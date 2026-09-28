@@ -1,0 +1,28 @@
+आदेश का प्रारूप — सक्षम अधिकारी द्वारा परीक्षण, संशोधन एवं डिजिटल हस्ताक्षर (DSC) हेतु
+कार्यालय {{ office.hi }}
+
+विषय: आवेदन क्र. {{ app.app_id }}, प्राप्ति दिनांक {{ received }}, {{ app.kendra.hi }} के माध्यम से
+आवेदक: {{ app.applicant_name.hi }}, {{ rel_word.hi }} {{ app.father_name.hi }}, ग्राम {{ app.village.hi }} (एलजीडी {{ app.village_lgd }}), तहसील {{ app.tehsil.hi }}, जिला {{ app.district.hi }}
+सेवा: {{ app.service_label.hi }}
+
+आधार अभिलेख:
+{% for r in records %}{{ loop.index }}. {{ r.hi }}
+{% endfor %}{% if considered %}विचार किए गए अभिलेख, जिन पर आधार नहीं लिया गया:
+{% for r in considered %}- {{ r.hi }}
+{% endfor %}{% endif %}
+विधिक आधार:
+{% for b in basis %}- {{ b.hi }}
+{% endfor %}
+अभिलेखों से तथ्य:
+{% for f in facts %}- {{ f.hi }}
+{% endfor %}
+अधोहस्ताक्षरी का समाधान:
+{{ satisfaction.hi }}
+
+{% if creamy %}{{ creamy.hi }}
+
+{% endif %}आदेश: उपर्युक्त कारणों से आवेदन स्वीकार किया जाता है तथा आवेदक को {{ grant.hi }} जारी किया जाता है।
+
+स्थान: {{ place.hi }}        दिनांक: {{ today }}
+{{ office.hi }}
+(डिजिटल हस्ताक्षर — DSC)

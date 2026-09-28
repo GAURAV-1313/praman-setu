@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect x="8" y="8" width="112" height="112" rx="18" fill="#f1f5f9" stroke="#334155" stroke-width="4"/>
+  <circle cx="64" cy="52" r="18" fill="#e2e8f0" stroke="#334155" stroke-width="3"/>
+  <path d="M36 94 C48 78 80 78 92 94" fill="#cbd5e1" stroke="#334155" stroke-width="3"/>
+  <text x="50%" y="116" text-anchor="middle" font-size="14" font-family="Arial" fill="#334155">SC/ST</text>
+</svg>

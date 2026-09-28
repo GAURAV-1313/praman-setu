@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect x="8" y="8" width="112" height="112" rx="18" fill="#ecfccb" stroke="#65a30d" stroke-width="4"/>
+  <path d="M28 92 C40 70 64 64 100 84" fill="#bef264" stroke="#65a30d" stroke-width="4"/>
+  <circle cx="44" cy="54" r="10" fill="#84cc16" stroke="#65a30d" stroke-width="3"/>
+  <text x="50%" y="116" text-anchor="middle" font-size="14" font-family="Arial" fill="#365314">Land Use</text>
+</svg>

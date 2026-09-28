@@ -1,0 +1,2627 @@
+{
+ "source": {
+  "en": "Sewa Setu public MIS dashboard (sewasetu.cgstate.gov.in), district-wise and service-wise status",
+  "hi": "सेवा सेतु सार्वजनिक एमआईएस डैशबोर्ड (sewasetu.cgstate.gov.in), जिलेवार एवं सेवावार स्थिति"
+ },
+ "fetched": "2026-09-27",
+ "period": {
+  "from": null,
+  "to": "2026-09-27",
+  "label": {
+   "en": "Cumulative since the portal went live, as published on 27-09-2026",
+   "hi": "पोर्टल आरंभ से संचयी, 27-09-2026 को प्रकाशित"
+  }
+ },
+ "totals": {
+  "applications": 5385535,
+  "approved": 4863282,
+  "rejected": 364124,
+  "pending": 136141,
+  "pending_beyond_sla": 4264,
+  "on_time_pct": 95.7
+ },
+ "on_time_note": {
+  "en": "On-time % = SLA compliance of applications resolved in the last 30 days (MIS API).",
+  "hi": "समय पर % = पिछले 30 दिनों में निराकृत आवेदनों का एसएलए अनुपालन (एमआईएस एपीआई)।"
+ },
+ "caste_combined": {
+  "total": 1197794,
+  "rejected": 225492,
+  "share_of_volume": 22.2,
+  "share_of_rejections": 61.9
+ },
+ "services": [
+  {
+   "key": "income",
+   "label": {
+    "en": "Income certificate",
+    "hi": "आय प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 2637878,
+   "approved": 2560227,
+   "rejected": 35633,
+   "pending": 40009,
+   "rejection_pct_decided": 1.37,
+   "share_of_volume": 48.98,
+   "share_of_rejections": 9.79,
+   "is_caste": false
+  },
+  {
+   "key": "domicile",
+   "label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवासी प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 1052396,
+   "approved": 958211,
+   "rejected": 76592,
+   "pending": 13742,
+   "rejection_pct_decided": 7.4,
+   "share_of_volume": 19.54,
+   "share_of_rejections": 21.03,
+   "is_caste": false
+  },
+  {
+   "key": "caste_scst",
+   "label": {
+    "en": "SC/ST caste certificate",
+    "hi": "अनुसूचित जाति / जनजाति प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 650302,
+   "approved": 496340,
+   "rejected": 116288,
+   "pending": 31159,
+   "rejection_pct_decided": 18.98,
+   "share_of_volume": 12.07,
+   "share_of_rejections": 31.94,
+   "is_caste": true
+  },
+  {
+   "key": "caste_obc",
+   "label": {
+    "en": "OBC caste certificate",
+    "hi": "अन्य पिछड़ा वर्ग प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 536515,
+   "approved": 389163,
+   "rejected": 104674,
+   "pending": 35656,
+   "rejection_pct_decided": 21.2,
+   "share_of_volume": 9.96,
+   "share_of_rejections": 28.75,
+   "is_caste": true
+  },
+  {
+   "key": "non_digitised_land_record_copy__nakal",
+   "label": {
+    "en": "Non-digitised land record copy (Nakal)",
+    "hi": "नॉन डिजिटाइज्ड नकल (भूमि दस्तावेज़ आदि ) हेतु"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 136470,
+   "approved": 134721,
+   "rejected": 269,
+   "pending": 1475,
+   "rejection_pct_decided": 0.2,
+   "share_of_volume": 2.53,
+   "share_of_rejections": 0.07,
+   "is_caste": false
+  },
+  {
+   "key": "revenue_court_order_copy",
+   "label": {
+    "en": "Revenue court order copy",
+    "hi": "न्यायालय आदेश प्रमाण पत्र (राजस्व न्यायालय)"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 75572,
+   "approved": 74098,
+   "rejected": 315,
+   "pending": 1111,
+   "rejection_pct_decided": 0.42,
+   "share_of_volume": 1.4,
+   "share_of_rejections": 0.09,
+   "is_caste": false
+  },
+  {
+   "key": "marriage_registration__urban",
+   "label": {
+    "en": "Marriage registration (urban)",
+    "hi": "विवाह पंजीकरण एवं प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 66112,
+   "approved": 59961,
+   "rejected": 5390,
+   "pending": 490,
+   "rejection_pct_decided": 8.25,
+   "share_of_volume": 1.23,
+   "share_of_rejections": 1.48,
+   "is_caste": false
+  },
+  {
+   "key": "land_use_information",
+   "label": {
+    "en": "Land use information",
+    "hi": "भूमि उपयोग की जानकारी"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 35543,
+   "approved": 32824,
+   "rejected": 1742,
+   "pending": 901,
+   "rejection_pct_decided": 5.04,
+   "share_of_volume": 0.66,
+   "share_of_rejections": 0.48,
+   "is_caste": false
+  },
+  {
+   "key": "marriage_registration__gram_panchayat",
+   "label": {
+    "en": "Marriage registration (gram panchayat)",
+    "hi": "विवाह पंजीकरण एवं प्रमाण पत्र ग्राम पंचायत के लिए"
+   },
+   "department": {
+    "en": "",
+    "hi": "पंचायत एवं ग्रामीण विकास विभाग"
+   },
+   "total": 32364,
+   "approved": 25943,
+   "rejected": 4131,
+   "pending": 1986,
+   "rejection_pct_decided": 13.74,
+   "share_of_volume": 0.6,
+   "share_of_rejections": 1.13,
+   "is_caste": false
+  },
+  {
+   "key": "birth_certificate_correction__legacy",
+   "label": {
+    "en": "Birth certificate correction (legacy)",
+    "hi": "जन्म प्रमाण पत्र सुधार (Legacy)"
+   },
+   "department": {
+    "en": "",
+    "hi": "आर्थिक एवं सांख्यिकी विभाग"
+   },
+   "total": 25020,
+   "approved": 23727,
+   "rejected": 1223,
+   "pending": 36,
+   "rejection_pct_decided": 4.9,
+   "share_of_volume": 0.46,
+   "share_of_rejections": 0.34,
+   "is_caste": false
+  },
+  {
+   "key": "trade_licence",
+   "label": {
+    "en": "Trade licence",
+    "hi": "व्यापार हेतु अनुज्ञप्ति"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 23471,
+   "approved": 21471,
+   "rejected": 2000,
+   "pending": 0,
+   "rejection_pct_decided": 8.52,
+   "share_of_volume": 0.44,
+   "share_of_rejections": 0.55,
+   "is_caste": false
+  },
+  {
+   "key": "camp___income_certificate",
+   "label": {
+    "en": "Camp - Income certificate",
+    "hi": "कैंप - आय प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 13209,
+   "approved": 13138,
+   "rejected": 71,
+   "pending": 0,
+   "rejection_pct_decided": 0.54,
+   "share_of_volume": 0.25,
+   "share_of_rejections": 0.02,
+   "is_caste": false
+  },
+  {
+   "key": "gazette_name_change",
+   "label": {
+    "en": "Gazette name change",
+    "hi": "नाम परिवर्तन के लिए साधारण राजपत्र अधिसूचना"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 11249,
+   "approved": 2730,
+   "rejected": 1805,
+   "pending": 6384,
+   "rejection_pct_decided": 39.8,
+   "share_of_volume": 0.21,
+   "share_of_rejections": 0.5,
+   "is_caste": false
+  },
+  {
+   "key": "marriage_certificate_correction",
+   "label": {
+    "en": "Marriage certificate correction",
+    "hi": "विवाह प्रमाण पत्र सुधार"
+   },
+   "department": {
+    "en": "",
+    "hi": "आर्थिक एवं सांख्यिकी विभाग"
+   },
+   "total": 9227,
+   "approved": 8750,
+   "rejected": 397,
+   "pending": 62,
+   "rejection_pct_decided": 4.34,
+   "share_of_volume": 0.17,
+   "share_of_rejections": 0.11,
+   "is_caste": false
+  },
+  {
+   "key": "shops___establishment_registration",
+   "label": {
+    "en": "Shops & establishment registration",
+    "hi": "दुकान एवं स्थापना पंजीयन हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "श्रम विभाग"
+   },
+   "total": 8232,
+   "approved": 6996,
+   "rejected": 1236,
+   "pending": 0,
+   "rejection_pct_decided": 15.01,
+   "share_of_volume": 0.15,
+   "share_of_rejections": 0.34,
+   "is_caste": false
+  },
+  {
+   "key": "camp_caste_obc",
+   "label": {
+    "en": "Camp - OBC certificate",
+    "hi": "कैंप - अन्य पिछड़ा वर्ग प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 7681,
+   "approved": 4407,
+   "rejected": 3274,
+   "pending": 0,
+   "rejection_pct_decided": 42.62,
+   "share_of_volume": 0.14,
+   "share_of_rejections": 0.9,
+   "is_caste": true
+  },
+  {
+   "key": "property_mutation__municipal",
+   "label": {
+    "en": "Property mutation (municipal)",
+    "hi": "संपत्ति नामांतरण नगर पालिका क्षेत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 7620,
+   "approved": 6956,
+   "rejected": 434,
+   "pending": 223,
+   "rejection_pct_decided": 5.87,
+   "share_of_volume": 0.14,
+   "share_of_rejections": 0.12,
+   "is_caste": false
+  },
+  {
+   "key": "new_trade_licence",
+   "label": {
+    "en": "New trade licence",
+    "hi": "New व्यापार अनुज्ञप्ति"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 6512,
+   "approved": 5996,
+   "rejected": 197,
+   "pending": 287,
+   "rejection_pct_decided": 3.18,
+   "share_of_volume": 0.12,
+   "share_of_rejections": 0.05,
+   "is_caste": false
+  },
+  {
+   "key": "iti_transfer_certificate",
+   "label": {
+    "en": "ITI transfer certificate",
+    "hi": "आई टी आई स्थानांतरण प्रमाण पत्र हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "तकनीकी शिक्षा, कौशल विकास तथा रोजगार विभाग"
+   },
+   "total": 5664,
+   "approved": 5080,
+   "rejected": 433,
+   "pending": 123,
+   "rejection_pct_decided": 7.85,
+   "share_of_volume": 0.11,
+   "share_of_rejections": 0.12,
+   "is_caste": false
+  },
+  {
+   "key": "temporary_firecracker_licence",
+   "label": {
+    "en": "Temporary firecracker licence",
+    "hi": "अस्थायी पटाखा लाइसेंस"
+   },
+   "department": {
+    "en": "",
+    "hi": "गृह विभाग"
+   },
+   "total": 5358,
+   "approved": 2608,
+   "rejected": 520,
+   "pending": 1184,
+   "rejection_pct_decided": 16.62,
+   "share_of_volume": 0.1,
+   "share_of_rejections": 0.14,
+   "is_caste": false
+  },
+  {
+   "key": "building_permission__urban",
+   "label": {
+    "en": "Building permission (urban)",
+    "hi": "भवन निर्माण अनुज्ञा"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 5143,
+   "approved": 4179,
+   "rejected": 828,
+   "pending": 109,
+   "rejection_pct_decided": 16.54,
+   "share_of_volume": 0.1,
+   "share_of_rejections": 0.23,
+   "is_caste": false
+  },
+  {
+   "key": "ignoaps_old_age_pension",
+   "label": {
+    "en": "IGNOAPS old-age pension",
+    "hi": "इंदिरा गांधी राष्ट्रीय वृद्धावस्था पेंशन योजना"
+   },
+   "department": {
+    "en": "",
+    "hi": "समाज कल्याण विभाग"
+   },
+   "total": 5095,
+   "approved": 4352,
+   "rejected": 739,
+   "pending": 4,
+   "rejection_pct_decided": 14.52,
+   "share_of_volume": 0.09,
+   "share_of_rejections": 0.2,
+   "is_caste": false
+  },
+  {
+   "key": "water_connection__urban",
+   "label": {
+    "en": "Water connection (urban)",
+    "hi": "नल कनेक्शन हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 4340,
+   "approved": 3519,
+   "rejected": 737,
+   "pending": 68,
+   "rejection_pct_decided": 17.32,
+   "share_of_volume": 0.08,
+   "share_of_rejections": 0.2,
+   "is_caste": false
+  },
+  {
+   "key": "svc_074",
+   "label": {
+    "en": "अन्त्योदय राशनकार्ड, प्राथमिकता राशनकार्ड, निराश्रित (एकल) राशनकार्ड, निःशक्तजन राशनकार्ड एवं सामान्य राशनकार्ड में सदस्य विलोपित हेतु आवेदन",
+    "hi": "अन्त्योदय राशनकार्ड, प्राथमिकता राशनकार्ड, निराश्रित (एकल) राशनकार्ड, निःशक्तजन राशनकार्ड एवं सामान्य राशनकार्ड में सदस्य विलोपित हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "खाद्य, नागरिक आपूर्ति एवं उपभोक्ता संरक्षण विभाग"
+   },
+   "total": 4175,
+   "approved": 2943,
+   "rejected": 988,
+   "pending": 181,
+   "rejection_pct_decided": 25.13,
+   "share_of_volume": 0.08,
+   "share_of_rejections": 0.27,
+   "is_caste": false
+  },
+  {
+   "key": "camp_caste_scst",
+   "label": {
+    "en": "Camp - SC/ST certificate",
+    "hi": "कैंप - अनुसूचित जाति / अनुसूचित जनजाति प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 3296,
+   "approved": 2040,
+   "rejected": 1256,
+   "pending": 0,
+   "rejection_pct_decided": 38.11,
+   "share_of_volume": 0.06,
+   "share_of_rejections": 0.34,
+   "is_caste": true
+  },
+  {
+   "key": "marriage_certificate_correction__legacy",
+   "label": {
+    "en": "Marriage certificate correction (legacy)",
+    "hi": "विवाह प्रमाण पत्र सुधार (legacy)"
+   },
+   "department": {
+    "en": "",
+    "hi": "आर्थिक एवं सांख्यिकी विभाग"
+   },
+   "total": 3115,
+   "approved": 2814,
+   "rejected": 256,
+   "pending": 30,
+   "rejection_pct_decided": 8.34,
+   "share_of_volume": 0.06,
+   "share_of_rejections": 0.07,
+   "is_caste": false
+  },
+  {
+   "key": "svc_073",
+   "label": {
+    "en": "अन्त्योदय राशनकार्ड, प्राथमिकता राशनकार्ड, निराश्रित (एकल) राशनकार्ड, निःशक्तजन राशनकार्ड एवं सामान्य राशनकार्ड में सदस्य जोड़ने हेतु आवेदन",
+    "hi": "अन्त्योदय राशनकार्ड, प्राथमिकता राशनकार्ड, निराश्रित (एकल) राशनकार्ड, निःशक्तजन राशनकार्ड एवं सामान्य राशनकार्ड में सदस्य जोड़ने हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "खाद्य, नागरिक आपूर्ति एवं उपभोक्ता संरक्षण विभाग"
+   },
+   "total": 2979,
+   "approved": 1989,
+   "rejected": 701,
+   "pending": 183,
+   "rejection_pct_decided": 26.06,
+   "share_of_volume": 0.06,
+   "share_of_rejections": 0.19,
+   "is_caste": false
+  },
+  {
+   "key": "svc_075",
+   "label": {
+    "en": "नवीन अन्त्योदय राशनकार्ड/ प्राथमिकता राशनकार्ड/ निराश्रित (एकल) राशनकार्ड/ निशक्तजन राशनकार्ड हेतु आवेदन",
+    "hi": "नवीन अन्त्योदय राशनकार्ड/ प्राथमिकता राशनकार्ड/ निराश्रित (एकल) राशनकार्ड/ निशक्तजन राशनकार्ड हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "खाद्य, नागरिक आपूर्ति एवं उपभोक्ता संरक्षण विभाग"
+   },
+   "total": 1431,
+   "approved": 525,
+   "rejected": 639,
+   "pending": 195,
+   "rejection_pct_decided": 54.9,
+   "share_of_volume": 0.03,
+   "share_of_rejections": 0.18,
+   "is_caste": false
+  },
+  {
+   "key": "svc_110",
+   "label": {
+    "en": "स्थानांतरण और चरित्र प्रमाणपत्र शासकीय इंजीनियरिंग / पॉलीटेक्निक कॉलेज के लिए",
+    "hi": "स्थानांतरण और चरित्र प्रमाणपत्र शासकीय इंजीनियरिंग / पॉलीटेक्निक कॉलेज के लिए"
+   },
+   "department": {
+    "en": "",
+    "hi": "तकनीकी शिक्षा, कौशल विकास तथा रोजगार विभाग"
+   },
+   "total": 1178,
+   "approved": 1071,
+   "rejected": 99,
+   "pending": 8,
+   "rejection_pct_decided": 8.46,
+   "share_of_volume": 0.02,
+   "share_of_rejections": 0.03,
+   "is_caste": false
+  },
+  {
+   "key": "svc_028",
+   "label": {
+    "en": "राजस्व सेवाएँ (नज़ूल पट्टा नामांतरण हेतु )",
+    "hi": "राजस्व सेवाएँ (नज़ूल पट्टा नामांतरण हेतु )"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 1056,
+   "approved": 982,
+   "rejected": 8,
+   "pending": 66,
+   "rejection_pct_decided": 0.81,
+   "share_of_volume": 0.02,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_069",
+   "label": {
+    "en": "इंदिरा गांधी राष्ट्रीय विधवा पेंशन योजना",
+    "hi": "इंदिरा गांधी राष्ट्रीय विधवा पेंशन योजना"
+   },
+   "department": {
+    "en": "",
+    "hi": "समाज कल्याण विभाग"
+   },
+   "total": 960,
+   "approved": 850,
+   "rejected": 110,
+   "pending": 0,
+   "rejection_pct_decided": 11.46,
+   "share_of_volume": 0.02,
+   "share_of_rejections": 0.03,
+   "is_caste": false
+  },
+  {
+   "key": "svc_076",
+   "label": {
+    "en": "सामान्य ( APL) ए. पी. एल. राशन कार्ड जारी कराने हेतु आवेदन",
+    "hi": "सामान्य ( APL) ए. पी. एल. राशन कार्ड जारी कराने हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "खाद्य, नागरिक आपूर्ति एवं उपभोक्ता संरक्षण विभाग"
+   },
+   "total": 798,
+   "approved": 324,
+   "rejected": 376,
+   "pending": 75,
+   "rejection_pct_decided": 53.71,
+   "share_of_volume": 0.01,
+   "share_of_rejections": 0.1,
+   "is_caste": false
+  },
+  {
+   "key": "svc_107",
+   "label": {
+    "en": "जनशक्ति - जनशक्ति प्रशिक्षण की अंकसूची",
+    "hi": "जनशक्ति - जनशक्ति प्रशिक्षण की अंकसूची"
+   },
+   "department": {
+    "en": "",
+    "hi": "तकनीकी शिक्षा, कौशल विकास तथा रोजगार विभाग"
+   },
+   "total": 702,
+   "approved": 650,
+   "rejected": 38,
+   "pending": 13,
+   "rejection_pct_decided": 5.52,
+   "share_of_volume": 0.01,
+   "share_of_rejections": 0.01,
+   "is_caste": false
+  },
+  {
+   "key": "svc_025",
+   "label": {
+    "en": "राजस्व सेवाएँ (कृषि भूमि/परिवर्तित सीमांकन हेतु)",
+    "hi": "राजस्व सेवाएँ (कृषि भूमि/परिवर्तित सीमांकन हेतु)"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 683,
+   "approved": 655,
+   "rejected": 13,
+   "pending": 14,
+   "rejection_pct_decided": 1.95,
+   "share_of_volume": 0.01,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_018",
+   "label": {
+    "en": "प्रकरण सूची (राजस्व न्यायालय)",
+    "hi": "प्रकरण सूची (राजस्व न्यायालय)"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 584,
+   "approved": 567,
+   "rejected": 17,
+   "pending": 0,
+   "rejection_pct_decided": 2.91,
+   "share_of_volume": 0.01,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_071",
+   "label": {
+    "en": "सामाजिक सुरक्षा पेंशन योजना",
+    "hi": "सामाजिक सुरक्षा पेंशन योजना"
+   },
+   "department": {
+    "en": "",
+    "hi": "समाज कल्याण विभाग"
+   },
+   "total": 513,
+   "approved": 437,
+   "rejected": 74,
+   "pending": 2,
+   "rejection_pct_decided": 14.48,
+   "share_of_volume": 0.01,
+   "share_of_rejections": 0.02,
+   "is_caste": false
+  },
+  {
+   "key": "svc_027",
+   "label": {
+    "en": "राजस्व सेवाएँ (नज़ूल पट्टा नवीनीकरण हेतु )",
+    "hi": "राजस्व सेवाएँ (नज़ूल पट्टा नवीनीकरण हेतु )"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 387,
+   "approved": 354,
+   "rejected": 3,
+   "pending": 30,
+   "rejection_pct_decided": 0.84,
+   "share_of_volume": 0.01,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_036",
+   "label": {
+    "en": "प्रारूप ड़ (नियम ७ (२) देखिये)धारा ११ के अधीन विनिर्दिष्ट इमारती लकड़ी के विनिर्माता/व्यापारी/उपभोक्ता के रजिस्ट्रीकरण के लिए आवेदन पत्र",
+    "hi": "प्रारूप ड़ (नियम ७ (२) देखिये)धारा ११ के अधीन विनिर्दिष्ट इमारती लकड़ी के विनिर्माता/व्यापारी/उपभोक्ता के रजिस्ट्रीकरण के लिए आवेदन पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "वन एवं जलवायु परिवर्तन विभाग"
+   },
+   "total": 385,
+   "approved": 347,
+   "rejected": 31,
+   "pending": 7,
+   "rejection_pct_decided": 8.2,
+   "share_of_volume": 0.01,
+   "share_of_rejections": 0.01,
+   "is_caste": false
+  },
+  {
+   "key": "svc_072",
+   "label": {
+    "en": "सुखद सहारा योजना",
+    "hi": "सुखद सहारा योजना"
+   },
+   "department": {
+    "en": "",
+    "hi": "समाज कल्याण विभाग"
+   },
+   "total": 321,
+   "approved": 281,
+   "rejected": 40,
+   "pending": 0,
+   "rejection_pct_decided": 12.46,
+   "share_of_volume": 0.01,
+   "share_of_rejections": 0.01,
+   "is_caste": false
+  },
+  {
+   "key": "svc_055",
+   "label": {
+    "en": "अस्वच्छ व्यवसाय मे कार्यरत परिवार के बच्चों की केंद्र प्रवर्तित प्री मैट्रिक छात्रवृति हेतु अस्वच्छ व्यवसाय प्रमाण -पत्र",
+    "hi": "अस्वच्छ व्यवसाय मे कार्यरत परिवार के बच्चों की केंद्र प्रवर्तित प्री मैट्रिक छात्रवृति हेतु अस्वच्छ व्यवसाय प्रमाण -पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "स्कूल शिक्षा विभाग"
+   },
+   "total": 235,
+   "approved": 61,
+   "rejected": 77,
+   "pending": 88,
+   "rejection_pct_decided": 55.8,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.02,
+   "is_caste": false
+  },
+  {
+   "key": "svc_068",
+   "label": {
+    "en": "इंदिरा गांधी राष्ट्रीय दिव्यांगजन पेंशन योजना",
+    "hi": "इंदिरा गांधी राष्ट्रीय दिव्यांगजन पेंशन योजना"
+   },
+   "department": {
+    "en": "",
+    "hi": "समाज कल्याण विभाग"
+   },
+   "total": 234,
+   "approved": 135,
+   "rejected": 99,
+   "pending": 0,
+   "rejection_pct_decided": 42.31,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.03,
+   "is_caste": false
+  },
+  {
+   "key": "svc_006",
+   "label": {
+    "en": "स्थायी पटाखा लाइसेंस",
+    "hi": "स्थायी पटाखा लाइसेंस"
+   },
+   "department": {
+    "en": "",
+    "hi": "गृह विभाग"
+   },
+   "total": 191,
+   "approved": 52,
+   "rejected": 101,
+   "pending": 26,
+   "rejection_pct_decided": 66.01,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.03,
+   "is_caste": false
+  },
+  {
+   "key": "ews_certificate",
+   "label": {
+    "en": "EWS certificate",
+    "hi": "आर्थिक रूप से कमजोर वर्ग (EWS) का प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 177,
+   "approved": 40,
+   "rejected": 24,
+   "pending": 78,
+   "rejection_pct_decided": 37.5,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.01,
+   "is_caste": false
+  },
+  {
+   "key": "svc_065",
+   "label": {
+    "en": "मृत्यु प्रमाण पत्र सुधार (Legacy)",
+    "hi": "मृत्यु प्रमाण पत्र सुधार (Legacy)"
+   },
+   "department": {
+    "en": "",
+    "hi": "आर्थिक एवं सांख्यिकी विभाग"
+   },
+   "total": 149,
+   "approved": 124,
+   "rejected": 24,
+   "pending": 0,
+   "rejection_pct_decided": 16.22,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.01,
+   "is_caste": false
+  },
+  {
+   "key": "svc_024",
+   "label": {
+    "en": "राजस्व सेवाएँ (कृषि भूमि/परिवर्तित नामान्तरण हेतु )",
+    "hi": "राजस्व सेवाएँ (कृषि भूमि/परिवर्तित नामान्तरण हेतु )"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 103,
+   "approved": 76,
+   "rejected": 10,
+   "pending": 17,
+   "rejection_pct_decided": 11.63,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_026",
+   "label": {
+    "en": "राजस्व सेवाएँ (नज़ूल पट्टा अनापत्ति प्रमाण हेतु)",
+    "hi": "राजस्व सेवाएँ (नज़ूल पट्टा अनापत्ति प्रमाण हेतु)"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 103,
+   "approved": 103,
+   "rejected": 0,
+   "pending": 0,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_023",
+   "label": {
+    "en": "राजस्व सेवाएँ (कृषि भूमि/परिवर्तित किसान किताब हेतु)",
+    "hi": "राजस्व सेवाएँ (कृषि भूमि/परिवर्तित किसान किताब हेतु)"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 94,
+   "approved": 89,
+   "rejected": 5,
+   "pending": 0,
+   "rejection_pct_decided": 5.32,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_029",
+   "label": {
+    "en": "राजस्व सेवाएँ (नज़ूल पट्टा सीमांकन हेतु )",
+    "hi": "राजस्व सेवाएँ (नज़ूल पट्टा सीमांकन हेतु )"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 83,
+   "approved": 80,
+   "rejected": 1,
+   "pending": 2,
+   "rejection_pct_decided": 1.23,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_022",
+   "label": {
+    "en": "राजस्व सेवाएँ (कृषि भूमि/परिवर्तित RBC 6(4) - राहत सहायता (प्राकृतिक आपदा)",
+    "hi": "राजस्व सेवाएँ (कृषि भूमि/परिवर्तित RBC 6(4) - राहत सहायता (प्राकृतिक आपदा)"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 61,
+   "approved": 42,
+   "rejected": 4,
+   "pending": 15,
+   "rejection_pct_decided": 8.7,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_039",
+   "label": {
+    "en": "वन - प्रारूप-ख [नियम 3 (2)] - पहले से स्थापित आरा मिल/ गड्डे को चलाने के लिये अनुज्ञप्ति मंजूर करने हेतु आवेदन",
+    "hi": "वन - प्रारूप-ख [नियम 3 (2)] - पहले से स्थापित आरा मिल/ गड्डे को चलाने के लिये अनुज्ञप्ति मंजूर करने हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "वन एवं जलवायु परिवर्तन विभाग"
+   },
+   "total": 60,
+   "approved": 51,
+   "rejected": 9,
+   "pending": 0,
+   "rejection_pct_decided": 15.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_040",
+   "label": {
+    "en": "वन उत्पाद की खुदरा बिक्री की मंज़ूरी के लिए आवेदन",
+    "hi": "वन उत्पाद की खुदरा बिक्री की मंज़ूरी के लिए आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "वन एवं जलवायु परिवर्तन विभाग"
+   },
+   "total": 57,
+   "approved": 32,
+   "rejected": 23,
+   "pending": 2,
+   "rejection_pct_decided": 41.82,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.01,
+   "is_caste": false
+  },
+  {
+   "key": "svc_060",
+   "label": {
+    "en": "पंचायत एवं ग्रामीण विकास - स्ट्रीट लाइट ( बल्ब एवं ट्यूबलाइट बदलना )",
+    "hi": "पंचायत एवं ग्रामीण विकास - स्ट्रीट लाइट ( बल्ब एवं ट्यूबलाइट बदलना )"
+   },
+   "department": {
+    "en": "",
+    "hi": "पंचायत एवं ग्रामीण विकास विभाग"
+   },
+   "total": 52,
+   "approved": 30,
+   "rejected": 16,
+   "pending": 5,
+   "rejection_pct_decided": 34.78,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_053",
+   "label": {
+    "en": "होटल व्यापार अनुज्ञप्ति",
+    "hi": "होटल व्यापार अनुज्ञप्ति"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 39,
+   "approved": 16,
+   "rejected": 23,
+   "pending": 0,
+   "rejection_pct_decided": 58.97,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.01,
+   "is_caste": false
+  },
+  {
+   "key": "svc_054",
+   "label": {
+    "en": "बेरोजगार इंजीनियर डिप्लोमा एवं बी.ई. पंजीयन हेतु",
+    "hi": "बेरोजगार इंजीनियर डिप्लोमा एवं बी.ई. पंजीयन हेतु"
+   },
+   "department": {
+    "en": "",
+    "hi": "लोक निर्माण विभाग"
+   },
+   "total": 36,
+   "approved": 2,
+   "rejected": 31,
+   "pending": 1,
+   "rejection_pct_decided": 93.94,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.01,
+   "is_caste": false
+  },
+  {
+   "key": "svc_059",
+   "label": {
+    "en": "पंचायत एवं ग्रामीण विकास - आवश्यक साफ सफाई व्यवस्था",
+    "hi": "पंचायत एवं ग्रामीण विकास - आवश्यक साफ सफाई व्यवस्था"
+   },
+   "department": {
+    "en": "",
+    "hi": "पंचायत एवं ग्रामीण विकास विभाग"
+   },
+   "total": 36,
+   "approved": 26,
+   "rejected": 4,
+   "pending": 5,
+   "rejection_pct_decided": 13.33,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_094",
+   "label": {
+    "en": "त्रिस्तरीय पंचायत राज संस्थाओं का तालाब पट्टे के प्रकरण प्रस्तुत करना",
+    "hi": "त्रिस्तरीय पंचायत राज संस्थाओं का तालाब पट्टे के प्रकरण प्रस्तुत करना"
+   },
+   "department": {
+    "en": "",
+    "hi": "मछली पालन विभाग"
+   },
+   "total": 33,
+   "approved": 23,
+   "rejected": 7,
+   "pending": 3,
+   "rejection_pct_decided": 23.33,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_102",
+   "label": {
+    "en": "टसर रेशम विकास एवं विस्तार कार्यक्रम",
+    "hi": "टसर रेशम विकास एवं विस्तार कार्यक्रम"
+   },
+   "department": {
+    "en": "",
+    "hi": "ग्रामीण उद्योग विभाग"
+   },
+   "total": 32,
+   "approved": 1,
+   "rejected": 0,
+   "pending": 31,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_030",
+   "label": {
+    "en": "राजस्व सेवाएँ (शोध्य क्षमता 5 लाख से कम)",
+    "hi": "राजस्व सेवाएँ (शोध्य क्षमता 5 लाख से कम)"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 18,
+   "approved": 14,
+   "rejected": 4,
+   "pending": 0,
+   "rejection_pct_decided": 22.22,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_061",
+   "label": {
+    "en": "भवन निर्माण अनुज्ञा ग्राम पंचायत के लिए",
+    "hi": "भवन निर्माण अनुज्ञा ग्राम पंचायत के लिए"
+   },
+   "department": {
+    "en": "",
+    "hi": "पंचायत एवं ग्रामीण विकास विभाग"
+   },
+   "total": 17,
+   "approved": 12,
+   "rejected": 3,
+   "pending": 2,
+   "rejection_pct_decided": 20.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_019",
+   "label": {
+    "en": "भुइयां से नकल (भूमि दस्तावेज़ आदि ) हेतु",
+    "hi": "भुइयां से नकल (भूमि दस्तावेज़ आदि ) हेतु"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 13,
+   "approved": 11,
+   "rejected": 2,
+   "pending": 0,
+   "rejection_pct_decided": 15.38,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_095",
+   "label": {
+    "en": "शिक्षण-प्रशिक्षण के लिए हितग्राहियों का चयन",
+    "hi": "शिक्षण-प्रशिक्षण के लिए हितग्राहियों का चयन"
+   },
+   "department": {
+    "en": "",
+    "hi": "मछली पालन विभाग"
+   },
+   "total": 13,
+   "approved": 2,
+   "rejected": 7,
+   "pending": 4,
+   "rejection_pct_decided": 77.78,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_032",
+   "label": {
+    "en": "सूचना का अधिकार जिला कलेक्टरेट",
+    "hi": "सूचना का अधिकार जिला कलेक्टरेट"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 12,
+   "approved": 8,
+   "rejected": 3,
+   "pending": 1,
+   "rejection_pct_decided": 27.27,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_100",
+   "label": {
+    "en": "छत्तीसगढ़ माटीकला बोर्ड में कुम्हारी (पोटरी) एवं मिट्टी के कार्य करने वाले कुम्भकारों/कारीगरों के पंजीयन हेतु आवेदन",
+    "hi": "छत्तीसगढ़ माटीकला बोर्ड में कुम्हारी (पोटरी) एवं मिट्टी के कार्य करने वाले कुम्भकारों/कारीगरों के पंजीयन हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "ग्रामीण उद्योग विभाग"
+   },
+   "total": 11,
+   "approved": 1,
+   "rejected": 1,
+   "pending": 9,
+   "rejection_pct_decided": 50.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_004",
+   "label": {
+    "en": "सड़क दुर्घटना मे मृत्यु / घायल व्यक्तियों के लिए आर्थिक सहायता राशि (अज्ञात वाहन – शोलेशियम फंड)",
+    "hi": "सड़क दुर्घटना मे मृत्यु / घायल व्यक्तियों के लिए आर्थिक सहायता राशि (अज्ञात वाहन – शोलेशियम फंड)"
+   },
+   "department": {
+    "en": "",
+    "hi": "गृह विभाग"
+   },
+   "total": 10,
+   "approved": 0,
+   "rejected": 6,
+   "pending": 4,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_085",
+   "label": {
+    "en": "संस्कृति - पंजीयन की प्रतिलिपि",
+    "hi": "संस्कृति - पंजीयन की प्रतिलिपि"
+   },
+   "department": {
+    "en": "",
+    "hi": "संस्कृति एवं राजभाषा"
+   },
+   "total": 9,
+   "approved": 0,
+   "rejected": 8,
+   "pending": 1,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_086",
+   "label": {
+    "en": "पंचायत एवं ग्रामीण विकास (मनरेगा) - पानी शुद्ध करें (तालाब शुद्धिकरण)",
+    "hi": "पंचायत एवं ग्रामीण विकास (मनरेगा) - पानी शुद्ध करें (तालाब शुद्धिकरण)"
+   },
+   "department": {
+    "en": "",
+    "hi": "जल संसाधन विभाग"
+   },
+   "total": 9,
+   "approved": 0,
+   "rejected": 8,
+   "pending": 1,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_087",
+   "label": {
+    "en": "उत्तराधिकारी नामांतरण का स्वीकृति प्रदान करने हेतु आवेदन",
+    "hi": "उत्तराधिकारी नामांतरण का स्वीकृति प्रदान करने हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "आवास एवं पर्यावरण विभाग"
+   },
+   "total": 9,
+   "approved": 1,
+   "rejected": 5,
+   "pending": 2,
+   "rejection_pct_decided": 83.33,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_099",
+   "label": {
+    "en": "छत्तीसगढ़ के बेरोजगार युवक युवतियों के लिए कारीगर प्रशिक्षण योजना अंतर्गत प्रशिक्षण प्राप्त करने हेतु आवेदन पत्र",
+    "hi": "छत्तीसगढ़ के बेरोजगार युवक युवतियों के लिए कारीगर प्रशिक्षण योजना अंतर्गत प्रशिक्षण प्राप्त करने हेतु आवेदन पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "ग्रामीण उद्योग विभाग"
+   },
+   "total": 8,
+   "approved": 0,
+   "rejected": 5,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_083",
+   "label": {
+    "en": "रामायण मंडली प्रोत्साहन योजना के लिए आवेदन",
+    "hi": "रामायण मंडली प्रोत्साहन योजना के लिए आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "संस्कृति एवं राजभाषा"
+   },
+   "total": 7,
+   "approved": 0,
+   "rejected": 2,
+   "pending": 4,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_014",
+   "label": {
+    "en": "जन शिकायत कलेक्टरेट",
+    "hi": "जन शिकायत कलेक्टरेट"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 6,
+   "approved": 6,
+   "rejected": 0,
+   "pending": 0,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_044",
+   "label": {
+    "en": "जन शिकायत नगर निगम/पालिका/पंचायत",
+    "hi": "जन शिकायत नगर निगम/पालिका/पंचायत"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 6,
+   "approved": 4,
+   "rejected": 2,
+   "pending": 0,
+   "rejection_pct_decided": 33.33,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_056",
+   "label": {
+    "en": "छ.ग. बोर्ड की दसवीं एवं बारहवीं के अंकसूची की प्रतिलिपि",
+    "hi": "छ.ग. बोर्ड की दसवीं एवं बारहवीं के अंकसूची की प्रतिलिपि"
+   },
+   "department": {
+    "en": "",
+    "hi": "स्कूल शिक्षा विभाग"
+   },
+   "total": 6,
+   "approved": 1,
+   "rejected": 2,
+   "pending": 3,
+   "rejection_pct_decided": 66.67,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_058",
+   "label": {
+    "en": "नल कनेक्शन हेतु आवेदन ग्राम पंचायत के लिए",
+    "hi": "नल कनेक्शन हेतु आवेदन ग्राम पंचायत के लिए"
+   },
+   "department": {
+    "en": "",
+    "hi": "पंचायत एवं ग्रामीण विकास विभाग"
+   },
+   "total": 4,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 3,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_088",
+   "label": {
+    "en": "भूखंड/भवन पर निर्माण/पुर्ननिर्माण की अनापत्ति प्रमाण पत्र प्राप्त करने हेतु आवेदन",
+    "hi": "भूखंड/भवन पर निर्माण/पुर्ननिर्माण की अनापत्ति प्रमाण पत्र प्राप्त करने हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "आवास एवं पर्यावरण विभाग"
+   },
+   "total": 4,
+   "approved": 0,
+   "rejected": 2,
+   "pending": 2,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_093",
+   "label": {
+    "en": "पशु रोग उद्भेदों की सूचना प्राप्ति पर कार्यवाही ( Disease Outbreak)",
+    "hi": "पशु रोग उद्भेदों की सूचना प्राप्ति पर कार्यवाही ( Disease Outbreak)"
+   },
+   "department": {
+    "en": "",
+    "hi": "पशुधन विकास विभाग"
+   },
+   "total": 4,
+   "approved": 1,
+   "rejected": 2,
+   "pending": 1,
+   "rejection_pct_decided": 66.67,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_003",
+   "label": {
+    "en": "विस्फोटक सामग्री विक्रय, परिवहन एवं निर्माण हेतु अनापत्ति प्रमाण पत्र",
+    "hi": "विस्फोटक सामग्री विक्रय, परिवहन एवं निर्माण हेतु अनापत्ति प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "गृह विभाग"
+   },
+   "total": 3,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 1,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_005",
+   "label": {
+    "en": "सिनेमेटोग्राफी एक्ट के तहत सिनेमा लाइसेंस",
+    "hi": "सिनेमेटोग्राफी एक्ट के तहत सिनेमा लाइसेंस"
+   },
+   "department": {
+    "en": "",
+    "hi": "गृह विभाग"
+   },
+   "total": 3,
+   "approved": 2,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 33.33,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_021",
+   "label": {
+    "en": "राजस्व सेवाएँ (5 लाख से 25 लाख तक)",
+    "hi": "राजस्व सेवाएँ (5 लाख से 25 लाख तक)"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 3,
+   "approved": 2,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 33.33,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_037",
+   "label": {
+    "en": "बसोड बही कार्ड पंजीकरण",
+    "hi": "बसोड बही कार्ड पंजीकरण"
+   },
+   "department": {
+    "en": "",
+    "hi": "वन एवं जलवायु परिवर्तन विभाग"
+   },
+   "total": 3,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 3,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_041",
+   "label": {
+    "en": "कृषि उपकरण पंप - किसान समृद्धि योजना",
+    "hi": "कृषि उपकरण पंप - किसान समृद्धि योजना"
+   },
+   "department": {
+    "en": "",
+    "hi": "कृषि विकास एवं किसान कल्याण तथा जैव प्रौद्योगिकी विभाग"
+   },
+   "total": 3,
+   "approved": 3,
+   "rejected": 0,
+   "pending": 0,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_052",
+   "label": {
+    "en": "हस्तांतरण/नामांतरण",
+    "hi": "हस्तांतरण/नामांतरण"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 3,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 2,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_082",
+   "label": {
+    "en": "फिल्म शूटिंग हेतु आवेदन",
+    "hi": "फिल्म शूटिंग हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "संस्कृति एवं राजभाषा"
+   },
+   "total": 3,
+   "approved": 1,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 50.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_089",
+   "label": {
+    "en": "वित्तदायी संस्था से ऋण लेने हेतु अनापत्ति प्रमाण पत्र प्राप्त करने हेतु",
+    "hi": "वित्तदायी संस्था से ऋण लेने हेतु अनापत्ति प्रमाण पत्र प्राप्त करने हेतु"
+   },
+   "department": {
+    "en": "",
+    "hi": "आवास एवं पर्यावरण विभाग"
+   },
+   "total": 2,
+   "approved": 1,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 50.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_092",
+   "label": {
+    "en": "हैण्डपंप सुधार की सूचना",
+    "hi": "हैण्डपंप सुधार की सूचना"
+   },
+   "department": {
+    "en": "",
+    "hi": "लोक स्वास्थ यांत्रिकी विभाग"
+   },
+   "total": 2,
+   "approved": 1,
+   "rejected": 0,
+   "pending": 1,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_098",
+   "label": {
+    "en": "छ.ग. हस्तशिल्प विकास बोर्ड में शिल्पी / शिल्पकारों हेतु पंजीयन का आवेदन पत्र",
+    "hi": "छ.ग. हस्तशिल्प विकास बोर्ड में शिल्पी / शिल्पकारों हेतु पंजीयन का आवेदन पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "ग्रामीण उद्योग विभाग"
+   },
+   "total": 2,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 2,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_103",
+   "label": {
+    "en": "बुनकरों हेतु कपड़ा बुनाई आवेदन",
+    "hi": "बुनकरों हेतु कपड़ा बुनाई आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "ग्रामीण उद्योग विभाग"
+   },
+   "total": 2,
+   "approved": 0,
+   "rejected": 2,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_105",
+   "label": {
+    "en": "सेरीकल्चर ऐड अंडर मलबरी प्लांटेशन",
+    "hi": "सेरीकल्चर ऐड अंडर मलबरी प्लांटेशन"
+   },
+   "department": {
+    "en": "",
+    "hi": "ग्रामीण उद्योग विभाग"
+   },
+   "total": 2,
+   "approved": 0,
+   "rejected": 2,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_108",
+   "label": {
+    "en": "शासकीय इंजीनियरिंग महाविद्यालय/पॉलिटेक्निक में संस्था स्तर पर शाखा परिवर्तन",
+    "hi": "शासकीय इंजीनियरिंग महाविद्यालय/पॉलिटेक्निक में संस्था स्तर पर शाखा परिवर्तन"
+   },
+   "department": {
+    "en": "",
+    "hi": "तकनीकी शिक्षा, कौशल विकास तथा रोजगार विभाग"
+   },
+   "total": 2,
+   "approved": 0,
+   "rejected": 2,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_109",
+   "label": {
+    "en": "शासकीय इंजीनियरिंग महाविद्यालय/पॉलिटेक्निक में सुरक्षा जमा राशि की वापसी",
+    "hi": "शासकीय इंजीनियरिंग महाविद्यालय/पॉलिटेक्निक में सुरक्षा जमा राशि की वापसी"
+   },
+   "department": {
+    "en": "",
+    "hi": "तकनीकी शिक्षा, कौशल विकास तथा रोजगार विभाग"
+   },
+   "total": 2,
+   "approved": 0,
+   "rejected": 2,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_001",
+   "label": {
+    "en": "पेट्रोल पंप स्थापित करने हेतु अनापत्ति प्रमाण पत्र",
+    "hi": "पेट्रोल पंप स्थापित करने हेतु अनापत्ति प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "गृह विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_002",
+   "label": {
+    "en": "प्राकृतिक आपदाओं से पीड़ित सहायता के लिए आवेदन",
+    "hi": "प्राकृतिक आपदाओं से पीड़ित सहायता के लिए आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "गृह विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_031",
+   "label": {
+    "en": "लॉकडाउन से छुट का आवेदन पत्र (वैवाहिक कार्यक्रम हेतु )",
+    "hi": "लॉकडाउन से छुट का आवेदन पत्र (वैवाहिक कार्यक्रम हेतु )"
+   },
+   "department": {
+    "en": "",
+    "hi": "राजस्व एवं आपदा प्रबंधन विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_033",
+   "label": {
+    "en": "Submission of Information for Continuation of Departmental Recognition",
+    "hi": "Submission of Information for Continuation of Departmental Recognition"
+   },
+   "department": {
+    "en": "",
+    "hi": "खेल एवं युवा कल्याण विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 1,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_034",
+   "label": {
+    "en": "मेधावी खिलाड़ियों को प्रोत्साहन राशि हेतु आवेदन",
+    "hi": "मेधावी खिलाड़ियों को प्रोत्साहन राशि हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "खेल एवं युवा कल्याण विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 1,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_035",
+   "label": {
+    "en": "संघ / संस्थानों की आर्थिक सहायता के लिए आवेदन - परिशिष्ट (ब)",
+    "hi": "संघ / संस्थानों की आर्थिक सहायता के लिए आवेदन - परिशिष्ट (ब)"
+   },
+   "department": {
+    "en": "",
+    "hi": "खेल एवं युवा कल्याण विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 1,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_038",
+   "label": {
+    "en": "मालिक मकबूज काष्ठ का भुगतान (डिपो में काष्ट प्राप्त होने के उपरांत)",
+    "hi": "मालिक मकबूज काष्ठ का भुगतान (डिपो में काष्ट प्राप्त होने के उपरांत)"
+   },
+   "department": {
+    "en": "",
+    "hi": "वन एवं जलवायु परिवर्तन विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 1,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_046",
+   "label": {
+    "en": "फ्री-होल्ड",
+    "hi": "फ्री-होल्ड"
+   },
+   "department": {
+    "en": "",
+    "hi": "नगरीय प्रशासन एवं विकास विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 1,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_057",
+   "label": {
+    "en": "स्थानांतरण प्रमाण पत्र आवेदन फार्म",
+    "hi": "स्थानांतरण प्रमाण पत्र आवेदन फार्म"
+   },
+   "department": {
+    "en": "",
+    "hi": "स्कूल शिक्षा विभाग"
+   },
+   "total": 1,
+   "approved": 1,
+   "rejected": 0,
+   "pending": 0,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_063",
+   "label": {
+    "en": "जन्म पंजीकरण एवं प्रमाण पत्र",
+    "hi": "जन्म पंजीकरण एवं प्रमाण पत्र"
+   },
+   "department": {
+    "en": "",
+    "hi": "आर्थिक एवं सांख्यिकी विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_077",
+   "label": {
+    "en": "Kalakar Kalyan Kosh Yojana",
+    "hi": "Kalakar Kalyan Kosh Yojana"
+   },
+   "department": {
+    "en": "",
+    "hi": "संस्कृति एवं राजभाषा"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_078",
+   "label": {
+    "en": "अंतरराष्ट्रीय पुरस्कार जीतने पर सब्सिडी के लिए आवेदन",
+    "hi": "अंतरराष्ट्रीय पुरस्कार जीतने पर सब्सिडी के लिए आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "संस्कृति एवं राजभाषा"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_079",
+   "label": {
+    "en": "छत्तीसगढ़ की विशेष ब्रांडिंग पर सब्सिडी के लिए आवेदन",
+    "hi": "छत्तीसगढ़ की विशेष ब्रांडिंग पर सब्सिडी के लिए आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "संस्कृति एवं राजभाषा"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_080",
+   "label": {
+    "en": "दुर्लभ संगीत वाद्ययंत्रों के लिए अनुदान",
+    "hi": "दुर्लभ संगीत वाद्ययंत्रों के लिए अनुदान"
+   },
+   "department": {
+    "en": "",
+    "hi": "संस्कृति एवं राजभाषा"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_081",
+   "label": {
+    "en": "फिल्म निर्माण उपकरण के लिए सब्सिडी आवेदन",
+    "hi": "फिल्म निर्माण उपकरण के लिए सब्सिडी आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "संस्कृति एवं राजभाषा"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_084",
+   "label": {
+    "en": "विभाग अंतर्गत स्थापित 12 राज्य स्तरीय सम्मान, पुरस्कार एवं अलंकरण",
+    "hi": "विभाग अंतर्गत स्थापित 12 राज्य स्तरीय सम्मान, पुरस्कार एवं अलंकरण"
+   },
+   "department": {
+    "en": "",
+    "hi": "संस्कृति एवं राजभाषा"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_090",
+   "label": {
+    "en": "नलकूप खनन की अनुमति",
+    "hi": "नलकूप खनन की अनुमति"
+   },
+   "department": {
+    "en": "",
+    "hi": "लोक स्वास्थ यांत्रिकी विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 1,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_091",
+   "label": {
+    "en": "पेयजल स्रोतों के परीक्षण",
+    "hi": "पेयजल स्रोतों के परीक्षण"
+   },
+   "department": {
+    "en": "",
+    "hi": "लोक स्वास्थ यांत्रिकी विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 1,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_096",
+   "label": {
+    "en": "कत्तिनो हेतु धागा कताई आवेदन",
+    "hi": "कत्तिनो हेतु धागा कताई आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "ग्रामीण उद्योग विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_097",
+   "label": {
+    "en": "कृमि पालकों को पालित प्रजाति के टसर स्वस्थ डिम्ब समूह की प्रदाय योजना",
+    "hi": "कृमि पालकों को पालित प्रजाति के टसर स्वस्थ डिम्ब समूह की प्रदाय योजना"
+   },
+   "department": {
+    "en": "",
+    "hi": "ग्रामीण उद्योग विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 1,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_101",
+   "label": {
+    "en": "छत्तीसगढ़ हस्तशिल्प विकास बोर्ड के अंतर्गत स्व-सहायता समूह (SHG) / सहकारी समितियों का पंजीयन हेतु आवेदन",
+    "hi": "छत्तीसगढ़ हस्तशिल्प विकास बोर्ड के अंतर्गत स्व-सहायता समूह (SHG) / सहकारी समितियों का पंजीयन हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "ग्रामीण उद्योग विभाग"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 1,
+   "pending": 0,
+   "rejection_pct_decided": 100.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_104",
+   "label": {
+    "en": "मुख्यमंत्री रोजगार सृजन कार्यक्रम हेतु आवेदन",
+    "hi": "मुख्यमंत्री रोजगार सृजन कार्यक्रम हेतु आवेदन"
+   },
+   "department": {
+    "en": "",
+    "hi": "ग्रामीण उद्योग विभाग"
+   },
+   "total": 1,
+   "approved": 1,
+   "rejected": 0,
+   "pending": 0,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  },
+  {
+   "key": "svc_111",
+   "label": {
+    "en": "अभिलेखों की प्रतिलिपि उपलब्ध कराना",
+    "hi": "अभिलेखों की प्रतिलिपि उपलब्ध कराना"
+   },
+   "department": {
+    "en": "",
+    "hi": "पुरातत्त्व, अभिलेखागार एवं संग्रहालय संचालनालय"
+   },
+   "total": 1,
+   "approved": 0,
+   "rejected": 0,
+   "pending": 1,
+   "rejection_pct_decided": 0.0,
+   "share_of_volume": 0.0,
+   "share_of_rejections": 0.0,
+   "is_caste": false
+  }
+ ],
+ "districts": [
+  {
+   "lgd": 646,
+   "name": {
+    "en": "Balod",
+    "hi": "बालोद"
+   },
+   "division": "Durg",
+   "total": 206420,
+   "approved": 190603,
+   "rejected": 10105,
+   "pending": 4582,
+   "pending_beyond": 34,
+   "rejection_pct": 4.9
+  },
+  {
+   "lgd": 644,
+   "name": {
+    "en": "Balodabazar-Bhatapara",
+    "hi": "बलौदाबाजार-भाटापारा"
+   },
+   "division": "Raipur",
+   "total": 263379,
+   "approved": 244298,
+   "rejected": 12555,
+   "pending": 5758,
+   "pending_beyond": 77,
+   "rejection_pct": 4.77
+  },
+  {
+   "lgd": 649,
+   "name": {
+    "en": "Balrampur",
+    "hi": "बलरामपुर-रामानुजगंज"
+   },
+   "division": "Surguja",
+   "total": 120330,
+   "approved": 111461,
+   "rejected": 6308,
+   "pending": 2202,
+   "pending_beyond": 66,
+   "rejection_pct": 5.24
+  },
+  {
+   "lgd": 374,
+   "name": {
+    "en": "Bastar",
+    "hi": "बस्तर"
+   },
+   "division": "Bastar",
+   "total": 129100,
+   "approved": 117328,
+   "rejected": 8920,
+   "pending": 2232,
+   "pending_beyond": 412,
+   "rejection_pct": 6.91
+  },
+  {
+   "lgd": 650,
+   "name": {
+    "en": "Bemetara",
+    "hi": "बेमेतरा"
+   },
+   "division": "Durg",
+   "total": 221030,
+   "approved": 193605,
+   "rejected": 12559,
+   "pending": 13632,
+   "pending_beyond": 72,
+   "rejection_pct": 5.68
+  },
+  {
+   "lgd": 636,
+   "name": {
+    "en": "Bijapur",
+    "hi": "बीजापुर"
+   },
+   "division": "Bastar",
+   "total": 90415,
+   "approved": 86935,
+   "rejected": 2092,
+   "pending": 1265,
+   "pending_beyond": 53,
+   "rejection_pct": 2.31
+  },
+  {
+   "lgd": 375,
+   "name": {
+    "en": "Bilaspur",
+    "hi": "बिलासपुर"
+   },
+   "division": "Bilaspur",
+   "total": 273607,
+   "approved": 245025,
+   "rejected": 19673,
+   "pending": 7960,
+   "pending_beyond": 110,
+   "rejection_pct": 7.19
+  },
+  {
+   "lgd": 376,
+   "name": {
+    "en": "Dantewada",
+    "hi": "दंतेवाड़ा"
+   },
+   "division": "Bastar",
+   "total": 53850,
+   "approved": 49545,
+   "rejected": 3391,
+   "pending": 806,
+   "pending_beyond": 48,
+   "rejection_pct": 6.3
+  },
+  {
+   "lgd": 377,
+   "name": {
+    "en": "Dhamtari",
+    "hi": "धमतरी"
+   },
+   "division": "Raipur",
+   "total": 185418,
+   "approved": 166766,
+   "rejected": 13246,
+   "pending": 4785,
+   "pending_beyond": 46,
+   "rejection_pct": 7.14
+  },
+  {
+   "lgd": 378,
+   "name": {
+    "en": "Durg",
+    "hi": "दुर्ग"
+   },
+   "division": "Durg",
+   "total": 327006,
+   "approved": 292507,
+   "rejected": 24283,
+   "pending": 8682,
+   "pending_beyond": 514,
+   "rejection_pct": 7.43
+  },
+  {
+   "lgd": 645,
+   "name": {
+    "en": "Gariyaband",
+    "hi": "गरियाबंद"
+   },
+   "division": "Raipur",
+   "total": 124309,
+   "approved": 114705,
+   "rejected": 6705,
+   "pending": 2548,
+   "pending_beyond": 77,
+   "rejection_pct": 5.39
+  },
+  {
+   "lgd": 734,
+   "name": {
+    "en": "Gaurela-Pendra-Marwahi",
+    "hi": "गौरेला-पेंड्रा-मरवाही"
+   },
+   "division": "Bilaspur",
+   "total": 59839,
+   "approved": 51287,
+   "rejected": 7920,
+   "pending": 339,
+   "pending_beyond": 8,
+   "rejection_pct": 13.24
+  },
+  {
+   "lgd": 379,
+   "name": {
+    "en": "Janjgir-Champa",
+    "hi": "जांजगीर-चांपा"
+   },
+   "division": "Bilaspur",
+   "total": 259661,
+   "approved": 240515,
+   "rejected": 10093,
+   "pending": 8365,
+   "pending_beyond": 227,
+   "rejection_pct": 3.89
+  },
+  {
+   "lgd": 380,
+   "name": {
+    "en": "Jashpur",
+    "hi": "जशपुर"
+   },
+   "division": "Surguja",
+   "total": 167882,
+   "approved": 149376,
+   "rejected": 13073,
+   "pending": 4704,
+   "pending_beyond": 188,
+   "rejection_pct": 7.79
+  },
+  {
+   "lgd": 382,
+   "name": {
+    "en": "Kabirdham",
+    "hi": "कबीरधाम"
+   },
+   "division": "Durg",
+   "total": 170491,
+   "approved": 153992,
+   "rejected": 11678,
+   "pending": 3984,
+   "pending_beyond": 124,
+   "rejection_pct": 6.85
+  },
+  {
+   "lgd": 381,
+   "name": {
+    "en": "Kanker",
+    "hi": "कांकेर"
+   },
+   "division": "Bastar",
+   "total": 131900,
+   "approved": 123228,
+   "rejected": 6125,
+   "pending": 2135,
+   "pending_beyond": 42,
+   "rejection_pct": 4.64
+  },
+  {
+   "lgd": 759,
+   "name": {
+    "en": "Khairagarh-Chhuikhadan-Gandai",
+    "hi": "खैरागढ़-छुईखदान-गंडई"
+   },
+   "division": "Durg",
+   "total": 136984,
+   "approved": 125520,
+   "rejected": 8426,
+   "pending": 2496,
+   "pending_beyond": 81,
+   "rejection_pct": 6.15
+  },
+  {
+   "lgd": 643,
+   "name": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "division": "Bastar",
+   "total": 178244,
+   "approved": 147765,
+   "rejected": 20689,
+   "pending": 8418,
+   "pending_beyond": 327,
+   "rejection_pct": 11.61
+  },
+  {
+   "lgd": 383,
+   "name": {
+    "en": "Korba",
+    "hi": "कोरबा"
+   },
+   "division": "Bilaspur",
+   "total": 178239,
+   "approved": 159856,
+   "rejected": 11614,
+   "pending": 5862,
+   "pending_beyond": 60,
+   "rejection_pct": 6.52
+  },
+  {
+   "lgd": 384,
+   "name": {
+    "en": "Korea",
+    "hi": "कोरिया"
+   },
+   "division": "Surguja",
+   "total": 53088,
+   "approved": 47356,
+   "rejected": 4523,
+   "pending": 980,
+   "pending_beyond": 5,
+   "rejection_pct": 8.52
+  },
+  {
+   "lgd": 385,
+   "name": {
+    "en": "Mahasamund",
+    "hi": "महासमुंद"
+   },
+   "division": "Raipur",
+   "total": 198696,
+   "approved": 169435,
+   "rejected": 21682,
+   "pending": 6584,
+   "pending_beyond": 130,
+   "rejection_pct": 10.91
+  },
+  {
+   "lgd": 760,
+   "name": {
+    "en": "Manendragarh-Chirimiri-Bharatpur",
+    "hi": "मनेंद्रगढ़-चिरमिरी-भरतपुर"
+   },
+   "division": "Surguja",
+   "total": 41213,
+   "approved": 36267,
+   "rejected": 3831,
+   "pending": 837,
+   "pending_beyond": 11,
+   "rejection_pct": 9.3
+  },
+  {
+   "lgd": 761,
+   "name": {
+    "en": "Mohla-Manpur-Ambagarh Chouki",
+    "hi": "मोहला-मानपुर-अंबागढ़ चौकी"
+   },
+   "division": "Durg",
+   "total": 122603,
+   "approved": 114865,
+   "rejected": 6334,
+   "pending": 1322,
+   "pending_beyond": 145,
+   "rejection_pct": 5.17
+  },
+  {
+   "lgd": 647,
+   "name": {
+    "en": "Mungeli",
+    "hi": "मुंगेली"
+   },
+   "division": "Bilaspur",
+   "total": 169606,
+   "approved": 157710,
+   "rejected": 7500,
+   "pending": 3966,
+   "pending_beyond": 96,
+   "rejection_pct": 4.42
+  },
+  {
+   "lgd": 637,
+   "name": {
+    "en": "Narayanpur",
+    "hi": "नारायणपुर"
+   },
+   "division": "Bastar",
+   "total": 32835,
+   "approved": 28967,
+   "rejected": 3333,
+   "pending": 385,
+   "pending_beyond": 27,
+   "rejection_pct": 10.15
+  },
+  {
+   "lgd": 386,
+   "name": {
+    "en": "Raigarh",
+    "hi": "रायगढ़"
+   },
+   "division": "Bilaspur",
+   "total": 225150,
+   "approved": 209730,
+   "rejected": 10673,
+   "pending": 4111,
+   "pending_beyond": 176,
+   "rejection_pct": 4.74
+  },
+  {
+   "lgd": 387,
+   "name": {
+    "en": "Raipur",
+    "hi": "रायपुर"
+   },
+   "division": "Raipur",
+   "total": 374506,
+   "approved": 331860,
+   "rejected": 35976,
+   "pending": 4981,
+   "pending_beyond": 261,
+   "rejection_pct": 9.61
+  },
+  {
+   "lgd": 388,
+   "name": {
+    "en": "Rajnandgaon",
+    "hi": "राजनांदगांव"
+   },
+   "division": "Durg",
+   "total": 248348,
+   "approved": 221917,
+   "rejected": 19938,
+   "pending": 5508,
+   "pending_beyond": 222,
+   "rejection_pct": 8.03
+  },
+  {
+   "lgd": 762,
+   "name": {
+    "en": "Sakti",
+    "hi": "सक्ती"
+   },
+   "division": "Bilaspur",
+   "total": 152020,
+   "approved": 139072,
+   "rejected": 7333,
+   "pending": 5194,
+   "pending_beyond": 234,
+   "rejection_pct": 4.82
+  },
+  {
+   "lgd": 763,
+   "name": {
+    "en": "Sarangarh-Bilaigarh",
+    "hi": "सारंगढ़-बिलाईगढ़"
+   },
+   "division": "Bilaspur",
+   "total": 160614,
+   "approved": 148119,
+   "rejected": 8407,
+   "pending": 3590,
+   "pending_beyond": 10,
+   "rejection_pct": 5.23
+  },
+  {
+   "lgd": 642,
+   "name": {
+    "en": "Sukma",
+    "hi": "सुकमा"
+   },
+   "division": "Bastar",
+   "total": 51964,
+   "approved": 48826,
+   "rejected": 2744,
+   "pending": 323,
+   "pending_beyond": 74,
+   "rejection_pct": 5.28
+  },
+  {
+   "lgd": 648,
+   "name": {
+    "en": "Surajpur",
+    "hi": "सूरजपुर"
+   },
+   "division": "Surguja",
+   "total": 106592,
+   "approved": 95069,
+   "rejected": 7633,
+   "pending": 3376,
+   "pending_beyond": 231,
+   "rejection_pct": 7.16
+  },
+  {
+   "lgd": 389,
+   "name": {
+    "en": "Surguja",
+    "hi": "सरगुजा"
+   },
+   "division": "Surguja",
+   "total": 170196,
+   "approved": 149772,
+   "rejected": 14762,
+   "pending": 4229,
+   "pending_beyond": 76,
+   "rejection_pct": 8.67
+  }
+ ]
+}

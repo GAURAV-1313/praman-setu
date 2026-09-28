@@ -1,0 +1,24 @@
+PRE-REJECTION NOTICE (OPPORTUNITY OF HEARING) — draft for the competent officer's review and digital signature (DSC)
+Office of the {{ office.en }}
+To: {{ app.applicant_name.en }}, {{ rel_word.en }} {{ app.father_name.en }}, village {{ app.village.en }}, tehsil {{ app.tehsil.en }}, district {{ app.district.en }}
+
+In the matter of Application No. {{ app.app_id }}, received {{ received }}, for: {{ service.en }}
+
+The undersigned proposes to reject your application for the reasons below. Before any decision you are given an opportunity to explain.
+
+{% if adverse %}Records proposed to be relied upon against the claim:
+{% for a in adverse %}{{ loop.index }}. {{ a.en }}
+{% endfor %}{% endif %}Other records on file:
+{% for r in records %}- {{ r.en }}
+{% endfor %}
+Grounds of the undersigned:
+[Officer: write your finding in the box above]
+
+You may submit a written reply, with any documents, at {{ app.kendra.en }} or to this office within {{ days }} days, i.e. by {{ reply_by }}. You may also ask to be heard in person. If no reply is received by that date, the application will be decided on the record.
+
+Legal basis:
+{% for b in basis %}- {{ b.en }}
+{% endfor %}
+Place: {{ place.en }}        Date: {{ today }}
+{{ office.en }}
+(digital signature — DSC)

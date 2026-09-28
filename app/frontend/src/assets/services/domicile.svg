@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect x="8" y="8" width="112" height="112" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="4"/>
+  <path d="M32 64 L64 36 L96 64 V96 H32 Z" fill="#7dd3fc" stroke="#0284c7" stroke-width="4"/>
+  <rect x="54" y="72" width="20" height="24" fill="#f8fafc" stroke="#0284c7" stroke-width="3"/>
+  <text x="50%" y="116" text-anchor="middle" font-size="14" font-family="Arial" fill="#075985">Home</text>
+</svg>

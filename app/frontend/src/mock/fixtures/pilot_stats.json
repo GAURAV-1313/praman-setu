@@ -1,0 +1,103 @@
+{
+ "synthetic": false,
+ "kind": "targets",
+ "note": {
+  "en": "Pilot targets and stop rules for a proposed 90-day shadow pilot in 2 tehsils — measured in the pilot, not results.",
+  "hi": "प्रस्तावित 90-दिवसीय शैडो पायलट (2 तहसील) हेतु लक्ष्य व रोक-नियम — पायलट में मापा जाएगा, ये परिणाम नहीं हैं।"
+ },
+ "lane_mix": {
+  "records_complete": 0.25,
+  "standard_review": 0.5,
+  "needs_attention": 0.25
+ },
+ "lane_mix_source": {
+  "en": "demo queue (synthetic applications)",
+  "hi": "डेमो कतार (सिंथेटिक आवेदन)"
+ },
+ "targets": [
+  {
+   "metric": {
+    "en": "Lineage link precision (random review of 'same family' files)",
+    "hi": "वंश-कड़ी की परिशुद्धता ('वही परिवार' फ़ाइलों की यादृच्छिक समीक्षा)"
+   },
+   "target": {
+    "en": "≥ 98%",
+    "hi": "≥ 98%"
+   },
+   "stop_rule": {
+    "en": "Pause if < 95% in any fortnight",
+    "hi": "किसी पखवाड़े में < 95% हो तो रोकें"
+   }
+  },
+  {
+   "metric": {
+    "en": "Exclusion guard: rejection rate, pilot minus control (ST women, SC, OBC, no-record, migrants)",
+    "hi": "बहिष्करण सुरक्षा: अस्वीकृति दर, पायलट घटा नियंत्रण (अ.ज.जा. महिलाएँ, अ.जा., अ.पि.व., बिना अभिलेख, प्रवासी)"
+   },
+   "target": {
+    "en": "Δ ≤ +1 pp in every group",
+    "hi": "हर समूह में Δ ≤ +1 प्रतिशत बिंदु"
+   },
+   "stop_rule": {
+    "en": "Pause at +2 pp in any group",
+    "hi": "किसी समूह में +2 प्रतिशत बिंदु पर रोकें"
+   }
+  },
+  {
+   "metric": {
+    "en": "Send-backs cured on the same application",
+    "hi": "उसी आवेदन में पूर्ण हुई वापसियाँ"
+   },
+   "target": {
+    "en": "≥ 50%",
+    "hi": "≥ 50%"
+   },
+   "stop_rule": {
+    "en": "Review the reason library if < 35%",
+    "hi": "< 35% हो तो कारण-सूची की समीक्षा"
+   }
+  },
+  {
+   "metric": {
+    "en": "Officers who find the check useful (one-tap feedback, anonymous)",
+    "hi": "जांच को उपयोगी मानने वाले अधिकारी (एक-टैप प्रतिक्रिया, अनाम)"
+   },
+   "target": {
+    "en": "≥ 60%",
+    "hi": "≥ 60%"
+   },
+   "stop_rule": {
+    "en": "Redesign if < 40% after 30 days",
+    "hi": "30 दिन बाद < 40% हो तो पुनः डिज़ाइन"
+   }
+  },
+  {
+   "metric": {
+    "en": "Median time to issue, records-complete files",
+    "hi": "अभिलेख-पूर्ण फ़ाइलों में जारी होने का माध्य समय"
+   },
+   "target": {
+    "en": "Same day at the SDO desk",
+    "hi": "एसडीओ डेस्क पर उसी दिन"
+   },
+   "stop_rule": {
+    "en": "Investigate if slower than control",
+    "hi": "नियंत्रण से धीमा हो तो जांच"
+   }
+  },
+  {
+   "metric": {
+    "en": "Wrong-family confirmations found on appeal / scrutiny",
+    "hi": "अपील / छानबीन में मिली गलत-परिवार पुष्टियाँ"
+   },
+   "target": {
+    "en": "0",
+    "hi": "0"
+   },
+   "stop_rule": {
+    "en": "Stop on the first confirmed case; root-cause review",
+    "hi": "पहले पुष्ट मामले पर रोकें; मूल-कारण समीक्षा"
+   }
+  }
+ ]
+}

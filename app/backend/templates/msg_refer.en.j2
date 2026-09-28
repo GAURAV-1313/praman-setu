@@ -1,0 +1,2 @@
+Namaste {{ name.en }}. Your application {{ app_id }} has been sent for a routine records check. You need not do anything now; you will get a message if anything is needed. No new fee.
+Records seen so far: {% if records.cert %}certificate No. {{ records.cert|join(', ') }}{% if records.seen.en %}; {% endif %}{% endif %}{% if records.seen.en %}{{ records.seen.en }}{% endif %}{% if not records.cert and not records.seen.en %}the documents you attached{% endif %}. Correction / objection: CSC or the Sewa Setu grievance. — {{ office.en }}

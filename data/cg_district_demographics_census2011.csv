@@ -1,0 +1,34 @@
+district,pop2011,urban_pct,sc_pct,st_pct,literacy_pct,notes
+Balod,826165,12.77,8.28,31.36,,post-split figures per Wikipedia (District Census Handbook Durg)
+Balodabazar-Bhatapara,1078911,13.93,21.30,13.75,,post-2022 split
+Balrampur,730491,4.75,4.48,62.83,54.24,
+Bastar,834375,16.24,1.77,62.42,53.15,residual after Kondagaon split
+Bemetara,795759,9.37,18.10,4.67,70.58,
+Bijapur,255230,11.60,3.97,80.00,41.58,
+Bilaspur,1625502,35.81,20.76,14.43,,residual after Mungeli+GPM
+Dantewada,283479,24.00,3.61,71.07,42.12,residual after Sukma
+Dhamtari,799781,18.65,7.32,25.96,,Wikipedia literacy 90% looks wrong - omitted
+Durg,1721948,64.15,14.26,5.88,,residual after Balod+Bemetara
+Gariyaband,597653,6.77,17.97,36.14,68.26,
+Gaurela-Pendra-Marwahi,336420,9.60,6.18,57.09,55.92,
+Janjgir-Champa,966671,16.92,25.81,8.58,,residual after Sakti
+Jashpur,851669,8.92,5.73,62.28,68.6,
+Kabirdham,822526,10.63,14.56,20.31,61.95,
+Kanker,748941,10.25,4.21,55.38,70.97,
+Khairagarh-Chhuikhadan-Gandai,368444,11.65,10.89,13.79,70.01,
+Kondagaon,578824,10.02,4.01,71.01,57.31,
+Korba,1206640,36.99,10.33,40.90,73.22,
+Korea,247427,29.30,8.30,39.25,,residual after MCB
+Mahasamund,1032754,11.63,13.52,27.10,71.54,
+Manendragarh-Chirimiri-Bharatpur,411490,32.27,8.35,50.34,,
+Mohla-Manpur-Ambagarh Chouki,283947,3.49,7.30,63.27,,
+Mungeli,701707,9.33,27.70,10.37,64.75,
+Narayanpur,139820,,3.56,77.36,49.59,urban share not given on Wikipedia
+Raigarh,1112982,19.66,11.35,39.87,,residual after Sarangarh-Bilaigarh
+Raipur,2160876,59.08,16.60,4.30,76.43,
+Rajnandgaon,884742,24.83,10.83,19.75,,residual after KCG+MMAC
+Sakti,653036,9.42,22.72,15.97,,
+Sarangarh-Bilaigarh,607434,7.14,28.62,13.33,,
+Sukma,250159,11.27,1.11,83.47,34.81,
+Surajpur,789043,9.07,5.43,45.58,60.95,
+Surguja,840352,16.27,4.77,57.40,,residual after Surajpur+Balrampur

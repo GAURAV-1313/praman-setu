@@ -1,0 +1,28 @@
+DRAFT ORDER — for the competent officer's review, edit and digital signature (DSC)
+Office of the {{ office.en }}
+
+In the matter of Application No. {{ app.app_id }}, received {{ received }} via {{ app.kendra.en }}
+Applicant: {{ app.applicant_name.en }}, {{ rel_word.en }} {{ app.father_name.en }}, village {{ app.village.en }} (LGD {{ app.village_lgd }}), tehsil {{ app.tehsil.en }}, district {{ app.district.en }}
+Service: {{ app.service_label.en }}
+
+Records relied upon:
+{% for r in records %}{{ loop.index }}. {{ r.en }}
+{% endfor %}{% if considered %}Records considered and not relied upon:
+{% for r in considered %}- {{ r.en }}
+{% endfor %}{% endif %}
+Legal basis:
+{% for b in basis %}- {{ b.en }}
+{% endfor %}
+Facts from the records:
+{% for f in facts %}- {{ f.en }}
+{% endfor %}
+Satisfaction of the undersigned:
+{{ satisfaction.en }}
+
+{% if creamy %}{{ creamy.en }}
+
+{% endif %}ORDER: For the reasons above, the application is ALLOWED and {{ grant.en }} is issued to the applicant.
+
+Place: {{ place.en }}        Date: {{ today }}
+{{ office.en }}
+(digital signature — DSC)

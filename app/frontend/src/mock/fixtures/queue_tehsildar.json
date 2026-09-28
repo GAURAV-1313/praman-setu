@@ -1,0 +1,757 @@
+[
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08849",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Usha Dewangan",
+    "hi": "उषा देवांगन"
+   },
+   "father_name": {
+    "en": "Khemraj Dewangan",
+    "hi": "खेमराज देवांगन"
+   },
+   "mother_name": {
+    "en": "Anita Dewangan",
+    "hi": "अनीता देवांगन"
+   },
+   "gender": "F",
+   "birth_year": 2004,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Sodhma",
+    "hi": "सोढ़मा"
+   },
+   "village_lgd": 449031,
+   "tehsil": {
+    "en": "Farasgaon",
+    "hi": "फरसगांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-16T10:44:00+05:30",
+   "sla_due": "2026-10-01",
+   "kendra": {
+    "en": "Choice Centre, Farasgaon",
+    "hi": "चॉइस सेंटर, फरसगांव"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_domicile",
+     "label": {
+      "en": "Family member's domicile certificate",
+      "hi": "परिवार के सदस्य का मूल निवास प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/TSL/2021/000620",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "lane": "records_complete",
+  "suggested_action": "approve",
+  "top_match_probability": 0.9833,
+  "evidence_summary": {
+   "en": "Father's certificate declared & matched · strong link",
+   "hi": "पिता का प्रमाण पत्र घोषित व मिलान · प्रबल कड़ी"
+  },
+  "evidence_rank": 0,
+  "next_step": {
+   "en": "Ready to sign",
+   "hi": "हस्ताक्षर हेतु तैयार"
+  },
+  "sla_days_left": 3,
+  "sla_urgent": true,
+  "stage": null,
+  "in_tray": false,
+  "competent": true,
+  "ready_to_sign": true,
+  "subdivision": {
+   "en": "Keskal",
+   "hi": "केशकाल",
+   "office": {
+    "en": "SDO (Revenue), Keskal",
+    "hi": "अनुविभागीय अधिकारी (राजस्व), केशकाल"
+   }
+  }
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08857",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Kartik Korram",
+    "hi": "कार्तिक कोर्राम"
+   },
+   "father_name": {
+    "en": "Dukalu Korram",
+    "hi": "दुकालू कोर्राम"
+   },
+   "mother_name": {
+    "en": "Anjali Korram",
+    "hi": "अंजली कोर्राम"
+   },
+   "gender": "M",
+   "birth_year": 2001,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Gare",
+    "hi": "गारे"
+   },
+   "village_lgd": 448869,
+   "tehsil": {
+    "en": "Makdi",
+    "hi": "माकड़ी"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-08T10:12:00+05:30",
+   "sla_due": "2026-09-23",
+   "kendra": {
+    "en": "CSC Bayanar (VLE)",
+    "hi": "सीएससी बयानार (वीएलई)"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "residence_proof",
+     "label": {
+      "en": "Residence proof (land record / ration card / school record in CG)",
+      "hi": "निवास प्रमाण (भूमि अभिलेख / राशन कार्ड / छ.ग. का स्कूल अभिलेख)"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 0
+  },
+  "lane": "standard_review",
+  "suggested_action": "send_back",
+  "top_match_probability": null,
+  "evidence_summary": {
+   "en": "No family record — normal scrutiny · residence proof missing",
+   "hi": "पारिवारिक अभिलेख नहीं — सामान्य जांच · निवास प्रमाण नहीं"
+  },
+  "evidence_rank": 2,
+  "next_step": {
+   "en": "Missing: residence proof",
+   "hi": "कमी: निवास प्रमाण"
+  },
+  "sla_days_left": -5,
+  "sla_urgent": true,
+  "stage": null,
+  "in_tray": false,
+  "competent": true,
+  "ready_to_sign": false,
+  "subdivision": {
+   "en": "Kondagaon",
+   "hi": "कोंडागांव",
+   "office": {
+    "en": "SDO (Revenue), Kondagaon",
+    "hi": "अनुविभागीय अधिकारी (राजस्व), कोंडागांव"
+   }
+  }
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08915",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Nisha Yadav",
+    "hi": "निशा यादव"
+   },
+   "father_name": {
+    "en": "Baliram Yadav",
+    "hi": "बलिराम यादव"
+   },
+   "mother_name": {
+    "en": "Kamla Yadav",
+    "hi": "कमला यादव"
+   },
+   "gender": "F",
+   "birth_year": 2005,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Kherwar",
+    "hi": "खैरवार"
+   },
+   "village": {
+    "en": "Padoki",
+    "hi": "पडोकी"
+   },
+   "village_lgd": 448605,
+   "tehsil": {
+    "en": "Bade Rajpur",
+    "hi": "बड़ेराजपुर"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Hostel admission",
+    "hi": "छात्रावास प्रवेश"
+   },
+   "submitted_at": "2026-09-25T11:05:00+05:30",
+   "sla_due": "2026-10-16",
+   "kendra": {
+    "en": "CSC Bayanar (VLE)",
+    "hi": "सीएससी बयानार (वीएलई)"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/SDO/2026/000762",
+   "sendback_count": 0,
+   "declared_source": "applicant",
+   "certificate_kind": "permanent",
+   "persona_note": {
+    "en": "Wrong-authority routing: a permanent caste application landed on the Tehsildar desk.",
+    "hi": "गलत प्राधिकारी: स्थायी जाति आवेदन तहसीलदार डेस्क पर आ गया।"
+   }
+  },
+  "lane": "records_complete",
+  "suggested_action": "approve",
+  "top_match_probability": 0.9833,
+  "evidence_summary": {
+   "en": "Permanent caste certificate — competent authority is the SDO (Revenue)",
+   "hi": "स्थायी जाति प्रमाण पत्र — सक्षम प्राधिकारी अनुविभागीय अधिकारी (राजस्व)"
+  },
+  "evidence_rank": -1,
+  "next_step": {
+   "en": "Not your competence — forward to SDO",
+   "hi": "आपकी सक्षमता नहीं — एसडीओ को अग्रेषित करें"
+  },
+  "sla_days_left": 18,
+  "sla_urgent": false,
+  "stage": null,
+  "in_tray": false,
+  "competent": false,
+  "ready_to_sign": false,
+  "subdivision": {
+   "en": "Keskal",
+   "hi": "केशकाल",
+   "office": {
+    "en": "SDO (Revenue), Keskal",
+    "hi": "अनुविभागीय अधिकारी (राजस्व), केशकाल"
+   }
+  }
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08868",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Babita Baghel",
+    "hi": "बबीता बघेल"
+   },
+   "father_name": {
+    "en": "Shyamlal Baghel",
+    "hi": "श्यामलाल बघेल"
+   },
+   "mother_name": {
+    "en": "Budhiyarin Baghel",
+    "hi": "बुधियारिन बघेल"
+   },
+   "gender": "F",
+   "birth_year": 2001,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Golawand",
+    "hi": "गोलावंड"
+   },
+   "village_lgd": 448772,
+   "tehsil": {
+    "en": "Mardapal",
+    "hi": "मर्दापाल"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "College admission",
+    "hi": "महाविद्यालय प्रवेश"
+   },
+   "submitted_at": "2026-09-18T10:28:00+05:30",
+   "sla_due": "2026-10-03",
+   "kendra": {
+    "en": "CSC Bayanar (VLE)",
+    "hi": "सीएससी बयानार (वीएलई)"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_domicile",
+     "label": {
+      "en": "Family member's domicile certificate",
+      "hi": "परिवार के सदस्य का मूल निवास प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/TSL/2018/001551",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "lane": "records_complete",
+  "suggested_action": "approve",
+  "top_match_probability": 0.9833,
+  "evidence_summary": {
+   "en": "Father's certificate declared & matched · strong link",
+   "hi": "पिता का प्रमाण पत्र घोषित व मिलान · प्रबल कड़ी"
+  },
+  "evidence_rank": 0,
+  "next_step": {
+   "en": "Ready to sign",
+   "hi": "हस्ताक्षर हेतु तैयार"
+  },
+  "sla_days_left": 5,
+  "sla_urgent": false,
+  "stage": null,
+  "in_tray": false,
+  "competent": true,
+  "ready_to_sign": true,
+  "subdivision": {
+   "en": "Kondagaon",
+   "hi": "कोंडागांव",
+   "office": {
+    "en": "SDO (Revenue), Kondagaon",
+    "hi": "अनुविभागीय अधिकारी (राजस्व), कोंडागांव"
+   }
+  }
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08902",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Lakshmi Verma",
+    "hi": "लक्ष्मी वर्मा"
+   },
+   "father_name": {
+    "en": "Hemlal Verma",
+    "hi": "हेमलाल वर्मा"
+   },
+   "mother_name": {
+    "en": "Savitri Verma",
+    "hi": "सावित्री वर्मा"
+   },
+   "gender": "F",
+   "birth_year": 2000,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Telanga",
+    "hi": "तेलंगा"
+   },
+   "village_lgd": 448699,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-24T10:13:00+05:30",
+   "sla_due": "2026-10-09",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_domicile",
+     "label": {
+      "en": "Family member's domicile certificate",
+      "hi": "परिवार के सदस्य का मूल निवास प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "persona_note": {
+    "en": "Domicile: father's domicile certificate (2018) plus land and ration records agree.",
+    "hi": "मूल निवास: पिता का मूल निवास प्रमाण पत्र (2018) तथा भूमि और राशन अभिलेख मेल खाते हैं।"
+   },
+   "declared_relative_cert_no": "CG/KDG/TSL/2018/005402",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "lane": "records_complete",
+  "suggested_action": "approve",
+  "top_match_probability": 0.9833,
+  "evidence_summary": {
+   "en": "Father's certificate declared & matched · strong link",
+   "hi": "पिता का प्रमाण पत्र घोषित व मिलान · प्रबल कड़ी"
+  },
+  "evidence_rank": 0,
+  "next_step": {
+   "en": "Ready to sign",
+   "hi": "हस्ताक्षर हेतु तैयार"
+  },
+  "sla_days_left": 11,
+  "sla_urgent": false,
+  "stage": null,
+  "in_tray": false,
+  "competent": true,
+  "ready_to_sign": true,
+  "subdivision": {
+   "en": "Kondagaon",
+   "hi": "कोंडागांव",
+   "office": {
+    "en": "SDO (Revenue), Kondagaon",
+    "hi": "अनुविभागीय अधिकारी (राजस्व), कोंडागांव"
+   }
+  }
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08878",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Phuleshwari Markam",
+    "hi": "फुलेश्वरी मरकाम"
+   },
+   "father_name": {
+    "en": "Bisahu Markam",
+    "hi": "बिसाहू मरकाम"
+   },
+   "mother_name": {
+    "en": "Neelam Markam",
+    "hi": "नीलम मरकाम"
+   },
+   "gender": "F",
+   "birth_year": 2005,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Arangula",
+    "hi": "अरंगुला"
+   },
+   "village_lgd": 448836,
+   "tehsil": {
+    "en": "Makdi",
+    "hi": "माकड़ी"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "College admission",
+    "hi": "महाविद्यालय प्रवेश"
+   },
+   "submitted_at": "2026-09-25T10:55:00+05:30",
+   "sla_due": "2026-10-10",
+   "kendra": {
+    "en": "Choice Centre, Farasgaon",
+    "hi": "चॉइस सेंटर, फरसगांव"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "residence_proof",
+     "label": {
+      "en": "Residence proof (land record / ration card / school record in CG)",
+      "hi": "निवास प्रमाण (भूमि अभिलेख / राशन कार्ड / छ.ग. का स्कूल अभिलेख)"
+     },
+     "uploaded": true
+    }
+   ],
+   "sendback_count": 0
+  },
+  "lane": "standard_review",
+  "suggested_action": "approve",
+  "top_match_probability": 0.9833,
+  "evidence_summary": {
+   "en": "Brother's certificate found · strong link · confirm relationship",
+   "hi": "भाई का प्रमाण पत्र मिला · प्रबल कड़ी · संबंध की पुष्टि करें"
+  },
+  "evidence_rank": 1,
+  "next_step": {
+   "en": "Confirm relationship",
+   "hi": "संबंध तय करें"
+  },
+  "sla_days_left": 12,
+  "sla_urgent": false,
+  "stage": null,
+  "in_tray": false,
+  "competent": true,
+  "ready_to_sign": false,
+  "subdivision": {
+   "en": "Kondagaon",
+   "hi": "कोंडागांव",
+   "office": {
+    "en": "SDO (Revenue), Kondagaon",
+    "hi": "अनुविभागीय अधिकारी (राजस्व), कोंडागांव"
+   }
+  }
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08886",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Hemlal Sen",
+    "hi": "हेमलाल सेन"
+   },
+   "father_name": {
+    "en": "Deepak Sen",
+    "hi": "दीपक सेन"
+   },
+   "mother_name": {
+    "en": "Sangeeta Sen",
+    "hi": "संगीता सेन"
+   },
+   "gender": "M",
+   "birth_year": 2001,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Nalajhar",
+    "hi": "नलाझर"
+   },
+   "village_lgd": 448883,
+   "tehsil": {
+    "en": "Makdi",
+    "hi": "माकड़ी"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-20T10:59:00+05:30",
+   "sla_due": "2026-10-05",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "residence_proof",
+     "label": {
+      "en": "Residence proof (land record / ration card / school record in CG)",
+      "hi": "निवास प्रमाण (भूमि अभिलेख / राशन कार्ड / छ.ग. का स्कूल अभिलेख)"
+     },
+     "uploaded": true
+    }
+   ],
+   "sendback_count": 0
+  },
+  "lane": "needs_attention",
+  "suggested_action": "refer",
+  "top_match_probability": 0.9694,
+  "evidence_summary": {
+   "en": "Brother's certificate is dated 22-10-2026 — a future date, probably an entry error; see the original",
+   "hi": "भाई के प्रमाण पत्र की तिथि 22-10-2026 — भविष्य की तिथि, संभवतः प्रविष्टि त्रुटि; मूल प्रति देखें"
+  },
+  "evidence_rank": 3,
+  "next_step": {
+   "en": "Check certificate date",
+   "hi": "प्रमाण पत्र की तिथि जांचें"
+  },
+  "sla_days_left": 7,
+  "sla_urgent": false,
+  "stage": null,
+  "in_tray": false,
+  "competent": true,
+  "ready_to_sign": false,
+  "subdivision": {
+   "en": "Kondagaon",
+   "hi": "कोंडागांव",
+   "office": {
+    "en": "SDO (Revenue), Kondagaon",
+    "hi": "अनुविभागीय अधिकारी (राजस्व), कोंडागांव"
+   }
+  }
+ }
+]

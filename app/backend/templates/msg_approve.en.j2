@@ -1,0 +1,2 @@
+Namaste {{ name.en }}. Your application {{ app_id }} for {{ service.en }} is APPROVED. Download the certificate on Sewa Setu, find it in DigiLocker, or collect it at {{ kendra.en }}.
+Records used in the decision on your application: {% if records.cert %}certificate No. {{ records.cert|join(', ') }} (family){% else %}the documents you attached{% endif %}.{% if records.seen.en %} Other records seen: {{ records.seen.en }} (for corroboration only).{% endif %} Correction / objection: CSC or the Sewa Setu grievance. — {{ office.en }}

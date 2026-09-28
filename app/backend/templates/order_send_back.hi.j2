@@ -1,0 +1,14 @@
+आवेदक को सूचना — कमी की पूर्ति हेतु (यह आदेश नहीं है)
+कार्यालय {{ office.hi }}
+
+आवेदन क्र.: {{ app.app_id }}, प्राप्ति दिनांक {{ received }}, {{ app.kendra.hi }} के माध्यम से
+आवेदक: {{ app.applicant_name.hi }}, {{ rel_word.hi }} {{ app.father_name.hi }}, ग्राम {{ app.village.hi }}, जिला {{ app.district.hi }}
+सेवा: {{ app.service_label.hi }}
+
+निर्णय से पहले आवेदन में निम्नलिखित आवश्यक है:
+{% for d in deficiencies %}{{ loop.index }}. {{ d.text.hi }}
+{% endfor %}
+कृपया 30 दिवस के भीतर, अर्थात दिनांक {{ reply_by }} तक, {{ app.kendra.hi }} पर इसी आवेदन में जोड़ें। आवेदन क्रमांक वही रहेगा। कोई नया शुल्क देय नहीं है। उस तिथि तक प्राप्त न होने पर आवेदन का निर्णय उपलब्ध अभिलेख के आधार पर किया जाएगा।
+
+स्थान: {{ place.hi }}        दिनांक: {{ today }}
+{{ office.hi }}

@@ -1,0 +1,82 @@
+{
+ "nodes": [
+  {
+   "id": "in",
+   "type": "inputNode",
+   "name": "Request",
+   "position": {
+    "x": 0,
+    "y": 0
+   }
+  },
+  {
+   "id": "dt",
+   "type": "decisionTableNode",
+   "name": "IncomeCert",
+   "position": {
+    "x": 200,
+    "y": 0
+   },
+   "content": {
+    "hitPolicy": "collect",
+    "inputs": [
+     {
+      "id": "i1",
+      "name": "Affidavit income",
+      "field": "affidavit_income"
+     },
+     {
+      "id": "i2",
+      "name": "Land acres",
+      "field": "land_acres"
+     }
+    ],
+    "outputs": [
+     {
+      "id": "o1",
+      "name": "flag",
+      "field": "flag"
+     }
+    ],
+    "rules": [
+     {
+      "_id": "r1",
+      "i1": "> 250000",
+      "i2": "",
+      "o1": "\"INCOME_ABOVE_EWS_THRESHOLD\""
+     },
+     {
+      "_id": "r2",
+      "i1": "< 30000",
+      "i2": "> 5",
+      "o1": "\"LOW_INCOME_BUT_LARGE_LANDHOLDING\""
+     }
+    ]
+   }
+  },
+  {
+   "id": "out",
+   "type": "outputNode",
+   "name": "Response",
+   "position": {
+    "x": 400,
+    "y": 0
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "e1",
+   "sourceId": "in",
+   "targetId": "dt",
+   "type": "edge"
+  },
+  {
+   "id": "e2",
+   "sourceId": "dt",
+   "targetId": "out",
+   "type": "edge"
+  }
+ ],
+ "_comment": "Starter GoRules JDM decision table for the income certificate. Verified with zen-engine 2.0.2 (Python) on 2026-09-27: input {affidavit_income:24000, land_acres:7.5} -> flag LOW_INCOME_BUT_LARGE_LANDHOLDING. Thresholds are placeholders, not CG policy."
+}

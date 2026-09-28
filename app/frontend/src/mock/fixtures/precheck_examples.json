@@ -1,0 +1,956 @@
+{
+ "hero_exact": {
+  "request": {
+   "service": "caste_st",
+   "applicant_name": "Sunita Markam",
+   "father_name": "Ramlal Markam",
+   "village_lgd": 448703,
+   "district_lgd": 643
+  },
+  "response": {
+   "matches": [
+    {
+     "certificate": {
+      "cert_no": "CG/KDG/SDO/2019/004512",
+      "service": "caste_st",
+      "cert_type": "permanent",
+      "category": "ST",
+      "caste_name": {
+       "en": "Gond",
+       "hi": "गोंड"
+      },
+      "holder_name": {
+       "en": "Ram Lal Markaam",
+       "hi": "रामलाल मरकाम"
+      },
+      "father_name": {
+       "en": "Budhram Markaam",
+       "hi": "बुधराम मरकाम"
+      },
+      "gender": "M",
+      "birth_year": 1976,
+      "village": {
+       "en": "Bayanar",
+       "hi": "बयानार"
+      },
+      "village_lgd": 448703,
+      "tehsil": {
+       "en": "Kondagaon",
+       "hi": "कोंडागांव"
+      },
+      "district": {
+       "en": "Kondagaon",
+       "hi": "कोंडागांव"
+      },
+      "district_lgd": 643,
+      "issue_date": "2019-03-14",
+      "issuing_authority": {
+       "en": "SDO (Revenue), Kondagaon",
+       "hi": "अनुविभागीय अधिकारी (राजस्व), कोंडागांव"
+      },
+      "authority_role": "SDO",
+      "status": "active",
+      "qr_verified": true
+     },
+     "relation": "father",
+     "relation_label": {
+      "en": "Father",
+      "hi": "पिता"
+     },
+     "match_probability": 0.9589,
+     "match_level": "exact",
+     "prior_weight": -13.877,
+     "weights": [
+      {
+       "field": "father_name",
+       "label": {
+        "en": "Father's name ↔ certificate holder",
+        "hi": "पिता का नाम ↔ प्रमाण पत्र धारक"
+       },
+       "comparison": {
+        "en": "exact after normalisation (Ramlal Markam ↔ Ram Lal Markaam)",
+        "hi": "सामान्यीकरण के बाद समान (Ramlal Markam ↔ Ram Lal Markaam)"
+       },
+       "level": "exact",
+       "weight": 6.826
+      },
+      {
+       "field": "surname",
+       "label": {
+        "en": "Surname",
+        "hi": "उपनाम"
+       },
+       "comparison": {
+        "en": "exact after normalisation (Markam ↔ Markaam)",
+        "hi": "सामान्यीकरण के बाद समान (Markam ↔ Markaam)"
+       },
+       "level": "exact",
+       "weight": 5.278
+      },
+      {
+       "field": "village",
+       "label": {
+        "en": "Village (LGD code)",
+        "hi": "ग्राम (एलजीडी कोड)"
+       },
+       "comparison": {
+        "en": "same village (Bayanar ↔ Bayanar, LGD 448703)",
+        "hi": "एक ही ग्राम (बयानार ↔ बयानार, एलजीडी 448703)"
+       },
+       "level": "same_village",
+       "weight": 6.317
+      },
+      {
+       "field": "birth_year_gap",
+       "label": {
+        "en": "Birth-year gap",
+        "hi": "जन्म-वर्ष अंतर"
+       },
+       "comparison": {
+        "en": "not available",
+        "hi": "उपलब्ध नहीं"
+       },
+       "level": "null",
+       "weight": 0.0
+      }
+     ],
+     "validity": [
+      {
+       "code": "permanent",
+       "ok": true,
+       "label": {
+        "en": "Permanent certificate",
+        "hi": "स्थायी प्रमाण पत्र"
+       },
+       "detail": {
+        "en": "Permanent certificate.",
+        "hi": "स्थायी प्रमाण पत्र।"
+       }
+      },
+      {
+       "code": "competent_authority",
+       "ok": true,
+       "label": {
+        "en": "Competent issuing authority",
+        "hi": "सक्षम जारीकर्ता प्राधिकारी"
+       },
+       "detail": {
+        "en": "Issued by SDO (Revenue), Kondagaon — competent authority.",
+        "hi": "अनुविभागीय अधिकारी (राजस्व), कोंडागांव द्वारा जारी — सक्षम प्राधिकारी।"
+       }
+      },
+      {
+       "code": "issue_date_valid",
+       "ok": true,
+       "label": {
+        "en": "Issue date not in the future",
+        "hi": "जारी तिथि भविष्य की नहीं"
+       },
+       "detail": {
+        "en": "Issued on 14-03-2019.",
+        "hi": "जारी दिनांक 14-03-2019।"
+       }
+      },
+      {
+       "code": "not_cancelled",
+       "ok": true,
+       "label": {
+        "en": "Not cancelled / not under scrutiny",
+        "hi": "निरस्त / जांचाधीन नहीं"
+       },
+       "detail": {
+        "en": "Active in the archive.",
+        "hi": "अभिलेखागार में सक्रिय।"
+       }
+      },
+      {
+       "code": "qr_verified",
+       "ok": true,
+       "label": {
+        "en": "QR / e-sign verified",
+        "hi": "क्यूआर / ई-हस्ताक्षर सत्यापित"
+       },
+       "detail": {
+        "en": "QR code and digital signature verified (simulated).",
+        "hi": "क्यूआर कोड व डिजिटल हस्ताक्षर सत्यापित (अनुकरण)।"
+       }
+      },
+      {
+       "code": "category_consistent",
+       "ok": true,
+       "label": {
+        "en": "Category consistent with the claim",
+        "hi": "दावे से वर्ग सुसंगत"
+       },
+       "detail": {
+        "en": "Certificate records ST; the application claims ST. Consistent.",
+        "hi": "प्रमाण पत्र में ST दर्ज; आवेदन में ST। सुसंगत।"
+       }
+      }
+     ],
+     "usable_as_evidence": true
+    }
+   ],
+   "checklist": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit",
+      "hi": "स्वघोषणा शपथ पत्र"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof",
+      "hi": "पहचान प्रमाण"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "caste_proof",
+     "label": {
+      "en": "Caste proof (any one: pre-1950/1984 record, school record, Sarpanch/Parshad certificate, family member's certificate)",
+      "hi": "जाति प्रमाण (कोई एक: 1950/1984 पूर्व अभिलेख, स्कूल अभिलेख, सरपंच/पार्षद प्रमाण पत्र, परिवार के सदस्य का प्रमाण पत्र)"
+     },
+     "required": true,
+     "present": true,
+     "satisfied_by": {
+      "en": "Relative's certificate No. CG/KDG/SDO/2019/004512 (SDO (Revenue), Kondagaon, 2019) found — the officer will confirm the relationship",
+      "hi": "संबंधी का प्रमाण पत्र क्र. CG/KDG/SDO/2019/004512 (अनुविभागीय अधिकारी (राजस्व), कोंडागांव, 2019) मिला — संबंध की पुष्टि अधिकारी करेंगे"
+     }
+    },
+    {
+     "code": "family_tree",
+     "label": {
+      "en": "Family tree, 3 generations, by the Halka Patwari (Rule 3(3))",
+      "hi": "हल्का पटवारी द्वारा तीन पीढ़ी का वंशवृक्ष (नियम 3(3))"
+     },
+     "required": false,
+     "present": false,
+     "note": {
+      "en": "Bring it if available (Rule 3(3)); the Patwari can also supply it.",
+      "hi": "उपलब्ध हो तो लाएं (नियम 3(3)); पटवारी भी दे सकते हैं।"
+     }
+    }
+   ],
+   "summary": {
+    "en": "✔ Matching family certificate found: Father's certificate No. CG/KDG/SDO/2019/004512 (SDO (Revenue), Kondagaon, 2019). Model link: strong link.",
+    "hi": "✔ मेल खाता पारिवारिक प्रमाण पत्र मिला: पिता का प्रमाण पत्र क्र. CG/KDG/SDO/2019/004512 (अनुविभागीय अधिकारी (राजस्व), कोंडागांव, 2019)। मॉडल कड़ी: प्रबल कड़ी।"
+   },
+   "suggestion": {
+    "en": "If the applicant confirms it is their relative's, attach certificate No. CG/KDG/SDO/2019/004512 as a Kendra search result (with the applicant's consent). The officer must still confirm the relationship. Also attach the affidavit and identity proof.",
+    "hi": "आवेदक द्वारा संबंधी का होने की पुष्टि पर, प्रमाण पत्र क्र. CG/KDG/SDO/2019/004512 को केंद्र खोज परिणाम के रूप में संलग्न करें (आवेदक की सहमति से)। अधिकारी को फिर भी संबंध की पुष्टि करनी होगी। शपथ पत्र और पहचान प्रमाण भी संलग्न करें।"
+   }
+  }
+ },
+ "hero_devanagari_by_name": {
+  "request": {
+   "service": "caste_st",
+   "applicant_name": "सुनीता मरकाम",
+   "father_name": "रामलाल मरकाम",
+   "village_name": "Bayanar",
+   "district_lgd": 643
+  },
+  "response": {
+   "matches": [
+    {
+     "certificate": {
+      "cert_no": "CG/KDG/SDO/2019/004512",
+      "service": "caste_st",
+      "cert_type": "permanent",
+      "category": "ST",
+      "caste_name": {
+       "en": "Gond",
+       "hi": "गोंड"
+      },
+      "holder_name": {
+       "en": "Ram Lal Markaam",
+       "hi": "रामलाल मरकाम"
+      },
+      "father_name": {
+       "en": "Budhram Markaam",
+       "hi": "बुधराम मरकाम"
+      },
+      "gender": "M",
+      "birth_year": 1976,
+      "village": {
+       "en": "Bayanar",
+       "hi": "बयानार"
+      },
+      "village_lgd": 448703,
+      "tehsil": {
+       "en": "Kondagaon",
+       "hi": "कोंडागांव"
+      },
+      "district": {
+       "en": "Kondagaon",
+       "hi": "कोंडागांव"
+      },
+      "district_lgd": 643,
+      "issue_date": "2019-03-14",
+      "issuing_authority": {
+       "en": "SDO (Revenue), Kondagaon",
+       "hi": "अनुविभागीय अधिकारी (राजस्व), कोंडागांव"
+      },
+      "authority_role": "SDO",
+      "status": "active",
+      "qr_verified": true
+     },
+     "relation": "father",
+     "relation_label": {
+      "en": "Father",
+      "hi": "पिता"
+     },
+     "match_probability": 0.9589,
+     "match_level": "exact",
+     "prior_weight": -13.877,
+     "weights": [
+      {
+       "field": "father_name",
+       "label": {
+        "en": "Father's name ↔ certificate holder",
+        "hi": "पिता का नाम ↔ प्रमाण पत्र धारक"
+       },
+       "comparison": {
+        "en": "exact after normalisation (रामलाल मरकाम ↔ Ram Lal Markaam)",
+        "hi": "सामान्यीकरण के बाद समान (रामलाल मरकाम ↔ Ram Lal Markaam)"
+       },
+       "level": "exact",
+       "weight": 6.826
+      },
+      {
+       "field": "surname",
+       "label": {
+        "en": "Surname",
+        "hi": "उपनाम"
+       },
+       "comparison": {
+        "en": "exact after normalisation (मरकाम ↔ Markaam)",
+        "hi": "सामान्यीकरण के बाद समान (मरकाम ↔ Markaam)"
+       },
+       "level": "exact",
+       "weight": 5.278
+      },
+      {
+       "field": "village",
+       "label": {
+        "en": "Village (LGD code)",
+        "hi": "ग्राम (एलजीडी कोड)"
+       },
+       "comparison": {
+        "en": "same village (Bayanar ↔ Bayanar, LGD 448703)",
+        "hi": "एक ही ग्राम (बयानार ↔ बयानार, एलजीडी 448703)"
+       },
+       "level": "same_village",
+       "weight": 6.317
+      },
+      {
+       "field": "birth_year_gap",
+       "label": {
+        "en": "Birth-year gap",
+        "hi": "जन्म-वर्ष अंतर"
+       },
+       "comparison": {
+        "en": "not available",
+        "hi": "उपलब्ध नहीं"
+       },
+       "level": "null",
+       "weight": 0.0
+      }
+     ],
+     "validity": [
+      {
+       "code": "permanent",
+       "ok": true,
+       "label": {
+        "en": "Permanent certificate",
+        "hi": "स्थायी प्रमाण पत्र"
+       },
+       "detail": {
+        "en": "Permanent certificate.",
+        "hi": "स्थायी प्रमाण पत्र।"
+       }
+      },
+      {
+       "code": "competent_authority",
+       "ok": true,
+       "label": {
+        "en": "Competent issuing authority",
+        "hi": "सक्षम जारीकर्ता प्राधिकारी"
+       },
+       "detail": {
+        "en": "Issued by SDO (Revenue), Kondagaon — competent authority.",
+        "hi": "अनुविभागीय अधिकारी (राजस्व), कोंडागांव द्वारा जारी — सक्षम प्राधिकारी।"
+       }
+      },
+      {
+       "code": "issue_date_valid",
+       "ok": true,
+       "label": {
+        "en": "Issue date not in the future",
+        "hi": "जारी तिथि भविष्य की नहीं"
+       },
+       "detail": {
+        "en": "Issued on 14-03-2019.",
+        "hi": "जारी दिनांक 14-03-2019।"
+       }
+      },
+      {
+       "code": "not_cancelled",
+       "ok": true,
+       "label": {
+        "en": "Not cancelled / not under scrutiny",
+        "hi": "निरस्त / जांचाधीन नहीं"
+       },
+       "detail": {
+        "en": "Active in the archive.",
+        "hi": "अभिलेखागार में सक्रिय।"
+       }
+      },
+      {
+       "code": "qr_verified",
+       "ok": true,
+       "label": {
+        "en": "QR / e-sign verified",
+        "hi": "क्यूआर / ई-हस्ताक्षर सत्यापित"
+       },
+       "detail": {
+        "en": "QR code and digital signature verified (simulated).",
+        "hi": "क्यूआर कोड व डिजिटल हस्ताक्षर सत्यापित (अनुकरण)।"
+       }
+      },
+      {
+       "code": "category_consistent",
+       "ok": true,
+       "label": {
+        "en": "Category consistent with the claim",
+        "hi": "दावे से वर्ग सुसंगत"
+       },
+       "detail": {
+        "en": "Certificate records ST; the application claims ST. Consistent.",
+        "hi": "प्रमाण पत्र में ST दर्ज; आवेदन में ST। सुसंगत।"
+       }
+      }
+     ],
+     "usable_as_evidence": true
+    }
+   ],
+   "checklist": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit",
+      "hi": "स्वघोषणा शपथ पत्र"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof",
+      "hi": "पहचान प्रमाण"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "caste_proof",
+     "label": {
+      "en": "Caste proof (any one: pre-1950/1984 record, school record, Sarpanch/Parshad certificate, family member's certificate)",
+      "hi": "जाति प्रमाण (कोई एक: 1950/1984 पूर्व अभिलेख, स्कूल अभिलेख, सरपंच/पार्षद प्रमाण पत्र, परिवार के सदस्य का प्रमाण पत्र)"
+     },
+     "required": true,
+     "present": true,
+     "satisfied_by": {
+      "en": "Relative's certificate No. CG/KDG/SDO/2019/004512 (SDO (Revenue), Kondagaon, 2019) found — the officer will confirm the relationship",
+      "hi": "संबंधी का प्रमाण पत्र क्र. CG/KDG/SDO/2019/004512 (अनुविभागीय अधिकारी (राजस्व), कोंडागांव, 2019) मिला — संबंध की पुष्टि अधिकारी करेंगे"
+     }
+    },
+    {
+     "code": "family_tree",
+     "label": {
+      "en": "Family tree, 3 generations, by the Halka Patwari (Rule 3(3))",
+      "hi": "हल्का पटवारी द्वारा तीन पीढ़ी का वंशवृक्ष (नियम 3(3))"
+     },
+     "required": false,
+     "present": false,
+     "note": {
+      "en": "Bring it if available (Rule 3(3)); the Patwari can also supply it.",
+      "hi": "उपलब्ध हो तो लाएं (नियम 3(3)); पटवारी भी दे सकते हैं।"
+     }
+    }
+   ],
+   "summary": {
+    "en": "✔ Matching family certificate found: Father's certificate No. CG/KDG/SDO/2019/004512 (SDO (Revenue), Kondagaon, 2019). Model link: strong link.",
+    "hi": "✔ मेल खाता पारिवारिक प्रमाण पत्र मिला: पिता का प्रमाण पत्र क्र. CG/KDG/SDO/2019/004512 (अनुविभागीय अधिकारी (राजस्व), कोंडागांव, 2019)। मॉडल कड़ी: प्रबल कड़ी।"
+   },
+   "suggestion": {
+    "en": "If the applicant confirms it is their relative's, attach certificate No. CG/KDG/SDO/2019/004512 as a Kendra search result (with the applicant's consent). The officer must still confirm the relationship. Also attach the affidavit and identity proof.",
+    "hi": "आवेदक द्वारा संबंधी का होने की पुष्टि पर, प्रमाण पत्र क्र. CG/KDG/SDO/2019/004512 को केंद्र खोज परिणाम के रूप में संलग्न करें (आवेदक की सहमति से)। अधिकारी को फिर भी संबंध की पुष्टि करनी होगी। शपथ पत्र और पहचान प्रमाण भी संलग्न करें।"
+   }
+  }
+ },
+ "no_match": {
+  "request": {
+   "service": "caste_obc",
+   "applicant_name": "Ramesh Yadav",
+   "father_name": "Dukalu Yadav",
+   "village_lgd": 448665,
+   "district_lgd": 643
+  },
+  "response": {
+   "matches": [],
+   "checklist": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit",
+      "hi": "स्वघोषणा शपथ पत्र"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof",
+      "hi": "पहचान प्रमाण"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "caste_proof",
+     "label": {
+      "en": "Caste proof (any one: pre-1950/1984 record, school record, Sarpanch/Parshad certificate, family member's certificate)",
+      "hi": "जाति प्रमाण (कोई एक: 1950/1984 पूर्व अभिलेख, स्कूल अभिलेख, सरपंच/पार्षद प्रमाण पत्र, परिवार के सदस्य का प्रमाण पत्र)"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "family_tree",
+     "label": {
+      "en": "Family tree, 3 generations, by the Halka Patwari (Rule 3(3))",
+      "hi": "हल्का पटवारी द्वारा तीन पीढ़ी का वंशवृक्ष (नियम 3(3))"
+     },
+     "required": false,
+     "present": false,
+     "note": {
+      "en": "Bring it if available (Rule 3(3)); the Patwari can also supply it.",
+      "hi": "उपलब्ध हो तो लाएं (नियम 3(3)); पटवारी भी दे सकते हैं।"
+     }
+    },
+    {
+     "code": "father_income",
+     "label": {
+      "en": "Father's income certificate, preceding year (OBC, Rule 3(3))",
+      "hi": "पिता का आय प्रमाण पत्र, पिछला वर्ष (अ.पि.व., नियम 3(3))"
+     },
+     "required": true,
+     "present": false
+    }
+   ],
+   "summary": {
+    "en": "No family certificate was found in the archive. This is common and does not affect eligibility.",
+    "hi": "अभिलेखागार में पारिवारिक प्रमाण पत्र नहीं मिला। यह सामान्य है और पात्रता को प्रभावित नहीं करता।"
+   },
+   "suggestion": {
+    "en": "Attach the documents in the checklist below before paying the fee. For caste proof, any ONE document is enough.",
+    "hi": "शुल्क जमा करने से पहले नीचे दी गई सूची के दस्तावेज़ संलग्न करें। जाति प्रमाण के लिए कोई एक दस्तावेज़ पर्याप्त है।"
+   }
+  }
+ },
+ "no_match_frontend_prefill": {
+  "request": {
+   "service": "caste_obc",
+   "applicant_name": "Ramesh Yadav",
+   "father_name": "Bhagwati Yadav",
+   "village_lgd": 448804,
+   "district_lgd": 643
+  },
+  "response": {
+   "matches": [],
+   "checklist": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit",
+      "hi": "स्वघोषणा शपथ पत्र"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof",
+      "hi": "पहचान प्रमाण"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "caste_proof",
+     "label": {
+      "en": "Caste proof (any one: pre-1950/1984 record, school record, Sarpanch/Parshad certificate, family member's certificate)",
+      "hi": "जाति प्रमाण (कोई एक: 1950/1984 पूर्व अभिलेख, स्कूल अभिलेख, सरपंच/पार्षद प्रमाण पत्र, परिवार के सदस्य का प्रमाण पत्र)"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "family_tree",
+     "label": {
+      "en": "Family tree, 3 generations, by the Halka Patwari (Rule 3(3))",
+      "hi": "हल्का पटवारी द्वारा तीन पीढ़ी का वंशवृक्ष (नियम 3(3))"
+     },
+     "required": false,
+     "present": false,
+     "note": {
+      "en": "Bring it if available (Rule 3(3)); the Patwari can also supply it.",
+      "hi": "उपलब्ध हो तो लाएं (नियम 3(3)); पटवारी भी दे सकते हैं।"
+     }
+    },
+    {
+     "code": "father_income",
+     "label": {
+      "en": "Father's income certificate, preceding year (OBC, Rule 3(3))",
+      "hi": "पिता का आय प्रमाण पत्र, पिछला वर्ष (अ.पि.व., नियम 3(3))"
+     },
+     "required": true,
+     "present": false
+    }
+   ],
+   "summary": {
+    "en": "No family certificate was found in the archive. This is common and does not affect eligibility.",
+    "hi": "अभिलेखागार में पारिवारिक प्रमाण पत्र नहीं मिला। यह सामान्य है और पात्रता को प्रभावित नहीं करता।"
+   },
+   "suggestion": {
+    "en": "Attach the documents in the checklist below before paying the fee. For caste proof, any ONE document is enough.",
+    "hi": "शुल्क जमा करने से पहले नीचे दी गई सूची के दस्तावेज़ संलग्न करें। जाति प्रमाण के लिए कोई एक दस्तावेज़ पर्याप्त है।"
+   }
+  }
+ },
+ "native_normal": {
+  "request": {
+   "service": "caste_st",
+   "applicant_name": "Rajni Korram",
+   "father_name": "Jaglu Usendi",
+   "village_lgd": 448686,
+   "district_lgd": 643
+  },
+  "response": {
+   "matches": [],
+   "checklist": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit",
+      "hi": "स्वघोषणा शपथ पत्र"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof",
+      "hi": "पहचान प्रमाण"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "caste_proof",
+     "label": {
+      "en": "Caste proof (any one: pre-1950/1984 record, school record, Sarpanch/Parshad certificate, family member's certificate)",
+      "hi": "जाति प्रमाण (कोई एक: 1950/1984 पूर्व अभिलेख, स्कूल अभिलेख, सरपंच/पार्षद प्रमाण पत्र, परिवार के सदस्य का प्रमाण पत्र)"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "family_tree",
+     "label": {
+      "en": "Family tree, 3 generations, by the Halka Patwari (Rule 3(3))",
+      "hi": "हल्का पटवारी द्वारा तीन पीढ़ी का वंशवृक्ष (नियम 3(3))"
+     },
+     "required": false,
+     "present": false,
+     "note": {
+      "en": "Bring it if available (Rule 3(3)); the Patwari can also supply it.",
+      "hi": "उपलब्ध हो तो लाएं (नियम 3(3)); पटवारी भी दे सकते हैं।"
+     }
+    }
+   ],
+   "summary": {
+    "en": "No family certificate was found in the archive. This is common and does not affect eligibility.",
+    "hi": "अभिलेखागार में पारिवारिक प्रमाण पत्र नहीं मिला। यह सामान्य है और पात्रता को प्रभावित नहीं करता।"
+   },
+   "suggestion": {
+    "en": "Attach the documents in the checklist below before paying the fee. For caste proof, any ONE document is enough.",
+    "hi": "शुल्क जमा करने से पहले नीचे दी गई सूची के दस्तावेज़ संलग्न करें। जाति प्रमाण के लिए कोई एक दस्तावेज़ पर्याप्त है।"
+   }
+  }
+ },
+ "native_found": {
+  "request": {
+   "service": "caste_st",
+   "applicant_name": "Rajni Korram",
+   "father_name": "Jaglu Usendi",
+   "village_lgd": 448686,
+   "district_lgd": 643,
+   "native_village_lgd": 449687
+  },
+  "response": {
+   "matches": [
+    {
+     "certificate": {
+      "cert_no": "CG/NRP/SDO/2017/003186",
+      "service": "caste_st",
+      "cert_type": "permanent",
+      "category": "ST",
+      "caste_name": {
+       "en": "Muria",
+       "hi": "मुरिया"
+      },
+      "holder_name": {
+       "en": "Jaglu Usendi",
+       "hi": "जगलू उसेंडी"
+      },
+      "father_name": {
+       "en": "Sukalu Usendi",
+       "hi": "सुकालू उसेंडी"
+      },
+      "gender": "M",
+      "birth_year": 1972,
+      "village": {
+       "en": "Garhbengal",
+       "hi": "गढ़बेंगाल"
+      },
+      "village_lgd": 449687,
+      "tehsil": {
+       "en": "Narayanpur",
+       "hi": "नारायणपुर"
+      },
+      "district": {
+       "en": "Narayanpur",
+       "hi": "नारायणपुर"
+      },
+      "district_lgd": 637,
+      "issue_date": "2017-06-12",
+      "issuing_authority": {
+       "en": "SDO (Revenue), Narayanpur",
+       "hi": "अनुविभागीय अधिकारी (राजस्व), नारायणपुर"
+      },
+      "authority_role": "SDO",
+      "status": "active",
+      "qr_verified": true
+     },
+     "relation": "father",
+     "relation_label": {
+      "en": "Father",
+      "hi": "पिता"
+     },
+     "match_probability": 0.9589,
+     "match_level": "exact",
+     "prior_weight": -13.877,
+     "weights": [
+      {
+       "field": "father_name",
+       "label": {
+        "en": "Father's name ↔ certificate holder",
+        "hi": "पिता का नाम ↔ प्रमाण पत्र धारक"
+       },
+       "comparison": {
+        "en": "exact after normalisation (Jaglu Usendi ↔ Jaglu Usendi)",
+        "hi": "सामान्यीकरण के बाद समान (Jaglu Usendi ↔ Jaglu Usendi)"
+       },
+       "level": "exact",
+       "weight": 6.826
+      },
+      {
+       "field": "surname",
+       "label": {
+        "en": "Surname",
+        "hi": "उपनाम"
+       },
+       "comparison": {
+        "en": "exact after normalisation (Usendi ↔ Usendi)",
+        "hi": "सामान्यीकरण के बाद समान (Usendi ↔ Usendi)"
+       },
+       "level": "exact",
+       "weight": 5.278
+      },
+      {
+       "field": "village",
+       "label": {
+        "en": "Village (LGD code)",
+        "hi": "ग्राम (एलजीडी कोड)"
+       },
+       "comparison": {
+        "en": "same village (Garhbengal ↔ Garhbengal, LGD 449687)",
+        "hi": "एक ही ग्राम (गढ़बेंगाल ↔ गढ़बेंगाल, एलजीडी 449687)"
+       },
+       "level": "same_village",
+       "weight": 6.317
+      },
+      {
+       "field": "birth_year_gap",
+       "label": {
+        "en": "Birth-year gap",
+        "hi": "जन्म-वर्ष अंतर"
+       },
+       "comparison": {
+        "en": "not available",
+        "hi": "उपलब्ध नहीं"
+       },
+       "level": "null",
+       "weight": 0.0
+      }
+     ],
+     "validity": [
+      {
+       "code": "permanent",
+       "ok": true,
+       "label": {
+        "en": "Permanent certificate",
+        "hi": "स्थायी प्रमाण पत्र"
+       },
+       "detail": {
+        "en": "Permanent certificate.",
+        "hi": "स्थायी प्रमाण पत्र।"
+       }
+      },
+      {
+       "code": "competent_authority",
+       "ok": true,
+       "label": {
+        "en": "Competent issuing authority",
+        "hi": "सक्षम जारीकर्ता प्राधिकारी"
+       },
+       "detail": {
+        "en": "Issued by SDO (Revenue), Narayanpur — competent authority.",
+        "hi": "अनुविभागीय अधिकारी (राजस्व), नारायणपुर द्वारा जारी — सक्षम प्राधिकारी।"
+       }
+      },
+      {
+       "code": "issue_date_valid",
+       "ok": true,
+       "label": {
+        "en": "Issue date not in the future",
+        "hi": "जारी तिथि भविष्य की नहीं"
+       },
+       "detail": {
+        "en": "Issued on 12-06-2017.",
+        "hi": "जारी दिनांक 12-06-2017।"
+       }
+      },
+      {
+       "code": "not_cancelled",
+       "ok": true,
+       "label": {
+        "en": "Not cancelled / not under scrutiny",
+        "hi": "निरस्त / जांचाधीन नहीं"
+       },
+       "detail": {
+        "en": "Active in the archive.",
+        "hi": "अभिलेखागार में सक्रिय।"
+       }
+      },
+      {
+       "code": "qr_verified",
+       "ok": true,
+       "label": {
+        "en": "QR / e-sign verified",
+        "hi": "क्यूआर / ई-हस्ताक्षर सत्यापित"
+       },
+       "detail": {
+        "en": "QR code and digital signature verified (simulated).",
+        "hi": "क्यूआर कोड व डिजिटल हस्ताक्षर सत्यापित (अनुकरण)।"
+       }
+      },
+      {
+       "code": "category_consistent",
+       "ok": true,
+       "label": {
+        "en": "Category consistent with the claim",
+        "hi": "दावे से वर्ग सुसंगत"
+       },
+       "detail": {
+        "en": "Certificate records ST; the application claims ST. Consistent.",
+        "hi": "प्रमाण पत्र में ST दर्ज; आवेदन में ST। सुसंगत।"
+       }
+      }
+     ],
+     "usable_as_evidence": true,
+     "found_via": "native_village",
+     "found_via_note": {
+      "en": "Found by the native (maiden) village search: Garhbengal (LGD 449687), tehsil Narayanpur, district Narayanpur. The search of the applicant's current village did not show it.",
+      "hi": "मायके / मूल गांव की खोज से मिला: गढ़बेंगाल (एलजीडी 449687), तहसील नारायणपुर, जिला नारायणपुर। आवेदक के वर्तमान गांव की खोज में यह नहीं दिखा।"
+     }
+    }
+   ],
+   "checklist": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit",
+      "hi": "स्वघोषणा शपथ पत्र"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof",
+      "hi": "पहचान प्रमाण"
+     },
+     "required": true,
+     "present": false
+    },
+    {
+     "code": "caste_proof",
+     "label": {
+      "en": "Caste proof (any one: pre-1950/1984 record, school record, Sarpanch/Parshad certificate, family member's certificate)",
+      "hi": "जाति प्रमाण (कोई एक: 1950/1984 पूर्व अभिलेख, स्कूल अभिलेख, सरपंच/पार्षद प्रमाण पत्र, परिवार के सदस्य का प्रमाण पत्र)"
+     },
+     "required": true,
+     "present": true,
+     "satisfied_by": {
+      "en": "Relative's certificate No. CG/NRP/SDO/2017/003186 (SDO (Revenue), Narayanpur, 2017) found — the officer will confirm the relationship",
+      "hi": "संबंधी का प्रमाण पत्र क्र. CG/NRP/SDO/2017/003186 (अनुविभागीय अधिकारी (राजस्व), नारायणपुर, 2017) मिला — संबंध की पुष्टि अधिकारी करेंगे"
+     }
+    },
+    {
+     "code": "family_tree",
+     "label": {
+      "en": "Family tree, 3 generations, by the Halka Patwari (Rule 3(3))",
+      "hi": "हल्का पटवारी द्वारा तीन पीढ़ी का वंशवृक्ष (नियम 3(3))"
+     },
+     "required": false,
+     "present": false,
+     "note": {
+      "en": "Bring it if available (Rule 3(3)); the Patwari can also supply it.",
+      "hi": "उपलब्ध हो तो लाएं (नियम 3(3)); पटवारी भी दे सकते हैं।"
+     }
+    }
+   ],
+   "summary": {
+    "en": "✔ Matching family certificate found: Father's certificate No. CG/NRP/SDO/2017/003186 (SDO (Revenue), Narayanpur, 2017). Model link: strong link. Found through the native (maiden) village Garhbengal (Narayanpur).",
+    "hi": "✔ मेल खाता पारिवारिक प्रमाण पत्र मिला: पिता का प्रमाण पत्र क्र. CG/NRP/SDO/2017/003186 (अनुविभागीय अधिकारी (राजस्व), नारायणपुर, 2017)। मॉडल कड़ी: प्रबल कड़ी। मायके / मूल गांव गढ़बेंगाल (नारायणपुर) की खोज से मिला।"
+   },
+   "suggestion": {
+    "en": "If the applicant confirms it is their relative's, attach certificate No. CG/NRP/SDO/2017/003186 as a Kendra search result (with the applicant's consent). The officer must still confirm the relationship. Also attach the affidavit and identity proof.",
+    "hi": "आवेदक द्वारा संबंधी का होने की पुष्टि पर, प्रमाण पत्र क्र. CG/NRP/SDO/2017/003186 को केंद्र खोज परिणाम के रूप में संलग्न करें (आवेदक की सहमति से)। अधिकारी को फिर भी संबंध की पुष्टि करनी होगी। शपथ पत्र और पहचान प्रमाण भी संलग्न करें।"
+   }
+  }
+ }
+}

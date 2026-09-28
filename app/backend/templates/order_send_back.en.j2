@@ -1,0 +1,14 @@
+NOTICE TO THE APPLICANT — deficiency (this is not an order)
+Office of the {{ office.en }}
+
+Application No.: {{ app.app_id }}, received {{ received }} via {{ app.kendra.en }}
+Applicant: {{ app.applicant_name.en }}, {{ rel_word.en }} {{ app.father_name.en }}, village {{ app.village.en }}, district {{ app.district.en }}
+Service: {{ app.service_label.en }}
+
+The application needs the following before it can be decided:
+{% for d in deficiencies %}{{ loop.index }}. {{ d.text.en }}
+{% endfor %}
+Please add these to the SAME application at {{ app.kendra.en }} within 30 days, i.e. by {{ reply_by }}. The application number stays the same. No new fee is payable. If they are not received by that date, the application will be decided on the record as it stands.
+
+Place: {{ place.en }}        Date: {{ today }}
+{{ office.en }}

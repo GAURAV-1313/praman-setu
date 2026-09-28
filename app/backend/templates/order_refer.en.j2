@@ -1,0 +1,37 @@
+REFERENCE — for the competent officer's review, edit and digital signature (DSC)
+Office of the {{ office.en }}
+To: {{ refer_to.en }}
+
+In the matter of Application No. {{ app.app_id }}, received {{ received }}
+Applicant: {{ app.applicant_name.en }}, {{ rel_word.en }} {{ app.father_name.en }}, village {{ app.village.en }} (LGD {{ app.village_lgd }}), tehsil {{ app.tehsil.en }}, district {{ app.district.en }}
+Service: {{ app.service_label.en }}
+
+{% if points %}The following points appear in the records and need verification before a decision:
+{% for p in points %}{{ loop.index }}. {{ p.en }}
+{% endfor %}{% else %}The application is referred for verification before a decision, for the reasons recorded by the undersigned below.
+{% endif %}
+{% if refer_code == "patwari" %}Under Rule 7 of the Rules, the Halka Patwari is directed to enquire under Rule 8 and report by {{ report_by }} on:
+{% if domicile %}(i) the applicant's and the family's residence in Chhattisgarh, with period;
+(ii) land and revenue records (B-1 / khasra) of the family;
+(iii) statements of the Kotwar / Sarpanch on residence;
+{% else %}(i) the family tree of three generations (vanshavali);
+(ii) the caste/tribe of the family as recorded in revenue records (misal / jamabandi / khasra);
+(iii) the family's residence before {{ cutoff }};
+(iv) statements of the Kotwar / Sarpanch and of holders of certificates of the same caste in the village;
+{% endif %}{% if points %}({{ 'iv' if domicile else 'v' }}) the specific point(s) listed above.
+{% endif %}Enclosed: pre-filled vanshavali / field-report form (family members found in the records; blank rows for the Kotwar / Sarpanch statements), sent to the Patwari app / Bhuiyan.
+{% elif refer_code == "scrutiny_committee" %}The Committee is requested to verify the point(s) above and communicate its finding; the application is kept pending meanwhile.
+{% else %}The SDO (Revenue) is requested to examine the point(s) above and decide or direct.
+{% endif %}
+Records examined:
+{% for r in records %}- {{ r.en }}
+{% endfor %}{% for r in considered %}- {{ r.en }}
+{% endfor %}
+Legal basis:
+{% for b in basis %}- {{ b.en }}
+{% endfor %}
+This reference is not a finding against the applicant. The applicant will be heard before any adverse decision.
+
+Place: {{ place.en }}        Date: {{ today }}
+{{ office.en }}
+(digital signature — DSC)

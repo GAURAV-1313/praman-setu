@@ -1,0 +1,4549 @@
+[
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08812",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Sunita Markam",
+    "hi": "सुनीता मरकाम"
+   },
+   "father_name": {
+    "en": "Ramlal Markam",
+    "hi": "रामलाल मरकाम"
+   },
+   "mother_name": {
+    "en": "Sukhmati Markam",
+    "hi": "सुखमती मरकाम"
+   },
+   "gender": "F",
+   "birth_year": 2008,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Gond",
+    "hi": "गोंड"
+   },
+   "village": {
+    "en": "Bayanar",
+    "hi": "बयानार"
+   },
+   "village_lgd": 448703,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Post-matric scholarship",
+    "hi": "पोस्ट-मैट्रिक छात्रवृत्ति"
+   },
+   "submitted_at": "2026-09-22T10:29:00+05:30",
+   "sla_due": "2026-10-22",
+   "kendra": {
+    "en": "CSC Bayanar (VLE)",
+    "hi": "सीएससी बयानार (वीएलई)"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    }
+   ],
+   "persona_note": {
+    "en": "Hero case: no pre-1950 record, but her father's ST certificate is in the archive (spelt differently, other script).",
+    "hi": "मुख्य केस: 1950 से पूर्व का अभिलेख नहीं, पर पिता का ST प्रमाण पत्र अभिलेखागार में है (अलग वर्तनी, अलग लिपि)।"
+   },
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 17546,
+   "father_id": 17544,
+   "father_raw": "रामलाल मरकाम",
+   "applicant_raw": "सुनीता मरकाम",
+   "tehsil_lgd": 3357
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Ramlal Markam — khasra 182/8, 1.14 ha, village Bayanar",
+     "hi": "रामलाल मरकाम — खसरा 182/8, 1.14 हे., ग्राम बयानार"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Ramlal Markam (ration card 2295269691)",
+     "hi": "रामलाल मरकाम (राशन कार्ड 2295269691)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08790",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Rohit Netam",
+    "hi": "रोहित नेताम"
+   },
+   "father_name": {
+    "en": "Sitaram Netam",
+    "hi": "सीताराम नेताम"
+   },
+   "mother_name": {
+    "en": "Parvati Netam",
+    "hi": "पार्वती नेताम"
+   },
+   "gender": "M",
+   "birth_year": 2006,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Gond",
+    "hi": "गोंड"
+   },
+   "village": {
+    "en": "Kongera",
+    "hi": "कोंगेरा"
+   },
+   "village_lgd": 448656,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "College admission",
+    "hi": "महाविद्यालय प्रवेश"
+   },
+   "submitted_at": "2026-09-18T10:58:00+05:30",
+   "sla_due": "2026-10-18",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "persona_note": {
+    "en": "Sibling match: his elder sister's permanent ST certificate (2021).",
+    "hi": "भाई-बहन मिलान: बड़ी बहन का स्थायी ST प्रमाण पत्र (2021)।"
+   },
+   "declared_relative_cert_no": "CG/KDG/SDO/2021/007731",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 17550,
+   "father_id": 17547,
+   "father_raw": "Seetaram Netam",
+   "applicant_raw": "Rohit Netam",
+   "tehsil_lgd": 3357
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Sitaram Netam (ration card 2295538186)",
+     "hi": "सीताराम नेताम (राशन कार्ड 2295538186)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08835",
+   "service": "caste_obc",
+   "service_label": {
+    "en": "Other Backward Class (OBC) caste certificate — permanent",
+    "hi": "अन्य पिछड़ा वर्ग जाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Pooja Sahu",
+    "hi": "पूजा साहू"
+   },
+   "father_name": {
+    "en": "Shyamlal Sahu",
+    "hi": "श्यामलाल साहू"
+   },
+   "mother_name": {
+    "en": "Geeta Sahu",
+    "hi": "गीता साहू"
+   },
+   "gender": "F",
+   "birth_year": 2007,
+   "claimed_category": "OBC",
+   "claimed_caste": {
+    "en": "Sahu/Teli",
+    "hi": "साहू/तेली"
+   },
+   "village": {
+    "en": "Kumhari",
+    "hi": "कुम्हारी"
+   },
+   "village_lgd": 937712,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Post-matric scholarship",
+    "hi": "पोस्ट-मैट्रिक छात्रवृत्ति"
+   },
+   "submitted_at": "2026-09-20T10:58:00+05:30",
+   "sla_due": "2026-10-20",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    },
+    {
+     "code": "school_record",
+     "label": {
+      "en": "School record (scholar register / TC) showing caste",
+      "hi": "स्कूल अभिलेख (दाखिल-खारिज पंजी / टीसी) जिसमें जाति दर्ज हो"
+     },
+     "uploaded": false
+    },
+    {
+     "code": "sarpanch_cert",
+     "label": {
+      "en": "Sarpanch / Parshad certificate",
+      "hi": "सरपंच / पार्षद प्रमाण पत्र"
+     },
+     "uploaded": false
+    }
+   ],
+   "persona_note": {
+    "en": "No family record found. One document is missing — a clear, curable send-back.",
+    "hi": "पारिवारिक अभिलेख नहीं मिला। एक दस्तावेज़ कम है — स्पष्ट, सुधार योग्य वापसी।"
+   },
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 17553,
+   "father_id": 17551,
+   "father_raw": "Shyamlal",
+   "applicant_raw": "Pooja Sahu",
+   "tehsil_lgd": 3357
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Shyam Lal Sahu (ration card 2257338810)",
+     "hi": "श्याम लाल साहू (राशन कार्ड 2257338810)"
+    },
+    "status": "ok",
+    "note": {
+     "en": "Affidavit says 'Shyamlal'. Same name, different spelling — the name normaliser treats them as equal.",
+     "hi": "शपथ पत्र में 'श्यामलाल' लिखा है। नाम एक ही है, वर्तनी अलग — नाम-मिलान इन्हें समान मानता है।"
+    }
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes — Pooja (daughter)",
+     "hi": "हाँ — पूजा (पुत्री)"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08841",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Kiran Dhruw",
+    "hi": "किरण ध्रुव"
+   },
+   "father_name": {
+    "en": "Govind Dhruw",
+    "hi": "गोविंद ध्रुव"
+   },
+   "mother_name": {
+    "en": "Kamla Dhruw",
+    "hi": "कमला ध्रुव"
+   },
+   "gender": "M",
+   "birth_year": 2004,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Gond",
+    "hi": "गोंड"
+   },
+   "village": {
+    "en": "Isalnar",
+    "hi": "ईसलनार"
+   },
+   "village_lgd": 448697,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-19T10:12:00+05:30",
+   "sla_due": "2026-10-19",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "sarpanch_cert",
+     "label": {
+      "en": "Sarpanch / Parshad certificate",
+      "hi": "सरपंच / पार्षद प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "persona_note": {
+    "en": "A sibling's certificate records a different category. Needs the officer's attention — not an accusation.",
+    "hi": "भाई के प्रमाण पत्र में अलग वर्ग दर्ज है। अधिकारी का ध्यान आवश्यक — यह आरोप नहीं है।"
+   },
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 17557,
+   "father_id": 17554,
+   "father_raw": "गोविंद ध्रुव",
+   "applicant_raw": "किरण ध्रुव",
+   "tehsil_lgd": 3357
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Govind Dhruw — khasra 908/6, 1.87 ha, village Isalnar",
+     "hi": "गोविंद ध्रुव — खसरा 908/6, 1.87 हे., ग्राम ईसलनार"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Govind Dhruw (ration card 2257517953)",
+     "hi": "गोविंद ध्रुव (राशन कार्ड 2257517953)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08856",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Meena Kashyap",
+    "hi": "मीना कश्यप"
+   },
+   "father_name": {
+    "en": "Lakhan Kashyap",
+    "hi": "लखन कश्यप"
+   },
+   "mother_name": {
+    "en": "Janki Kashyap",
+    "hi": "जानकी कश्यप"
+   },
+   "gender": "F",
+   "birth_year": 2009,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Bhatra",
+    "hi": "भतरा"
+   },
+   "village": {
+    "en": "Makadi",
+    "hi": "माकड़ी"
+   },
+   "village_lgd": 448778,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Pre-matric scholarship",
+    "hi": "प्री-मैट्रिक छात्रवृत्ति"
+   },
+   "submitted_at": "2026-09-21T10:32:00+05:30",
+   "sla_due": "2026-10-21",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "school_record",
+     "label": {
+      "en": "School record (scholar register / TC) showing caste",
+      "hi": "स्कूल अभिलेख (दाखिल-खारिज पंजी / टीसी) जिसमें जाति दर्ज हो"
+     },
+     "uploaded": true
+    }
+   ],
+   "persona_note": {
+    "en": "The father's certificate was cancelled after scrutiny. It cannot be used as evidence.",
+    "hi": "पिता का प्रमाण पत्र छानबीन के बाद निरस्त हुआ। इसे साक्ष्य के रूप में उपयोग नहीं किया जा सकता।"
+   },
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 17560,
+   "father_id": 17558,
+   "father_raw": "Lakhan Kashyap",
+   "applicant_raw": "Meena Kashyap",
+   "tehsil_lgd": 3357
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Lakhan Kashyap — khasra 68/3, 1.09 ha, village Makadi",
+     "hi": "लखन कश्यप — खसरा 68/3, 1.09 हे., ग्राम माकड़ी"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Lakhan Kashyap (ration card 2204221951)",
+     "hi": "लखन कश्यप (राशन कार्ड 2204221951)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08863",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Anil Sori",
+    "hi": "अनिल सोरी"
+   },
+   "father_name": {
+    "en": "Sukhram Sori",
+    "hi": "सुखराम सोरी"
+   },
+   "mother_name": {
+    "en": "Sita Sori",
+    "hi": "सीता सोरी"
+   },
+   "gender": "M",
+   "birth_year": 2002,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Gond",
+    "hi": "गोंड"
+   },
+   "village": {
+    "en": "Umargaon",
+    "hi": "उमरगांव"
+   },
+   "village_lgd": 448804,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-17T10:50:00+05:30",
+   "sla_due": "2026-10-17",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "persona_note": {
+    "en": "The father's permanent certificate was signed by a Tehsildar — competent authority needs checking (CG HC, Jul 2026).",
+    "hi": "पिता का स्थायी प्रमाण पत्र तहसीलदार द्वारा जारी — सक्षम प्राधिकारी की जांच आवश्यक (छ.ग. उच्च न्यायालय, जुलाई 2026)।"
+   },
+   "declared_relative_cert_no": "CG/KDG/TSL/2017/001164",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 17563,
+   "father_id": 17561,
+   "father_raw": "सुखराम सोरी",
+   "applicant_raw": "अनिल सोरी",
+   "tehsil_lgd": 3357
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Sukhram Sori (ration card 2242310967)",
+     "hi": "सुखराम सोरी (राशन कार्ड 2242310967)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08870",
+   "service": "caste_obc",
+   "service_label": {
+    "en": "Other Backward Class (OBC) caste certificate — permanent",
+    "hi": "अन्य पिछड़ा वर्ग जाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Ramesh Yadav",
+    "hi": "रमेश यादव"
+   },
+   "father_name": {
+    "en": "Dukalu Yadav",
+    "hi": "दुकालू यादव"
+   },
+   "mother_name": {
+    "en": "Sukhmati Yadav",
+    "hi": "सुखमती यादव"
+   },
+   "gender": "M",
+   "birth_year": 2005,
+   "claimed_category": "OBC",
+   "claimed_caste": {
+    "en": "Yadav/Raut",
+    "hi": "यादव/राउत"
+   },
+   "village": {
+    "en": "Bansgaon",
+    "hi": "बांसगांव"
+   },
+   "village_lgd": 448665,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "College admission",
+    "hi": "महाविद्यालय प्रवेश"
+   },
+   "submitted_at": "2026-09-23T10:39:00+05:30",
+   "sla_due": "2026-10-23",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "school_record",
+     "label": {
+      "en": "School record (scholar register / TC) showing caste",
+      "hi": "स्कूल अभिलेख (दाखिल-खारिज पंजी / टीसी) जिसमें जाति दर्ज हो"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_tree",
+     "label": {
+      "en": "Family tree (3 generations, Halka Patwari)",
+      "hi": "वंशवृक्ष (3 पीढ़ी, हल्का पटवारी)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "father_income",
+     "uploaded": true,
+     "label": {
+      "en": "Father's income certificate (preceding year; OBC creamy-layer check)",
+      "hi": "पिता का आय प्रमाण पत्र (पिछला वर्ष; अ.पि.व. क्रीमी लेयर जांच)"
+     }
+    }
+   ],
+   "persona_note": {
+    "en": "First-generation applicant who moved within CG (from Bemetara). No records is normal — standard review.",
+    "hi": "प्रथम पीढ़ी आवेदक, छ.ग. के भीतर बेमेतरा से आए। अभिलेख न मिलना सामान्य है — सामान्य जांच।"
+   },
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 17566,
+   "father_id": 17564,
+   "father_raw": "Dukalu Yadav",
+   "applicant_raw": "Ramesh Yadav",
+   "tehsil_lgd": 3357
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Ration card",
+     "hi": "राशन कार्ड"
+    },
+    "value": {
+     "en": "2209047890 — issued in Bemetara (Nawagarh), used in Kondagaon under One Nation One Ration Card",
+     "hi": "2209047890 — बेमेतरा (नवागढ़) में जारी, 'एक राष्ट्र एक राशन कार्ड' के तहत कोंडागांव में उपयोग"
+    },
+    "status": "info",
+    "note": {
+     "en": "Family moved within Chhattisgarh. This is normal and is not a concern.",
+     "hi": "परिवार छत्तीसगढ़ के भीतर स्थानांतरित हुआ। यह सामान्य है, चिंता का विषय नहीं।"
+    }
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Dukalu Yadav",
+     "hi": "दुकालू यादव"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Land holding",
+     "hi": "भूमि धारण"
+    },
+    "value": {
+     "en": "No holding found in the family's name",
+     "hi": "परिवार के नाम पर भूमि नहीं मिली"
+    },
+    "status": "info",
+    "note": {
+     "en": "Many families hold no land. Absence of a land record is not a ground for rejection.",
+     "hi": "अनेक परिवारों के पास भूमि नहीं होती। भूमि अभिलेख न होना अस्वीकृति का आधार नहीं है।"
+    }
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08902",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Lakshmi Verma",
+    "hi": "लक्ष्मी वर्मा"
+   },
+   "father_name": {
+    "en": "Hemlal Verma",
+    "hi": "हेमलाल वर्मा"
+   },
+   "mother_name": {
+    "en": "Savitri Verma",
+    "hi": "सावित्री वर्मा"
+   },
+   "gender": "F",
+   "birth_year": 2000,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Telanga",
+    "hi": "तेलंगा"
+   },
+   "village_lgd": 448699,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-24T10:13:00+05:30",
+   "sla_due": "2026-10-09",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_domicile",
+     "label": {
+      "en": "Family member's domicile certificate",
+      "hi": "परिवार के सदस्य का मूल निवास प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "persona_note": {
+    "en": "Domicile: father's domicile certificate (2018) plus land and ration records agree.",
+    "hi": "मूल निवास: पिता का मूल निवास प्रमाण पत्र (2018) तथा भूमि और राशन अभिलेख मेल खाते हैं।"
+   },
+   "declared_relative_cert_no": "CG/KDG/TSL/2018/005402",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 17569,
+   "father_id": 17567,
+   "father_raw": "Hemlal Verma",
+   "applicant_raw": "Lakshmi Verma",
+   "tehsil_lgd": 3357
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Hemlal Verma — khasra 470/4, 0.27 ha, village Telanga",
+     "hi": "हेमलाल वर्मा — खसरा 470/4, 0.27 हे., ग्राम तेलंगा"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Hemlal Verma (ration card 2222870820)",
+     "hi": "हेमलाल वर्मा (राशन कार्ड 2222870820)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08710",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Budhram Markam",
+    "hi": "बुधराम मरकाम"
+   },
+   "father_name": {
+    "en": "Tikeshwar Markam",
+    "hi": "टिकेश्वर मरकाम"
+   },
+   "mother_name": {
+    "en": "Suman Markam",
+    "hi": "सुमन मरकाम"
+   },
+   "gender": "M",
+   "birth_year": 2009,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Muria",
+    "hi": "मुरिया"
+   },
+   "village": {
+    "en": "Jamgaon",
+    "hi": "जमगांव"
+   },
+   "village_lgd": 448971,
+   "tehsil": {
+    "en": "Dhanora",
+    "hi": "धनोरा"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-04T10:54:00+05:30",
+   "sla_due": "2026-10-04",
+   "kendra": {
+    "en": "CSC Bayanar (VLE)",
+    "hi": "सीएससी बयानार (वीएलई)"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "school_record",
+     "label": {
+      "en": "School record (scholar register / TC) showing caste",
+      "hi": "स्कूल अभिलेख (दाखिल-खारिज पंजी / टीसी) जिसमें जाति दर्ज हो"
+     },
+     "uploaded": true
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 9734,
+   "father_id": 9732,
+   "father_raw": "tikeshwar markam",
+   "applicant_raw": "Budh Ram Markam",
+   "tehsil_lgd": 7320
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Tikeshwar Markam — khasra 392/7, 0.47 ha, village Jamgaon",
+     "hi": "टिकेश्वर मरकाम — खसरा 392/7, 0.47 हे., ग्राम जमगांव"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Tikeshwar Markam (ration card 2213520233)",
+     "hi": "टिकेश्वर मरकाम (राशन कार्ड 2213520233)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08721",
+   "service": "caste_sc",
+   "service_label": {
+    "en": "Scheduled Caste (SC) caste certificate — permanent",
+    "hi": "अनुसूचित जाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Samundri Manjhi",
+    "hi": "समुंद्री मांझी"
+   },
+   "father_name": {
+    "en": "Hemant Manjhi",
+    "hi": "हेमंत मांझी"
+   },
+   "mother_name": {
+    "en": "Pooja Manjhi",
+    "hi": "पूजा मांझी"
+   },
+   "gender": "F",
+   "birth_year": 2005,
+   "claimed_category": "SC",
+   "claimed_caste": {
+    "en": "Satnami",
+    "hi": "सतनामी"
+   },
+   "village": {
+    "en": "Golawand",
+    "hi": "गोलवंड"
+   },
+   "village_lgd": 448772,
+   "tehsil": {
+    "en": "Mardapal",
+    "hi": "मर्दापाल"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Hostel admission",
+    "hi": "छात्रावास प्रवेश"
+   },
+   "submitted_at": "2026-09-20T10:25:00+05:30",
+   "sla_due": "2026-10-20",
+   "kendra": {
+    "en": "CSC Bayanar (VLE)",
+    "hi": "सीएससी बयानार (वीएलई)"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/SDO/2026/002290",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 11301,
+   "father_id": 11297,
+   "father_raw": "Hemant Manjhi",
+   "applicant_raw": "Samundri Manjhi",
+   "tehsil_lgd": 7319
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Hemant Manjhi — khasra 829/1, 2.37 ha, village Golawand",
+     "hi": "हेमंत मांझी — खसरा 829/1, 2.37 हे., ग्राम गोलवंड"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Hemant Manjhi (ration card 2222116161)",
+     "hi": "हेमंत मांझी (राशन कार्ड 2222116161)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08732",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Sohan Dewangan",
+    "hi": "सोहन देवांगन"
+   },
+   "father_name": {
+    "en": "Narendra Dewangan",
+    "hi": "नरेंद्र देवांगन"
+   },
+   "mother_name": {
+    "en": "Radha Dewangan",
+    "hi": "राधा देवांगन"
+   },
+   "gender": "M",
+   "birth_year": 2004,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Maria",
+    "hi": "माड़िया"
+   },
+   "village": {
+    "en": "Nugali",
+    "hi": "नुगली"
+   },
+   "village_lgd": 448661,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Hostel admission",
+    "hi": "छात्रावास प्रवेश"
+   },
+   "submitted_at": "2026-09-25T10:36:00+05:30",
+   "sla_due": "2026-10-25",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/SDO/2023/001525",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 10685,
+   "father_id": 10683,
+   "father_raw": "नरेंद्र देवांगन",
+   "applicant_raw": "सोहन देवांगन",
+   "tehsil_lgd": 3357
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Narendra Dewangan — khasra 818/4, 1.93 ha, village Nugali",
+     "hi": "नरेंद्र देवांगन — खसरा 818/4, 1.93 हे., ग्राम नुगली"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Narendra Dewangan (ration card 2232840301)",
+     "hi": "नरेंद्र देवांगन (राशन कार्ड 2232840301)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08743",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Radha Poyam",
+    "hi": "राधा पोयाम"
+   },
+   "father_name": {
+    "en": "Jageshwar Poyam",
+    "hi": "जागेश्वर पोयाम"
+   },
+   "mother_name": {
+    "en": "Sunita Poyam",
+    "hi": "सुनीता पोयाम"
+   },
+   "gender": "F",
+   "birth_year": 2006,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Muria",
+    "hi": "मुरिया"
+   },
+   "village": {
+    "en": "Arangula",
+    "hi": "अरंगुला"
+   },
+   "village_lgd": 448836,
+   "tehsil": {
+    "en": "Makdi",
+    "hi": "माकड़ी"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Hostel admission",
+    "hi": "छात्रावास प्रवेश"
+   },
+   "submitted_at": "2026-09-03T10:43:00+05:30",
+   "sla_due": "2026-10-03",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/SDO/2026/000419",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 7609,
+   "father_id": 7607,
+   "father_raw": "जागेश्वर पोयाम",
+   "applicant_raw": "राधा पोयाम",
+   "tehsil_lgd": 3358
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Jageshwar Poyam (ration card 2270569403)",
+     "hi": "जागेश्वर पोयाम (राशन कार्ड 2270569403)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08749",
+   "service": "caste_obc",
+   "service_label": {
+    "en": "Other Backward Class (OBC) caste certificate — permanent",
+    "hi": "अन्य पिछड़ा वर्ग जाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Babita Kawasi",
+    "hi": "बबीता कवासी"
+   },
+   "father_name": {
+    "en": "Dilip Kawasi",
+    "hi": "दिलीप कवासी"
+   },
+   "mother_name": {
+    "en": "Samundri Kawasi",
+    "hi": "समुंद्री कवासी"
+   },
+   "gender": "F",
+   "birth_year": 2004,
+   "claimed_category": "OBC",
+   "claimed_caste": {
+    "en": "Sahu/Teli",
+    "hi": "साहू/तेली"
+   },
+   "village": {
+    "en": "Adnar",
+    "hi": "अड्नर"
+   },
+   "village_lgd": 448714,
+   "tehsil": {
+    "en": "Mardapal",
+    "hi": "मर्दापाल"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Pre-matric scholarship",
+    "hi": "प्री-मैट्रिक छात्रवृत्ति"
+   },
+   "submitted_at": "2026-09-23T10:11:00+05:30",
+   "sla_due": "2026-10-23",
+   "kendra": {
+    "en": "Lok Seva Kendra, Keskal",
+    "hi": "लोक सेवा केंद्र, केशकाल"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/SDO/2018/000918",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 9037,
+   "father_id": 9035,
+   "father_raw": "Deeelip Kavasi",
+   "applicant_raw": "Bobita Kawasi",
+   "tehsil_lgd": 7319
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Dilip Kawasi (ration card 2240677397)",
+     "hi": "दिलीप कवासी (राशन कार्ड 2240677397)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08754",
+   "service": "caste_sc",
+   "service_label": {
+    "en": "Scheduled Caste (SC) caste certificate — permanent",
+    "hi": "अनुसूचित जाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Draupadi Nag",
+    "hi": "द्रौपदी नाग"
+   },
+   "father_name": {
+    "en": "Santosh Nag",
+    "hi": "संतोष नाग"
+   },
+   "mother_name": {
+    "en": "Asha Nag",
+    "hi": "आशा नाग"
+   },
+   "gender": "F",
+   "birth_year": 2003,
+   "claimed_category": "SC",
+   "claimed_caste": {
+    "en": "Dewar",
+    "hi": "देवार"
+   },
+   "village": {
+    "en": "Marangpuri",
+    "hi": "मरंग्पुरी"
+   },
+   "village_lgd": 448628,
+   "tehsil": {
+    "en": "Bade Rajpur",
+    "hi": "बड़ेराजपुर"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Pre-matric scholarship",
+    "hi": "प्री-मैट्रिक छात्रवृत्ति"
+   },
+   "submitted_at": "2026-09-19T10:23:00+05:30",
+   "sla_due": "2026-10-19",
+   "kendra": {
+    "en": "Lok Seva Kendra, Keskal",
+    "hi": "लोक सेवा केंद्र, केशकाल"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/SDO/2024/000348",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 8009,
+   "father_id": 8007,
+   "father_raw": "संतोष नाग",
+   "applicant_raw": "द्रौपदी नाग",
+   "tehsil_lgd": 3356
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Santosh Nag — khasra 262/4, 1.38 ha, village Marangpuri",
+     "hi": "संतोष नाग — खसरा 262/4, 1.38 हे., ग्राम मरंग्पुरी"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Santosh Nag (ration card 2222775360)",
+     "hi": "संतोष नाग (राशन कार्ड 2222775360)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08758",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Nirmala Yadav",
+    "hi": "निर्मला यादव"
+   },
+   "father_name": {
+    "en": "Baliram Yadav",
+    "hi": "बलिराम यादव"
+   },
+   "mother_name": {
+    "en": "Kamla Yadav",
+    "hi": "कमला यादव"
+   },
+   "gender": "F",
+   "birth_year": 2005,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Kherwar",
+    "hi": "खैरवार"
+   },
+   "village": {
+    "en": "Padoki",
+    "hi": "पडोकी"
+   },
+   "village_lgd": 448605,
+   "tehsil": {
+    "en": "Bade Rajpur",
+    "hi": "बड़ेराजपुर"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Hostel admission",
+    "hi": "छात्रावास प्रवेश"
+   },
+   "submitted_at": "2026-09-25T10:26:00+05:30",
+   "sla_due": "2026-10-25",
+   "kendra": {
+    "en": "CSC Bayanar (VLE)",
+    "hi": "सीएससी बयानार (वीएलई)"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/SDO/2026/000762",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 8566,
+   "father_id": 8562,
+   "father_raw": "BALIRAM YADAAW",
+   "applicant_raw": "Nirmala Yadav",
+   "tehsil_lgd": 3356
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Baliram Yadav — khasra 27/1, 1.29 ha, village Padoki",
+     "hi": "बलिराम यादव — खसरा 27/1, 1.29 हे., ग्राम पडोकी"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Baliram Yadav (ration card 2278482582)",
+     "hi": "बलिराम यादव (राशन कार्ड 2278482582)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08766",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Laxmi Kawasi",
+    "hi": "लक्ष्मी कवासी"
+   },
+   "father_name": {
+    "en": "Puniram Kawasi",
+    "hi": "पुनीराम कवासी"
+   },
+   "mother_name": {
+    "en": "Khushboo Kawasi",
+    "hi": "खुशबू कवासी"
+   },
+   "gender": "F",
+   "birth_year": 2006,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Binjhwar",
+    "hi": "बिंझवार"
+   },
+   "village": {
+    "en": "Seonipal",
+    "hi": "सेओनिपल"
+   },
+   "village_lgd": 448589,
+   "tehsil": {
+    "en": "Keskal",
+    "hi": "केशकाल"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Hostel admission",
+    "hi": "छात्रावास प्रवेश"
+   },
+   "submitted_at": "2026-09-25T10:18:00+05:30",
+   "sla_due": "2026-10-25",
+   "kendra": {
+    "en": "Choice Centre, Farasgaon",
+    "hi": "चॉइस सेंटर, फरसगांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/TSL/2017/000210",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 7313,
+   "father_id": 7311,
+   "father_raw": "पुनिराम कवासी",
+   "applicant_raw": "लक्ष्मी कवासी",
+   "tehsil_lgd": 3355
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Puniram Kawasi — khasra 318/6, 2.12 ha, village Seonipal",
+     "hi": "पुनीराम कवासी — खसरा 318/6, 2.12 हे., ग्राम सेओनिपल"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Puniram Kawasi (ration card 2208454186)",
+     "hi": "पुनीराम कवासी (राशन कार्ड 2208454186)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08772",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Samundri Kawasi",
+    "hi": "समुंद्री कवासी"
+   },
+   "father_name": {
+    "en": "Rajesh Kawasi",
+    "hi": "राजेश कवासी"
+   },
+   "mother_name": {
+    "en": "Mahima Kawasi",
+    "hi": "महिमा कवासी"
+   },
+   "gender": "F",
+   "birth_year": 2005,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Nagesia",
+    "hi": "नगेसिया"
+   },
+   "village": {
+    "en": "Mohlai",
+    "hi": "मोह्लै"
+   },
+   "village_lgd": 448950,
+   "tehsil": {
+    "en": "Farasgaon",
+    "hi": "फरसगांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "College admission",
+    "hi": "महाविद्यालय प्रवेश"
+   },
+   "submitted_at": "2026-09-10T10:24:00+05:30",
+   "sla_due": "2026-10-10",
+   "kendra": {
+    "en": "CSC Bayanar (VLE)",
+    "hi": "सीएससी बयानार (वीएलई)"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_cert",
+     "label": {
+      "en": "Family member's caste certificate",
+      "hi": "परिवार के सदस्य का जाति प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/SDO/2021/002027",
+   "sendback_count": 0,
+   "declared_source": "kendra_search"
+  },
+  "meta": {
+   "person_id": 12130,
+   "father_id": 12128,
+   "father_raw": "Rajesh Kawasi",
+   "applicant_raw": "Samundri Kawasi",
+   "tehsil_lgd": 3359
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Rajesh Kawasi (ration card 2214705790)",
+     "hi": "राजेश कवासी (राशन कार्ड 2214705790)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08778",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Tarun Nishad",
+    "hi": "तरुण निषाद"
+   },
+   "father_name": {
+    "en": "Deepak Nishad",
+    "hi": "दीपक निषाद"
+   },
+   "mother_name": {
+    "en": "Ganga Nishad",
+    "hi": "गंगा निषाद"
+   },
+   "gender": "M",
+   "birth_year": 2002,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Gond",
+    "hi": "गोंड"
+   },
+   "village": {
+    "en": "Chilputi",
+    "hi": "चिल्पुटी"
+   },
+   "village_lgd": 448672,
+   "tehsil": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Pre-matric scholarship",
+    "hi": "प्री-मैट्रिक छात्रवृत्ति"
+   },
+   "submitted_at": "2026-09-01T10:34:00+05:30",
+   "sla_due": "2026-10-01",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 7750,
+   "father_id": 7746,
+   "father_raw": "दीपक निषाद",
+   "applicant_raw": "तरुण निषाद",
+   "tehsil_lgd": 3357
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Deepak Nishad (ration card 2236876586)",
+     "hi": "दीपक निषाद (राशन कार्ड 2236876586)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08785",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Yogesh Sori",
+    "hi": "योगेश सोरी"
+   },
+   "father_name": {
+    "en": "Hemlal Sori",
+    "hi": "हेमलाल सोरी"
+   },
+   "mother_name": {
+    "en": "Pooja Sori",
+    "hi": "पूजा सोरी"
+   },
+   "gender": "M",
+   "birth_year": 2010,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Binjhwar",
+    "hi": "बिंझवार"
+   },
+   "village": {
+    "en": "Mohlai",
+    "hi": "मोह्लै"
+   },
+   "village_lgd": 448950,
+   "tehsil": {
+    "en": "Farasgaon",
+    "hi": "फरसगांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Post-matric scholarship",
+    "hi": "पोस्ट-मैट्रिक छात्रवृत्ति"
+   },
+   "submitted_at": "2026-09-01T10:58:00+05:30",
+   "sla_due": "2026-10-01",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 12032,
+   "father_id": 12028,
+   "father_raw": "Hemlal Sori",
+   "applicant_raw": "Yogesh Sorri",
+   "tehsil_lgd": 3359
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Hemlal Sori (ration card 2260607419)",
+     "hi": "हेमलाल सोरी (राशन कार्ड 2260607419)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08791",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Itwari Baghel",
+    "hi": "इतवारी बघेल"
+   },
+   "father_name": {
+    "en": "Deepak Baghel",
+    "hi": "दीपक बघेल"
+   },
+   "mother_name": {
+    "en": "Durga Baghel",
+    "hi": "दुर्गा बघेल"
+   },
+   "gender": "M",
+   "birth_year": 2009,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Korwa",
+    "hi": "कोरवा"
+   },
+   "village": {
+    "en": "Dhurwapara",
+    "hi": "धुर्वपरा"
+   },
+   "village_lgd": 945391,
+   "tehsil": {
+    "en": "Keskal",
+    "hi": "केशकाल"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "College admission",
+    "hi": "महाविद्यालय प्रवेश"
+   },
+   "submitted_at": "2026-09-08T10:58:00+05:30",
+   "sla_due": "2026-10-08",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "sarpanch_cert",
+     "label": {
+      "en": "Sarpanch / Parshad certificate",
+      "hi": "सरपंच / पार्षद प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 10410,
+   "father_id": 10408,
+   "father_raw": "Deepak Baghel",
+   "applicant_raw": "Itwari Baghel",
+   "tehsil_lgd": 3355
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Deepak Baghel (ration card 2258717045)",
+     "hi": "दीपक बघेल (राशन कार्ड 2258717045)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08795",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Phuleshwari Yadav",
+    "hi": "फुलेश्वरी यादव"
+   },
+   "father_name": {
+    "en": "Lakhan Yadav",
+    "hi": "लखन यादव"
+   },
+   "mother_name": {
+    "en": "Samundri Yadav",
+    "hi": "समुंद्री यादव"
+   },
+   "gender": "F",
+   "birth_year": 2010,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Gond",
+    "hi": "गोंड"
+   },
+   "village": {
+    "en": "Banchapai",
+    "hi": "बंचपै"
+   },
+   "village_lgd": 449021,
+   "tehsil": {
+    "en": "Farasgaon",
+    "hi": "फरसगांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Hostel admission",
+    "hi": "छात्रावास प्रवेश"
+   },
+   "submitted_at": "2026-09-10T10:35:00+05:30",
+   "sla_due": "2026-10-10",
+   "kendra": {
+    "en": "Lok Seva Kendra, Keskal",
+    "hi": "लोक सेवा केंद्र, केशकाल"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 8759,
+   "father_id": 8757,
+   "father_raw": "Lakhkhan Yadav",
+   "applicant_raw": "FULESHWARI YADAV",
+   "tehsil_lgd": 3359
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Lakhan Yadav (ration card 2298456770)",
+     "hi": "लखन यादव (राशन कार्ड 2298456770)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08800",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Babita Patel",
+    "hi": "बबीता पटेल"
+   },
+   "father_name": {
+    "en": "Gajendra Patel",
+    "hi": "गजेंद्र पटेल"
+   },
+   "mother_name": {
+    "en": "Kamla Patel",
+    "hi": "कमला पटेल"
+   },
+   "gender": "F",
+   "birth_year": 2008,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Kamar",
+    "hi": "कमार"
+   },
+   "village": {
+    "en": "Halda",
+    "hi": "हल्डा"
+   },
+   "village_lgd": 448634,
+   "tehsil": {
+    "en": "Bade Rajpur",
+    "hi": "बड़ेराजपुर"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "College admission",
+    "hi": "महाविद्यालय प्रवेश"
+   },
+   "submitted_at": "2026-09-08T10:56:00+05:30",
+   "sla_due": "2026-10-08",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    },
+    {
+     "code": "school_record",
+     "label": {
+      "en": "School record (scholar register / TC) showing caste",
+      "hi": "स्कूल अभिलेख (दाखिल-खारिज पंजी / टीसी) जिसमें जाति दर्ज हो"
+     },
+     "uploaded": false
+    },
+    {
+     "code": "sarpanch_cert",
+     "label": {
+      "en": "Sarpanch / Parshad certificate",
+      "hi": "सरपंच / पार्षद प्रमाण पत्र"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 9355,
+   "father_id": 9353,
+   "father_raw": "Gajendra Patel",
+   "applicant_raw": "Babita Patel",
+   "tehsil_lgd": 3356
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Gajendra Patel — khasra 483/8, 0.86 ha, village Halda",
+     "hi": "गजेंद्र पटेल — खसरा 483/8, 0.86 हे., ग्राम हल्डा"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Gajendra Patel (ration card 2204937126)",
+     "hi": "गजेंद्र पटेल (राशन कार्ड 2204937126)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08811",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Somaru Usendi",
+    "hi": "सोमारू उसेंडी"
+   },
+   "father_name": {
+    "en": "Kanhaiya Usendi",
+    "hi": "कन्हैया उसेंडी"
+   },
+   "mother_name": {
+    "en": "Janki Usendi",
+    "hi": "जानकी उसेंडी"
+   },
+   "gender": "M",
+   "birth_year": 2010,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Gond",
+    "hi": "गोंड"
+   },
+   "village": {
+    "en": "Chichadi",
+    "hi": "चिचडी"
+   },
+   "village_lgd": 448937,
+   "tehsil": {
+    "en": "Farasgaon",
+    "hi": "फरसगांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Post-matric scholarship",
+    "hi": "पोस्ट-मैट्रिक छात्रवृत्ति"
+   },
+   "submitted_at": "2026-09-13T10:11:00+05:30",
+   "sla_due": "2026-10-13",
+   "kendra": {
+    "en": "Lok Seva Kendra, Keskal",
+    "hi": "लोक सेवा केंद्र, केशकाल"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 7001,
+   "father_id": 6999,
+   "father_raw": "कन्हैया उसेंडी",
+   "applicant_raw": "सोमारू उसेंडी",
+   "tehsil_lgd": 3359
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Kanhaiya Usendi (ration card 2280279518)",
+     "hi": "कन्हैया उसेंडी (राशन कार्ड 2280279518)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08816",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Govind Nishad",
+    "hi": "गोविंद निषाद"
+   },
+   "father_name": {
+    "en": "Phagu Nishad",
+    "hi": "फागू निषाद"
+   },
+   "mother_name": {
+    "en": "Mahima Nishad",
+    "hi": "महिमा निषाद"
+   },
+   "gender": "M",
+   "birth_year": 2005,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Kanwar",
+    "hi": "कंवर"
+   },
+   "village": {
+    "en": "Seonipal",
+    "hi": "सेओनिपल"
+   },
+   "village_lgd": 448589,
+   "tehsil": {
+    "en": "Keskal",
+    "hi": "केशकाल"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-12T10:36:00+05:30",
+   "sla_due": "2026-10-12",
+   "kendra": {
+    "en": "Lok Seva Kendra, Keskal",
+    "hi": "लोक सेवा केंद्र, केशकाल"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 7370,
+   "father_id": 7367,
+   "father_raw": "फागू निषाद",
+   "applicant_raw": "गोविंद निषाद",
+   "tehsil_lgd": 3355
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Phagu Nishad (ration card 2212326946)",
+     "hi": "फागू निषाद (राशन कार्ड 2212326946)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08826",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Sarita Nag",
+    "hi": "सरिता नाग"
+   },
+   "father_name": {
+    "en": "Ajay Nag",
+    "hi": "अजय नाग"
+   },
+   "mother_name": {
+    "en": "Laxmi Nag",
+    "hi": "लक्ष्मी नाग"
+   },
+   "gender": "F",
+   "birth_year": 2009,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Bhatra",
+    "hi": "भतरा"
+   },
+   "village": {
+    "en": "Korgaon",
+    "hi": "कोरगांव"
+   },
+   "village_lgd": 448599,
+   "tehsil": {
+    "en": "Bade Rajpur",
+    "hi": "बड़ेराजपुर"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-25T10:13:00+05:30",
+   "sla_due": "2026-10-25",
+   "kendra": {
+    "en": "Choice Centre, Farasgaon",
+    "hi": "चॉइस सेंटर, फरसगांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "school_record",
+     "label": {
+      "en": "School record (scholar register / TC) showing caste",
+      "hi": "स्कूल अभिलेख (दाखिल-खारिज पंजी / टीसी) जिसमें जाति दर्ज हो"
+     },
+     "uploaded": true
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 10157,
+   "father_id": 10154,
+   "father_raw": "AJAY NAG",
+   "applicant_raw": "Sarita Nag",
+   "tehsil_lgd": 3356
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Ajay Nag — khasra 853/7, 0.62 ha, village Korgaon",
+     "hi": "अजय नाग — खसरा 853/7, 0.62 हे., ग्राम कोरगांव"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Ajay Nag (ration card 2285035036)",
+     "hi": "अजय नाग (राशन कार्ड 2285035036)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08830",
+   "service": "caste_obc",
+   "service_label": {
+    "en": "Other Backward Class (OBC) caste certificate — permanent",
+    "hi": "अन्य पिछड़ा वर्ग जाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Phagu Patel",
+    "hi": "फागू पटेल"
+   },
+   "father_name": {
+    "en": "Yogesh Patel",
+    "hi": "योगेश पटेल"
+   },
+   "mother_name": {
+    "en": "Draupadi Patel",
+    "hi": "द्रौपदी पटेल"
+   },
+   "gender": "M",
+   "birth_year": 2004,
+   "claimed_category": "OBC",
+   "claimed_caste": {
+    "en": "Lohar",
+    "hi": "लोहार"
+   },
+   "village": {
+    "en": "Sandsa",
+    "hi": "संड्सा"
+   },
+   "village_lgd": 448875,
+   "tehsil": {
+    "en": "Makdi",
+    "hi": "माकड़ी"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-09T10:59:00+05:30",
+   "sla_due": "2026-10-09",
+   "kendra": {
+    "en": "Choice Centre, Farasgaon",
+    "hi": "चॉइस सेंटर, फरसगांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    },
+    {
+     "code": "school_record",
+     "label": {
+      "en": "School record (scholar register / TC) showing caste",
+      "hi": "स्कूल अभिलेख (दाखिल-खारिज पंजी / टीसी) जिसमें जाति दर्ज हो"
+     },
+     "uploaded": false
+    },
+    {
+     "code": "sarpanch_cert",
+     "label": {
+      "en": "Sarpanch / Parshad certificate",
+      "hi": "सरपंच / पार्षद प्रमाण पत्र"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 7437,
+   "father_id": 7435,
+   "father_raw": "JOGESH PATELL",
+   "applicant_raw": "Fagu Patel",
+   "tehsil_lgd": 3358
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Yogesh Patel — khasra 306/6, 0.63 ha, village Sandsa",
+     "hi": "योगेश पटेल — खसरा 306/6, 0.63 हे., ग्राम संड्सा"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Yogesh Patel (ration card 2265659797)",
+     "hi": "योगेश पटेल (राशन कार्ड 2265659797)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08838",
+   "service": "caste_obc",
+   "service_label": {
+    "en": "Other Backward Class (OBC) caste certificate — permanent",
+    "hi": "अन्य पिछड़ा वर्ग जाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Sarita Thakur",
+    "hi": "सरिता ठाकुर"
+   },
+   "father_name": {
+    "en": "Kamal Thakur",
+    "hi": "कमल ठाकुर"
+   },
+   "mother_name": {
+    "en": "Ganga Thakur",
+    "hi": "गंगा ठाकुर"
+   },
+   "gender": "F",
+   "birth_year": 2007,
+   "claimed_category": "OBC",
+   "claimed_caste": {
+    "en": "Dewangan/Koshta",
+    "hi": "देवांगन/कोष्टा"
+   },
+   "village": {
+    "en": "Umla",
+    "hi": "उंला"
+   },
+   "village_lgd": 448498,
+   "tehsil": {
+    "en": "Dhanora",
+    "hi": "धनोरा"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Post-matric scholarship",
+    "hi": "पोस्ट-मैट्रिक छात्रवृत्ति"
+   },
+   "submitted_at": "2026-09-09T10:29:00+05:30",
+   "sla_due": "2026-10-09",
+   "kendra": {
+    "en": "Lok Seva Kendra, Keskal",
+    "hi": "लोक सेवा केंद्र, केशकाल"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    },
+    {
+     "code": "school_record",
+     "label": {
+      "en": "School record (scholar register / TC) showing caste",
+      "hi": "स्कूल अभिलेख (दाखिल-खारिज पंजी / टीसी) जिसमें जाति दर्ज हो"
+     },
+     "uploaded": false
+    },
+    {
+     "code": "sarpanch_cert",
+     "label": {
+      "en": "Sarpanch / Parshad certificate",
+      "hi": "सरपंच / पार्षद प्रमाण पत्र"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 11806,
+   "father_id": 11804,
+   "father_raw": "Sri Kamal Thakoor",
+   "applicant_raw": "Sarita Thakoor",
+   "tehsil_lgd": 7320
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Kamal Thakur — khasra 841/3, 1.57 ha, village Umla",
+     "hi": "कमल ठाकुर — खसरा 841/3, 1.57 हे., ग्राम उंला"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Kamal Thakur (ration card 2244667434)",
+     "hi": "कमल ठाकुर (राशन कार्ड 2244667434)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08842",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Nirmala Manjhi",
+    "hi": "निर्मला मांझी"
+   },
+   "father_name": {
+    "en": "Itwari Manjhi",
+    "hi": "इतवारी मांझी"
+   },
+   "mother_name": {
+    "en": "Kavita Manjhi",
+    "hi": "कविता मांझी"
+   },
+   "gender": "F",
+   "birth_year": 2001,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Gond",
+    "hi": "गोंड"
+   },
+   "village": {
+    "en": "Umargaon",
+    "hi": "उमरगांव"
+   },
+   "village_lgd": 448848,
+   "tehsil": {
+    "en": "Makdi",
+    "hi": "माकड़ी"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Pre-matric scholarship",
+    "hi": "प्री-मैट्रिक छात्रवृत्ति"
+   },
+   "submitted_at": "2026-09-09T10:52:00+05:30",
+   "sla_due": "2026-10-09",
+   "kendra": {
+    "en": "Choice Centre, Farasgaon",
+    "hi": "चॉइस सेंटर, फरसगांव"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "record_1950",
+     "label": {
+      "en": "Pre-1950 / pre-1984 record (revenue record, jamabandi)",
+      "hi": "1950/1984 से पूर्व का अभिलेख (राजस्व अभिलेख, जमाबंदी)"
+     },
+     "uploaded": false
+    },
+    {
+     "code": "school_record",
+     "label": {
+      "en": "School record (scholar register / TC) showing caste",
+      "hi": "स्कूल अभिलेख (दाखिल-खारिज पंजी / टीसी) जिसमें जाति दर्ज हो"
+     },
+     "uploaded": false
+    },
+    {
+     "code": "sarpanch_cert",
+     "label": {
+      "en": "Sarpanch / Parshad certificate",
+      "hi": "सरपंच / पार्षद प्रमाण पत्र"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 1
+  },
+  "meta": {
+   "person_id": 10866,
+   "father_id": 10864,
+   "father_raw": "Etwari Manjhi",
+   "applicant_raw": "Nirmala Manjhi",
+   "tehsil_lgd": 3358
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Itwari Manjhi — khasra 404/4, 1.37 ha, village Umargaon",
+     "hi": "इतवारी मांझी — खसरा 404/4, 1.37 हे., ग्राम उमरगांव"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Itwari Manjhi (ration card 2220163970)",
+     "hi": "इतवारी मांझी (राशन कार्ड 2220163970)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08845",
+   "service": "caste_st",
+   "service_label": {
+    "en": "Scheduled Tribe (ST) caste certificate — permanent",
+    "hi": "अनुसूचित जनजाति प्रमाण पत्र — स्थायी"
+   },
+   "applicant_name": {
+    "en": "Jagdish Thakur",
+    "hi": "जगदीश ठाकुर"
+   },
+   "father_name": {
+    "en": "Budhu Thakur",
+    "hi": "बुधू ठाकुर"
+   },
+   "mother_name": {
+    "en": "Asha Thakur",
+    "hi": "आशा ठाकुर"
+   },
+   "gender": "M",
+   "birth_year": 2007,
+   "claimed_category": "ST",
+   "claimed_caste": {
+    "en": "Gond",
+    "hi": "गोंड"
+   },
+   "village": {
+    "en": "Uparbedi",
+    "hi": "उपर्बेडी"
+   },
+   "village_lgd": 448544,
+   "tehsil": {
+    "en": "Keskal",
+    "hi": "केशकाल"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Hostel admission",
+    "hi": "छात्रावास प्रवेश"
+   },
+   "submitted_at": "2026-09-13T10:55:00+05:30",
+   "sla_due": "2026-10-13",
+   "kendra": {
+    "en": "Lok Seva Kendra, Keskal",
+    "hi": "लोक सेवा केंद्र, केशकाल"
+   },
+   "routed_to": "sdo",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (Form 2A)",
+      "hi": "स्वघोषणा शपथ पत्र (फॉर्म 2A)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "sarpanch_cert",
+     "label": {
+      "en": "Sarpanch / Parshad certificate",
+      "hi": "सरपंच / पार्षद प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 9900,
+   "father_id": 9898,
+   "father_raw": "बुधू ठाकुर",
+   "applicant_raw": "जगदीश ठाकुर",
+   "tehsil_lgd": 3355
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Budhu Thakur (ration card 2281863461)",
+     "hi": "बुधू ठाकुर (राशन कार्ड 2281863461)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08849",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Usha Dewangan",
+    "hi": "उषा देवांगन"
+   },
+   "father_name": {
+    "en": "Khemraj Dewangan",
+    "hi": "खेमराज देवांगन"
+   },
+   "mother_name": {
+    "en": "Anita Dewangan",
+    "hi": "अनीता देवांगन"
+   },
+   "gender": "F",
+   "birth_year": 2004,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Sodhma",
+    "hi": "सोध्मा"
+   },
+   "village_lgd": 449031,
+   "tehsil": {
+    "en": "Farasgaon",
+    "hi": "फरसगांव"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-16T10:44:00+05:30",
+   "sla_due": "2026-10-01",
+   "kendra": {
+    "en": "Choice Centre, Farasgaon",
+    "hi": "चॉइस सेंटर, फरसगांव"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_domicile",
+     "label": {
+      "en": "Family member's domicile certificate",
+      "hi": "परिवार के सदस्य का मूल निवास प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/TSL/2021/000620",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 8258,
+   "father_id": 8256,
+   "father_raw": "Khemraj Dewangan",
+   "applicant_raw": "Usha Dewangan",
+   "tehsil_lgd": 3359
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Khemraj Dewangan (ration card 2282271165)",
+     "hi": "खेमराज देवांगन (राशन कार्ड 2282271165)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08857",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Kartik Korram",
+    "hi": "कार्तिक कोर्राम"
+   },
+   "father_name": {
+    "en": "Dukalu Korram",
+    "hi": "दुकालू कोर्राम"
+   },
+   "mother_name": {
+    "en": "Anjali Korram",
+    "hi": "अंजली कोर्राम"
+   },
+   "gender": "M",
+   "birth_year": 2001,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Gare",
+    "hi": "गरे"
+   },
+   "village_lgd": 448869,
+   "tehsil": {
+    "en": "Makdi",
+    "hi": "माकड़ी"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-08T10:12:00+05:30",
+   "sla_due": "2026-09-23",
+   "kendra": {
+    "en": "CSC Bayanar (VLE)",
+    "hi": "सीएससी बयानार (वीएलई)"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "residence_proof",
+     "label": {
+      "en": "Residence proof (land record / ration card / school record in CG)",
+      "hi": "निवास प्रमाण (भूमि अभिलेख / राशन कार्ड / छ.ग. का स्कूल अभिलेख)"
+     },
+     "uploaded": false
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 8326,
+   "father_id": 8323,
+   "father_raw": "Dukalu Korram",
+   "applicant_raw": "Kartik Korram",
+   "tehsil_lgd": 3358
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Dukalu Korram — khasra 338/1, 1.16 ha, village Gare",
+     "hi": "दुकालू कोर्राम — खसरा 338/1, 1.16 हे., ग्राम गरे"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Dukalu Korram (ration card 2222684500)",
+     "hi": "दुकालू कोर्राम (राशन कार्ड 2222684500)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08868",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Babita Baghel",
+    "hi": "बबीता बघेल"
+   },
+   "father_name": {
+    "en": "Shyamlal Baghel",
+    "hi": "श्यामलाल बघेल"
+   },
+   "mother_name": {
+    "en": "Budhiyarin Baghel",
+    "hi": "बुधियारिन बघेल"
+   },
+   "gender": "F",
+   "birth_year": 2001,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Golawand",
+    "hi": "गोलवंड"
+   },
+   "village_lgd": 448772,
+   "tehsil": {
+    "en": "Mardapal",
+    "hi": "मर्दापाल"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "College admission",
+    "hi": "महाविद्यालय प्रवेश"
+   },
+   "submitted_at": "2026-09-18T10:28:00+05:30",
+   "sla_due": "2026-10-03",
+   "kendra": {
+    "en": "CSC Bayanar (VLE)",
+    "hi": "सीएससी बयानार (वीएलई)"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "family_domicile",
+     "label": {
+      "en": "Family member's domicile certificate",
+      "hi": "परिवार के सदस्य का मूल निवास प्रमाण पत्र"
+     },
+     "uploaded": true
+    }
+   ],
+   "declared_relative_cert_no": "CG/KDG/TSL/2018/001551",
+   "sendback_count": 0,
+   "declared_source": "applicant"
+  },
+  "meta": {
+   "person_id": 11324,
+   "father_id": 11322,
+   "father_raw": "Shyamlal Baghel",
+   "applicant_raw": "Babita Baghel",
+   "tehsil_lgd": 7319
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Shyamlal Baghel (ration card 2231563487)",
+     "hi": "श्यामलाल बघेल (राशन कार्ड 2231563487)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08878",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Phuleshwari Markam",
+    "hi": "फुलेश्वरी मरकाम"
+   },
+   "father_name": {
+    "en": "Bisahu Markam",
+    "hi": "बिसाहू मरकाम"
+   },
+   "mother_name": {
+    "en": "Neelam Markam",
+    "hi": "नीलम मरकाम"
+   },
+   "gender": "F",
+   "birth_year": 2005,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Arangula",
+    "hi": "अरंगुला"
+   },
+   "village_lgd": 448836,
+   "tehsil": {
+    "en": "Makdi",
+    "hi": "माकड़ी"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "College admission",
+    "hi": "महाविद्यालय प्रवेश"
+   },
+   "submitted_at": "2026-09-25T10:55:00+05:30",
+   "sla_due": "2026-10-10",
+   "kendra": {
+    "en": "Choice Centre, Farasgaon",
+    "hi": "चॉइस सेंटर, फरसगांव"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "residence_proof",
+     "label": {
+      "en": "Residence proof (land record / ration card / school record in CG)",
+      "hi": "निवास प्रमाण (भूमि अभिलेख / राशन कार्ड / छ.ग. का स्कूल अभिलेख)"
+     },
+     "uploaded": true
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 7663,
+   "father_id": 7660,
+   "father_raw": "Bisahu Markam",
+   "applicant_raw": "Phuleshwari Markam",
+   "tehsil_lgd": 3358
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Bisahu Markam — khasra 325/4, 0.27 ha, village Arangula",
+     "hi": "बिसाहू मरकाम — खसरा 325/4, 0.27 हे., ग्राम अरंगुला"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Bisahu Markam (ration card 2299325484)",
+     "hi": "बिसाहू मरकाम (राशन कार्ड 2299325484)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ },
+ {
+  "application": {
+   "app_id": "SS/2026/KDG/08886",
+   "service": "domicile",
+   "service_label": {
+    "en": "Domicile (Mool Niwasi) certificate",
+    "hi": "मूल निवास प्रमाण पत्र"
+   },
+   "applicant_name": {
+    "en": "Hemlal Sen",
+    "hi": "हेमलाल सेन"
+   },
+   "father_name": {
+    "en": "Deepak Sen",
+    "hi": "दीपक सेन"
+   },
+   "mother_name": {
+    "en": "Sangeeta Sen",
+    "hi": "संगीता सेन"
+   },
+   "gender": "M",
+   "birth_year": 2001,
+   "claimed_category": null,
+   "claimed_caste": null,
+   "village": {
+    "en": "Nalajhar",
+    "hi": "नलझर"
+   },
+   "village_lgd": 448883,
+   "tehsil": {
+    "en": "Makdi",
+    "hi": "माकड़ी"
+   },
+   "district": {
+    "en": "Kondagaon",
+    "hi": "कोंडागांव"
+   },
+   "district_lgd": 643,
+   "purpose": {
+    "en": "Government job application",
+    "hi": "शासकीय नौकरी हेतु आवेदन"
+   },
+   "submitted_at": "2026-09-20T10:59:00+05:30",
+   "sla_due": "2026-10-05",
+   "kendra": {
+    "en": "Lok Seva Kendra, Kondagaon",
+    "hi": "लोक सेवा केंद्र, कोंडागांव"
+   },
+   "routed_to": "tehsildar",
+   "status": "pending",
+   "documents": [
+    {
+     "code": "affidavit",
+     "label": {
+      "en": "Self-declaration affidavit (domicile)",
+      "hi": "स्वघोषणा शपथ पत्र (मूल निवास)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "identity_proof",
+     "label": {
+      "en": "Identity proof (Aadhaar / voter ID)",
+      "hi": "पहचान प्रमाण (आधार / मतदाता पहचान पत्र)"
+     },
+     "uploaded": true
+    },
+    {
+     "code": "residence_proof",
+     "label": {
+      "en": "Residence proof (land record / ration card / school record in CG)",
+      "hi": "निवास प्रमाण (भूमि अभिलेख / राशन कार्ड / छ.ग. का स्कूल अभिलेख)"
+     },
+     "uploaded": true
+    }
+   ],
+   "sendback_count": 0
+  },
+  "meta": {
+   "person_id": 8444,
+   "father_id": 8440,
+   "father_raw": "Deepak Sen",
+   "applicant_raw": "Hemlal Sen",
+   "tehsil_lgd": 3358
+  },
+  "evidence_rows": [
+   {
+    "source": {
+     "en": "Bhuiyan land record (mock)",
+     "hi": "भुइयां भू-अभिलेख (नमूना)"
+    },
+    "field": {
+     "en": "Khasra holder",
+     "hi": "खसरा धारक"
+    },
+    "value": {
+     "en": "Deepak Sen — khasra 746/6, 0.29 ha, village Nalajhar",
+     "hi": "दीपक सेन — खसरा 746/6, 0.29 हे., ग्राम नलझर"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Head of household",
+     "hi": "परिवार मुखिया"
+    },
+    "value": {
+     "en": "Deepak Sen (ration card 2299521022)",
+     "hi": "दीपक सेन (राशन कार्ड 2299521022)"
+    },
+    "status": "ok"
+   },
+   {
+    "source": {
+     "en": "Khadya ration roster (mock)",
+     "hi": "खाद्य राशन सूची (नमूना)"
+    },
+    "field": {
+     "en": "Applicant listed as member",
+     "hi": "आवेदक सदस्य के रूप में दर्ज"
+    },
+    "value": {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    "status": "ok"
+   }
+  ]
+ }
+]

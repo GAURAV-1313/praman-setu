@@ -1,0 +1,27 @@
+DRAFT ORDER — for the competent officer's review, edit and digital signature (DSC)
+Office of the {{ office.en }}
+
+In the matter of Application No. {{ app.app_id }}, received {{ received }} via {{ app.kendra.en }}
+Applicant: {{ app.applicant_name.en }}, {{ rel_word.en }} {{ app.father_name.en }}, village {{ app.village.en }} (LGD {{ app.village_lgd }}), tehsil {{ app.tehsil.en }}, district {{ app.district.en }}
+Service: {{ app.service_label.en }}
+
+Records relied upon:
+{% for r in relied %}{{ loop.index }}. {{ r.en }}
+{% endfor %}{% if considered %}Records considered and not relied upon:
+{% for r in considered %}- {{ r.en }}
+{% endfor %}{% endif %}
+Hearing:
+{{ hearing.en }}
+
+Legal basis:
+{% for b in basis %}- {{ b.en }}
+{% endfor %}
+Findings of the undersigned:
+[Officer: write your finding in the box above]
+
+ORDER: For the reasons recorded above, the claim is not established and the application is REJECTED under section 4 of the Act.
+Appeal: {% if caste %}an appeal lies under section 5 of the Act{% else %}an appeal lies as per the rules{% endif %} to {{ appellate.en }} within 30 days of receipt of this order.
+
+Place: {{ place.en }}        Date: {{ today }}
+{{ office.en }}
+(digital signature — DSC)

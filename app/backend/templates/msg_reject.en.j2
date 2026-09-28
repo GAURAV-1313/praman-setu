@@ -1,0 +1,2 @@
+Namaste {{ name.en }}. Your application {{ app_id }} for {{ service.en }} has been rejected. The order with reasons is on Sewa Setu and at {{ kendra.en }}. You may appeal under section 5 within 30 days to the Appellate Authority.
+Records used in the decision on your application: {% if records.cert %}certificate No. {{ records.cert|join(', ') }}{% else %}the documents you attached{% endif %}.{% if records.seen.en %} Other records seen: {{ records.seen.en }} (for corroboration only).{% endif %} Correction / objection: CSC or the Sewa Setu grievance. — {{ office.en }}

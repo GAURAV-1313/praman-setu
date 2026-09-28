@@ -1,0 +1,294 @@
+{
+ "model": "Splink Fellegi–Sunter (EM)",
+ "model_version": "lineage-fs-splink-2026-09-27",
+ "test_set": {
+  "pairs": 392604,
+  "positives": 4883,
+  "queries": 3178,
+  "description": {
+   "en": "SYNTHETIC held-out families (30% of lineages, unseen in training): 3,178 applicants, 3,92,604 scored applicant–certificate pairs, 4,883 true father/sibling certificates. 90 true links were never surfaced by blocking and count as misses.",
+   "hi": "नमूना (सिंथेटिक) परीक्षण परिवार (30% वंश, प्रशिक्षण में शामिल नहीं): 3,178 आवेदक, 3,92,604 आवेदक–प्रमाण पत्र जोड़े, 4,883 वास्तविक पिता/भाई-बहन प्रमाण पत्र।"
+  }
+ },
+ "thresholds": {
+  "exact": 0.95,
+  "possible": 0.6
+ },
+ "overall": {
+  "precision": 0.8943,
+  "recall": 0.4835,
+  "f1": 0.6277
+ },
+ "overall_possible": {
+  "precision": 0.7726,
+  "recall": 0.8356,
+  "f1": 0.8028
+ },
+ "relation_correct_at_exact": 1.0,
+ "blocking_recall": 0.9816,
+ "slices": [
+  {
+   "name": {
+    "en": "Same village & common surname (the relative is in the candidate set; the test is telling families apart)",
+    "hi": "एक ही ग्राम व सामान्य उपनाम (संबंधी उम्मीदवार-सूची में रहता है; परीक्षा परिवारों को अलग पहचानना है)"
+   },
+   "n": 36367,
+   "positives": 2308,
+   "precision": 0.9009,
+   "recall": 0.9298,
+   "precision_possible": 0.8792,
+   "recall_possible": 0.9809
+  },
+  {
+   "name": {
+    "en": "Bastar & Surguja divisions",
+    "hi": "बस्तर और सरगुजा संभाग"
+   },
+   "n": 272940,
+   "positives": 2535,
+   "precision": 0.889,
+   "recall": 0.4611,
+   "precision_possible": 0.7165,
+   "recall_possible": 0.8454
+  },
+  {
+   "name": {
+    "en": "Plains divisions (Raipur, Durg, Bilaspur)",
+    "hi": "मैदानी संभाग (रायपुर, दुर्ग, बिलासपुर)"
+   },
+   "n": 119664,
+   "positives": 2348,
+   "precision": 0.8996,
+   "recall": 0.5077,
+   "precision_possible": 0.8459,
+   "recall_possible": 0.825
+  },
+  {
+   "name": {
+    "en": "Women applicants",
+    "hi": "महिला आवेदक"
+   },
+   "n": 208574,
+   "positives": 2458,
+   "precision": 0.8839,
+   "recall": 0.3283,
+   "precision_possible": 0.7629,
+   "recall_possible": 0.7945
+  },
+  {
+   "name": {
+    "en": "Cross-script (Devanagari ↔ Latin)",
+    "hi": "भिन्न लिपि (देवनागरी ↔ लैटिन)"
+   },
+   "n": 192021,
+   "positives": 2381,
+   "precision": 0.8812,
+   "recall": 0.4859,
+   "precision_possible": 0.7684,
+   "recall_possible": 0.8261
+  },
+  {
+   "key": "women_native_village",
+   "name": {
+    "en": "Women applicants, with native-village search (maiden village also searched for married women)",
+    "hi": "महिला आवेदक, मायके / मूल गांव की खोज सहित (विवाहित महिलाओं हेतु मायके का गांव भी खोजा गया)"
+   },
+   "n": 250535,
+   "positives": 2458,
+   "precision": 0.9015,
+   "recall": 0.7111,
+   "precision_possible": 0.773,
+   "recall_possible": 0.9032,
+   "note": {
+    "en": "Simulation: the native village is known for every married woman in the held-out set (an upper bound; in practice only when she states it).",
+    "hi": "अनुकरण: परीक्षण-समूह की हर विवाहित महिला का मायके का गांव ज्ञात माना गया (ऊपरी सीमा; व्यवहार में केवल जब वह बताएं)।"
+   }
+  }
+ ],
+ "native_village_search": {
+  "women_queries_with_native_search": 1081,
+  "women": {
+   "before": {
+    "exact": {
+     "precision": 0.8839,
+     "recall": 0.3283,
+     "positives": 2458,
+     "n": 208574
+    },
+    "possible": {
+     "precision": 0.7629,
+     "recall": 0.7945,
+     "positives": 2458,
+     "n": 208574
+    }
+   },
+   "after": {
+    "exact": {
+     "precision": 0.9015,
+     "recall": 0.7111,
+     "positives": 2458,
+     "n": 250535
+    },
+    "possible": {
+     "precision": 0.773,
+     "recall": 0.9032,
+     "positives": 2458,
+     "n": 250535
+    }
+   }
+  },
+  "married_women": {
+   "before": {
+    "exact": {
+     "precision": 0.8424,
+     "recall": 0.0947,
+     "positives": 1637,
+     "n": 145645
+    },
+    "possible": {
+     "precision": 0.7589,
+     "recall": 0.7385,
+     "positives": 1637,
+     "n": 145645
+    }
+   },
+   "after": {
+    "exact": {
+     "precision": 0.9058,
+     "recall": 0.6695,
+     "positives": 1637,
+     "n": 187606
+    },
+    "possible": {
+     "precision": 0.7748,
+     "recall": 0.9016,
+     "positives": 1637,
+     "n": 187606
+    }
+   }
+  },
+  "assumption": {
+   "en": "Native village = the woman's birth village in the synthetic population, searched in addition to her current village; scores merged per certificate (max). Synthetic data.",
+   "hi": "मायके का गांव = नमूना जनसंख्या में महिला का जन्म-गांव, वर्तमान गांव के अतिरिक्त खोजा गया; प्रत्येक प्रमाण पत्र का अधिकतम अंक लिया गया। नमूना (सिंथेटिक) डेटा।"
+  }
+ },
+ "weights_learned": [
+  {
+   "comparison": "given_name",
+   "level": "exact",
+   "m": 0.8433185774421108,
+   "u": 0.007430628665964807,
+   "weight": 6.8264
+  },
+  {
+   "comparison": "given_name",
+   "level": "skeleton",
+   "m": 0.1245019821504372,
+   "u": 0.0015892561717121801,
+   "weight": 6.2917
+  },
+  {
+   "comparison": "given_name",
+   "level": "jw>=0.92",
+   "m": 0.021549280893976154,
+   "u": 0.0003934533657048321,
+   "weight": 5.7753
+  },
+  {
+   "comparison": "given_name",
+   "level": "jw>=0.80",
+   "m": 0.010005046552158274,
+   "u": 0.011556853339922223,
+   "weight": -0.208
+  },
+  {
+   "comparison": "given_name",
+   "level": "else",
+   "m": 0.0006251129613175451,
+   "u": 0.979029808456696,
+   "weight": -10.613
+  },
+  {
+   "comparison": "surname",
+   "level": "exact",
+   "m": 0.8342705510582267,
+   "u": 0.021506322110736307,
+   "weight": 5.2777
+  },
+  {
+   "comparison": "surname",
+   "level": "skeleton",
+   "m": 0.12662202188216184,
+   "u": 0.0060669703285134175,
+   "weight": 4.3834
+  },
+  {
+   "comparison": "surname",
+   "level": "jw>=0.85",
+   "m": 0.038882988160503944,
+   "u": 0.0021324366714650968,
+   "weight": 4.1886
+  },
+  {
+   "comparison": "surname",
+   "level": "else",
+   "m": 0.0002244388991076394,
+   "u": 0.9702942708892852,
+   "weight": -12.0779
+  },
+  {
+   "comparison": "place",
+   "level": "same_village",
+   "m": 0.504119654212267,
+   "u": 0.0063237892916228,
+   "weight": 6.3168
+  },
+  {
+   "comparison": "place",
+   "level": "same_tehsil",
+   "m": 0.07538564805698751,
+   "u": 0.02136095922050577,
+   "weight": 1.8193
+  },
+  {
+   "comparison": "place",
+   "level": "same_district",
+   "m": 0.419724780995648,
+   "u": 0.1302246712717272,
+   "weight": 1.6884
+  },
+  {
+   "comparison": "place",
+   "level": "else",
+   "m": 0.0007699167350975129,
+   "u": 0.8420905802161442,
+   "weight": -10.0951
+  },
+  {
+   "comparison": "birth_gap",
+   "level": "plausible",
+   "m": 0.9353910745716802,
+   "u": 0.3702641240358378,
+   "weight": 1.337
+  },
+  {
+   "comparison": "birth_gap",
+   "level": "near",
+   "m": 0.056115768700777856,
+   "u": 0.11007462185505876,
+   "weight": -0.972
+  },
+  {
+   "comparison": "birth_gap",
+   "level": "implausible",
+   "m": 0.008493156727541931,
+   "u": 0.5196612541091034,
+   "weight": -5.9351
+  }
+ ],
+ "honesty_note": {
+  "en": "Measured on synthetic data generated by us; real-archive accuracy must be re-measured on a labelled sample before any pilot.",
+  "hi": "यह माप हमारे द्वारा बनाए गए नमूना डेटा पर है; किसी भी पायलट से पहले वास्तविक अभिलेखों के लेबल किए गए नमूने पर पुनः मापना आवश्यक है।"
+ },
+ "seconds": 3.1
+}

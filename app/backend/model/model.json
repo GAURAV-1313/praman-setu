@@ -1,0 +1,159 @@
+{
+ "model": "Splink Fellegi–Sunter (EM)",
+ "model_version": "lineage-fs-splink-2026-09-27",
+ "trained_on": {
+  "applicant_rows": 13858,
+  "certificate_rows": 17508,
+  "description": "SYNTHETIC Chhattisgarh population, training families only (70%)",
+  "seconds": 4.2
+ },
+ "probability_two_random_records_match": 6.646721994431175e-05,
+ "splink_lambda_full_cartesian": 3.323360997215587e-05,
+ "prior_log2_odds": -13.8769,
+ "thresholds": {
+  "exact": 0.95,
+  "possible": 0.6
+ },
+ "comparisons": [
+  {
+   "name": "given_name",
+   "levels": [
+    {
+     "level": "null",
+     "m": null,
+     "u": null,
+     "weight": 0.0
+    },
+    {
+     "level": "exact",
+     "m": 0.8433185774421108,
+     "u": 0.007430628665964807,
+     "weight": 6.8264
+    },
+    {
+     "level": "skeleton",
+     "m": 0.1245019821504372,
+     "u": 0.0015892561717121801,
+     "weight": 6.2917
+    },
+    {
+     "level": "jw>=0.92",
+     "m": 0.021549280893976154,
+     "u": 0.0003934533657048321,
+     "weight": 5.7753
+    },
+    {
+     "level": "jw>=0.80",
+     "m": 0.010005046552158274,
+     "u": 0.011556853339922223,
+     "weight": -0.208
+    },
+    {
+     "level": "else",
+     "m": 0.0006251129613175451,
+     "u": 0.979029808456696,
+     "weight": -10.613
+    }
+   ]
+  },
+  {
+   "name": "surname",
+   "levels": [
+    {
+     "level": "null",
+     "m": null,
+     "u": null,
+     "weight": 0.0
+    },
+    {
+     "level": "exact",
+     "m": 0.8342705510582267,
+     "u": 0.021506322110736307,
+     "weight": 5.2777
+    },
+    {
+     "level": "skeleton",
+     "m": 0.12662202188216184,
+     "u": 0.0060669703285134175,
+     "weight": 4.3834
+    },
+    {
+     "level": "jw>=0.85",
+     "m": 0.038882988160503944,
+     "u": 0.0021324366714650968,
+     "weight": 4.1886
+    },
+    {
+     "level": "else",
+     "m": 0.0002244388991076394,
+     "u": 0.9702942708892852,
+     "weight": -12.0779
+    }
+   ]
+  },
+  {
+   "name": "place",
+   "levels": [
+    {
+     "level": "null",
+     "m": null,
+     "u": null,
+     "weight": 0.0
+    },
+    {
+     "level": "same_village",
+     "m": 0.504119654212267,
+     "u": 0.0063237892916228,
+     "weight": 6.3168
+    },
+    {
+     "level": "same_tehsil",
+     "m": 0.07538564805698751,
+     "u": 0.02136095922050577,
+     "weight": 1.8193
+    },
+    {
+     "level": "same_district",
+     "m": 0.419724780995648,
+     "u": 0.1302246712717272,
+     "weight": 1.6884
+    },
+    {
+     "level": "else",
+     "m": 0.0007699167350975129,
+     "u": 0.8420905802161442,
+     "weight": -10.0951
+    }
+   ]
+  },
+  {
+   "name": "birth_gap",
+   "levels": [
+    {
+     "level": "null",
+     "m": null,
+     "u": null,
+     "weight": 0.0
+    },
+    {
+     "level": "plausible",
+     "m": 0.9353910745716802,
+     "u": 0.3702641240358378,
+     "weight": 1.337
+    },
+    {
+     "level": "near",
+     "m": 0.056115768700777856,
+     "u": 0.11007462185505876,
+     "weight": -0.972
+    },
+    {
+     "level": "implausible",
+     "m": 0.008493156727541931,
+     "u": 0.5196612541091034,
+     "weight": -5.9351
+    }
+   ]
+  }
+ ]
+}

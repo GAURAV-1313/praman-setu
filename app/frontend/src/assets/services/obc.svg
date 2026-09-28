@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect x="8" y="8" width="112" height="112" rx="18" fill="#fff7ed" stroke="#fb923c" stroke-width="4"/>
+  <rect x="30" y="36" width="68" height="48" rx="8" fill="#fed7aa" stroke="#fb923c" stroke-width="3"/>
+  <text x="50%" y="66" text-anchor="middle" font-size="22" font-family="Arial" fill="#c2410c" font-weight="700">OBC</text>
+  <text x="50%" y="100" text-anchor="middle" font-size="12" font-family="Arial" fill="#9a3412">Certificate</text>
+</svg>
