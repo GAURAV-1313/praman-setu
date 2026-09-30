@@ -31,10 +31,10 @@ def render_pair(template: str, **ctx) -> dict:
     return out
 
 
-@lru_cache(maxsize=1)
-def template_vocab() -> set[str]:
+@lru_cache(maxsize=4)
+def template_vocab(pattern: str = "msg_*.j2") -> set[str]:
     vocab: set[str] = set()
-    for p in TPL_DIR.glob("msg_*.j2"):
+    for p in TPL_DIR.glob(pattern):
         text = re.sub(r"\{\{.*?\}\}|\{%.*?%\}", " ", p.read_text(encoding="utf-8"))
         vocab.update(t.lower() for t in TOKEN_RE.findall(text))
     return vocab
@@ -59,10 +59,11 @@ def _flatten(obj) -> list[str]:
     return []
 
 
-def check_entities(text: dict, source) -> dict:
-    """Every entity in the message (both languages) must be traceable to the source record."""
+def check_entities(text: dict, source, vocab_pattern: str = "msg_*.j2") -> dict:
+    """Every entity in the message (both languages) must be traceable to the source record.
+    vocab_pattern (Round 8b): which templates' fixed wording counts as vocabulary (default: the decision messages)."""
     corpus = {t.lower() for s in _flatten(source) for t in _tokens(s)}
-    vocab = template_vocab()
+    vocab = template_vocab(vocab_pattern)
     checked, unsupported = [], []
     for lang in ("en", "hi"):
         for tok in _tokens(text.get(lang, "")):

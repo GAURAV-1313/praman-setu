@@ -330,3 +330,34 @@ All additive; with the new field absent every existing response is byte-identica
 - **`GET /api/villages`** items also carry `district: I18n` (the native-village picker searches the whole state).
 - **`GET /api/eval`**: a 6th slice `key: "women_native_village"` (with `note`) and `native_village_search {women, married_women: {before, after: {exact, possible}}, women_queries_with_native_search, assumption}`. The first five slices are unchanged.
 - **Demo file `SS/2026/KDG/08925`** (SDO Kondagaon desk, seeded on reset by `backend/seed_round7.py`; generator outputs untouched): Rajni Korram (F, 1999, ST Muria) applies from her husband's village Masora (448686). Her father Jaglu Usendi's permanent ST certificate `CG/NRP/SDO/2017/003186` (SDO Narayanpur, 12-06-2017) is registered in her maiden village Garhbengal (449687, Narayanpur). Normal search: no record (standard review, send back). Native search → exact father match → C → records complete.
+
+## Round 8b changes (29-09-2026, second service on the same engine + visible agent trace)
+All additive. Caste/domicile rules (`rules.py`) are untouched; income renewal lives in its own module (`backend/renewal.py`).
+
+**`Analysis.trace?: TraceStep[]`** (added by `api.State.analysis`; `engine.analyse()` output is unchanged, it only fills an optional `timings` dict)
+```ts
+interface TraceStep { step: number; code: "read"|"search"|"match"|"rules"|"draft"|"officer";
+  status: "ok"|"attention"|"waiting"; ms: number|null; title: I18n; detail: I18n;
+  count?: number /* search: candidate certificates */; passed?: number; total?: number /* rules: validity checks */; model_version?: string }
+```
+Six steps from real data: ① read the application → ② blocking by village/tehsil LGD (+ district surname, name) → N like-for-like candidates of the archive → ③ model score of the top record (attention while a record awaits "same family / not this family") → ④ validity checks passed/total + checklist, attention flags and gaps → ⑤ draft kind (order / notice / reference) → ⑥ always `waiting` for the officer (the frontend shows it as done once the file is decided). Timings are measured when the analysis is computed (cached per file).
+
+**Income-certificate renewal (SYNTHETIC; nothing is issued)**
+| Method & path | Body / query | Returns |
+|---|---|---|
+| `GET /api/renewals?district_lgd=643&window=60` | `window` 1–90 (UI uses 30 / 60); unknown district → 422 | `{district_lgd, district, as_of, window_days, counts {d30, d60, strong, partial, verify}, items: RenewalItem[], districts, context {income_share_of_volume (REAL MIS 48.98), note}, roadmap [{code: legal_heir|ews, label, note}], synthetic: true}` |
+| `POST /api/renewals/{cert_no}/prefill` | — (cert_no keeps its slashes) | `RenewalRecord` (idempotent until reset; audit `renewal_prefilled`, records = cert no + Khadya + Bhuiyan); unknown → 404 |
+
+- `RenewalItem {certificate: IncomeCertificate, days_left, window: 30|60, evidence: EvidenceRow[3] (last year's certificate, Khadya ration category, Bhuiyan land holding), rule_flags [{code, label}], strength: strong|partial|verify, strength_label, strength_reason, renewal_id|null}`.
+- `IncomeCertificate`: `cert_no` `CG/{DIST}/TSL/INC/{yyyy}/{seq}`, `service: "income"`, holder/father, place (LGD), `annual_income`, `annual_income_text`, `income_sources`, `issue_date`, `valid_until` (= issue + 364 days), Tehsildar authority, `synthetic: true`. Derived deterministically from the synthetic population (1 in 100 adults, one per family; expiries 1–90 days from today); Ramlal Markam (Bayanar, Sunita's father) is pinned at 12 days.
+- `strength`: `verify` when the starter rule file `data/rules/income_certificate.starter.jdm.json` (placeholder thresholds) fires; `partial` when the ration category or land holding changed since last year; else `strong`.
+- `RenewalRecord {renewal_id "REN/{DIST}/{yyyy}/{seq}", status: "awaiting_citizen_confirmation", fields [{label, value, source}], evidence_reused, rule_flags, strength…, citizen_confirmation {required: true, confirmed: false, statement, note}, officer_step {required: true, auto_issue: false, office, note}, nudge: CitizenMessage & {status: "preview", status_note}, rule_file, synthetic}`.
+- Nudge: template `templates/renewal_nudge.{hi,en}.j2`, checked by the same entity checker (`check_entities(..., vocab_pattern="renewal_nudge.*.j2")`; the decision-message vocabulary is unchanged).
+- `POST /api/reset` also clears pre-filled renewals.
+- Frontend: route `/renewals` (nav "नवीनीकरण"), landing strip "एक इंजन, कई सेवाएँ", Audit label `renewal_prefilled`. Offline: fixtures `renewals.json`, `renewal_prefill.json`.
+
+## Round 8a changes (29-09-2026, family graph + human-in-the-loop learning; all SYNTHETIC)
+Additive only; see `app/iterations/round8a_changes.md`.
+- `GET /api/graph/family/{app_id}?role=` → `{app_id, family_id, applicant, lane, nodes[{id, kind: person|applicant|cert|application, label: I18n, rel?, rel_label?, gen?, birth_year?, in_register?, name_only?, cert_no?, category?, status?, authority_role?, issue_year?, use?: relied|candidate|dismissed|null}], edges[{id, source, target, kind: parent|spouse|holds|match|applied, probability?, relation_label?, use?}], signals[{code, title, detail, node_ids}], records_used, records_found, note}`. Audited `family_graph_viewed`.
+- `GET /api/graph/integrity` → `{graph, overlay{planted, found, extra_flags, note}, edges_note, signals[{code, title, explanation, count, families, certificates, examples[{family_id, district, cert_nos, app_id?}], top_districts}], districts[{lgd, name, <code>: n, total}]}`. Signal codes: `category_conflict`, `cancelled_relative`, `duplicate_identity`, `tehsildar_permanent`. Category labels only; neutral wording.
+- `GET /api/learning/status` → `{labels{real, simulated, total, by_source{officer_case, officer_active, simulated}, …}, calibration|null, baseline{exact, possible}, live:false, uncertain[5 pairs], held_out, method, note, simulated_note}`; `POST /api/learning/recalibrate` → same (audit `model_recalibrated`; proposal only, never applied to live matching); `POST /api/learning/label {pair_id, decision: same|not}` → `{ok, label, status}` (404 unknown pair). `POST /api/reset` clears learning state.

@@ -10,6 +10,7 @@ dependencies = [
     "httpx>=0.28.1",
     "indic-transliteration>=2.3.82",
     "jinja2>=3.1.6",
+    "networkx>=3.6.1",
     "pandas>=3.0.6",
     "pydantic>=2.13.5",
     "pytest>=9.1.1",

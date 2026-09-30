@@ -30,6 +30,8 @@ const ACTION: Record<string, { en: string; hi: string }> = {
   decision_reject: { en: "Rejected (order signed)", hi: "अस्वीकृत (आदेश हस्ताक्षरित)" },
   match_rejected: { en: "Marked 'not this family'", hi: "'यह परिवार नहीं' दर्ज" },
   native_village_searched: { en: "Searched native (maiden) village", hi: "मायके / मूल गांव में खोज" },
+  renewal_prefilled: { en: "Income renewal pre-filled (citizen confirms, officer decides)", hi: "आय नवीनीकरण पूर्व-भरित (नागरिक पुष्टि, अधिकारी निर्णय)" },
+  archive_certificate_lookup: { en: "Praman Reader: archive lookup by certificate no.", hi: "प्रमाण रीडर: क्रमांक से अभिलेखागार खोज" },
   native_village_search_cleared: { en: "Removed native-village search", hi: "मायके के गांव की खोज हटाई" },
   relationship_unconfirmed: { en: "Confirmation withdrawn (before signing)", hi: "पुष्टि वापस (हस्ताक्षर से पहले)" },
   match_rejection_undone: { en: "'Not this family' withdrawn", hi: "'यह परिवार नहीं' वापस" },

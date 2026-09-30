@@ -25,6 +25,8 @@ from pydantic import BaseModel, Field
 import rules
 
 import engine
+import agent_trace
+import renewal
 import seed_round7
 import geo
 import mis
@@ -142,8 +144,11 @@ class State:
     def analysis(self, app_id: str) -> dict:
         with self.lock:
             if app_id not in self._cache:
-                self._cache[app_id] = engine.analyse(self.entry(app_id), self.dispositions.get(app_id, {}),
-                                                     self.show_cause.get(app_id), native_village=self.native.get(app_id))
+                marks: dict = {}
+                an = engine.analyse(self.entry(app_id), self.dispositions.get(app_id, {}),
+                                    self.show_cause.get(app_id), native_village=self.native.get(app_id), timings=marks)
+                an["trace"] = agent_trace.build(self.entry(app_id), an, marks)  # Round 8b (additive)
+                self._cache[app_id] = an
             return self._cache[app_id]
 
     def invalidate(self, app_id: str):
@@ -1208,7 +1213,37 @@ def audit(q: str = ""):
     return [e for e in rows if hit(e)]
 
 
+# ------------------------------------------------------------------ Round 8b: income-certificate renewal (SYNTHETIC)
+@app.get("/api/renewals")
+def renewals(district_lgd: int = 643, window: int = Query(60, ge=1, le=90)):
+    """Income certificates expiring in the next `window` days (30/60), with evidence strength. Nothing is issued here."""
+    if district_lgd not in geo.districts():
+        raise HTTPException(422, f"unknown district_lgd {district_lgd}")
+    return renewal.listing(district_lgd, window)
+
+
+@app.post("/api/renewals/{cert_no:path}/prefill")
+def renewal_prefill(cert_no: str):
+    """Creates (idempotently) a PRE-FILLED renewal application from last year's record + evidence. The citizen must
+    still confirm "income unchanged" at the Kendra and the Tehsildar still decides; never auto-issued."""
+    try:
+        rec, created = renewal.prefill(cert_no)
+    except KeyError:
+        raise HTTPException(404, f"income certificate {cert_no} not found")
+    if created:
+        STATE.add_audit("kendra_operator", "renewal_prefilled", records=renewal.records_accessed(rec),
+                        note=f"{rec['renewal_id']}: income-certificate renewal pre-filled from last year's record "
+                             f"(citizen confirmation and officer decision pending; nudge preview only)")
+    return rec
+
+
 @app.post("/api/reset")
 def reset():
     STATE.reset(persist=True)
+    renewal.reset()
+    insights_api.learning.reset()  # Round 8a: officer-answered learning labels + proposed calibration
     return {"ok": True}
+
+
+import reader_api; app.include_router(reader_api.router)  # noqa: E402,E702 — Round 8c: Praman Reader archive lookup
+import insights_api; app.include_router(insights_api.router)  # noqa: E402,E702 — Round 8a: family graph + learning

@@ -40,7 +40,7 @@ export default function Layout() {
     window.scrollTo(0, 0);
   }, [loc.pathname]);
 
-  const synthetic = /^\/(kendra|officer|audit)/.test(loc.pathname);
+  const synthetic = /^\/(kendra|officer|audit|renewals)/.test(loc.pathname);
   // Round 3: every working screen gets ONE compact bar (≤ 56 px): brand · nav · data pill · role · language · menu.
   // The landing page keeps the full header.
   const compact = loc.pathname !== "/";
@@ -132,6 +132,9 @@ export default function Layout() {
             </NavLink>
             <NavLink to="/collector">{tx("Collector", "कलेक्टर")}</NavLink>
             <NavLink to="/audit">{tx("Audit", "ऑडिट")}</NavLink>
+            <NavLink to="/graph">{tx("Network", "नेटवर्क")}</NavLink>
+            <NavLink to="/renewals">{tx("Renewals", "नवीनीकरण")}</NavLink>
+            <NavLink to="/reader">{tx("Reader", "रीडर")}</NavLink>
           </nav>
           <div className="nav-right">
             {compact && synthetic && <SyntheticPill />}
@@ -167,6 +170,12 @@ export default function Layout() {
                     </NavLink>
                     <NavLink to="/audit" onClick={() => setMenu(false)}>
                       {tx("Audit", "ऑडिट")}
+                    </NavLink>
+                    <NavLink to="/graph" onClick={() => setMenu(false)}>
+                      {tx("Family network", "परिवार नेटवर्क")}
+                    </NavLink>
+                    <NavLink to="/renewals" onClick={() => setMenu(false)}>
+                      {tx("Renewals", "नवीनीकरण")}
                     </NavLink>
                     <div className="menu-sep" />
                   </div>

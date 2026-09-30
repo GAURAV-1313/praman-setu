@@ -209,6 +209,20 @@ export interface Analysis {
   sla_clock?: SlaClock;
   /** Round 7: present only after the officer searched the applicant's native (maiden) village */
   native_village?: NativeVillageInfo;
+  /** Round 8b: what the system did for this file (read → search → match → rules → draft → officer); never decides */
+  trace?: TraceStep[];
+}
+export interface TraceStep {
+  step: number;
+  code: "read" | "search" | "match" | "rules" | "draft" | "officer";
+  status: "ok" | "attention" | "waiting";
+  ms: number | null;
+  title: I18n;
+  detail: I18n;
+  count?: number;
+  passed?: number;
+  total?: number;
+  model_version?: string;
 }
 export interface NativeVillageInfo {
   village_lgd: number;
@@ -572,4 +586,75 @@ export interface DistrictFeature {
 export interface DistrictGeo {
   type: "FeatureCollection";
   features: DistrictFeature[];
+}
+
+// ---- Round 8b: income-certificate renewal (second service on the same engine; SYNTHETIC)
+export interface IncomeCertificate {
+  cert_no: string;
+  service: "income";
+  cert_type: "annual";
+  holder_name: I18n;
+  father_name: I18n;
+  gender: "M" | "F";
+  birth_year: number;
+  village: I18n;
+  village_lgd: number;
+  tehsil: I18n;
+  district: I18n;
+  district_lgd: number;
+  annual_income: number;
+  annual_income_text: string;
+  income_sources: I18n;
+  issue_date: string;
+  valid_until: string;
+  issuing_authority: I18n;
+  authority_role: string;
+  status: string;
+  qr_verified: boolean;
+  synthetic: boolean;
+  persona_note?: I18n;
+}
+export type RenewalStrength = "strong" | "partial" | "verify";
+export interface RenewalItem {
+  certificate: IncomeCertificate;
+  days_left: number;
+  window: 30 | 60;
+  evidence: EvidenceRow[];
+  rule_flags: { code: string; label: I18n }[];
+  strength: RenewalStrength;
+  strength_label: I18n;
+  strength_reason: I18n;
+  renewal_id: string | null;
+}
+export interface RenewalList {
+  district_lgd: number;
+  district: I18n | null;
+  as_of: string;
+  window_days: number;
+  counts: { d30: number; d60: number; strong: number; partial: number; verify: number };
+  items: RenewalItem[];
+  districts: { lgd: number; name: I18n }[];
+  context: { income_share_of_volume: number | null; note: I18n };
+  roadmap: { code: string; label: I18n; note: I18n }[];
+  synthetic: true;
+}
+export interface RenewalRecord {
+  renewal_id: string;
+  created_at: string;
+  status: "awaiting_citizen_confirmation";
+  service: "income_renewal";
+  service_label: I18n;
+  source_certificate: IncomeCertificate;
+  days_left: number;
+  fields: { label: I18n; value: I18n; source: I18n }[];
+  evidence_reused: EvidenceRow[];
+  rule_flags: { code: string; label: I18n }[];
+  strength: RenewalStrength;
+  strength_label: I18n;
+  strength_reason: I18n;
+  citizen_confirmation: { required: true; confirmed: boolean; statement: I18n; note: I18n };
+  officer_step: { required: true; auto_issue: false; office: I18n; note: I18n };
+  nudge: CitizenMessage & { status: "preview"; status_note: I18n };
+  rule_file: { name: string; note: I18n };
+  synthetic: true;
 }

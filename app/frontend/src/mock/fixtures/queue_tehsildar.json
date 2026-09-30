@@ -91,7 +91,7 @@
    "en": "Ready to sign",
    "hi": "हस्ताक्षर हेतु तैयार"
   },
-  "sla_days_left": 3,
+  "sla_days_left": 2,
   "sla_urgent": true,
   "stage": null,
   "in_tray": false,
@@ -196,7 +196,7 @@
    "en": "Missing: residence proof",
    "hi": "कमी: निवास प्रमाण"
   },
-  "sla_days_left": -5,
+  "sla_days_left": -6,
   "sla_urgent": true,
   "stage": null,
   "in_tray": false,
@@ -311,7 +311,7 @@
    "en": "Not your competence — forward to SDO",
    "hi": "आपकी सक्षमता नहीं — एसडीओ को अग्रेषित करें"
   },
-  "sla_days_left": 18,
+  "sla_days_left": 17,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -418,7 +418,7 @@
    "en": "Ready to sign",
    "hi": "हस्ताक्षर हेतु तैयार"
   },
-  "sla_days_left": 5,
+  "sla_days_left": 4,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -529,7 +529,7 @@
    "en": "Ready to sign",
    "hi": "हस्ताक्षर हेतु तैयार"
   },
-  "sla_days_left": 11,
+  "sla_days_left": 10,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -634,7 +634,7 @@
    "en": "Confirm relationship",
    "hi": "संबंध तय करें"
   },
-  "sla_days_left": 12,
+  "sla_days_left": 11,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -739,7 +739,7 @@
    "en": "Check certificate date",
    "hi": "प्रमाण पत्र की तिथि जांचें"
   },
-  "sla_days_left": 7,
+  "sla_days_left": 6,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,

@@ -92,7 +92,7 @@
    "en": "Confirm relationship",
    "hi": "संबंध तय करें"
   },
-  "sla_days_left": 3,
+  "sla_days_left": 2,
   "sla_urgent": true,
   "stage": null,
   "in_tray": false,
@@ -200,7 +200,7 @@
    "en": "Cancelled certificate — verify",
    "hi": "निरस्त प्रमाण पत्र — सत्यापन करें"
   },
-  "sla_days_left": 3,
+  "sla_days_left": 2,
   "sla_urgent": true,
   "stage": null,
   "in_tray": false,
@@ -310,7 +310,7 @@
    "en": "Ready to sign",
    "hi": "हस्ताक्षर हेतु तैयार"
   },
-  "sla_days_left": 5,
+  "sla_days_left": 4,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -424,7 +424,7 @@
    "en": "Ready to sign",
    "hi": "हस्ताक्षर हेतु तैयार"
   },
-  "sla_days_left": 19,
+  "sla_days_left": 18,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -538,7 +538,7 @@
    "en": "Ready to sign",
    "hi": "हस्ताक्षर हेतु तैयार"
   },
-  "sla_days_left": 20,
+  "sla_days_left": 19,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -648,7 +648,7 @@
    "en": "Confirm relationship (another family record)",
    "hi": "संबंध तय करें (एक और पारिवारिक अभिलेख)"
   },
-  "sla_days_left": 27,
+  "sla_days_left": 26,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -758,7 +758,7 @@
    "en": "Ready to sign",
    "hi": "हस्ताक्षर हेतु तैयार"
   },
-  "sla_days_left": 27,
+  "sla_days_left": 26,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -868,7 +868,7 @@
    "en": "Confirm relationship",
    "hi": "संबंध तय करें"
   },
-  "sla_days_left": 12,
+  "sla_days_left": 11,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -976,7 +976,7 @@
    "en": "Confirm relationship",
    "hi": "संबंध तय करें"
   },
-  "sla_days_left": 15,
+  "sla_days_left": 14,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -1088,7 +1088,7 @@
    "en": "Confirm relationship",
    "hi": "संबंध तय करें"
   },
-  "sla_days_left": 24,
+  "sla_days_left": 23,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -1196,7 +1196,7 @@
    "en": "Normal scrutiny — pick proof",
    "hi": "सामान्य जांच — प्रमाण चुनें"
   },
-  "sla_days_left": 6,
+  "sla_days_left": 5,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -1320,7 +1320,7 @@
    "en": "Missing: caste proof",
    "hi": "कमी: जाति प्रमाण"
   },
-  "sla_days_left": 10,
+  "sla_days_left": 9,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -1428,7 +1428,7 @@
    "en": "Normal scrutiny — pick proof",
    "hi": "सामान्य जांच — प्रमाण चुनें"
   },
-  "sla_days_left": 10,
+  "sla_days_left": 9,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -1552,7 +1552,7 @@
    "en": "Missing: caste proof",
    "hi": "कमी: जाति प्रमाण"
   },
-  "sla_days_left": 11,
+  "sla_days_left": 10,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -1676,7 +1676,7 @@
    "en": "Missing: caste proof, father's income certificate",
    "hi": "कमी: जाति प्रमाण, पिता का आय प्रमाण पत्र"
   },
-  "sla_days_left": 11,
+  "sla_days_left": 10,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -1784,7 +1784,7 @@
    "en": "Mark possible record",
    "hi": "संभावित अभिलेख चिह्नित करें"
   },
-  "sla_days_left": 14,
+  "sla_days_left": 13,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -1892,7 +1892,7 @@
    "en": "Mark possible record",
    "hi": "संभावित अभिलेख चिह्नित करें"
   },
-  "sla_days_left": 15,
+  "sla_days_left": 14,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -2020,7 +2020,7 @@
    "en": "Missing: caste proof, father's income certificate",
    "hi": "कमी: जाति प्रमाण, पिता का आय प्रमाण पत्र"
   },
-  "sla_days_left": 22,
+  "sla_days_left": 21,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -2148,7 +2148,7 @@
    "en": "Normal scrutiny — pick proof",
    "hi": "सामान्य जांच — प्रमाण चुनें"
   },
-  "sla_days_left": 25,
+  "sla_days_left": 24,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -2256,7 +2256,7 @@
    "en": "Normal scrutiny — pick proof",
    "hi": "सामान्य जांच — प्रमाण चुनें"
   },
-  "sla_days_left": 27,
+  "sla_days_left": 26,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -2366,7 +2366,7 @@
    "en": "Missing: caste proof",
    "hi": "कमी: जाति प्रमाण"
   },
-  "sla_days_left": 27,
+  "sla_days_left": 26,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -2478,7 +2478,7 @@
    "en": "Missing: caste proof",
    "hi": "कमी: जाति प्रमाण"
   },
-  "sla_days_left": 27,
+  "sla_days_left": 26,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -2602,7 +2602,7 @@
    "en": "Check conflicting record",
    "hi": "विरोधी अभिलेख जांचें"
   },
-  "sla_days_left": 11,
+  "sla_days_left": 10,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -2710,7 +2710,7 @@
    "en": "Check certificate date",
    "hi": "प्रमाण पत्र की तिथि जांचें"
   },
-  "sla_days_left": 12,
+  "sla_days_left": 11,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -2822,7 +2822,7 @@
    "en": "Check category difference",
    "hi": "वर्ग भिन्नता जांचें"
   },
-  "sla_days_left": 21,
+  "sla_days_left": 20,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -2932,7 +2932,7 @@
    "en": "Certificate under scrutiny — verify",
    "hi": "प्रमाण पत्र जांचाधीन — सत्यापन करें"
   },
-  "sla_days_left": 21,
+  "sla_days_left": 20,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -3042,7 +3042,7 @@
    "en": "Check certificate date",
    "hi": "प्रमाण पत्र की तिथि जांचें"
   },
-  "sla_days_left": 22,
+  "sla_days_left": 21,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -3154,7 +3154,7 @@
    "en": "Cancelled certificate — verify",
    "hi": "निरस्त प्रमाण पत्र — सत्यापन करें"
   },
-  "sla_days_left": 23,
+  "sla_days_left": 22,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,
@@ -3264,7 +3264,7 @@
    "en": "Check conflicting record",
    "hi": "विरोधी अभिलेख जांचें"
   },
-  "sla_days_left": 25,
+  "sla_days_left": 24,
   "sla_urgent": false,
   "stage": null,
   "in_tray": false,

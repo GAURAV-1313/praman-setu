@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import heroBanner from "../assets/hero-banner.jpg";
 import { useI18n } from "../i18n";
 import type { Role } from "../api/types";
+import { EngineServices } from "./Renewals";
 import {
   CollectorIllustration,
   FamilyTreeIllustration,
@@ -86,6 +87,10 @@ export default function Landing() {
             <span className="pill blue">✓ {tx("No match = normal review, never a rejection", "मिलान नहीं = सामान्य जांच, अस्वीकृति नहीं")}</span>
             <span className="pill blue">✓ {tx("Every access logged", "हर पहुंच दर्ज")}</span>
           </div>
+          {/* Round 8b: the same evidence engine serves more than caste */}
+          <button className="linkish engine-link" onClick={() => nav("/renewals")} id="landing-renewals">
+            <EngineServices compact />
+          </button>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <FamilyTreeIllustration size={380} />

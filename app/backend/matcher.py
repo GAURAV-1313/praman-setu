@@ -11,6 +11,8 @@ levels below are reproduced 1:1 in SQL for Splink training (train_model.py).
 """
 from __future__ import annotations
 
+import time
+
 import json
 import math
 from dataclasses import dataclass
@@ -268,14 +270,17 @@ class Matcher:
 
     def match(self, query: dict, min_prob: float = 0.60, top: int = 5,
               extra_cert_nos: list[str] | None = None, explain: bool = True,
-              kind: str | None = None) -> list[dict]:
+              kind: str | None = None, stats: dict | None = None) -> list[dict]:
         """Score all blocked candidates; return best hypothesis per certificate, sorted.
-        kind: "caste" or "domicile" keeps only certificates of that kind (evidence must be like-for-like)."""
+        kind: "caste" or "domicile" keeps only certificates of that kind (evidence must be like-for-like).
+        stats (Round 8b, optional): filled with blocking / scoring counts and timings for the agent trace."""
+        t0 = time.perf_counter()
         qf = query_features(query)
         cand = self.archive.candidates(qf)
         for no in extra_cert_nos or []:
             if no in self.archive.by_no:
                 cand += self.archive.views_for_cert(self.archive.by_no[no])
+        tb = time.perf_counter()
         best: dict[int, tuple] = {}
         for k in set(cand):
             v = self.archive.views[k]
@@ -299,6 +304,10 @@ class Matcher:
                 "weights": self.explain(qf, v, levels) if explain else None,
             })
         out.sort(key=lambda r: -r["probability"])
+        if stats is not None:
+            stats.update({"archive_certs": len(self.archive.certs), "blocked_views": len(set(cand)),
+                          "candidates": len(best), "above_threshold": len(out),
+                          "block_ms": round((tb - t0) * 1000, 2), "score_ms": round((time.perf_counter() - tb) * 1000, 2)})
         return out[:top]
 
     def score_all(self, query: dict) -> dict[int, tuple[float, str]]:

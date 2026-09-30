@@ -37,6 +37,8 @@ import type {
   Role,
   Village,
   WeightItem,
+  RenewalList,
+  RenewalRecord,
 } from "../api/types";
 
 import { finalise, kindOf } from "../components/orderText";
@@ -162,6 +164,8 @@ function pushAudit(e: AuditEntry) {
   if (last && (e.action === "view_case" || e.action === "case_opened") && last.action === e.action && last.app_id === e.app_id && Date.parse(e.ts) - Date.parse(last.ts) < 60000) return;
   state.audit.unshift(e);
 }
+
+const renewalIds = new Map<string, string>(); // Round 8b: offline pre-filled renewals (session only)
 
 // ---------- GET ----------
 export const mock = {
@@ -417,10 +421,28 @@ export const mock = {
     };
   },
 
+  // ---------- Round 8b: income-certificate renewal (exported fixtures; SYNTHETIC) ----------
+  renewals(districtLgd: number, window: number): RenewalList {
+    const all = fx<Record<string, RenewalList>>("renewals") ?? {};
+    const l = all[String(districtLgd)] ?? all["643"];
+    if (!l) throw new MockHttpError(503, "renewal fixtures missing");
+    const out = clone(l);
+    out.items = out.items.filter((i) => i.days_left <= window).map((i) => ({ ...i, renewal_id: renewalIds.get(i.certificate.cert_no) ?? null }));
+    out.window_days = window;
+    return out;
+  },
+  renewalPrefill(certNo: string): RenewalRecord {
+    const rec = (fx<Record<string, RenewalRecord>>("renewal_prefill") ?? {})[certNo];
+    if (!rec) throw new MockHttpError(404, `income certificate ${certNo} not found`);
+    renewalIds.set(certNo, rec.renewal_id);
+    return clone(rec);
+  },
+
   // ---------- POST ----------
   reset() {
     state = freshState();
     save();
+    renewalIds.clear();
     return { ok: true };
   },
 

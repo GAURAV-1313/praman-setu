@@ -19,6 +19,9 @@ import Queue from "./pages/Queue";
 import CaseView from "./pages/CaseView";
 import Collector from "./pages/Collector";
 import Audit from "./pages/Audit";
+import GraphPage from "./pages/GraphPage";
+import Renewals from "./pages/Renewals";
+import Reader from "./pages/Reader";
 import SewaSetuConsole, { SewaSetuDashboard } from "./pages/SewaSetuConsole";
 
 import { bootDemo } from "./demo";
@@ -38,6 +41,9 @@ bootDemo().finally(() => ReactDOM.createRoot(document.getElementById("root")!).r
             <Route path="/officer/case/:appId" element={<CaseView />} />
             <Route path="/collector" element={<Collector />} />
             <Route path="/audit" element={<Audit />} />
+            <Route path="/graph" element={<GraphPage />} />
+            <Route path="/renewals" element={<Renewals />} />
+            <Route path="/reader" element={<Reader />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

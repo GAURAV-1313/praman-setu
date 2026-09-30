@@ -9,6 +9,7 @@ import NativeVillageAction, { nativeSearchOffered } from "../components/NativeVi
 import LineageCard, { type DisposeTarget } from "../components/LineageCard";
 import ActionPanel, { PATWARI_EVENT } from "../components/ActionPanel";
 import WhatsAppPreview from "../components/WhatsAppPreview";
+import AgentTrace from "../components/AgentTrace";
 import { SearchFamilyIllustration } from "../illustrations";
 import { DESK_LABEL, setDesk, useDesk } from "../desk";
 
@@ -424,6 +425,8 @@ export default function CaseView() {
         </div>
 
         <aside className="case-side stack">
+          {/* Round 8b: what the system did for this file (collapsed, one line); hidden in shadow mode until decided */}
+          {!(shadow && !decided) && <AgentTrace trace={an.trace} decided={decided} />}
           <section className="card tight">
             <div className="card-title">{tx("Application — compare against", "आवेदन — जिससे मिलाना है")}</div>
             <dl className="kv">

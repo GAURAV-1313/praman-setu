@@ -6,6 +6,7 @@ import { useI18n } from "../i18n";
 import type { CollectorTiles, DistrictGeo, EvalResult, MisDistrict, MisSummary, PilotStats, PolicyResponse, PolicyValue, SlaPauseValue } from "../api/types";
 import { ErrorBox, fmtNum, LANE_LABEL, Loading, pct, useAsync } from "../components/common";
 import DistrictMap from "../components/DistrictMap";
+import LearningPanel from "../components/LearningPanel";
 import chartPng from "../assets/rejection_by_service_and_district_2026-09-27.png";
 
 type SortKey = "name" | "total" | "rejected" | "rejection_pct" | "pending_beyond";
@@ -195,6 +196,21 @@ export default function Collector() {
       {pilot.data && <PilotPanel p={pilot.data} />}
       {policy.data && <PolicyCard p={policy.data} onChange={(v) => api.setPolicy(v).then((r) => policy.setData(r))} onSlaChange={(v) => api.setSlaPause(v).then((r) => policy.setData(r))} />}
       {ev.data && <EvalPanel e={ev.data} />}
+
+      {/* Round 8a: family network analytics + human-in-the-loop learning (SYNTHETIC) */}
+      <Link to="/graph" className="card fnet-link-card">
+        <span className="fnet-link-ic" aria-hidden>⌬</span>
+        <span>
+          <b>{tx("Family network analysis · परिवार नेटवर्क विश्लेषण", "परिवार नेटवर्क विश्लेषण · Family network analysis")}</b>
+          <span className="small muted" style={{ display: "block" }}>
+            {tx("Three-generation family graph per file, and district counts of signals that need a look: category differs within a family, a relative's certificate cancelled, one person certified twice, Tehsildar-issued permanent certificates.", "प्रति प्रकरण तीन पीढ़ियों का परिवार-ग्राफ़, और देखने योग्य संकेतों की जिलेवार गिनती: परिवार में श्रेणी भिन्न, संबंधी का प्रमाण पत्र निरस्त, एक व्यक्ति के दो प्रमाण पत्र, तहसीलदार द्वारा जारी स्थायी प्रमाण पत्र।")}
+          </span>
+        </span>
+        <span className="spacer" />
+        <span className="badge-synth">{tx("SYNTHETIC", "सिंथेटिक")}</span>
+        <span className="fnet-link-go">→</span>
+      </Link>
+      <LearningPanel />
 
       <section className="card tight">
         <div className="row">

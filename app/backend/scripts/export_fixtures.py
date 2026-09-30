@@ -26,6 +26,7 @@ from fastapi.testclient import TestClient  # noqa: E402
 
 import geo  # noqa: E402
 import seed_round7  # noqa: E402
+import renewal  # noqa: E402
 from api import app  # noqa: E402
 
 OUT = HERE.parent / "frontend" / "src" / "mock" / "fixtures"
@@ -54,7 +55,7 @@ FOCUS_CASES = {f"SS/2026/KDG/{n}" for n in ("08812", "08790", "08835", "08841", 
                                             "08857", "08845", "08749", "08721", "08766", "08772", "08710", "08915", "08778", "08758",
                                             "08925")}
 BIG = ("villages", "geo_districts", "cases", "confirm_overrides", "reject_match_overrides", "show_cause_overrides",
-       "policy_verify_cases", "forward_overrides", "native_village_overrides")
+       "policy_verify_cases", "forward_overrides", "native_village_overrides", "renewal_prefill")
 
 
 def dump(name: str, obj) -> None:
@@ -166,6 +167,18 @@ def main():
         r.raise_for_status()
         prechecks[k] = {"request": body, "response": r.json()}
     dump("precheck_examples", prechecks)
+    # Round 8b: income-certificate renewal lists (demo districts) and the pre-filled renewal for every listed certificate
+    c.post("/api/reset").raise_for_status()
+    ren, pre = {}, {}
+    for d in renewal.DEMO_DISTRICTS:
+        ren[str(d)] = get(f"/api/renewals?district_lgd={d}&window=60")
+        for it in ren[str(d)]["items"]:
+            no = it["certificate"]["cert_no"]
+            r = c.post(f"/api/renewals/{no}/prefill")
+            r.raise_for_status()
+            pre[no] = r.json()
+    dump("renewals", ren)
+    dump("renewal_prefill", pre)
     c.post("/api/reset")
     dump("audit", [])
     assert "SS/2026/KDG/08812" in overrides, "hero confirm override missing"

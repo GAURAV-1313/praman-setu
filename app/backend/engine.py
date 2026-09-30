@@ -12,6 +12,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import time
 from datetime import date, datetime, timedelta, timezone
 from functools import lru_cache
 
@@ -163,10 +164,10 @@ def claimed_category(service: str, explicit: str | None = None) -> str | None:
 
 
 def lineage_matches(query: dict, service: str, claimed_cat, claimed_caste, extra: list[str] | None = None,
-                    as_of: str | None = None) -> list[dict]:
+                    as_of: str | None = None, stats: dict | None = None) -> list[dict]:
     m = matcher()
     out = []
-    for r in m.match(query, extra_cert_nos=extra, kind=rules.service_kind(service)):
+    for r in m.match(query, extra_cert_nos=extra, kind=rules.service_kind(service), stats=stats):
         lvl = match_level(r["probability"])
         if lvl is None:
             continue
@@ -836,9 +837,12 @@ def evidence_key(caste: str | None, res: str | None) -> str:
 
 # ------------------------------------------------------------------ analysis
 def analyse(entry: dict, dispositions: dict | None = None, show_cause: dict | None = None,
-            native_village: int | None = None) -> dict:
+            native_village: int | None = None, timings: dict | None = None) -> dict:
     """dispositions: {cert_no: {"decision": "same"|"not", "grounds": [...], "note": str, "ts": iso}} (officer's acts).
-    Back-compat: a set/list of cert_nos means "same" with no grounds."""
+    Back-compat: a set/list of cert_nos means "same" with no grounds.
+    timings (Round 8b, optional): filled with step marks for the agent trace; the returned analysis is unchanged."""
+    marks = timings if timings is not None else {}
+    marks["t0"] = time.perf_counter()
     app, meta = entry["application"], entry["meta"]
     if dispositions is None:
         dispositions = {}
@@ -847,14 +851,19 @@ def analyse(entry: dict, dispositions: dict | None = None, show_cause: dict | No
     declared = app.get("declared_relative_cert_no")
     declared_src = app.get("declared_source", "applicant") if declared else None
     service = app["service"]
-    all_matches = lineage_matches(app_query(app, meta), service, app["claimed_category"], app["claimed_caste"],
-                                  extra=[declared] if declared else None, as_of=app["submitted_at"])
+    query = app_query(app, meta)
+    marks["read"] = time.perf_counter()
+    marks["search"] = [{"place": "current"}]
+    all_matches = lineage_matches(query, service, app["claimed_category"], app["claimed_caste"],
+                                  extra=[declared] if declared else None, as_of=app["submitted_at"], stats=marks["search"][0])
     # Round 7: officer-requested search of the applicant's native (maiden) village as well (absent -> unchanged)
     npl = native_place(native_village)
     if npl is not None:
+        marks["search"].append({"place": "native", "village_lgd": npl["village_lgd"]})
         nat = lineage_matches(native_query(app_query(app, meta), npl), service, app["claimed_category"], app["claimed_caste"],
-                              extra=[declared] if declared else None, as_of=app["submitted_at"])
+                              extra=[declared] if declared else None, as_of=app["submitted_at"], stats=marks["search"][-1])
         all_matches = merge_native(all_matches, nat, npl)
+    marks["match"] = time.perf_counter()
     for lm in all_matches:
         head, sev = validity_headline(lm, app["claimed_category"])
         lm["validity_headline"] = head
@@ -934,6 +943,7 @@ def analyse(entry: dict, dispositions: dict | None = None, show_cause: dict | No
     if lane == "standard_review":
         lane_reason = {k: lane_reason[k] + extra[k] for k in ("en", "hi")}
 
+    marks["rules"] = time.perf_counter()
     info = office_info(app)
     ctx = order_context(app, entry, all_matches, matches, accepted, pending, attention, items, confirmed, dispositions, info)
     evidence_required = not accepted and lane != "needs_attention"
@@ -962,6 +972,7 @@ def analyse(entry: dict, dispositions: dict | None = None, show_cause: dict | No
     sc = public_show_cause(show_cause)
     drafts["show_cause"] = show_cause_draft(app, info, ctx, adverse)
     drafts["reject"] = reject_draft(app, info, ctx, adverse, sc) if (sc and sc.get("reply")) else None
+    marks["draft"] = time.perf_counter()
 
     open_issue = None
     if attention:

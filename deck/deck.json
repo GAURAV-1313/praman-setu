@@ -1,0 +1,64 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "at": "2026-09-27T23:10:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "faces": {
+    "caveat": {
+      "family": "Caveat",
+      "href": "https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap"
+    },
+    "mukta": {
+      "family": "Mukta",
+      "href": "https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap"
+    },
+    "tiro-devanagari-hindi": {
+      "family": "Tiro Devanagari Hindi",
+      "href": "https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"
+    }
+  },
+  "order": [
+    "cover",
+    "states",
+    "where",
+    "sources",
+    "voices",
+    "desk",
+    "govchain",
+    "insight",
+    "panel",
+    "citizen",
+    "aistack",
+    "change",
+    "build",
+    "limits",
+    "techstack",
+    "ask",
+    "model"
+  ],
+  "sections": {
+    "s1": {
+      "description": "What Chhattisgarh and other states already have, and Sewa Setu's own data",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "The problem, seen from one applicant and the officer's screen",
+      "start": "voices"
+    },
+    "s3": {
+      "description": "What Praman Setu does inside Sewa Setu",
+      "start": "insight"
+    },
+    "s4": {
+      "description": "What changes, how it is built on the legacy database, its limits and the ask",
+      "start": "change"
+    },
+    "s5": {
+      "description": "Backup for questions",
+      "start": "model"
+    }
+  },
+  "title": "Praman Setu — Sewa Setu Hackathon"
+}

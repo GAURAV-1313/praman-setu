@@ -1,0 +1,6620 @@
+{
+ "643": {
+  "district_lgd": 643,
+  "district": {
+   "en": "Kondagaon",
+   "hi": "कोंडागांव"
+  },
+  "as_of": "2026-09-29",
+  "window_days": 60,
+  "counts": {
+   "d30": 11,
+   "d60": 21,
+   "strong": 16,
+   "partial": 3,
+   "verify": 2
+  },
+  "items": [
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000454",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Radha Netam",
+      "hi": "राधा नेताम"
+     },
+     "father_name": {
+      "en": "Mahesh Usendi",
+      "hi": "महेश उसेंडी"
+     },
+     "gender": "F",
+     "birth_year": 1974,
+     "village": {
+      "en": "Kejang",
+      "hi": "केजंग"
+     },
+     "village_lgd": 448708,
+     "tehsil": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 230000,
+     "annual_income_text": "₹2,30,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-05",
+     "valid_until": "2026-10-04",
+     "issuing_authority": {
+      "en": "Tehsildar, Kondagaon",
+      "hi": "तहसीलदार, कोंडागांव"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 5,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000454 · ₹2,30,000/year · Tehsildar, Kondagaon · 05-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000454 · ₹2,30,000/वर्ष · तहसीलदार, कोंडागांव · 05-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.2 ha · same as last year",
+       "hi": "2.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000044",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Neelam Nishad",
+      "hi": "नीलम निषाद"
+     },
+     "father_name": {
+      "en": "Dilip Nishad",
+      "hi": "दिलीप निषाद"
+     },
+     "gender": "F",
+     "birth_year": 1992,
+     "village": {
+      "en": "Ulera",
+      "hi": "उलेरा"
+     },
+     "village_lgd": 448864,
+     "tehsil": {
+      "en": "Makdi",
+      "hi": "माकड़ी"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 65000,
+     "annual_income_text": "₹65,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-06",
+     "valid_until": "2026-10-05",
+     "issuing_authority": {
+      "en": "Tehsildar, Makdi",
+      "hi": "तहसीलदार, माकड़ी"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 6,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000044 · ₹65,000/year · Tehsildar, Makdi · 06-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000044 · ₹65,000/वर्ष · तहसीलदार, माकड़ी · 06-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.8 ha · same as last year",
+       "hi": "0.8 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000492",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Ramlal Markam",
+      "hi": "रामलाल मरकाम"
+     },
+     "father_name": {
+      "en": "Budhram Markam",
+      "hi": "बुधराम मरकाम"
+     },
+     "gender": "M",
+     "birth_year": 1976,
+     "village": {
+      "en": "Bayanar",
+      "hi": "बयानार"
+     },
+     "village_lgd": 448703,
+     "tehsil": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 68000,
+     "annual_income_text": "₹68,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-12",
+     "valid_until": "2026-10-11",
+     "issuing_authority": {
+      "en": "Tehsildar, Kondagaon",
+      "hi": "तहसीलदार, कोंडागांव"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true,
+     "persona_note": {
+      "en": "Same family as the hero caste file: Sunita's (08812) post-matric scholarship also needs this income certificate.",
+      "hi": "हीरो जाति प्रकरण का ही परिवार: सुनीता (08812) की पोस्ट-मैट्रिक छात्रवृत्ति हेतु यह आय प्रमाण पत्र भी चाहिए।"
+     }
+    },
+    "days_left": 12,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000492 · ₹68,000/year · Tehsildar, Kondagaon · 12-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000492 · ₹68,000/वर्ष · तहसीलदार, कोंडागांव · 12-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.2 ha · same as last year",
+       "hi": "1.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000227",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Durga Thakur",
+      "hi": "दुर्गा ठाकुर"
+     },
+     "father_name": {
+      "en": "Jitendra Mandavi",
+      "hi": "जितेंद्र मंडावी"
+     },
+     "gender": "F",
+     "birth_year": 1992,
+     "village": {
+      "en": "Jhatiban",
+      "hi": "झटिबन"
+     },
+     "village_lgd": 937713,
+     "tehsil": {
+      "en": "Farasgaon",
+      "hi": "फरसगांव"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 47000,
+     "annual_income_text": "₹47,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-14",
+     "valid_until": "2026-10-13",
+     "issuing_authority": {
+      "en": "Tehsildar, Farasgaon",
+      "hi": "तहसीलदार, फरसगांव"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 14,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000227 · ₹47,000/year · Tehsildar, Farasgaon · 14-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000227 · ₹47,000/वर्ष · तहसीलदार, फरसगांव · 14-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000059",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Nirmala Thakur",
+      "hi": "निर्मला ठाकुर"
+     },
+     "father_name": {
+      "en": "Dhaniram Poyam",
+      "hi": "धनीराम पोयाम"
+     },
+     "gender": "F",
+     "birth_year": 1975,
+     "village": {
+      "en": "Seonipal",
+      "hi": "सिवनीपाल"
+     },
+     "village_lgd": 448589,
+     "tehsil": {
+      "en": "Keskal",
+      "hi": "केशकाल"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 80000,
+     "annual_income_text": "₹80,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-16",
+     "valid_until": "2026-10-15",
+     "issuing_authority": {
+      "en": "Tehsildar, Keskal",
+      "hi": "तहसीलदार, केशकाल"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 16,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000059 · ₹80,000/year · Tehsildar, Keskal · 16-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000059 · ₹80,000/वर्ष · तहसीलदार, केशकाल · 16-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.8 ha · same as last year",
+       "hi": "0.8 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000476",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Hemlata Sori",
+      "hi": "हेमलता सोरी"
+     },
+     "father_name": {
+      "en": "Itwari Yadav",
+      "hi": "इतवारी यादव"
+     },
+     "gender": "F",
+     "birth_year": 1972,
+     "village": {
+      "en": "Bedagaon",
+      "hi": "बेडागांव"
+     },
+     "village_lgd": 448912,
+     "tehsil": {
+      "en": "Makdi",
+      "hi": "माकड़ी"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 95000,
+     "annual_income_text": "₹95,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-23",
+     "valid_until": "2026-10-22",
+     "issuing_authority": {
+      "en": "Tehsildar, Makdi",
+      "hi": "तहसीलदार, माकड़ी"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 23,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000476 · ₹95,000/year · Tehsildar, Makdi · 23-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000476 · ₹95,000/वर्ष · तहसीलदार, माकड़ी · 23-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "3.1 ha · last year 1.6 ha",
+       "hi": "3.1 हे. · पिछले वर्ष 1.6 हे."
+      },
+      "status": "warn",
+      "note": {
+       "en": "Land holding changed since last year.",
+       "hi": "पिछले वर्ष से भूमि धारिता बदली।"
+      }
+     }
+    ],
+    "rule_flags": [],
+    "strength": "partial",
+    "strength_label": {
+     "en": "Partial: a source changed",
+     "hi": "आंशिक: एक स्रोत बदला"
+    },
+    "strength_reason": {
+     "en": "2/3 sources as last year; changed: land holding",
+     "hi": "2/3 स्रोत पिछले वर्ष जैसे; बदला: भूमि धारिता"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000098",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Narendra Usendi",
+      "hi": "नरेंद्र उसेंडी"
+     },
+     "father_name": {
+      "en": "Chaitram Usendi",
+      "hi": "चैतराम उसेंडी"
+     },
+     "gender": "M",
+     "birth_year": 1980,
+     "village": {
+      "en": "Marangpuri",
+      "hi": "मरंगपुरी"
+     },
+     "village_lgd": 448628,
+     "tehsil": {
+      "en": "Bade Rajpur",
+      "hi": "बड़ेराजपुर"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 78000,
+     "annual_income_text": "₹78,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-24",
+     "valid_until": "2026-10-23",
+     "issuing_authority": {
+      "en": "Tehsildar, Bade Rajpur",
+      "hi": "तहसीलदार, बड़ेराजपुर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 24,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000098 · ₹78,000/year · Tehsildar, Bade Rajpur · 24-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000098 · ₹78,000/वर्ष · तहसीलदार, बड़ेराजपुर · 24-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.9 ha · last year 0.4 ha",
+       "hi": "1.9 हे. · पिछले वर्ष 0.4 हे."
+      },
+      "status": "warn",
+      "note": {
+       "en": "Land holding changed since last year.",
+       "hi": "पिछले वर्ष से भूमि धारिता बदली।"
+      }
+     }
+    ],
+    "rule_flags": [],
+    "strength": "partial",
+    "strength_label": {
+     "en": "Partial: a source changed",
+     "hi": "आंशिक: एक स्रोत बदला"
+    },
+    "strength_reason": {
+     "en": "2/3 sources as last year; changed: land holding",
+     "hi": "2/3 स्रोत पिछले वर्ष जैसे; बदला: भूमि धारिता"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000337",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Jamuna Patel",
+      "hi": "जमुना पटेल"
+     },
+     "father_name": {
+      "en": "Rakesh Markam",
+      "hi": "राकेश मरकाम"
+     },
+     "gender": "F",
+     "birth_year": 1981,
+     "village": {
+      "en": "Temrugaon",
+      "hi": "टेंरुगांव"
+     },
+     "village_lgd": 448660,
+     "tehsil": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 230000,
+     "annual_income_text": "₹2,30,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-24",
+     "valid_until": "2026-10-23",
+     "issuing_authority": {
+      "en": "Tehsildar, Kondagaon",
+      "hi": "तहसीलदार, कोंडागांव"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 24,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000337 · ₹2,30,000/year · Tehsildar, Kondagaon · 24-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000337 · ₹2,30,000/वर्ष · तहसीलदार, कोंडागांव · 24-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.0 ha · same as last year",
+       "hi": "1.0 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000220",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Ramesh Usendi",
+      "hi": "रमेश उसेंडी"
+     },
+     "father_name": {
+      "en": "Lokesh Usendi",
+      "hi": "लोकेश उसेंडी"
+     },
+     "gender": "M",
+     "birth_year": 1964,
+     "village": {
+      "en": "Padoki",
+      "hi": "पडोकी"
+     },
+     "village_lgd": 448605,
+     "tehsil": {
+      "en": "Bade Rajpur",
+      "hi": "बड़ेराजपुर"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 130000,
+     "annual_income_text": "₹1,30,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-25",
+     "valid_until": "2026-10-24",
+     "issuing_authority": {
+      "en": "Tehsildar, Bade Rajpur",
+      "hi": "तहसीलदार, बड़ेराजपुर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 25,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000220 · ₹1,30,000/year · Tehsildar, Bade Rajpur · 25-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000220 · ₹1,30,000/वर्ष · तहसीलदार, बड़ेराजपुर · 25-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000143",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Sita Sori",
+      "hi": "सीता सोरी"
+     },
+     "father_name": {
+      "en": "Tarun Sen",
+      "hi": "तरुण सेन"
+     },
+     "gender": "F",
+     "birth_year": 1977,
+     "village": {
+      "en": "Ulera",
+      "hi": "उलेरा"
+     },
+     "village_lgd": 448864,
+     "tehsil": {
+      "en": "Makdi",
+      "hi": "माकड़ी"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 170000,
+     "annual_income_text": "₹1,70,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-28",
+     "valid_until": "2026-10-27",
+     "issuing_authority": {
+      "en": "Tehsildar, Makdi",
+      "hi": "तहसीलदार, माकड़ी"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 28,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000143 · ₹1,70,000/year · Tehsildar, Makdi · 28-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000143 · ₹1,70,000/वर्ष · तहसीलदार, माकड़ी · 28-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000174",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Suman Thakur",
+      "hi": "सुमन ठाकुर"
+     },
+     "father_name": {
+      "en": "Hemant Patel",
+      "hi": "हेमंत पटेल"
+     },
+     "gender": "F",
+     "birth_year": 1985,
+     "village": {
+      "en": "Nalajhar",
+      "hi": "नलाझर"
+     },
+     "village_lgd": 448883,
+     "tehsil": {
+      "en": "Makdi",
+      "hi": "माकड़ी"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 60000,
+     "annual_income_text": "₹60,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-28",
+     "valid_until": "2026-10-27",
+     "issuing_authority": {
+      "en": "Tehsildar, Makdi",
+      "hi": "तहसीलदार, माकड़ी"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 28,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000174 · ₹60,000/year · Tehsildar, Makdi · 28-10-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000174 · ₹60,000/वर्ष · तहसीलदार, माकड़ी · 28-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.4 ha · same as last year",
+       "hi": "0.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000448",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Tularam Thakur",
+      "hi": "तुलाराम ठाकुर"
+     },
+     "father_name": {
+      "en": "Manglu Thakur",
+      "hi": "मंगलू ठाकुर"
+     },
+     "gender": "M",
+     "birth_year": 1982,
+     "village": {
+      "en": "Umla",
+      "hi": "उमला"
+     },
+     "village_lgd": 448498,
+     "tehsil": {
+      "en": "Dhanora",
+      "hi": "धनोरा"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 26000,
+     "annual_income_text": "₹26,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-02",
+     "valid_until": "2026-11-01",
+     "issuing_authority": {
+      "en": "Tehsildar, Dhanora",
+      "hi": "तहसीलदार, धनोरा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 33,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000448 · ₹26,000/year · Tehsildar, Dhanora · 02-11-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000448 · ₹26,000/वर्ष · तहसीलदार, धनोरा · 02-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.4 ha · same as last year",
+       "hi": "2.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [
+     {
+      "code": "LOW_INCOME_BUT_LARGE_LANDHOLDING",
+      "label": {
+       "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+       "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+      }
+     }
+    ],
+    "strength": "verify",
+    "strength_label": {
+     "en": "Verify: rule-file flag",
+     "hi": "जांचें: नियम-फ़ाइल संकेत"
+    },
+    "strength_reason": {
+     "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+     "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000289",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Kamla Sori",
+      "hi": "कमला सोरी"
+     },
+     "father_name": {
+      "en": "Mansingh Sori",
+      "hi": "मानसिंह सोरी"
+     },
+     "gender": "F",
+     "birth_year": 1990,
+     "village": {
+      "en": "Karmari",
+      "hi": "कर्मरी"
+     },
+     "village_lgd": 448517,
+     "tehsil": {
+      "en": "Dhanora",
+      "hi": "धनोरा"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 26000,
+     "annual_income_text": "₹26,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-07",
+     "valid_until": "2026-11-06",
+     "issuing_authority": {
+      "en": "Tehsildar, Dhanora",
+      "hi": "तहसीलदार, धनोरा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 38,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000289 · ₹26,000/year · Tehsildar, Dhanora · 07-11-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000289 · ₹26,000/वर्ष · तहसीलदार, धनोरा · 07-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.4 ha · same as last year",
+       "hi": "2.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [
+     {
+      "code": "LOW_INCOME_BUT_LARGE_LANDHOLDING",
+      "label": {
+       "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+       "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+      }
+     }
+    ],
+    "strength": "verify",
+    "strength_label": {
+     "en": "Verify: rule-file flag",
+     "hi": "जांचें: नियम-फ़ाइल संकेत"
+    },
+    "strength_reason": {
+     "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+     "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000372",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Kamlesh Korram",
+      "hi": "कमलेश कोर्राम"
+     },
+     "father_name": {
+      "en": "Tularam Korram",
+      "hi": "तुलाराम कोर्राम"
+     },
+     "gender": "M",
+     "birth_year": 1970,
+     "village": {
+      "en": "Salebhat",
+      "hi": "सलेभट"
+     },
+     "village_lgd": 448596,
+     "tehsil": {
+      "en": "Keskal",
+      "hi": "केशकाल"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 170000,
+     "annual_income_text": "₹1,70,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-07",
+     "valid_until": "2026-11-06",
+     "issuing_authority": {
+      "en": "Tehsildar, Keskal",
+      "hi": "तहसीलदार, केशकाल"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 38,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000372 · ₹1,70,000/year · Tehsildar, Keskal · 07-11-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000372 · ₹1,70,000/वर्ष · तहसीलदार, केशकाल · 07-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000038",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Gajendra Porte",
+      "hi": "गजेंद्र पोर्ते"
+     },
+     "father_name": {
+      "en": "Somaru Porte",
+      "hi": "सोमारू पोर्ते"
+     },
+     "gender": "M",
+     "birth_year": 1970,
+     "village": {
+      "en": "Singarpuri",
+      "hi": "सिंगर्पुरी"
+     },
+     "village_lgd": 448944,
+     "tehsil": {
+      "en": "Farasgaon",
+      "hi": "फरसगांव"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 185000,
+     "annual_income_text": "₹1,85,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-11",
+     "valid_until": "2026-11-10",
+     "issuing_authority": {
+      "en": "Tehsildar, Farasgaon",
+      "hi": "तहसीलदार, फरसगांव"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 42,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000038 · ₹1,85,000/year · Tehsildar, Farasgaon · 11-11-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000038 · ₹1,85,000/वर्ष · तहसीलदार, फरसगांव · 11-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000116",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Naresh Nag",
+      "hi": "नरेश नाग"
+     },
+     "father_name": {
+      "en": "Dilip Nag",
+      "hi": "दिलीप नाग"
+     },
+     "gender": "M",
+     "birth_year": 1973,
+     "village": {
+      "en": "Marangpuri",
+      "hi": "मरंगपुरी"
+     },
+     "village_lgd": 448628,
+     "tehsil": {
+      "en": "Bade Rajpur",
+      "hi": "बड़ेराजपुर"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 190000,
+     "annual_income_text": "₹1,90,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-11",
+     "valid_until": "2026-11-10",
+     "issuing_authority": {
+      "en": "Tehsildar, Bade Rajpur",
+      "hi": "तहसीलदार, बड़ेराजपुर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 42,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000116 · ₹1,90,000/year · Tehsildar, Bade Rajpur · 11-11-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000116 · ₹1,90,000/वर्ष · तहसीलदार, बड़ेराजपुर · 11-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.0 ha · same as last year",
+       "hi": "1.0 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000413",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Parvati Manjhi",
+      "hi": "पार्वती मांझी"
+     },
+     "father_name": {
+      "en": "Tarun Nishad",
+      "hi": "तरुण निषाद"
+     },
+     "gender": "F",
+     "birth_year": 1961,
+     "village": {
+      "en": "Golawand",
+      "hi": "गोलावंड"
+     },
+     "village_lgd": 448772,
+     "tehsil": {
+      "en": "Mardapal",
+      "hi": "मर्दापाल"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 160000,
+     "annual_income_text": "₹1,60,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-15",
+     "valid_until": "2026-11-14",
+     "issuing_authority": {
+      "en": "Tehsildar, Mardapal",
+      "hi": "तहसीलदार, मर्दापाल"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 46,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000413 · ₹1,60,000/year · Tehsildar, Mardapal · 15-11-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000413 · ₹1,60,000/वर्ष · तहसीलदार, मर्दापाल · 15-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000032",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Gajendra Sen",
+      "hi": "गजेंद्र सेन"
+     },
+     "father_name": {
+      "en": "Santosh Sen",
+      "hi": "संतोष सेन"
+     },
+     "gender": "M",
+     "birth_year": 1985,
+     "village": {
+      "en": "Singarpuri",
+      "hi": "सिंगर्पुरी"
+     },
+     "village_lgd": 448944,
+     "tehsil": {
+      "en": "Farasgaon",
+      "hi": "फरसगांव"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 18000,
+     "annual_income_text": "₹18,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-16",
+     "valid_until": "2026-11-15",
+     "issuing_authority": {
+      "en": "Tehsildar, Farasgaon",
+      "hi": "तहसीलदार, फरसगांव"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 47,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000032 · ₹18,000/year · Tehsildar, Farasgaon · 16-11-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000032 · ₹18,000/वर्ष · तहसीलदार, फरसगांव · 16-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "AAY (Antyodaya) · same as last year",
+       "hi": "अंत्योदय (AAY) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.4 ha · same as last year",
+       "hi": "0.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000256",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Suman Poyam",
+      "hi": "सुमन पोयाम"
+     },
+     "father_name": {
+      "en": "Mangalram Markam",
+      "hi": "मंगलराम मरकाम"
+     },
+     "gender": "F",
+     "birth_year": 1978,
+     "village": {
+      "en": "Dhanpur",
+      "hi": "धंपुर"
+     },
+     "village_lgd": 937709,
+     "tehsil": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 80000,
+     "annual_income_text": "₹80,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-16",
+     "valid_until": "2026-11-15",
+     "issuing_authority": {
+      "en": "Tehsildar, Kondagaon",
+      "hi": "तहसीलदार, कोंडागांव"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 47,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000256 · ₹80,000/year · Tehsildar, Kondagaon · 16-11-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000256 · ₹80,000/वर्ष · तहसीलदार, कोंडागांव · 16-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.8 ha · same as last year",
+       "hi": "0.8 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000078",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Parasram Nag",
+      "hi": "परसराम नाग"
+     },
+     "father_name": {
+      "en": "Jagdish Nag",
+      "hi": "जगदीश नाग"
+     },
+     "gender": "M",
+     "birth_year": 1973,
+     "village": {
+      "en": "Sandsa",
+      "hi": "सांडसा"
+     },
+     "village_lgd": 448875,
+     "tehsil": {
+      "en": "Makdi",
+      "hi": "माकड़ी"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 230000,
+     "annual_income_text": "₹2,30,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-20",
+     "valid_until": "2026-11-19",
+     "issuing_authority": {
+      "en": "Tehsildar, Makdi",
+      "hi": "तहसीलदार, माकड़ी"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 51,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000078 · ₹2,30,000/year · Tehsildar, Makdi · 20-11-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000078 · ₹2,30,000/वर्ष · तहसीलदार, माकड़ी · 20-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.0 ha · same as last year",
+       "hi": "1.0 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/KDG/TSL/INC/2025/000118",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Dukalu Poyam",
+      "hi": "दुकालू पोयाम"
+     },
+     "father_name": {
+      "en": "Ghanshyam Poyam",
+      "hi": "घनश्याम पोयाम"
+     },
+     "gender": "M",
+     "birth_year": 1992,
+     "village": {
+      "en": "Sodhma",
+      "hi": "सोढ़मा"
+     },
+     "village_lgd": 449031,
+     "tehsil": {
+      "en": "Farasgaon",
+      "hi": "फरसगांव"
+     },
+     "district": {
+      "en": "Kondagaon",
+      "hi": "कोंडागांव"
+     },
+     "district_lgd": 643,
+     "annual_income": 87000,
+     "annual_income_text": "₹87,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-23",
+     "valid_until": "2026-11-22",
+     "issuing_authority": {
+      "en": "Tehsildar, Farasgaon",
+      "hi": "तहसीलदार, फरसगांव"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 54,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/KDG/TSL/INC/2025/000118 · ₹87,000/year · Tehsildar, Farasgaon · 23-11-2025 · QR ✓",
+       "hi": "क्र. CG/KDG/TSL/INC/2025/000118 · ₹87,000/वर्ष · तहसीलदार, फरसगांव · 23-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.9 ha · last year 0.4 ha",
+       "hi": "1.9 हे. · पिछले वर्ष 0.4 हे."
+      },
+      "status": "warn",
+      "note": {
+       "en": "Land holding changed since last year.",
+       "hi": "पिछले वर्ष से भूमि धारिता बदली।"
+      }
+     }
+    ],
+    "rule_flags": [],
+    "strength": "partial",
+    "strength_label": {
+     "en": "Partial: a source changed",
+     "hi": "आंशिक: एक स्रोत बदला"
+    },
+    "strength_reason": {
+     "en": "2/3 sources as last year; changed: land holding",
+     "hi": "2/3 स्रोत पिछले वर्ष जैसे; बदला: भूमि धारिता"
+    },
+    "renewal_id": null
+   }
+  ],
+  "districts": [
+   {
+    "lgd": 643,
+    "name": {
+     "en": "Kondagaon",
+     "hi": "कोंडागांव"
+    }
+   },
+   {
+    "lgd": 374,
+    "name": {
+     "en": "Bastar",
+     "hi": "बस्तर"
+    }
+   },
+   {
+    "lgd": 387,
+    "name": {
+     "en": "Raipur",
+     "hi": "रायपुर"
+    }
+   },
+   {
+    "lgd": 734,
+    "name": {
+     "en": "Gaurela-Pendra-Marwahi",
+     "hi": "गौरेला-पेंड्रा-मरवाही"
+    }
+   },
+   {
+    "lgd": 650,
+    "name": {
+     "en": "Bemetara",
+     "hi": "बेमेतरा"
+    }
+   }
+  ],
+  "context": {
+   "income_share_of_volume": 48.98,
+   "note": {
+    "en": "Income certificates are valid for one year and are about half of all Sewa Setu applications (REAL public MIS, 27-09-2026). Certificates and registry rows here are SYNTHETIC.",
+    "hi": "आय प्रमाण पत्र एक वर्ष हेतु मान्य हैं और सेवा सेतु के लगभग आधे आवेदन इन्हीं के हैं (वास्तविक सार्वजनिक MIS, 27-09-2026)। यहाँ के प्रमाण पत्र व अभिलेख सिंथेटिक हैं।"
+   }
+  },
+  "roadmap": [
+   {
+    "code": "legal_heir",
+    "label": {
+     "en": "Legal heir certificate (वारिस)",
+     "hi": "वारिस (उत्तराधिकार) प्रमाण पत्र"
+    },
+    "note": {
+     "en": "Family tree from the archive + death record; same same-family / not-this-family step",
+     "hi": "अभिलेखागार से वंशावली + मृत्यु अभिलेख; वही “एक ही परिवार / यह परिवार नहीं” चरण"
+    }
+   },
+   {
+    "code": "ews",
+    "label": {
+     "en": "EWS certificate",
+     "hi": "ईडब्ल्यूएस (EWS) प्रमाण पत्र"
+    },
+    "note": {
+     "en": "Income + land + residence evidence; a rule file for the thresholds",
+     "hi": "आय + भूमि + निवास साक्ष्य; सीमाओं हेतु एक नियम फ़ाइल"
+    }
+   }
+  ],
+  "synthetic": true
+ },
+ "374": {
+  "district_lgd": 374,
+  "district": {
+   "en": "Bastar",
+   "hi": "बस्तर"
+  },
+  "as_of": "2026-09-29",
+  "window_days": 60,
+  "counts": {
+   "d30": 3,
+   "d60": 14,
+   "strong": 9,
+   "partial": 3,
+   "verify": 2
+  },
+  "items": [
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000281",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Sonmati Korram",
+      "hi": "सोनमती कोर्राम"
+     },
+     "father_name": {
+      "en": "Budhu Dhruw",
+      "hi": "बुधू ध्रुव"
+     },
+     "gender": "F",
+     "birth_year": 1982,
+     "village": {
+      "en": "Pandripani",
+      "hi": "पंड्रिपनी"
+     },
+     "village_lgd": 449134,
+     "tehsil": {
+      "en": "Jagdalpur",
+      "hi": "जगदलपुर"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 32000,
+     "annual_income_text": "₹32,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-03",
+     "valid_until": "2026-10-02",
+     "issuing_authority": {
+      "en": "Tehsildar, Jagdalpur",
+      "hi": "तहसीलदार, जगदलपुर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 3,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000281 · ₹32,000/year · Tehsildar, Jagdalpur · 03-10-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000281 · ₹32,000/वर्ष · तहसीलदार, जगदलपुर · 03-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · last year AAY (Antyodaya)",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष अंत्योदय (AAY)"
+      },
+      "status": "warn",
+      "note": {
+       "en": "Category changed: income may have changed. The citizen confirms, the officer checks.",
+       "hi": "श्रेणी बदली: आय बदली हो सकती है। नागरिक पुष्टि करें, अधिकारी जांचें।"
+      }
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.4 ha · same as last year",
+       "hi": "0.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "partial",
+    "strength_label": {
+     "en": "Partial: a source changed",
+     "hi": "आंशिक: एक स्रोत बदला"
+    },
+    "strength_reason": {
+     "en": "2/3 sources as last year; changed: ration category",
+     "hi": "2/3 स्रोत पिछले वर्ष जैसे; बदला: राशन श्रेणी"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000158",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Dhaniram Yadav",
+      "hi": "धनीराम यादव"
+     },
+     "father_name": {
+      "en": "Devendra Yadav",
+      "hi": "देवेंद्र यादव"
+     },
+     "gender": "M",
+     "birth_year": 1965,
+     "village": {
+      "en": "Baniyagaon",
+      "hi": "बनियागांव"
+     },
+     "village_lgd": 449493,
+     "tehsil": {
+      "en": "Bakavand",
+      "hi": "बकवंड"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 40000,
+     "annual_income_text": "₹40,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-18",
+     "valid_until": "2026-10-17",
+     "issuing_authority": {
+      "en": "Tehsildar, Bakavand",
+      "hi": "तहसीलदार, बकवंड"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 18,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000158 · ₹40,000/year · Tehsildar, Bakavand · 18-10-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000158 · ₹40,000/वर्ष · तहसीलदार, बकवंड · 18-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.3 ha · last year 0.8 ha",
+       "hi": "2.3 हे. · पिछले वर्ष 0.8 हे."
+      },
+      "status": "warn",
+      "note": {
+       "en": "Land holding changed since last year.",
+       "hi": "पिछले वर्ष से भूमि धारिता बदली।"
+      }
+     }
+    ],
+    "rule_flags": [],
+    "strength": "partial",
+    "strength_label": {
+     "en": "Partial: a source changed",
+     "hi": "आंशिक: एक स्रोत बदला"
+    },
+    "strength_reason": {
+     "en": "2/3 sources as last year; changed: land holding",
+     "hi": "2/3 स्रोत पिछले वर्ष जैसे; बदला: भूमि धारिता"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000079",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Hemlata Poyam",
+      "hi": "हेमलता पोयाम"
+     },
+     "father_name": {
+      "en": "Chandrashekhar Markam",
+      "hi": "चंद्रशेखर मरकाम"
+     },
+     "gender": "F",
+     "birth_year": 1984,
+     "village": {
+      "en": "Chindgaon 2",
+      "hi": "चिंडगांव 2"
+     },
+     "village_lgd": 937765,
+     "tehsil": {
+      "en": "Bakavand",
+      "hi": "बकवंड"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 180000,
+     "annual_income_text": "₹1,80,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-27",
+     "valid_until": "2026-10-26",
+     "issuing_authority": {
+      "en": "Tehsildar, Bakavand",
+      "hi": "तहसीलदार, बकवंड"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 27,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000079 · ₹1,80,000/year · Tehsildar, Bakavand · 27-10-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000079 · ₹1,80,000/वर्ष · तहसीलदार, बकवंड · 27-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.2 ha · same as last year",
+       "hi": "2.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000327",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Sangeeta Dewangan",
+      "hi": "संगीता देवांगन"
+     },
+     "father_name": {
+      "en": "Lakhan Usendi",
+      "hi": "लखन उसेंडी"
+     },
+     "gender": "F",
+     "birth_year": 1963,
+     "village": {
+      "en": "Toynar",
+      "hi": "टोय्नर"
+     },
+     "village_lgd": 449639,
+     "tehsil": {
+      "en": "Darbha",
+      "hi": "डर्भा"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 145000,
+     "annual_income_text": "₹1,45,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-31",
+     "valid_until": "2026-10-30",
+     "issuing_authority": {
+      "en": "Tehsildar, Darbha",
+      "hi": "तहसीलदार, डर्भा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 31,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000327 · ₹1,45,000/year · Tehsildar, Darbha · 31-10-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000327 · ₹1,45,000/वर्ष · तहसीलदार, डर्भा · 31-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000107",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Priyanka Markam",
+      "hi": "प्रियंका मरकाम"
+     },
+     "father_name": {
+      "en": "Manoj Kunjam",
+      "hi": "मनोज कुंजाम"
+     },
+     "gender": "F",
+     "birth_year": 1969,
+     "village": {
+      "en": "Bagmundipaneda",
+      "hi": "बग्मुंडिपनेडा"
+     },
+     "village_lgd": 449257,
+     "tehsil": {
+      "en": "Bastanar",
+      "hi": "बस्टनर"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 26000,
+     "annual_income_text": "₹26,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-02",
+     "valid_until": "2026-11-01",
+     "issuing_authority": {
+      "en": "Tehsildar, Bastanar",
+      "hi": "तहसीलदार, बस्टनर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 33,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000107 · ₹26,000/year · Tehsildar, Bastanar · 02-11-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000107 · ₹26,000/वर्ष · तहसीलदार, बस्टनर · 02-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.4 ha · same as last year",
+       "hi": "2.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [
+     {
+      "code": "LOW_INCOME_BUT_LARGE_LANDHOLDING",
+      "label": {
+       "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+       "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+      }
+     }
+    ],
+    "strength": "verify",
+    "strength_label": {
+     "en": "Verify: rule-file flag",
+     "hi": "जांचें: नियम-फ़ाइल संकेत"
+    },
+    "strength_reason": {
+     "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+     "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000229",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Sunita Mandavi",
+      "hi": "सुनीता मंडावी"
+     },
+     "father_name": {
+      "en": "Prakash Sen",
+      "hi": "प्रकाश सेन"
+     },
+     "gender": "F",
+     "birth_year": 1963,
+     "village": {
+      "en": "Kumhali",
+      "hi": "कुंहली"
+     },
+     "village_lgd": 449238,
+     "tehsil": {
+      "en": "Lohandiguda",
+      "hi": "लोहंडिगुडा"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 18000,
+     "annual_income_text": "₹18,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-03",
+     "valid_until": "2026-11-02",
+     "issuing_authority": {
+      "en": "Tehsildar, Lohandiguda",
+      "hi": "तहसीलदार, लोहंडिगुडा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 34,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000229 · ₹18,000/year · Tehsildar, Lohandiguda · 03-11-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000229 · ₹18,000/वर्ष · तहसीलदार, लोहंडिगुडा · 03-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "AAY (Antyodaya) · same as last year",
+       "hi": "अंत्योदय (AAY) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.0 ha · same as last year",
+       "hi": "0.0 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000348",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Anil Nag",
+      "hi": "अनिल नाग"
+     },
+     "father_name": {
+      "en": "Dinesh Nag",
+      "hi": "दिनेश नाग"
+     },
+     "gender": "M",
+     "birth_year": 1989,
+     "village": {
+      "en": "Katakanda",
+      "hi": "कटकंडा"
+     },
+     "village_lgd": 449578,
+     "tehsil": {
+      "en": "Darbha",
+      "hi": "डर्भा"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 83000,
+     "annual_income_text": "₹83,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-07",
+     "valid_until": "2026-11-06",
+     "issuing_authority": {
+      "en": "Tehsildar, Darbha",
+      "hi": "तहसीलदार, डर्भा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 38,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000348 · ₹83,000/year · Tehsildar, Darbha · 07-11-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000348 · ₹83,000/वर्ष · तहसीलदार, डर्भा · 07-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · last year PHH (priority household)",
+       "hi": "सामान्य (APL) · पिछले वर्ष प्राथमिकता परिवार (PHH)"
+      },
+      "status": "warn",
+      "note": {
+       "en": "Category changed: income may have changed. The citizen confirms, the officer checks.",
+       "hi": "श्रेणी बदली: आय बदली हो सकती है। नागरिक पुष्टि करें, अधिकारी जांचें।"
+      }
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.8 ha · same as last year",
+       "hi": "0.8 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "partial",
+    "strength_label": {
+     "en": "Partial: a source changed",
+     "hi": "आंशिक: एक स्रोत बदला"
+    },
+    "strength_reason": {
+     "en": "2/3 sources as last year; changed: ration category",
+     "hi": "2/3 स्रोत पिछले वर्ष जैसे; बदला: राशन श्रेणी"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000321",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Priyanka Korram",
+      "hi": "प्रियंका कोर्राम"
+     },
+     "father_name": {
+      "en": "Mahesh Yadav",
+      "hi": "महेश यादव"
+     },
+     "gender": "F",
+     "birth_year": 1994,
+     "village": {
+      "en": "Tokapal",
+      "hi": "टोकपल"
+     },
+     "village_lgd": 449561,
+     "tehsil": {
+      "en": "Tokapal",
+      "hi": "टोकपल"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 36000,
+     "annual_income_text": "₹36,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-16",
+     "valid_until": "2026-11-15",
+     "issuing_authority": {
+      "en": "Tehsildar, Tokapal",
+      "hi": "तहसीलदार, टोकपल"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 47,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000321 · ₹36,000/year · Tehsildar, Tokapal · 16-11-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000321 · ₹36,000/वर्ष · तहसीलदार, टोकपल · 16-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000163",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Kamal Sen",
+      "hi": "कमल सेन"
+     },
+     "father_name": {
+      "en": "Tularam Sen",
+      "hi": "तुलाराम सेन"
+     },
+     "gender": "M",
+     "birth_year": 1964,
+     "village": {
+      "en": "Baniyagaon",
+      "hi": "बनियागांव"
+     },
+     "village_lgd": 449493,
+     "tehsil": {
+      "en": "Bakavand",
+      "hi": "बकवंड"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 200000,
+     "annual_income_text": "₹2,00,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-20",
+     "valid_until": "2026-11-19",
+     "issuing_authority": {
+      "en": "Tehsildar, Bakavand",
+      "hi": "तहसीलदार, बकवंड"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 51,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000163 · ₹2,00,000/year · Tehsildar, Bakavand · 20-11-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000163 · ₹2,00,000/वर्ष · तहसीलदार, बकवंड · 20-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "3.0 ha · same as last year",
+       "hi": "3.0 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000195",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Sangeeta Dhruw",
+      "hi": "संगीता ध्रुव"
+     },
+     "father_name": {
+      "en": "Devendra Kashyap",
+      "hi": "देवेंद्र कश्यप"
+     },
+     "gender": "F",
+     "birth_year": 1974,
+     "village": {
+      "en": "Choknar",
+      "hi": "चोक्नर"
+     },
+     "village_lgd": 449398,
+     "tehsil": {
+      "en": "Bakavand",
+      "hi": "बकवंड"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 205000,
+     "annual_income_text": "₹2,05,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-23",
+     "valid_until": "2026-11-22",
+     "issuing_authority": {
+      "en": "Tehsildar, Bakavand",
+      "hi": "तहसीलदार, बकवंड"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 54,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000195 · ₹2,05,000/year · Tehsildar, Bakavand · 23-11-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000195 · ₹2,05,000/वर्ष · तहसीलदार, बकवंड · 23-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.0 ha · same as last year",
+       "hi": "1.0 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000062",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Janki Manjhi",
+      "hi": "जानकी मांझी"
+     },
+     "father_name": {
+      "en": "Ramesh Korram",
+      "hi": "रमेश कोर्राम"
+     },
+     "gender": "F",
+     "birth_year": 1971,
+     "village": {
+      "en": "Bagmundipaneda",
+      "hi": "बग्मुंडिपनेडा"
+     },
+     "village_lgd": 449257,
+     "tehsil": {
+      "en": "Bastanar",
+      "hi": "बस्टनर"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 26000,
+     "annual_income_text": "₹26,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-24",
+     "valid_until": "2026-11-23",
+     "issuing_authority": {
+      "en": "Tehsildar, Bastanar",
+      "hi": "तहसीलदार, बस्टनर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 55,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000062 · ₹26,000/year · Tehsildar, Bastanar · 24-11-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000062 · ₹26,000/वर्ष · तहसीलदार, बस्टनर · 24-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.4 ha · same as last year",
+       "hi": "2.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [
+     {
+      "code": "LOW_INCOME_BUT_LARGE_LANDHOLDING",
+      "label": {
+       "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+       "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+      }
+     }
+    ],
+    "strength": "verify",
+    "strength_label": {
+     "en": "Verify: rule-file flag",
+     "hi": "जांचें: नियम-फ़ाइल संकेत"
+    },
+    "strength_reason": {
+     "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+     "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000025",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Ajay Sen",
+      "hi": "अजय सेन"
+     },
+     "father_name": {
+      "en": "Mansingh Sen",
+      "hi": "मानसिंह सेन"
+     },
+     "gender": "M",
+     "birth_year": 1969,
+     "village": {
+      "en": "Karandola",
+      "hi": "करंडोला"
+     },
+     "village_lgd": 449324,
+     "tehsil": {
+      "en": "Bhanpuri",
+      "hi": "भंपुरी"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 180000,
+     "annual_income_text": "₹1,80,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-25",
+     "valid_until": "2026-11-24",
+     "issuing_authority": {
+      "en": "Tehsildar, Bhanpuri",
+      "hi": "तहसीलदार, भंपुरी"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 56,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000025 · ₹1,80,000/year · Tehsildar, Bhanpuri · 25-11-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000025 · ₹1,80,000/वर्ष · तहसीलदार, भंपुरी · 25-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.2 ha · same as last year",
+       "hi": "2.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000231",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Mahendra Mandavi",
+      "hi": "महेंद्र मंडावी"
+     },
+     "father_name": {
+      "en": "Manglu Mandavi",
+      "hi": "मंगलू मंडावी"
+     },
+     "gender": "M",
+     "birth_year": 1965,
+     "village": {
+      "en": "Kumhali",
+      "hi": "कुंहली"
+     },
+     "village_lgd": 449238,
+     "tehsil": {
+      "en": "Lohandiguda",
+      "hi": "लोहंडिगुडा"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 95000,
+     "annual_income_text": "₹95,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-25",
+     "valid_until": "2026-11-24",
+     "issuing_authority": {
+      "en": "Tehsildar, Lohandiguda",
+      "hi": "तहसीलदार, लोहंडिगुडा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 56,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000231 · ₹95,000/year · Tehsildar, Lohandiguda · 25-11-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000231 · ₹95,000/वर्ष · तहसीलदार, लोहंडिगुडा · 25-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.2 ha · same as last year",
+       "hi": "1.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BST/TSL/INC/2025/000254",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Geeta Baghel",
+      "hi": "गीता बघेल"
+     },
+     "father_name": {
+      "en": "Jagdish Dhruw",
+      "hi": "जगदीश ध्रुव"
+     },
+     "gender": "F",
+     "birth_year": 1984,
+     "village": {
+      "en": "Karkapal",
+      "hi": "कर्कपल"
+     },
+     "village_lgd": 449138,
+     "tehsil": {
+      "en": "Jagdalpur",
+      "hi": "जगदलपुर"
+     },
+     "district": {
+      "en": "Bastar",
+      "hi": "बस्तर"
+     },
+     "district_lgd": 374,
+     "annual_income": 220000,
+     "annual_income_text": "₹2,20,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-25",
+     "valid_until": "2026-11-24",
+     "issuing_authority": {
+      "en": "Tehsildar, Jagdalpur",
+      "hi": "तहसीलदार, जगदलपुर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 56,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BST/TSL/INC/2025/000254 · ₹2,20,000/year · Tehsildar, Jagdalpur · 25-11-2025 · QR ✓",
+       "hi": "क्र. CG/BST/TSL/INC/2025/000254 · ₹2,20,000/वर्ष · तहसीलदार, जगदलपुर · 25-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "3.0 ha · same as last year",
+       "hi": "3.0 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   }
+  ],
+  "districts": [
+   {
+    "lgd": 643,
+    "name": {
+     "en": "Kondagaon",
+     "hi": "कोंडागांव"
+    }
+   },
+   {
+    "lgd": 374,
+    "name": {
+     "en": "Bastar",
+     "hi": "बस्तर"
+    }
+   },
+   {
+    "lgd": 387,
+    "name": {
+     "en": "Raipur",
+     "hi": "रायपुर"
+    }
+   },
+   {
+    "lgd": 734,
+    "name": {
+     "en": "Gaurela-Pendra-Marwahi",
+     "hi": "गौरेला-पेंड्रा-मरवाही"
+    }
+   },
+   {
+    "lgd": 650,
+    "name": {
+     "en": "Bemetara",
+     "hi": "बेमेतरा"
+    }
+   }
+  ],
+  "context": {
+   "income_share_of_volume": 48.98,
+   "note": {
+    "en": "Income certificates are valid for one year and are about half of all Sewa Setu applications (REAL public MIS, 27-09-2026). Certificates and registry rows here are SYNTHETIC.",
+    "hi": "आय प्रमाण पत्र एक वर्ष हेतु मान्य हैं और सेवा सेतु के लगभग आधे आवेदन इन्हीं के हैं (वास्तविक सार्वजनिक MIS, 27-09-2026)। यहाँ के प्रमाण पत्र व अभिलेख सिंथेटिक हैं।"
+   }
+  },
+  "roadmap": [
+   {
+    "code": "legal_heir",
+    "label": {
+     "en": "Legal heir certificate (वारिस)",
+     "hi": "वारिस (उत्तराधिकार) प्रमाण पत्र"
+    },
+    "note": {
+     "en": "Family tree from the archive + death record; same same-family / not-this-family step",
+     "hi": "अभिलेखागार से वंशावली + मृत्यु अभिलेख; वही “एक ही परिवार / यह परिवार नहीं” चरण"
+    }
+   },
+   {
+    "code": "ews",
+    "label": {
+     "en": "EWS certificate",
+     "hi": "ईडब्ल्यूएस (EWS) प्रमाण पत्र"
+    },
+    "note": {
+     "en": "Income + land + residence evidence; a rule file for the thresholds",
+     "hi": "आय + भूमि + निवास साक्ष्य; सीमाओं हेतु एक नियम फ़ाइल"
+    }
+   }
+  ],
+  "synthetic": true
+ },
+ "387": {
+  "district_lgd": 387,
+  "district": {
+   "en": "Raipur",
+   "hi": "रायपुर"
+  },
+  "as_of": "2026-09-29",
+  "window_days": 60,
+  "counts": {
+   "d30": 6,
+   "d60": 8,
+   "strong": 5,
+   "partial": 1,
+   "verify": 2
+  },
+  "items": [
+   {
+    "certificate": {
+     "cert_no": "CG/RPR/TSL/INC/2025/000161",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Itwari Paikra",
+      "hi": "इतवारी पैकरा"
+     },
+     "father_name": {
+      "en": "Sunil Paikra",
+      "hi": "सुनील पैकरा"
+     },
+     "gender": "M",
+     "birth_year": 1974,
+     "village": {
+      "en": "Dumartarai",
+      "hi": "डुमर्टरै"
+     },
+     "village_lgd": 444767,
+     "tehsil": {
+      "en": "Raipur",
+      "hi": "रायपुर"
+     },
+     "district": {
+      "en": "Raipur",
+      "hi": "रायपुर"
+     },
+     "district_lgd": 387,
+     "annual_income": 120000,
+     "annual_income_text": "₹1,20,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-01",
+     "valid_until": "2026-09-30",
+     "issuing_authority": {
+      "en": "Tehsildar, Raipur",
+      "hi": "तहसीलदार, रायपुर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 1,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/RPR/TSL/INC/2025/000161 · ₹1,20,000/year · Tehsildar, Raipur · 01-10-2025 · QR ✓",
+       "hi": "क्र. CG/RPR/TSL/INC/2025/000161 · ₹1,20,000/वर्ष · तहसीलदार, रायपुर · 01-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.2 ha · same as last year",
+       "hi": "2.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/RPR/TSL/INC/2025/000133",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Hemant Agrawal",
+      "hi": "हेमंत अग्रवाल"
+     },
+     "father_name": {
+      "en": "Ajay Agrawal",
+      "hi": "अजय अग्रवाल"
+     },
+     "gender": "M",
+     "birth_year": 1982,
+     "village": {
+      "en": "Kanhera",
+      "hi": "कंहेरा"
+     },
+     "village_lgd": 444600,
+     "tehsil": {
+      "en": "Abhanpur",
+      "hi": "अभंपुर"
+     },
+     "district": {
+      "en": "Raipur",
+      "hi": "रायपुर"
+     },
+     "district_lgd": 387,
+     "annual_income": 155000,
+     "annual_income_text": "₹1,55,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-04",
+     "valid_until": "2026-10-03",
+     "issuing_authority": {
+      "en": "Tehsildar, Abhanpur",
+      "hi": "तहसीलदार, अभंपुर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 4,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/RPR/TSL/INC/2025/000133 · ₹1,55,000/year · Tehsildar, Abhanpur · 04-10-2025 · QR ✓",
+       "hi": "क्र. CG/RPR/TSL/INC/2025/000133 · ₹1,55,000/वर्ष · तहसीलदार, अभंपुर · 04-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "4.5 ha · last year 3.0 ha",
+       "hi": "4.5 हे. · पिछले वर्ष 3.0 हे."
+      },
+      "status": "warn",
+      "note": {
+       "en": "Land holding changed since last year.",
+       "hi": "पिछले वर्ष से भूमि धारिता बदली।"
+      }
+     }
+    ],
+    "rule_flags": [],
+    "strength": "partial",
+    "strength_label": {
+     "en": "Partial: a source changed",
+     "hi": "आंशिक: एक स्रोत बदला"
+    },
+    "strength_reason": {
+     "en": "2/3 sources as last year; changed: land holding",
+     "hi": "2/3 स्रोत पिछले वर्ष जैसे; बदला: भूमि धारिता"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/RPR/TSL/INC/2025/000013",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Naresh Tiwari",
+      "hi": "नरेश तिवारी"
+     },
+     "father_name": {
+      "en": "Yogesh Tiwari",
+      "hi": "योगेश तिवारी"
+     },
+     "gender": "M",
+     "birth_year": 1964,
+     "village": {
+      "en": "Kota",
+      "hi": "कोटा"
+     },
+     "village_lgd": 444922,
+     "tehsil": {
+      "en": "Tilda",
+      "hi": "टिल्डा"
+     },
+     "district": {
+      "en": "Raipur",
+      "hi": "रायपुर"
+     },
+     "district_lgd": 387,
+     "annual_income": 93000,
+     "annual_income_text": "₹93,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-08",
+     "valid_until": "2026-10-07",
+     "issuing_authority": {
+      "en": "Tehsildar, Tilda",
+      "hi": "तहसीलदार, टिल्डा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 8,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/RPR/TSL/INC/2025/000013 · ₹93,000/year · Tehsildar, Tilda · 08-10-2025 · QR ✓",
+       "hi": "क्र. CG/RPR/TSL/INC/2025/000013 · ₹93,000/वर्ष · तहसीलदार, टिल्डा · 08-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/RPR/TSL/INC/2025/000159",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Kavita Paikra",
+      "hi": "कविता पैकरा"
+     },
+     "father_name": {
+      "en": "Ramdas Paikra",
+      "hi": "रामदास पैकरा"
+     },
+     "gender": "F",
+     "birth_year": 1992,
+     "village": {
+      "en": "Bhilauni",
+      "hi": "भिलौनी"
+     },
+     "village_lgd": 444939,
+     "tehsil": {
+      "en": "Tilda",
+      "hi": "टिल्डा"
+     },
+     "district": {
+      "en": "Raipur",
+      "hi": "रायपुर"
+     },
+     "district_lgd": 387,
+     "annual_income": 29000,
+     "annual_income_text": "₹29,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-08",
+     "valid_until": "2026-10-07",
+     "issuing_authority": {
+      "en": "Tehsildar, Tilda",
+      "hi": "तहसीलदार, टिल्डा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 8,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/RPR/TSL/INC/2025/000159 · ₹29,000/year · Tehsildar, Tilda · 08-10-2025 · QR ✓",
+       "hi": "क्र. CG/RPR/TSL/INC/2025/000159 · ₹29,000/वर्ष · तहसीलदार, टिल्डा · 08-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "AAY (Antyodaya) · same as last year",
+       "hi": "अंत्योदय (AAY) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.4 ha · same as last year",
+       "hi": "0.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/RPR/TSL/INC/2025/000044",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Dhaniram Uike",
+      "hi": "धनीराम उइके"
+     },
+     "father_name": {
+      "en": "Ramlal Uike",
+      "hi": "रामलाल उइके"
+     },
+     "gender": "M",
+     "birth_year": 1982,
+     "village": {
+      "en": "Bhadaha",
+      "hi": "भडहा"
+     },
+     "village_lgd": 444994,
+     "tehsil": {
+      "en": "KHARORA",
+      "hi": "खरोरा"
+     },
+     "district": {
+      "en": "Raipur",
+      "hi": "रायपुर"
+     },
+     "district_lgd": 387,
+     "annual_income": 26000,
+     "annual_income_text": "₹26,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-13",
+     "valid_until": "2026-10-12",
+     "issuing_authority": {
+      "en": "Tehsildar, KHARORA",
+      "hi": "तहसीलदार, खरोरा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 13,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/RPR/TSL/INC/2025/000044 · ₹26,000/year · Tehsildar, KHARORA · 13-10-2025 · QR ✓",
+       "hi": "क्र. CG/RPR/TSL/INC/2025/000044 · ₹26,000/वर्ष · तहसीलदार, खरोरा · 13-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.4 ha · same as last year",
+       "hi": "2.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [
+     {
+      "code": "LOW_INCOME_BUT_LARGE_LANDHOLDING",
+      "label": {
+       "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+       "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+      }
+     }
+    ],
+    "strength": "verify",
+    "strength_label": {
+     "en": "Verify: rule-file flag",
+     "hi": "जांचें: नियम-फ़ाइल संकेत"
+    },
+    "strength_reason": {
+     "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+     "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/RPR/TSL/INC/2025/000053",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Neelam Barman",
+      "hi": "नीलम बर्मन"
+     },
+     "father_name": {
+      "en": "Tarun Sen",
+      "hi": "तरुण सेन"
+     },
+     "gender": "F",
+     "birth_year": 1987,
+     "village": {
+      "en": "Changori",
+      "hi": "चंगोरी"
+     },
+     "village_lgd": 444941,
+     "tehsil": {
+      "en": "Tilda",
+      "hi": "टिल्डा"
+     },
+     "district": {
+      "en": "Raipur",
+      "hi": "रायपुर"
+     },
+     "district_lgd": 387,
+     "annual_income": 82000,
+     "annual_income_text": "₹82,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-17",
+     "valid_until": "2026-10-16",
+     "issuing_authority": {
+      "en": "Tehsildar, Tilda",
+      "hi": "तहसीलदार, टिल्डा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 17,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/RPR/TSL/INC/2025/000053 · ₹82,000/year · Tehsildar, Tilda · 17-10-2025 · QR ✓",
+       "hi": "क्र. CG/RPR/TSL/INC/2025/000053 · ₹82,000/वर्ष · तहसीलदार, टिल्डा · 17-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.8 ha · same as last year",
+       "hi": "0.8 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/RPR/TSL/INC/2025/000069",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Shanti Markam",
+      "hi": "शांति मरकाम"
+     },
+     "father_name": {
+      "en": "Gajendra Mahilang",
+      "hi": "गजेंद्र महिलांग"
+     },
+     "gender": "F",
+     "birth_year": 1976,
+     "village": {
+      "en": "Sankari -3 (sakari)",
+      "hi": "संकरी -3 (सकरी)"
+     },
+     "village_lgd": 444761,
+     "tehsil": {
+      "en": "Raipur",
+      "hi": "रायपुर"
+     },
+     "district": {
+      "en": "Raipur",
+      "hi": "रायपुर"
+     },
+     "district_lgd": 387,
+     "annual_income": 42000,
+     "annual_income_text": "₹42,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-08",
+     "valid_until": "2026-11-07",
+     "issuing_authority": {
+      "en": "Tehsildar, Raipur",
+      "hi": "तहसीलदार, रायपुर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 39,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/RPR/TSL/INC/2025/000069 · ₹42,000/year · Tehsildar, Raipur · 08-11-2025 · QR ✓",
+       "hi": "क्र. CG/RPR/TSL/INC/2025/000069 · ₹42,000/वर्ष · तहसीलदार, रायपुर · 08-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/RPR/TSL/INC/2025/000131",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Manoj Markam",
+      "hi": "मनोज मरकाम"
+     },
+     "father_name": {
+      "en": "Devendra Markam",
+      "hi": "देवेंद्र मरकाम"
+     },
+     "gender": "M",
+     "birth_year": 1975,
+     "village": {
+      "en": "Kanhera",
+      "hi": "कंहेरा"
+     },
+     "village_lgd": 444600,
+     "tehsil": {
+      "en": "Abhanpur",
+      "hi": "अभंपुर"
+     },
+     "district": {
+      "en": "Raipur",
+      "hi": "रायपुर"
+     },
+     "district_lgd": 387,
+     "annual_income": 26000,
+     "annual_income_text": "₹26,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-29",
+     "valid_until": "2026-11-28",
+     "issuing_authority": {
+      "en": "Tehsildar, Abhanpur",
+      "hi": "तहसीलदार, अभंपुर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 60,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/RPR/TSL/INC/2025/000131 · ₹26,000/year · Tehsildar, Abhanpur · 29-11-2025 · QR ✓",
+       "hi": "क्र. CG/RPR/TSL/INC/2025/000131 · ₹26,000/वर्ष · तहसीलदार, अभंपुर · 29-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.4 ha · same as last year",
+       "hi": "2.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [
+     {
+      "code": "LOW_INCOME_BUT_LARGE_LANDHOLDING",
+      "label": {
+       "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+       "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+      }
+     }
+    ],
+    "strength": "verify",
+    "strength_label": {
+     "en": "Verify: rule-file flag",
+     "hi": "जांचें: नियम-फ़ाइल संकेत"
+    },
+    "strength_reason": {
+     "en": "Low income but a large land holding (rule file; placeholder thresholds)",
+     "hi": "कम आय पर अधिक भूमि (नियम फ़ाइल; सांकेतिक सीमाएँ)"
+    },
+    "renewal_id": null
+   }
+  ],
+  "districts": [
+   {
+    "lgd": 643,
+    "name": {
+     "en": "Kondagaon",
+     "hi": "कोंडागांव"
+    }
+   },
+   {
+    "lgd": 374,
+    "name": {
+     "en": "Bastar",
+     "hi": "बस्तर"
+    }
+   },
+   {
+    "lgd": 387,
+    "name": {
+     "en": "Raipur",
+     "hi": "रायपुर"
+    }
+   },
+   {
+    "lgd": 734,
+    "name": {
+     "en": "Gaurela-Pendra-Marwahi",
+     "hi": "गौरेला-पेंड्रा-मरवाही"
+    }
+   },
+   {
+    "lgd": 650,
+    "name": {
+     "en": "Bemetara",
+     "hi": "बेमेतरा"
+    }
+   }
+  ],
+  "context": {
+   "income_share_of_volume": 48.98,
+   "note": {
+    "en": "Income certificates are valid for one year and are about half of all Sewa Setu applications (REAL public MIS, 27-09-2026). Certificates and registry rows here are SYNTHETIC.",
+    "hi": "आय प्रमाण पत्र एक वर्ष हेतु मान्य हैं और सेवा सेतु के लगभग आधे आवेदन इन्हीं के हैं (वास्तविक सार्वजनिक MIS, 27-09-2026)। यहाँ के प्रमाण पत्र व अभिलेख सिंथेटिक हैं।"
+   }
+  },
+  "roadmap": [
+   {
+    "code": "legal_heir",
+    "label": {
+     "en": "Legal heir certificate (वारिस)",
+     "hi": "वारिस (उत्तराधिकार) प्रमाण पत्र"
+    },
+    "note": {
+     "en": "Family tree from the archive + death record; same same-family / not-this-family step",
+     "hi": "अभिलेखागार से वंशावली + मृत्यु अभिलेख; वही “एक ही परिवार / यह परिवार नहीं” चरण"
+    }
+   },
+   {
+    "code": "ews",
+    "label": {
+     "en": "EWS certificate",
+     "hi": "ईडब्ल्यूएस (EWS) प्रमाण पत्र"
+    },
+    "note": {
+     "en": "Income + land + residence evidence; a rule file for the thresholds",
+     "hi": "आय + भूमि + निवास साक्ष्य; सीमाओं हेतु एक नियम फ़ाइल"
+    }
+   }
+  ],
+  "synthetic": true
+ },
+ "734": {
+  "district_lgd": 734,
+  "district": {
+   "en": "Gaurela-Pendra-Marwahi",
+   "hi": "गौरेला-पेंड्रा-मरवाही"
+  },
+  "as_of": "2026-09-29",
+  "window_days": 60,
+  "counts": {
+   "d30": 4,
+   "d60": 7,
+   "strong": 7,
+   "partial": 0,
+   "verify": 0
+  },
+  "items": [
+   {
+    "certificate": {
+     "cert_no": "CG/GPM/TSL/INC/2025/000064",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Kanhaiya Sinha",
+      "hi": "कन्हैया सिन्हा"
+     },
+     "father_name": {
+      "en": "Suresh Sinha",
+      "hi": "सुरेश सिन्हा"
+     },
+     "gender": "M",
+     "birth_year": 1981,
+     "village": {
+      "en": "Bagra",
+      "hi": "बग्रा"
+     },
+     "village_lgd": 437504,
+     "tehsil": {
+      "en": "Pendra Road Gorella",
+      "hi": "पेंड्रा रोअड गोरेल्ला"
+     },
+     "district": {
+      "en": "Gaurela-Pendra-Marwahi",
+      "hi": "गौरेला-पेंड्रा-मरवाही"
+     },
+     "district_lgd": 734,
+     "annual_income": 59000,
+     "annual_income_text": "₹59,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-15",
+     "valid_until": "2026-10-14",
+     "issuing_authority": {
+      "en": "Tehsildar, Pendra Road Gorella",
+      "hi": "तहसीलदार, पेंड्रा रोअड गोरेल्ला"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 15,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/GPM/TSL/INC/2025/000064 · ₹59,000/year · Tehsildar, Pendra Road Gorella · 15-10-2025 · QR ✓",
+       "hi": "क्र. CG/GPM/TSL/INC/2025/000064 · ₹59,000/वर्ष · तहसीलदार, पेंड्रा रोअड गोरेल्ला · 15-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.2 ha · same as last year",
+       "hi": "1.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/GPM/TSL/INC/2025/000032",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Radha Chandrakar",
+      "hi": "राधा चंद्राकर"
+     },
+     "father_name": {
+      "en": "Kishor Verma",
+      "hi": "किशोर वर्मा"
+     },
+     "gender": "F",
+     "birth_year": 1979,
+     "village": {
+      "en": "Chanadongri",
+      "hi": "चनडोंग्री"
+     },
+     "village_lgd": 437544,
+     "tehsil": {
+      "en": "Marwahi",
+      "hi": "मरवाही"
+     },
+     "district": {
+      "en": "Gaurela-Pendra-Marwahi",
+      "hi": "गौरेला-पेंड्रा-मरवाही"
+     },
+     "district_lgd": 734,
+     "annual_income": 180000,
+     "annual_income_text": "₹1,80,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-21",
+     "valid_until": "2026-10-20",
+     "issuing_authority": {
+      "en": "Tehsildar, Marwahi",
+      "hi": "तहसीलदार, मरवाही"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 21,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/GPM/TSL/INC/2025/000032 · ₹1,80,000/year · Tehsildar, Marwahi · 21-10-2025 · QR ✓",
+       "hi": "क्र. CG/GPM/TSL/INC/2025/000032 · ₹1,80,000/वर्ष · तहसीलदार, मरवाही · 21-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.2 ha · same as last year",
+       "hi": "2.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/GPM/TSL/INC/2025/000138",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Somaru Soni",
+      "hi": "सोमारू सोनी"
+     },
+     "father_name": {
+      "en": "Devendra Soni",
+      "hi": "देवेंद्र सोनी"
+     },
+     "gender": "M",
+     "birth_year": 1970,
+     "village": {
+      "en": "Harri",
+      "hi": "हर्री"
+     },
+     "village_lgd": 437442,
+     "tehsil": {
+      "en": "Pendra Road Gorella",
+      "hi": "पेंड्रा रोअड गोरेल्ला"
+     },
+     "district": {
+      "en": "Gaurela-Pendra-Marwahi",
+      "hi": "गौरेला-पेंड्रा-मरवाही"
+     },
+     "district_lgd": 734,
+     "annual_income": 66000,
+     "annual_income_text": "₹66,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-21",
+     "valid_until": "2026-10-20",
+     "issuing_authority": {
+      "en": "Tehsildar, Pendra Road Gorella",
+      "hi": "तहसीलदार, पेंड्रा रोअड गोरेल्ला"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 21,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/GPM/TSL/INC/2025/000138 · ₹66,000/year · Tehsildar, Pendra Road Gorella · 21-10-2025 · QR ✓",
+       "hi": "क्र. CG/GPM/TSL/INC/2025/000138 · ₹66,000/वर्ष · तहसीलदार, पेंड्रा रोअड गोरेल्ला · 21-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.4 ha · same as last year",
+       "hi": "0.4 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/GPM/TSL/INC/2025/000117",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Ghasiram Baghel",
+      "hi": "घासीराम बघेल"
+     },
+     "father_name": {
+      "en": "Yogesh Baghel",
+      "hi": "योगेश बघेल"
+     },
+     "gender": "M",
+     "birth_year": 1990,
+     "village": {
+      "en": "Bagra",
+      "hi": "बग्रा"
+     },
+     "village_lgd": 437504,
+     "tehsil": {
+      "en": "Pendra Road Gorella",
+      "hi": "पेंड्रा रोअड गोरेल्ला"
+     },
+     "district": {
+      "en": "Gaurela-Pendra-Marwahi",
+      "hi": "गौरेला-पेंड्रा-मरवाही"
+     },
+     "district_lgd": 734,
+     "annual_income": 155000,
+     "annual_income_text": "₹1,55,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-27",
+     "valid_until": "2026-10-26",
+     "issuing_authority": {
+      "en": "Tehsildar, Pendra Road Gorella",
+      "hi": "तहसीलदार, पेंड्रा रोअड गोरेल्ला"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 27,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/GPM/TSL/INC/2025/000117 · ₹1,55,000/year · Tehsildar, Pendra Road Gorella · 27-10-2025 · QR ✓",
+       "hi": "क्र. CG/GPM/TSL/INC/2025/000117 · ₹1,55,000/वर्ष · तहसीलदार, पेंड्रा रोअड गोरेल्ला · 27-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "3.0 ha · same as last year",
+       "hi": "3.0 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/GPM/TSL/INC/2025/000031",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Hemlata Kurre",
+      "hi": "हेमलता कुर्रे"
+     },
+     "father_name": {
+      "en": "Shyamlal Chandravanshi",
+      "hi": "श्यामलाल चंद्रवंशी"
+     },
+     "gender": "F",
+     "birth_year": 1997,
+     "village": {
+      "en": "Majhganwan",
+      "hi": "मझ्गंवन"
+     },
+     "village_lgd": 437594,
+     "tehsil": {
+      "en": "Marwahi",
+      "hi": "मरवाही"
+     },
+     "district": {
+      "en": "Gaurela-Pendra-Marwahi",
+      "hi": "गौरेला-पेंड्रा-मरवाही"
+     },
+     "district_lgd": 734,
+     "annual_income": 160000,
+     "annual_income_text": "₹1,60,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-05",
+     "valid_until": "2026-11-04",
+     "issuing_authority": {
+      "en": "Tehsildar, Marwahi",
+      "hi": "तहसीलदार, मरवाही"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 36,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/GPM/TSL/INC/2025/000031 · ₹1,60,000/year · Tehsildar, Marwahi · 05-11-2025 · QR ✓",
+       "hi": "क्र. CG/GPM/TSL/INC/2025/000031 · ₹1,60,000/वर्ष · तहसीलदार, मरवाही · 05-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/GPM/TSL/INC/2025/000037",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Anjali Dewangan",
+      "hi": "अंजली देवांगन"
+     },
+     "father_name": {
+      "en": "Khemraj Dewangan",
+      "hi": "खेमराज देवांगन"
+     },
+     "gender": "F",
+     "birth_year": 1978,
+     "village": {
+      "en": "Chanadongri",
+      "hi": "चनडोंग्री"
+     },
+     "village_lgd": 437544,
+     "tehsil": {
+      "en": "Marwahi",
+      "hi": "मरवाही"
+     },
+     "district": {
+      "en": "Gaurela-Pendra-Marwahi",
+      "hi": "गौरेला-पेंड्रा-मरवाही"
+     },
+     "district_lgd": 734,
+     "annual_income": 29000,
+     "annual_income_text": "₹29,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-26",
+     "valid_until": "2026-11-25",
+     "issuing_authority": {
+      "en": "Tehsildar, Marwahi",
+      "hi": "तहसीलदार, मरवाही"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 57,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/GPM/TSL/INC/2025/000037 · ₹29,000/year · Tehsildar, Marwahi · 26-11-2025 · QR ✓",
+       "hi": "क्र. CG/GPM/TSL/INC/2025/000037 · ₹29,000/वर्ष · तहसीलदार, मरवाही · 26-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "AAY (Antyodaya) · same as last year",
+       "hi": "अंत्योदय (AAY) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.0 ha · same as last year",
+       "hi": "0.0 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/GPM/TSL/INC/2025/000175",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Ramesh Yadav",
+      "hi": "रमेश यादव"
+     },
+     "father_name": {
+      "en": "Sitaram Yadav",
+      "hi": "सीताराम यादव"
+     },
+     "gender": "M",
+     "birth_year": 1981,
+     "village": {
+      "en": "Lamna",
+      "hi": "लंना"
+     },
+     "village_lgd": 437502,
+     "tehsil": {
+      "en": "Pendra Road Gorella",
+      "hi": "पेंड्रा रोअड गोरेल्ला"
+     },
+     "district": {
+      "en": "Gaurela-Pendra-Marwahi",
+      "hi": "गौरेला-पेंड्रा-मरवाही"
+     },
+     "district_lgd": 734,
+     "annual_income": 56000,
+     "annual_income_text": "₹56,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-26",
+     "valid_until": "2026-11-25",
+     "issuing_authority": {
+      "en": "Tehsildar, Pendra Road Gorella",
+      "hi": "तहसीलदार, पेंड्रा रोअड गोरेल्ला"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 57,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/GPM/TSL/INC/2025/000175 · ₹56,000/year · Tehsildar, Pendra Road Gorella · 26-11-2025 · QR ✓",
+       "hi": "क्र. CG/GPM/TSL/INC/2025/000175 · ₹56,000/वर्ष · तहसीलदार, पेंड्रा रोअड गोरेल्ला · 26-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   }
+  ],
+  "districts": [
+   {
+    "lgd": 643,
+    "name": {
+     "en": "Kondagaon",
+     "hi": "कोंडागांव"
+    }
+   },
+   {
+    "lgd": 374,
+    "name": {
+     "en": "Bastar",
+     "hi": "बस्तर"
+    }
+   },
+   {
+    "lgd": 387,
+    "name": {
+     "en": "Raipur",
+     "hi": "रायपुर"
+    }
+   },
+   {
+    "lgd": 734,
+    "name": {
+     "en": "Gaurela-Pendra-Marwahi",
+     "hi": "गौरेला-पेंड्रा-मरवाही"
+    }
+   },
+   {
+    "lgd": 650,
+    "name": {
+     "en": "Bemetara",
+     "hi": "बेमेतरा"
+    }
+   }
+  ],
+  "context": {
+   "income_share_of_volume": 48.98,
+   "note": {
+    "en": "Income certificates are valid for one year and are about half of all Sewa Setu applications (REAL public MIS, 27-09-2026). Certificates and registry rows here are SYNTHETIC.",
+    "hi": "आय प्रमाण पत्र एक वर्ष हेतु मान्य हैं और सेवा सेतु के लगभग आधे आवेदन इन्हीं के हैं (वास्तविक सार्वजनिक MIS, 27-09-2026)। यहाँ के प्रमाण पत्र व अभिलेख सिंथेटिक हैं।"
+   }
+  },
+  "roadmap": [
+   {
+    "code": "legal_heir",
+    "label": {
+     "en": "Legal heir certificate (वारिस)",
+     "hi": "वारिस (उत्तराधिकार) प्रमाण पत्र"
+    },
+    "note": {
+     "en": "Family tree from the archive + death record; same same-family / not-this-family step",
+     "hi": "अभिलेखागार से वंशावली + मृत्यु अभिलेख; वही “एक ही परिवार / यह परिवार नहीं” चरण"
+    }
+   },
+   {
+    "code": "ews",
+    "label": {
+     "en": "EWS certificate",
+     "hi": "ईडब्ल्यूएस (EWS) प्रमाण पत्र"
+    },
+    "note": {
+     "en": "Income + land + residence evidence; a rule file for the thresholds",
+     "hi": "आय + भूमि + निवास साक्ष्य; सीमाओं हेतु एक नियम फ़ाइल"
+    }
+   }
+  ],
+  "synthetic": true
+ },
+ "650": {
+  "district_lgd": 650,
+  "district": {
+   "en": "Bemetara",
+   "hi": "बेमेतरा"
+  },
+  "as_of": "2026-09-29",
+  "window_days": 60,
+  "counts": {
+   "d30": 1,
+   "d60": 7,
+   "strong": 6,
+   "partial": 1,
+   "verify": 0
+  },
+  "items": [
+   {
+    "certificate": {
+     "cert_no": "CG/BMT/TSL/INC/2025/000132",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Bhuneshwar Baghel",
+      "hi": "भुनेश्वर बघेल"
+     },
+     "father_name": {
+      "en": "Pradeep Baghel",
+      "hi": "प्रदीप बघेल"
+     },
+     "gender": "M",
+     "birth_year": 1970,
+     "village": {
+      "en": "Rakhi",
+      "hi": "रखी"
+     },
+     "village_lgd": 442136,
+     "tehsil": {
+      "en": "Devkar",
+      "hi": "डेव्कर"
+     },
+     "district": {
+      "en": "Bemetara",
+      "hi": "बेमेतरा"
+     },
+     "district_lgd": 650,
+     "annual_income": 33000,
+     "annual_income_text": "₹33,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-10-25",
+     "valid_until": "2026-10-24",
+     "issuing_authority": {
+      "en": "Tehsildar, Devkar",
+      "hi": "तहसीलदार, डेव्कर"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 25,
+    "window": 30,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BMT/TSL/INC/2025/000132 · ₹33,000/year · Tehsildar, Devkar · 25-10-2025 · QR ✓",
+       "hi": "क्र. CG/BMT/TSL/INC/2025/000132 · ₹33,000/वर्ष · तहसीलदार, डेव्कर · 25-10-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "AAY (Antyodaya) · same as last year",
+       "hi": "अंत्योदय (AAY) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.0 ha · same as last year",
+       "hi": "0.0 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BMT/TSL/INC/2025/000012",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Khemraj Sahu",
+      "hi": "खेमराज साहू"
+     },
+     "father_name": {
+      "en": "Khemraj Sahu",
+      "hi": "खेमराज साहू"
+     },
+     "gender": "M",
+     "birth_year": 1986,
+     "village": {
+      "en": "Khisora",
+      "hi": "खिसोरा"
+     },
+     "village_lgd": 442266,
+     "tehsil": {
+      "en": "Berla",
+      "hi": "बेर्ला"
+     },
+     "district": {
+      "en": "Bemetara",
+      "hi": "बेमेतरा"
+     },
+     "district_lgd": 650,
+     "annual_income": 195000,
+     "annual_income_text": "₹1,95,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-06",
+     "valid_until": "2026-11-05",
+     "issuing_authority": {
+      "en": "Tehsildar, Berla",
+      "hi": "तहसीलदार, बेर्ला"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 37,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BMT/TSL/INC/2025/000012 · ₹1,95,000/year · Tehsildar, Berla · 06-11-2025 · QR ✓",
+       "hi": "क्र. CG/BMT/TSL/INC/2025/000012 · ₹1,95,000/वर्ष · तहसीलदार, बेर्ला · 06-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.2 ha · same as last year",
+       "hi": "2.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BMT/TSL/INC/2025/000158",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Rameshwari Ratre",
+      "hi": "रामेश्वरी रात्रे"
+     },
+     "father_name": {
+      "en": "Kanhaiya Sahu",
+      "hi": "कन्हैया साहू"
+     },
+     "gender": "F",
+     "birth_year": 1983,
+     "village": {
+      "en": "Sambalpur",
+      "hi": "संबल्पुर"
+     },
+     "village_lgd": 441814,
+     "tehsil": {
+      "en": "NANDGHAT",
+      "hi": "नंड्घट"
+     },
+     "district": {
+      "en": "Bemetara",
+      "hi": "बेमेतरा"
+     },
+     "district_lgd": 650,
+     "annual_income": 38000,
+     "annual_income_text": "₹38,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-13",
+     "valid_until": "2026-11-12",
+     "issuing_authority": {
+      "en": "Tehsildar, NANDGHAT",
+      "hi": "तहसीलदार, नंड्घट"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 44,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BMT/TSL/INC/2025/000158 · ₹38,000/year · Tehsildar, NANDGHAT · 13-11-2025 · QR ✓",
+       "hi": "क्र. CG/BMT/TSL/INC/2025/000158 · ₹38,000/वर्ष · तहसीलदार, नंड्घट · 13-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.2 ha · same as last year",
+       "hi": "1.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BMT/TSL/INC/2025/000070",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Samaru Banjare",
+      "hi": "समारू बंजारे"
+     },
+     "father_name": {
+      "en": "Nandkumar Banjare",
+      "hi": "नंदकुमार बंजारे"
+     },
+     "gender": "M",
+     "birth_year": 1993,
+     "village": {
+      "en": "Bhilauni",
+      "hi": "भिलौनी"
+     },
+     "village_lgd": 441840,
+     "tehsil": {
+      "en": "NANDGHAT",
+      "hi": "नंड्घट"
+     },
+     "district": {
+      "en": "Bemetara",
+      "hi": "बेमेतरा"
+     },
+     "district_lgd": 650,
+     "annual_income": 64000,
+     "annual_income_text": "₹64,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-14",
+     "valid_until": "2026-11-13",
+     "issuing_authority": {
+      "en": "Tehsildar, NANDGHAT",
+      "hi": "तहसीलदार, नंड्घट"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 45,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BMT/TSL/INC/2025/000070 · ₹64,000/year · Tehsildar, NANDGHAT · 14-11-2025 · QR ✓",
+       "hi": "क्र. CG/BMT/TSL/INC/2025/000070 · ₹64,000/वर्ष · तहसीलदार, नंड्घट · 14-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "PHH (priority household) · same as last year",
+       "hi": "प्राथमिकता परिवार (PHH) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.8 ha · same as last year",
+       "hi": "0.8 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BMT/TSL/INC/2025/000091",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Mahesh Kaushik",
+      "hi": "महेश कौशिक"
+     },
+     "father_name": {
+      "en": "Samaru Kaushik",
+      "hi": "समारू कौशिक"
+     },
+     "gender": "M",
+     "birth_year": 1984,
+     "village": {
+      "en": "Hasda",
+      "hi": "हस्डा"
+     },
+     "village_lgd": 442361,
+     "tehsil": {
+      "en": "Bhimbhauri",
+      "hi": "भिंभौरी"
+     },
+     "district": {
+      "en": "Bemetara",
+      "hi": "बेमेतरा"
+     },
+     "district_lgd": 650,
+     "annual_income": 77000,
+     "annual_income_text": "₹77,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-14",
+     "valid_until": "2026-11-13",
+     "issuing_authority": {
+      "en": "Tehsildar, Bhimbhauri",
+      "hi": "तहसीलदार, भिंभौरी"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 45,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BMT/TSL/INC/2025/000091 · ₹77,000/year · Tehsildar, Bhimbhauri · 14-11-2025 · QR ✓",
+       "hi": "क्र. CG/BMT/TSL/INC/2025/000091 · ₹77,000/वर्ष · तहसीलदार, भिंभौरी · 14-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · last year PHH (priority household)",
+       "hi": "सामान्य (APL) · पिछले वर्ष प्राथमिकता परिवार (PHH)"
+      },
+      "status": "warn",
+      "note": {
+       "en": "Category changed: income may have changed. The citizen confirms, the officer checks.",
+       "hi": "श्रेणी बदली: आय बदली हो सकती है। नागरिक पुष्टि करें, अधिकारी जांचें।"
+      }
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "1.6 ha · same as last year",
+       "hi": "1.6 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "partial",
+    "strength_label": {
+     "en": "Partial: a source changed",
+     "hi": "आंशिक: एक स्रोत बदला"
+    },
+    "strength_reason": {
+     "en": "2/3 sources as last year; changed: ration category",
+     "hi": "2/3 स्रोत पिछले वर्ष जैसे; बदला: राशन श्रेणी"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BMT/TSL/INC/2025/000039",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Khushboo Pandey",
+      "hi": "खुशबू पांडेय"
+     },
+     "father_name": {
+      "en": "Tikeshwar Thakur",
+      "hi": "टिकेश्वर ठाकुर"
+     },
+     "gender": "F",
+     "birth_year": 1982,
+     "village": {
+      "en": "Karamtara",
+      "hi": "करंटरा"
+     },
+     "village_lgd": 442093,
+     "tehsil": {
+      "en": "Saja",
+      "hi": "सजा"
+     },
+     "district": {
+      "en": "Bemetara",
+      "hi": "बेमेतरा"
+     },
+     "district_lgd": 650,
+     "annual_income": 21000,
+     "annual_income_text": "₹21,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-24",
+     "valid_until": "2026-11-23",
+     "issuing_authority": {
+      "en": "Tehsildar, Saja",
+      "hi": "तहसीलदार, सजा"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 55,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BMT/TSL/INC/2025/000039 · ₹21,000/year · Tehsildar, Saja · 24-11-2025 · QR ✓",
+       "hi": "क्र. CG/BMT/TSL/INC/2025/000039 · ₹21,000/वर्ष · तहसीलदार, सजा · 24-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "AAY (Antyodaya) · same as last year",
+       "hi": "अंत्योदय (AAY) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "0.2 ha · same as last year",
+       "hi": "0.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   },
+   {
+    "certificate": {
+     "cert_no": "CG/BMT/TSL/INC/2025/000023",
+     "service": "income",
+     "cert_type": "annual",
+     "holder_name": {
+      "en": "Govind Mahilang",
+      "hi": "गोविंद महिलांग"
+     },
+     "father_name": {
+      "en": "Rakesh Mahilang",
+      "hi": "राकेश महिलांग"
+     },
+     "gender": "M",
+     "birth_year": 1962,
+     "village": {
+      "en": "Dhobni Khurd",
+      "hi": "धोब्नी खुर्द"
+     },
+     "village_lgd": 441705,
+     "tehsil": {
+      "en": "Nawagarh",
+      "hi": "नवागढ़"
+     },
+     "district": {
+      "en": "Bemetara",
+      "hi": "बेमेतरा"
+     },
+     "district_lgd": 650,
+     "annual_income": 235000,
+     "annual_income_text": "₹2,35,000",
+     "income_sources": {
+      "en": "Agriculture and wage labour",
+      "hi": "खेती एवं मज़दूरी"
+     },
+     "issue_date": "2025-11-28",
+     "valid_until": "2026-11-27",
+     "issuing_authority": {
+      "en": "Tehsildar, Nawagarh",
+      "hi": "तहसीलदार, नवागढ़"
+     },
+     "authority_role": "Tehsildar",
+     "status": "active",
+     "qr_verified": true,
+     "synthetic": true
+    },
+    "days_left": 59,
+    "window": 60,
+    "evidence": [
+     {
+      "source": {
+       "en": "Sewa Setu archive: last year's income certificate",
+       "hi": "सेवा सेतु अभिलेखागार: पिछले वर्ष का आय प्रमाण पत्र"
+      },
+      "field": {
+       "en": "Number and income",
+       "hi": "क्रमांक व आय"
+      },
+      "value": {
+       "en": "No. CG/BMT/TSL/INC/2025/000023 · ₹2,35,000/year · Tehsildar, Nawagarh · 28-11-2025 · QR ✓",
+       "hi": "क्र. CG/BMT/TSL/INC/2025/000023 · ₹2,35,000/वर्ष · तहसीलदार, नवागढ़ · 28-11-2025 · QR ✓"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Khadya ration roster (mock)",
+       "hi": "खाद्य राशन सूची (नमूना)"
+      },
+      "field": {
+       "en": "Ration category",
+       "hi": "राशन श्रेणी"
+      },
+      "value": {
+       "en": "APL (general) · same as last year",
+       "hi": "सामान्य (APL) · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     },
+     {
+      "source": {
+       "en": "Bhuiyan land record (mock)",
+       "hi": "भुइयां भू-अभिलेख (नमूना)"
+      },
+      "field": {
+       "en": "Land holding",
+       "hi": "भूमि धारिता"
+      },
+      "value": {
+       "en": "2.2 ha · same as last year",
+       "hi": "2.2 हे. · पिछले वर्ष जैसी"
+      },
+      "status": "ok"
+     }
+    ],
+    "rule_flags": [],
+    "strength": "strong",
+    "strength_label": {
+     "en": "Strong: 3/3 sources as last year",
+     "hi": "मज़बूत: 3/3 स्रोत पिछले वर्ष जैसे"
+    },
+    "strength_reason": {
+     "en": "Last year's certificate, ration category and land holding all as last year",
+     "hi": "पिछले वर्ष का प्रमाण पत्र, राशन श्रेणी व भूमि धारिता — सभी पिछले वर्ष जैसे"
+    },
+    "renewal_id": null
+   }
+  ],
+  "districts": [
+   {
+    "lgd": 643,
+    "name": {
+     "en": "Kondagaon",
+     "hi": "कोंडागांव"
+    }
+   },
+   {
+    "lgd": 374,
+    "name": {
+     "en": "Bastar",
+     "hi": "बस्तर"
+    }
+   },
+   {
+    "lgd": 387,
+    "name": {
+     "en": "Raipur",
+     "hi": "रायपुर"
+    }
+   },
+   {
+    "lgd": 734,
+    "name": {
+     "en": "Gaurela-Pendra-Marwahi",
+     "hi": "गौरेला-पेंड्रा-मरवाही"
+    }
+   },
+   {
+    "lgd": 650,
+    "name": {
+     "en": "Bemetara",
+     "hi": "बेमेतरा"
+    }
+   }
+  ],
+  "context": {
+   "income_share_of_volume": 48.98,
+   "note": {
+    "en": "Income certificates are valid for one year and are about half of all Sewa Setu applications (REAL public MIS, 27-09-2026). Certificates and registry rows here are SYNTHETIC.",
+    "hi": "आय प्रमाण पत्र एक वर्ष हेतु मान्य हैं और सेवा सेतु के लगभग आधे आवेदन इन्हीं के हैं (वास्तविक सार्वजनिक MIS, 27-09-2026)। यहाँ के प्रमाण पत्र व अभिलेख सिंथेटिक हैं।"
+   }
+  },
+  "roadmap": [
+   {
+    "code": "legal_heir",
+    "label": {
+     "en": "Legal heir certificate (वारिस)",
+     "hi": "वारिस (उत्तराधिकार) प्रमाण पत्र"
+    },
+    "note": {
+     "en": "Family tree from the archive + death record; same same-family / not-this-family step",
+     "hi": "अभिलेखागार से वंशावली + मृत्यु अभिलेख; वही “एक ही परिवार / यह परिवार नहीं” चरण"
+    }
+   },
+   {
+    "code": "ews",
+    "label": {
+     "en": "EWS certificate",
+     "hi": "ईडब्ल्यूएस (EWS) प्रमाण पत्र"
+    },
+    "note": {
+     "en": "Income + land + residence evidence; a rule file for the thresholds",
+     "hi": "आय + भूमि + निवास साक्ष्य; सीमाओं हेतु एक नियम फ़ाइल"
+    }
+   }
+  ],
+  "synthetic": true
+ }
+}

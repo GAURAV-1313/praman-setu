@@ -27,6 +27,8 @@ import type {
   PrecheckRequest,
   PrecheckResponse,
   QueueItem,
+  RenewalList,
+  RenewalRecord,
   Role,
   Village,
 } from "./types";
@@ -193,6 +195,12 @@ export const api = {
     withFallback<TraySignResponse>("/tray/sign", () => mock.traySign(otp), post({ otp, officer_name: officer })),
   toolFeedback: (appId: string, useful: "yes" | "no" | "wrong_family", note?: string) =>
     withFallback<{ ok: boolean }>(`/applications/${enc(appId)}/tool-feedback`, () => mock.toolFeedback(appId, useful, note), post({ useful, note })),
+  // ---- Round 8b: income-certificate renewal (SYNTHETIC; nothing is issued)
+  renewals: (districtLgd = 643, window = 60) =>
+    withFallback<RenewalList>(`/renewals?district_lgd=${districtLgd}&window=${window}`, () => mock.renewals(districtLgd, window)),
+  /** cert_no keeps its slashes: the backend route is /renewals/{cert_no:path}/prefill */
+  renewalPrefill: (certNo: string) =>
+    withFallback<RenewalRecord>(`/renewals/${certNo.split("/").map(enc).join("/")}/prefill`, () => mock.renewalPrefill(certNo), { method: "POST" }),
   reset: async () => {
     // Always reset the local simulation too.
     mock.reset();
