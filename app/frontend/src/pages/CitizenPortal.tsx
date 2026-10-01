@@ -158,6 +158,7 @@ export default function CitizenPortal() {
   }
   async function demo(kind: "sunita" | "ramesh" | "rajni") {
     reset();
+    setStep(1);
     const pick = async (q: string, d?: number) => (await api.villages(d, q).catch(() => [] as Village[]))[0] ?? null;
     if (kind === "sunita") {
       const v = (await pick("Bayanar", 643)) ?? { village_lgd: 448703, name: { en: "Bayanar", hi: "बयानार" }, tehsil: { en: "Kondagaon", hi: "कोंडागांव" } };
@@ -230,6 +231,13 @@ export default function CitizenPortal() {
     }
   }
 
+  const formMissing = [
+    !f.guardianHi && tx("guardian's name", "अभिभावक का नाम"),
+    !f.guardianEn && tx("guardian's name in English", "अभिभावक का नाम अंग्रेजी में"),
+    !f.birthYear && tx("year of birth", "जन्म वर्ष"),
+    !f.caste && tx("caste", "जाति"),
+    !f.nameEn && tx("beneficiary's name in English", "हितग्राही का नाम अंग्रेजी में"),
+  ].filter(Boolean) as string[];
   const casteProofOk = proofAttached || noPapers || uploads.has("caste_proof");
   const obcIncomeOk = svc !== "caste_obc" || uploads.has("father_income");
   const affidavitOk = svc !== "caste_obc" || uploads.has("affidavit") || noPapers;
@@ -318,6 +326,7 @@ export default function CitizenPortal() {
 
         {step === 0 && (
           <>
+            <DemoStrip onPick={demo} />
             <div className="cz-svc-pick">
               <span className="small">{tx("Service", "सेवा")}:</span>
               <button className={svcGroup === "scst" ? "on" : ""} onClick={() => setSvcGroup("scst")}>
@@ -420,7 +429,7 @@ export default function CitizenPortal() {
                 <div className="cz-box">
                   <b>22 {tx("days", "दिन")}</b>
                 </div>
-                <PapersGuide svcGroup={svcGroup} />
+                <PapersGuide svcGroup={svcGroup} onStart={() => setStep(1)} />
               </div>
             </div>
           </>
@@ -428,15 +437,16 @@ export default function CitizenPortal() {
 
         {step === 1 && (
           <>
+            {!f.nameHi && <DemoStrip onPick={demo} />}
             <TitleBand>{svcTitle}</TitleBand>
             <div className="cz-card">
               <div className="cz-card-tab">{tx("Applicant's basic information", "आवेदक की बुनियादी जानकारी")}</div>
               <div className="cz-grid2">
                 <Field label={tx("Applicant's name", "आवेदक का नाम")} req>
-                  <input className="cz-in" value={f.nameHi} onChange={(e) => set("nameHi", e.target.value)} placeholder="सुनीता मरकाम" id="cz-name" />
+                  <input className="cz-in" value={f.nameHi} onChange={(e) => set("nameHi", e.target.value)} placeholder={tx("e.g. Sunita Markam", "उदा. सुनीता मरकाम")} id="cz-name" />
                 </Field>
                 <Field label={tx("Mobile number", "मोबाइल नंबर")} req>
-                  <input className="cz-in" value={f.mobile} onChange={(e) => set("mobile", e.target.value)} placeholder="98XXXXXXXX" />
+                  <input className="cz-in" value={f.mobile} onChange={(e) => set("mobile", e.target.value)} placeholder={tx("10-digit mobile", "10 अंकों का मोबाइल")} />
                 </Field>
                 <Field label={tx("District", "जिला")} req>
                   <select className="cz-in" value="643" disabled>
@@ -462,9 +472,16 @@ export default function CitizenPortal() {
                 {aadhaarOk ? (
                   <span className="cz-ok">✓ {tx("Aadhaar e-Authentication done", "आधार ई-प्रमाणीकरण पूर्ण")} · XXXX XXXX {f.aadhaar.slice(-4)}</span>
                 ) : (
-                  <button className="cz-btn blue" onClick={() => setAadhaarOpen(true)} id="cz-aadhaar" disabled={!f.nameHi || !f.village}>
-                    Aadhaar e-Authentication
-                  </button>
+                  <>
+                    <button className="cz-btn blue" onClick={() => setAadhaarOpen(true)} id="cz-aadhaar" disabled={!f.nameHi || !f.village}>
+                      Aadhaar e-Authentication
+                    </button>
+                    {(!f.nameHi || !f.village) && (
+                      <span className="cz-hint">
+                        {tx("Fill first", "पहले भरें")}: {[!f.nameHi && tx("applicant's name", "आवेदक का नाम"), !f.village && tx("revenue village (pick from the list)", "राजस्व गांव (सूची से चुनें)")].filter(Boolean).join(" · ")}
+                      </span>
+                    )}
+                  </>
                 )}
               </div>
             </div>
@@ -472,6 +489,7 @@ export default function CitizenPortal() {
               <button className="cz-btn red" disabled={!aadhaarOk} onClick={() => setStep(2)} id="cz-submit-1">
                 {tx("Submit", "जमा करें")}
               </button>
+              {!aadhaarOk && <span className="cz-hint">{tx("Complete Aadhaar e-Authentication first", "पहले आधार ई-प्रमाणीकरण पूरा करें")}</span>}
               <button className="cz-btn red" onClick={() => setStep(0)}>
                 {tx("Back", "फिर से")}
               </button>
@@ -809,8 +827,13 @@ export default function CitizenPortal() {
                 </select>
               </Field>
             </div>
+            {formMissing.length > 0 && (
+              <div className="cz-hint" style={{ textAlign: "center" }}>
+                {tx("Fill the starred fields", "* वाले खाने भरें")}: {formMissing.join(" · ")}
+              </div>
+            )}
             <div className="cz-actions">
-              <button className="cz-btn green" onClick={() => setStep(3)} disabled={!f.guardianHi || !f.nameEn || !f.caste || !f.birthYear} id="cz-save-preview">
+              <button className="cz-btn green" onClick={() => setStep(3)} disabled={formMissing.length > 0} id="cz-save-preview">
                 {tx("Save and continue", "सहेजें और पूर्वावलोकन")}
               </button>
               <button className="cz-btn blue" onClick={() => setStep(1)}>
@@ -1137,7 +1160,7 @@ function UpRow({ n, name, doc, code, uploads, setUploads, archive, generated, la
 }
 
 /** "कौन से कागज़ चलेंगे?" — public guidance before applying (no data stored). */
-function PapersGuide({ svcGroup }: { svcGroup: "scst" | "obc" }) {
+function PapersGuide({ svcGroup, onStart }: { svcGroup: "scst" | "obc"; onStart: () => void }) {
   const { tx } = useI18n();
   const [fam, setFam] = useState<"yes" | "no" | "dk" | null>(null);
   const [doc, setDoc] = useState<"yes" | "no" | null>(null);
@@ -1183,8 +1206,33 @@ function PapersGuide({ svcGroup }: { svcGroup: "scst" | "obc" }) {
         </>
       )}
       {fam === "dk" && <p className="small muted">{tx("Don't know? The Family Proof Helper in the form will search for you.", "पता नहीं? फ़ॉर्म में परिवार प्रमाण सहायक आपके लिए खोजेगा।")}</p>}
-      {pathText && <div className="cz-path">{pathText}</div>}
+      {pathText && (
+        <>
+          <div className="cz-path">{pathText}</div>
+          <button className="cz-btn green" style={{ marginTop: 8 }} onClick={onStart} id="cz-guide-start">
+            {tx("Start the application →", "आवेदन शुरू करें →")}
+          </button>
+        </>
+      )}
       <p className="small muted" style={{ marginTop: 6 }}>{tx("Guidance only, not a rejection · nothing is stored", "केवल मार्गदर्शन, अस्वीकृति नहीं · कुछ भी दर्ज नहीं होता")}</p>
+    </div>
+  );
+}
+
+function DemoStrip({ onPick }: { onPick: (k: "sunita" | "ramesh" | "rajni") => void }) {
+  const { tx } = useI18n();
+  return (
+    <div className="cz-demostrip" id="cz-demostrip">
+      <span className="small">{tx("Demo — fill as:", "डेमो — इस नागरिक से भरें:")}</span>
+      <button className="cz-btn outline sm" onClick={() => onPick("sunita")} id="cz-demo-sunita">
+        ✦ {tx("Sunita (family certificate found)", "सुनीता (परिवार का प्रमाण पत्र मिलेगा)")}
+      </button>
+      <button className="cz-btn outline sm" onClick={() => onPick("rajni")} id="cz-demo-rajni">
+        {tx("Rajni (maiden village)", "रजनी (मायके का गांव)")}
+      </button>
+      <button className="cz-btn outline sm" onClick={() => onPick("ramesh")} id="cz-demo-ramesh">
+        {tx("Ramesh (no papers)", "रमेश (कोई कागज़ नहीं)")}
+      </button>
     </div>
   );
 }
