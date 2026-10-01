@@ -73,7 +73,7 @@ export default function Layout() {
   const offline =
     mode === "offline" ? (
       <span className="offline-pill" title={tx("Backend not reachable: using bundled demo data", "बैकएंड उपलब्ध नहीं: संलग्न डेमो डेटा उपयोग में")}>
-        <span className="dot" /> {tx("offline demo", "ऑफ़लाइन डेमो")}
+        <span className="dot" /> {tx("offline", "ऑफ़लाइन")}<span className="pill-more"> {tx("demo", "डेमो")}</span>
       </span>
     ) : null;
 
@@ -176,6 +176,9 @@ export default function Layout() {
                     </NavLink>
                     <NavLink to="/renewals" onClick={() => setMenu(false)}>
                       {tx("Renewals", "नवीनीकरण")}
+                    </NavLink>
+                    <NavLink to="/reader" onClick={() => setMenu(false)}>
+                      {tx("Praman Reader", "प्रमाण रीडर")}
                     </NavLink>
                     <div className="menu-sep" />
                   </div>

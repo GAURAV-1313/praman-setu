@@ -194,7 +194,7 @@ export default function Collector() {
       </div>
 
       {pilot.data && <PilotPanel p={pilot.data} />}
-      {policy.data && <PolicyCard p={policy.data} onChange={(v) => api.setPolicy(v).then((r) => policy.setData(r))} onSlaChange={(v) => api.setSlaPause(v).then((r) => policy.setData(r))} />}
+      {policy.data && <PolicyCard p={policy.data} onChange={(v) => api.setPolicy(v).then((r) => policy.setData(r), () => policy.reload())} onSlaChange={(v) => api.setSlaPause(v).then((r) => policy.setData(r), () => policy.reload())} />}
       {ev.data && <EvalPanel e={ev.data} />}
 
       {/* Round 8a: family network analytics + human-in-the-loop learning (SYNTHETIC) */}

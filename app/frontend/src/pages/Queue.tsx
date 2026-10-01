@@ -10,6 +10,7 @@ import { Bi, ErrorBox, Kbd, LANE_LABEL, LaneChip, Loading, SERVICE_ICON, SERVICE
 const LANES: Lane[] = ["records_complete", "standard_review", "needs_attention"];
 type Filter = Lane | "all" | "urgent" | "pending" | "awaiting_reply" | "sent_back" | "signed_today" | "awaiting_patwari";
 const SIGNED = new Set(["approved", "referred", "rejected"]);
+const FILTERS: Filter[] = ["all", ...LANES, "urgent", "pending", "awaiting_reply", "sent_back", "signed_today", "awaiting_patwari"];
 
 /** Round 3 fallback when the backend did not send `next_step` (older fixtures): the pending task, never an outcome. */
 function nextStepOf(q: QueueItem): I18n {
@@ -41,7 +42,8 @@ export default function Queue() {
   const { t, tx, setRole, shadow } = useI18n();
   const nav = useNavigate();
   const loc = useLocation();
-  const initialFilter = (sp.get("filter") as Filter | null) ?? "all";
+  // an unknown ?filter= (typo, old link) falls back to "all" instead of an empty list with no chip selected
+  const initialFilter: Filter = FILTERS.includes(sp.get("filter") as Filter) ? (sp.get("filter") as Filter) : "all";
   const [filter, setFilter] = useState<Filter>(initialFilter);
   // Round 6 (P2): the SDO desk shows only its own sub-division's files
   const deskCode = useDesk();
@@ -51,7 +53,7 @@ export default function Queue() {
   const policy = useAsync<PolicyResponse>(() => api.policy(), []);
   const [trayOpen, setTrayOpen] = useState<boolean>(!!(loc.state as { openTray?: boolean } | null)?.openTray);
   const [note, setNote] = useState<string | null>(((loc.state as { note?: string } | null)?.note) ?? null);
-  const { data: audit } = useAsync<AuditEntry[]>(() => api.audit(), [role]);
+  const { data: audit, reload: reloadAudit } = useAsync<AuditEntry[]>(() => api.audit(), [role]);
   // files this desk signed today (from the audit trail; a called-back order no longer counts)
   const signedToday = useMemo(() => {
     const ids = new Set<string>();
@@ -351,6 +353,7 @@ export default function Queue() {
           onChanged={() => {
             tray.reload();
             reload();
+            reloadAudit(); // "Orders issued today" counts from the audit: tray signatures must show at once
           }}
         />
       )}
@@ -368,6 +371,14 @@ function TrayModal({ tray, onClose, onChanged }: { tray: TrayView | null; onClos
   const [err, setErr] = useState<string | null>(null);
   const [done, setDone] = useState<TraySignResponse | null>(null);
   const items = tray?.items ?? [];
+  // Esc closes the tray from anywhere (an empty tray has no focused control inside the dialog)
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && !busy) onClose();
+    };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, [busy, onClose]);
   async function sign() {
     setBusy(true);
     setErr(null);
@@ -387,7 +398,7 @@ function TrayModal({ tray, onClose, onChanged }: { tray: TrayView | null; onClos
   }
   return (
     <div className="modal-bg" onClick={() => !busy && onClose()}>
-      <div className="modal tray-modal" role="dialog" aria-modal="true" aria-labelledby="tray-title" onClick={(e) => e.stopPropagation()} onKeyDown={(e) => e.key === "Escape" && onClose()}>
+      <div className="modal tray-modal" role="dialog" aria-modal="true" aria-labelledby="tray-title" onClick={(e) => e.stopPropagation()}>
         <h2 id="tray-title">{tx("Sign tray — one DSC token passcode", "हस्ताक्षर ट्रे — एक DSC टोकन पासकोड")}</h2>
         <p className="small muted">
           {tx(
@@ -455,12 +466,19 @@ function TrayModal({ tray, onClose, onChanged }: { tray: TrayView | null; onClos
                 {items.length === 0 && (
                   <tr>
                     <td colSpan={4} className="muted small" style={{ textAlign: "center", padding: 16 }}>
-                      {tx("The tray is empty. Open a records-complete file, read the order, then “Save & add to sign tray” (Ctrl+S).", "ट्रे खाली है। अभिलेख-पूर्ण फ़ाइल खोलें, आदेश पढ़ें, फिर “सहेजें व हस्ताक्षर ट्रे में रखें” (Ctrl+S)।")}
+                      {tx("The tray is empty. Open a records-complete file, read the order, then “Add to sign tray” (Ctrl+S).", "ट्रे खाली है। अभिलेख-पूर्ण फ़ाइल खोलें, आदेश पढ़ें, फिर “हस्ताक्षर ट्रे में रखें” (Ctrl+S)।")}
                     </td>
                   </tr>
                 )}
               </tbody>
             </table>
+            {items.length === 0 && (
+              <div className="row" style={{ justifyContent: "flex-end", marginTop: 10 }}>
+                <button className="btn secondary" onClick={onClose} autoFocus>
+                  {tx("Close", "बंद करें")}
+                </button>
+              </div>
+            )}
             {items.length > 0 && !otpSent && (
               <div className="row" style={{ justifyContent: "flex-end", marginTop: 10 }}>
                 <button className="btn secondary" onClick={onClose}>
@@ -480,6 +498,9 @@ function TrayModal({ tray, onClose, onChanged }: { tray: TrayView | null; onClos
                   <input id="tray-otp" type="password" className="input mono" inputMode="numeric" maxLength={6} autoFocus value={otp} onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))} onKeyDown={(e) => e.key === "Enter" && otp.length === 6 && sign()} />
                   <button className="btn blue" disabled={busy || otp.length !== 6} onClick={sign} id="tray-sign-btn">
                     {busy ? <span className="spinner" /> : "✍"} {tx("Sign PDFs", "PDF पर हस्ताक्षर")}
+                  </button>
+                  <button className="btn secondary" disabled={busy} onClick={() => (setOtpSent(false), setOtp(""), setErr(null))}>
+                    {tx("Back", "वापस")}
                   </button>
                 </div>
               </div>

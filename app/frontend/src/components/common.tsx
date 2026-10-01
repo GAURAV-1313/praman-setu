@@ -109,7 +109,7 @@ export function SyntheticPill() {
   const { tx } = useI18n();
   return (
     <span className="synth-pill" role="note" title={tx("All citizen data on this screen is synthetic (demo)", "इस स्क्रीन का सारा नागरिक डेटा नमूना (डेमो) है")}>
-      {tx("Synthetic data", "नमूना डेटा")}
+      {tx("Synthetic", "नमूना")}<span className="pill-more"> {tx("data", "डेटा")}</span>
     </span>
   );
 }

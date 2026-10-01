@@ -37,6 +37,7 @@ interface Props {
 export default function LineageCard({ app, analysis, matches, confirmed, accepted, decided, evidenceRows, active, setActive, onDispose, onClear, idx, setIdx, keysLive }: Props) {
   const { t, tx, lang, shadow } = useI18n();
   const [busy, setBusy] = useState(false);
+  const [clearErr, setClearErr] = useState<string | null>(null);
   // follow the active popover to its match
   useEffect(() => {
     if (!active) return;
@@ -46,6 +47,7 @@ export default function LineageCard({ app, analysis, matches, confirmed, accepte
   }, [active?.cert_no]);
   const m = matches[Math.min(idx, matches.length - 1)];
   const c = m.certificate;
+  useEffect(() => setClearErr(null), [c.cert_no]);
   const isConfirmed = confirmed.has(c.cert_no);
   const isAccepted = accepted.has(c.cert_no);
   const disp = m.disposition ?? null;
@@ -84,8 +86,12 @@ export default function LineageCard({ app, analysis, matches, confirmed, accepte
 
   async function doClear() {
     setBusy(true);
+    setClearErr(null);
     try {
       await onClear(c.cert_no);
+    } catch (e) {
+      // e.g. the file was decided meanwhile in another tab: say why nothing changed (never an unhandled rejection)
+      setClearErr(String((e as Error)?.message ?? e));
     } finally {
       setBusy(false);
     }
@@ -177,6 +183,7 @@ export default function LineageCard({ app, analysis, matches, confirmed, accepte
             <button className="btn secondary sm" disabled={busy} onClick={doClear} id="undo-disp">
               ↶ {tx("Undo", "पूर्ववत करें")}
             </button>
+            {clearErr && <span className="error-box small">{clearErr}</span>}
           </>
         ) : popOpen ? (
           <GroundsPop key={active!.decision + c.cert_no} analysis={analysis} m={m} decision={active!.decision} onCancel={() => setActive(null)} onCommit={(g, n) => onDispose(c.cert_no, active!.decision, g, n)} />

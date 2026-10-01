@@ -1280,7 +1280,7 @@ def evidence_satisfaction(app: dict, evidence: dict) -> dict:
     claim_hi = f"{cw['hi']} ({app['claimed_caste']['hi']})" if app.get("claimed_caste") else cw["hi"]
     return {"en": f"The undersigned has examined the documents on file and is satisfied that the applicant's claim to belong to {claim_en} is shown by: {cz['label']['en']}; "
                   f"and that the family's residence before {cut} is shown by: {rs['label']['en']}.",
-            "hi": f"अधोहस्ताक्षरी ने संलग्न दस्तावेज़ों का परीक्षण किया है तथा समाधान है कि आवेदक का {claim_hi} वर्ग का दावा इससे प्रदर्शित होता है: {cz['label']['hi']}; "
+            "hi": f"अधोहस्ताक्षरी ने संलग्न दस्तावेज़ों का परीक्षण किया है तथा समाधान है कि आवेदक का {claim_hi} से संबंधित होने का दावा इससे प्रदर्शित होता है: {cz['label']['hi']}; "
                   f"तथा {cut} से पूर्व परिवार का निवास इससे प्रदर्शित होता है: {rs['label']['hi']}।"}
 
 

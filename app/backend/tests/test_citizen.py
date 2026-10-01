@@ -152,3 +152,62 @@ def test_patwari_referral_tells_the_citizen_what_happens():
     assert "पटवारी" in msg["text"]["hi"] and "अस्वीकृति नहीं" in msg["text"]["hi"] and "Patwari" in msg["text"]["en"]
     assert msg["checker"]["passed"], msg["checker"]
     assert r.json()["application"]["status"] == "awaiting_patwari"
+
+
+# ---------------------------------------------------------------- QA round 13: console / citizen / Kendra bug pass
+def test_concurrent_filings_get_distinct_application_numbers():
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(8) as ex:
+        out = list(ex.map(lambda i: client.post("/api/citizen/submit", json={**RAMESH, "session_id": f"test-conc-{i}"}).json()["app_id"], range(8)))
+    assert len(set(out)) == 8, out
+    ids = [x["application"]["app_id"] for x in client.get("/api/queue?role=sdo&desk=all").json()]
+    assert all(ids.count(a) == 1 for a in out)
+
+
+def test_double_submit_in_flight_files_one_application():
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(4) as ex:
+        out = list(ex.map(lambda _: client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-inflight"}).json()["app_id"], range(4)))
+    assert len(set(out)) == 1
+
+
+def test_birth_year_cannot_be_in_the_future_but_this_year_is_fine():
+    from datetime import datetime
+    y = datetime.now().year
+    assert client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-by-1", "birth_year": y + 1}).status_code == 422
+    assert client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-by-2", "birth_year": y}).status_code == 200
+
+
+def test_found_certificate_and_no_papers_together_is_refused():
+    ref = client.post("/api/citizen/precheck", json={**SUNITA, "session_id": "test-both"}).json()["proof_ref"]
+    r = client.post("/api/citizen/submit", json={**RAMESH, "service": "caste_st", "session_id": "test-both", "proof_ref": ref, "no_papers": True})
+    assert r.status_code == 422
+
+
+def test_lists_are_bounded():
+    many = [{"relation": "पिता", "name": "x"}] * 50
+    assert client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-big", "vanshavali": many}).status_code == 422
+    assert client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-big2", "other_docs": ["a"] * 100}).status_code == 422
+
+
+def test_officer_reads_the_declaration_as_signed_and_english_relations():
+    decl = "मैं, रमेश यादव, पिता भगवती यादव, निवासी ग्राम उमरगांव, घोषणा करता हूँ कि मेरे पास 26 दिसंबर 1984 से पहले के निवास का कोई दस्तावेज़ उपलब्ध नहीं है।"
+    app_id = client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-decl", "declaration": decl}).json()["app_id"]
+    e = client.get(f"/api/applications/{enc(app_id)}").json()
+    d = next(d for d in e["application"]["documents"] if d["code"] == "unavailability_declaration")
+    assert d["text"] == decl
+    rows = [r for r in e.get("evidence_rows", []) if r["source"]["en"].startswith("Applicant's family tree")] or \
+           [r for r in client.get(f"/api/applications/{enc(app_id)}").json().get("analysis", {}).get("evidence_rows", []) if "family tree" in r["source"]["en"]]
+    assert rows and rows[0]["field"]["en"] == "Father" and rows[0]["field"]["hi"] == "पिता"
+
+
+def test_receipt_message_names_the_due_date_as_a_deadline():
+    r = client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-msg-due"}).json()
+    assert "निर्णय की अंतिम तिथि" in r["citizen_message"]["text"]["hi"] and r["citizen_message"]["checker"]["passed"]
+
+
+def test_blank_father_name_does_not_use_up_a_search():
+    s = {**SUNITA, "session_id": "test-blank"}
+    for bad in ("  ", "--", "..."):
+        assert client.post("/api/citizen/precheck", json={**s, "father_name": bad}).status_code == 422
+    assert client.post("/api/citizen/precheck", json=s).json()["searches_left"] == 2

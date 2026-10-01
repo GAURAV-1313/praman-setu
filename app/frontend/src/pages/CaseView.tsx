@@ -33,7 +33,10 @@ export default function CaseView() {
   const { t, tx, lang, role: ctxRole, setRole, presenter, shadow } = useI18n();
   const nav = useNavigate();
   const loc = useLocation();
-  const { data, error, loading, setData, reload } = useAsync<CaseBundle>(() => api.getCase(appId, (ctxRole as Role) ?? "sdo"), [appId]);
+  const { data: rawData, error, setData, reload } = useAsync<CaseBundle>(() => api.getCase(appId, (ctxRole as Role) ?? "sdo"), [appId]);
+  // J / K / auto-advance keep the previous bundle while the next one loads: never render (or key / dispose on) the
+  // previous file under the new URL — the record tab, keys and buttons would act on stale data
+  const data = rawData && rawData.application.app_id === appId ? rawData : null;
   const [active, setActive] = useState<DisposeTarget | null>(null);
   const openedAt = useRef(Date.now());
   const [result, setResult] = useState<DecisionResponse | null>(null);
@@ -191,6 +194,7 @@ export default function CaseView() {
       go(nextId, { last: { app_id: app.app_id, name: app.applicant_name, status: r.application.status, msg: r.citizen_message } satisfies LastDecision });
     } else {
       // Round 5 (P0-1): stay on the file — the result and the citizen message are shown at the top
+      setLast(null); // an earlier toast (e.g. "hearing notice issued") is superseded by this result
       setResult(r);
       setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 0);
     }
@@ -242,9 +246,8 @@ export default function CaseView() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [go, nextId, prevId, keyTarget, decided, startDispose, switchView, matchCount, otherDesk]);
 
-  if (loading && !data) return <Loading />;
   if (error) return <ErrorBox error={error} />;
-  if (!data || !app || !an) return null;
+  if (!data || !app || !an) return <Loading />;
   const days = slaDaysLeft(app.sla_due);
   const infoFlags = an.flags.filter((f) => f.severity !== "attention");
 
@@ -276,9 +279,11 @@ export default function CaseView() {
           <button className="btn secondary sm" onClick={() => setShowMsg(true)}>
             {tx("View message", "संदेश देखें")}
           </button>
-          <button className="btn secondary sm" onClick={() => go(last.app_id)} title={tx("Open the decided case: view the issued text or call it back within 10 minutes", "निर्णीत प्रकरण खोलें: जारी पाठ देखें या 10 मिनट में वापस लें")}>
-            {tx("View order · Call back (10 min)", "आदेश देखें · वापस लें (10 मिनट)")}
-          </button>
+          {last.app_id !== appId && (
+            <button className="btn secondary sm" onClick={() => go(last.app_id)} title={tx("Open the decided case: view the issued text or call it back within 10 minutes", "निर्णीत प्रकरण खोलें: जारी पाठ देखें या 10 मिनट में वापस लें")}>
+              {tx("View order · Call back (10 min)", "आदेश देखें · वापस लें (10 मिनट)")}
+            </button>
+          )}
           <button className="toast-x" aria-label={tx("Dismiss", "बंद करें")} onClick={() => setLast(null)}>
             ×
           </button>
@@ -311,7 +316,7 @@ export default function CaseView() {
           </div>
         </div>
         <span className={`pill sla ${days <= 3 ? "amber" : "outline"}`} title={fmtDate(app.sla_due, lang)}>
-          {days <= 3 ? "⏰" : "⏱"} {days < 0 ? tx(`${-days} days overdue`, `${-days} दिन विलंब`) : `${days} ${tx("days left", "दिन शेष")}`}
+          {days <= 3 ? "⏰" : "⏱"} {days < 0 ? tx(`${-days} day${days === -1 ? "" : "s"} overdue`, `${-days} दिन विलंब`) : tx(`${days} day${days === 1 ? "" : "s"} left`, `${days} दिन शेष`)}
         </span>
         {decided && <span className="pill">{t(STATUS_LABEL[status])}</span>}
         <Link to={`/sewasetu/case/${enc(app.app_id)}`} className="btn secondary sm embed-link" title={tx("The same file as it would appear inside the Sewa Setu officer console", "यही फ़ाइल सेवा सेतु अधिकारी कंसोल के भीतर")}>
@@ -553,10 +558,12 @@ export default function CaseView() {
         hasNext={!!nextId}
         onBundle={(b) => {
           setResult(null);
+          setLast((l) => (l && l.app_id === appId ? null : l));
           setData(b);
         }}
         onCalledBack={() => {
           setResult(null);
+          setLast((l) => (l && l.app_id === appId ? null : l));
           reload();
         }}
         secondsOnScreen={() => (Date.now() - openedAt.current) / 1000}

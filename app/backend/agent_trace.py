@@ -84,7 +84,7 @@ def build(entry: dict, an: dict, marks: dict, model_name: str = "Splink Fellegi�
         status = "attention" if needs else "ok"
         if needs:
             d_en += " · the officer must confirm “same family / not this family”"
-            d_hi += " · अधिकारी को “एक ही परिवार / यह परिवार नहीं” तय करना है"
+            d_hi += " · अधिकारी को “वही परिवार / यह परिवार नहीं” तय करना है"
     d_en += f" · model: {model_name}, {an.get('model_version')}"
     d_hi += f" · मॉडल: {model_name}, {an.get('model_version')}"
     steps.append({

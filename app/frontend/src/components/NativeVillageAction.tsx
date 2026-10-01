@@ -41,6 +41,11 @@ export default function NativeVillageAction({
 
   async function run() {
     if (!v) return;
+    if (v.village_lgd === app.village_lgd) {
+      // the backend refuses it too; say so in the officer's language without a round trip
+      setErr(tx("This is the applicant's current village — it is already searched. Name her father's (maiden) village.", "यह आवेदिका का वर्तमान गांव है — इसमें पहले ही खोजा जा चुका है। उनके पिता का (मायके का) गांव चुनें।"));
+      return;
+    }
     setBusy(true);
     setErr(null);
     try {
@@ -50,7 +55,13 @@ export default function NativeVillageAction({
       setV(null);
       setText("");
     } catch (e) {
-      setErr(e instanceof ApiError ? e.message : String(e));
+      setErr(
+        e instanceof ApiError && e.status === 409
+          ? tx("You already marked a record found in the earlier native-village search — undo that first.", "पिछली मायके-गांव खोज में मिले अभिलेख पर आप निर्णय दर्ज कर चुके हैं — पहले उसे पूर्ववत करें।")
+          : e instanceof ApiError
+            ? e.message
+            : String(e),
+      );
     } finally {
       setBusy(false);
     }
@@ -90,6 +101,7 @@ export default function NativeVillageAction({
                 onChange={(nv2, tx2) => {
                   setV(nv2);
                   setText(tx2);
+                  setErr(null);
                 }}
                 placeholder={tx("Village name — any district", "गांव का नाम — किसी भी जिले का")}
               />
@@ -102,7 +114,7 @@ export default function NativeVillageAction({
             </button>
           </div>
           <div className="small muted" style={{ marginTop: 4 }}>
-            🔒 {tx("The search is logged in the audit trail. Any record found still needs your “same family / not this family”.", "यह खोज ऑडिट ट्रेल में दर्ज होती है। मिले किसी भी अभिलेख पर “एक ही परिवार / यह परिवार नहीं” आपको ही तय करना है।")}
+            🔒 {tx("The search is logged in the audit trail. Any record found still needs your “same family / not this family”.", "यह खोज ऑडिट ट्रेल में दर्ज होती है। मिले किसी भी अभिलेख पर “वही परिवार / यह परिवार नहीं” आपको ही तय करना है।")}
           </div>
           {err && <div className="small" style={{ color: "var(--amber)", marginTop: 4 }}>{err}</div>}
         </div>

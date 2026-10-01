@@ -147,9 +147,9 @@ export default function LearningPanel() {
                 </div>
                 <div className="row" style={{ gap: 8, marginTop: 6 }}>
                   <span className="pill slate">{tx("model", "मॉडल")} {Math.round(p.probability * 100)}%</span>
-                  {presenter && <span className="pill outline small">{tx("synthetic truth", "सिंथेटिक सत्य")}: {p.synthetic_truth === "same" ? tx("same", "एक ही") : tx("not", "नहीं")}</span>}
+                  {presenter && <span className="pill outline small">{tx("synthetic truth", "सिंथेटिक सत्य")}: {p.synthetic_truth === "same" ? tx("same", "वही परिवार") : tx("not", "नहीं")}</span>}
                   <span className="spacer" />
-                  <button className="btn green sm" disabled={answering !== null} onClick={() => answer(p, "same")}>✓ {tx("Same family", "एक ही परिवार")}</button>
+                  <button className="btn green sm" disabled={answering !== null} onClick={() => answer(p, "same")}>✓ {tx("Same family", "वही परिवार")}</button>
                   <button className="btn pair not sm" disabled={answering !== null} onClick={() => answer(p, "not")}>✗ {tx("Not this family", "यह परिवार नहीं")}</button>
                 </div>
               </div>

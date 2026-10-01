@@ -90,6 +90,7 @@ const VROWS: VRow[] = [
   { relation: "परदादा", name: "", village: "", place: "" },
 ];
 const VREL_EN: Record<string, string> = { पिता: "Father", दादा: "Grandfather", परदादा: "Great-grandfather" };
+const THIS_YEAR = new Date().getFullYear();
 const newSession = () => `nagrik-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
 /** Draft kept for this browser tab only (sessionStorage), so a refresh or the phone's Back button does not throw away a
  *  half-filled form. Only the last 4 Aadhaar digits are kept. Cleared by "Start again" / a new application / demo reset. */
@@ -97,7 +98,7 @@ const DRAFT_KEY = "ps_nagrik_draft"; // ps_ prefix: cleared by the demo reset (d
 interface Draft {
   step: Step; session: string; svcGroup: "scst" | "obc"; f: Form; aadhaarOk: boolean; relation: string; certNo: string;
   native: Village | null; nativeText: string; consent: boolean; res: CitizenPrecheckResponse | null; resKey: string;
-  path: Path; vrows: VRow[]; declOk: boolean; uploads: string[]; finalDecl: boolean; receipt: CitizenSubmitResponse | null;
+  path: Path; vrows: VRow[]; declOk: boolean; declText: string; uploads: string[]; finalDecl: boolean; receipt: CitizenSubmitResponse | null;
 }
 function loadDraft(): Partial<Draft> {
   try {
@@ -131,6 +132,7 @@ export default function CitizenPortal() {
   const [path, setPath] = useState<Path>(d0.path ?? null);
   const [vrows, setVrows] = useState<VRow[]>(d0.vrows ?? VROWS);
   const [declOk, setDeclOk] = useState(d0.declOk ?? false);
+  const [declText, setDeclText] = useState(d0.declText ?? "");
   // uploads (mock) + submit
   const [uploads, setUploads] = useState<Set<string>>(new Set(d0.uploads ?? []));
   const [saved, setSaved] = useState(false);
@@ -171,13 +173,13 @@ export default function CitizenPortal() {
     return () => window.removeEventListener("popstate", h);
   }, []);
   useEffect(() => {
-    const d: Draft = { step, session, svcGroup, f: { ...f, aadhaar: f.aadhaar ? "XXXXXXXX" + f.aadhaar.slice(-4) : "" }, aadhaarOk, relation, certNo, native, nativeText, consent, res, resKey, path, vrows, declOk, uploads: [...uploads], finalDecl, receipt };
+    const d: Draft = { step, session, svcGroup, f: { ...f, aadhaar: f.aadhaar ? "XXXXXXXX" + f.aadhaar.slice(-4) : "" }, aadhaarOk, relation, certNo, native, nativeText, consent, res, resKey, path, vrows, declOk, declText, uploads: [...uploads], finalDecl, receipt };
     try {
       sessionStorage.setItem(DRAFT_KEY, JSON.stringify(d));
     } catch {
       /* storage blocked: the form still works, it just does not survive a refresh */
     }
-  }, [step, session, svcGroup, f, aadhaarOk, relation, certNo, native, nativeText, consent, res, resKey, path, vrows, declOk, uploads, finalDecl, receipt]);
+  }, [step, session, svcGroup, f, aadhaarOk, relation, certNo, native, nativeText, consent, res, resKey, path, vrows, declOk, declText, uploads, finalDecl, receipt]);
 
   const casteRow = CASTES.find((c) => c.hi === f.caste) ?? null;
   const svc: Svc = svcGroup === "obc" ? "caste_obc" : casteRow?.svc === "caste_sc" ? "caste_sc" : "caste_st";
@@ -187,9 +189,15 @@ export default function CitizenPortal() {
   const searchKey = JSON.stringify([fatherForSearch, f.village?.village_lgd ?? null, f.gender === "F" && f.married ? native?.village_lgd ?? null : null, svc]);
   const resStale = !!res && resKey !== searchKey;
   const proofAttached = !resStale && path === "found" && res?.status !== "not_found" && !!res?.proof_ref;
-  const noPapers = path === "no_papers" && declOk;
-  const block1950Optional = proofAttached || noPapers;
 
+  function pickGroup(g: "scst" | "obc") {
+    setSvcGroup(g);
+    // a caste chosen for the other service is not in this list: clear it, so the form asks again
+    setF((x) => {
+      const c = CASTES.find((k) => k.hi === x.caste);
+      return c && (c.svc === "caste_obc") !== (g === "obc") ? { ...x, caste: "" } : x;
+    });
+  }
   function reset() {
     demoMenu.current?.removeAttribute("open");
     setStep(0);
@@ -207,6 +215,7 @@ export default function CitizenPortal() {
     setPath(null);
     setVrows(VROWS);
     setDeclOk(false);
+    setDeclText("");
     setUploads(new Set());
     setSaved(false);
     setFinalDecl(false);
@@ -274,7 +283,7 @@ export default function CitizenPortal() {
         setRes((cur) => (cur && !resStale ? { ...cur, searches_left: 0 } : { status: "not_found", searches_left: 0 }));
         setResKey(searchKey);
       }
-      setErr(e instanceof ApiError ? (e.status === 429 ? tx("You have used all 3 searches for this application. Continue with a document, or choose “I have no papers”.", "इस आवेदन की 3 खोज पूरी हो गईं। किसी दस्तावेज़ से आगे बढ़ें, या “मेरे पास कोई कागज़ नहीं” चुनें।") : e.message) : String(e));
+      setErr(e instanceof ApiError ? (e.status === 422 ? tx("Write your father's name in letters (Hindi or English) and search again.", "पिता का नाम अक्षरों में (हिंदी या अंग्रेज़ी) लिखकर फिर से खोजें।") : e.status === 429 ? tx("You have used all 3 searches for this application. Continue with a document, or choose “I have no papers”.", "इस आवेदन की 3 खोज पूरी हो गईं। किसी दस्तावेज़ से आगे बढ़ें, या “मेरे पास कोई कागज़ नहीं” चुनें।") : e.message) : String(e));
     } finally {
       setBusy(false);
     }
@@ -293,6 +302,9 @@ export default function CitizenPortal() {
       `मेरे परिवार की जानकारी: ${lines || "—"}। मैं अनुरोध ${f.gender === "M" ? "करता" : "करती"} हूँ कि नियम 7 के अंतर्गत पटवारी / राजस्व निरीक्षक से जांच कराई जाए। गलत जानकारी देना दंडनीय अपराध है।`
     );
   }, [vrows, f.nameHi, f.nameEn, fatherForSearch, f.village, f.gender, svc]);
+  // the "no papers" path counts only with the declaration exactly as ticked (editing the family tree un-ticks it)
+  const noPapers = path === "no_papers" && declOk && declText === declaration;
+  const block1950Optional = proofAttached || noPapers;
 
   const [voiceNote, setVoiceNote] = useState(false);
   function speak(text: string) {
@@ -314,10 +326,12 @@ export default function CitizenPortal() {
     </p>
   );
 
+  const birthYearOk = /^\d{4}$/.test(f.birthYear) && Number(f.birthYear) >= 1930 && Number(f.birthYear) <= THIS_YEAR;
   const formMissing = [
     f.guardianType !== "father" && !f.fatherName.trim() && tx("father's name", "पिता का नाम"),
     !f.guardianHi && !f.guardianEn && tx("guardian's name (Hindi or English — one is enough)", "अभिभावक का नाम (हिंदी या अंग्रेज़ी — एक काफ़ी)"),
     !f.birthYear && tx("year of birth", "जन्म वर्ष"),
+    !!f.birthYear && !birthYearOk && tx(`year of birth (4 digits, 1930–${THIS_YEAR})`, `जन्म वर्ष (4 अंक, 1930–${THIS_YEAR})`),
     !f.caste && tx("caste", "जाति"),
     !f.nameEn && tx("beneficiary's name in English", "हितग्राही का नाम अंग्रेजी में"),
   ].filter(Boolean) as string[];
@@ -347,6 +361,7 @@ export default function CitizenPortal() {
         purpose: f.purpose,
         proof_ref: proofAttached ? res?.proof_ref : undefined,
         no_papers: noPapers,
+        declaration: noPapers ? declaration : undefined,
         vanshavali: noPapers ? vrows.map((r) => ({ relation: r.relation, name: r.name, village: r.village, place_1950: r.place })) : [],
         other_docs: other,
         aadhaar_last4: /^\d{4}$/.test(f.aadhaar.slice(-4)) ? f.aadhaar.slice(-4) : undefined,
@@ -418,17 +433,34 @@ export default function CitizenPortal() {
       </div>
 
       <div className="cz-page">
-        <Stepper step={step} />
+        <Stepper step={receipt ? 6 : step} />
 
-        {step === 0 && (
+        {receipt && step < 6 && (
+          <div className="cz-box" id="cz-already" role="status" style={{ marginTop: 12 }}>
+            <p>
+              <b>{tx("This application is already submitted", "यह आवेदन जमा हो चुका है")}</b> · <span className="mono">{receipt.app_id}</span>
+            </p>
+            <p className="small">{tx("It can no longer be changed here. If something is wrong, tell the officer at the Lok Seva Kendra, or start a new application.", "इसे अब यहाँ बदला नहीं जा सकता। कुछ गलत हो तो लोक सेवा केंद्र पर अधिकारी को बताएं, या नया आवेदन शुरू करें।")}</p>
+            <div className="cz-row">
+              <button className="cz-btn green" onClick={() => setStep(6)} id="cz-show-receipt">
+                {tx("Show the receipt", "पावती देखें")}
+              </button>
+              <button className="cz-btn outline" onClick={reset}>
+                {tx("New application", "नया आवेदन")}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {step === 0 && !receipt && (
           <>
             <DemoStrip onPick={demo} />
             <div className="cz-svc-pick">
               <span className="small">{tx("Service", "सेवा")}:</span>
-              <button className={svcGroup === "scst" ? "on" : ""} onClick={() => setSvcGroup("scst")}>
+              <button className={svcGroup === "scst" ? "on" : ""} onClick={() => pickGroup("scst")}>
                 {tx("SC / ST certificate", "अनुसूचित जाति / अनुसूचित जनजाति प्रमाण पत्र")}
               </button>
-              <button className={svcGroup === "obc" ? "on" : ""} onClick={() => setSvcGroup("obc")}>
+              <button className={svcGroup === "obc" ? "on" : ""} onClick={() => pickGroup("obc")}>
                 {tx("OBC certificate", "अन्य पिछड़ा वर्ग प्रमाण पत्र")}
               </button>
             </div>
@@ -531,7 +563,7 @@ export default function CitizenPortal() {
           </>
         )}
 
-        {step === 1 && (
+        {step === 1 && !receipt && (
           <>
             {!f.nameHi && <DemoStrip onPick={demo} />}
             <TitleBand>{svcTitle}</TitleBand>
@@ -608,7 +640,7 @@ export default function CitizenPortal() {
                   </label>
                   <button
                     className="cz-btn blue"
-                    disabled={!aadhaarConsent || f.aadhaar.length !== 12 || !f.aadhaarName}
+                    disabled={!aadhaarConsent || !/^[\dX]{8}\d{4}$/i.test(f.aadhaar) || !f.aadhaarName}
                     onClick={() => {
                       setAadhaarOk(true);
                       setAadhaarOpen(false);
@@ -627,7 +659,7 @@ export default function CitizenPortal() {
           </>
         )}
 
-        {step === 2 && (
+        {step === 2 && !receipt && (
           <>
             <TitleBand>{svcTitle}</TitleBand>
             <div className="cz-crumb">
@@ -900,7 +932,7 @@ export default function CitizenPortal() {
                         {voiceMsg}
                       </div>
                       <label className="cz-check">
-                        <input type="checkbox" checked={declOk} onChange={(e) => setDeclOk(e.target.checked)} id="cz-decl-ok" />
+                        <input type="checkbox" checked={declOk && declText === declaration} onChange={(e) => { setDeclOk(e.target.checked); setDeclText(e.target.checked ? declaration : ""); }} id="cz-decl-ok" />
                         <span>{tx("I have read / heard this declaration; it is true. (e-sign with Aadhaar OTP; thumb impression at the Kendra)", "मैंने यह घोषणा पढ़/सुन ली है; यह सत्य है। (आधार OTP से ई-हस्ताक्षर; केंद्र पर अंगूठा)")}</span>
                       </label>
                       <div className="cz-next">
@@ -965,7 +997,7 @@ export default function CitizenPortal() {
           </>
         )}
 
-        {step === 3 && (
+        {step === 3 && !receipt && (
           <>
             <TitleBand>{tx("Attachment details", "अनुलग्नक का विवरण")}</TitleBand>
             <div className="cz-rules">
@@ -988,7 +1020,7 @@ export default function CitizenPortal() {
               <tbody>
                 <UpRow n={1} name={tx("Caste proof #", "जाति का प्रमाण #")} doc={tx("Caste certificate issued to the applicant or any family member", "आवेदक को या उसके किसी परिवारजन को जारी हुआ जाति प्रमाण पत्र")} archive={proofAttached ? res?.masked_no : undefined} code="relative_cert" uploads={uploads} setUploads={setUploads} hide={!proofAttached} />
                 <UpRow n={2} name={tx("Caste proof #", "जाति का प्रमाण #")} doc={tx("School leaving certificate (countersigned)", "प्राथमिक शाला या जिला शिक्षा अधिकारी द्वारा प्रमाणित शाला त्याग प्रमाण पत्र")} code="caste_proof" uploads={uploads} setUploads={setUploads} />
-                <UpRow n={3} name={tx("Caste proof #", "जाति का प्रमाण #")} doc={tx("Disability / unavailability proof", "असमर्थता / अनुपलब्धता का प्रमाण")} generated={noPapers} code="unavail" uploads={uploads} setUploads={setUploads} />
+                <UpRow n={3} name={tx("Caste proof #", "जाति का प्रमाण #")} doc={tx("Disability / unavailability proof", "असमर्थता / अनुपलब्धता का प्रमाण")} generated={noPapers} code="unavail" uploads={uploads} setUploads={setUploads} note={noPapers ? undefined : tx("No papers? Go back to the form and choose “I have no papers” — the declaration is made there", "कागज़ नहीं? पीछे फ़ॉर्म में “मेरे पास कोई कागज़ नहीं” चुनें — घोषणा वहीं बनती है")} />
                 <UpRow n={4} name={tx("Identity", "पहचान")} doc={tx("Aadhaar (e-authenticated)", "आधार (ई-प्रमाणीकृत)")} generated label={tx("✓ Aadhaar e-auth", "✓ आधार ई-प्रमाणीकरण")} code="identity" uploads={uploads} setUploads={setUploads} />
                 <UpRow n={5} name={svc === "caste_obc" ? tx("Affidavit *", "शपथ पत्र *") : tx("Affidavit", "शपथ पत्र")} doc={tx("Self-declaration affidavit (Form 2A)", "स्वघोषणा शपथ पत्र (फॉर्म 2A)")} code="affidavit" uploads={uploads} setUploads={setUploads} />
                 <UpRow n={6} name={tx("Vanshavali", "वंशावली")} doc={tx("Family tree by the Halka Patwari", "हल्का पटवारी द्वारा वंशावली")} code="vanshavali" uploads={uploads} setUploads={setUploads} note={noPapers ? tx("Patwari will prepare it in the inquiry", "जांच में पटवारी बनाएंगे") : undefined} />
@@ -1023,7 +1055,7 @@ export default function CitizenPortal() {
           </>
         )}
 
-        {step === 4 && (
+        {step === 4 && !receipt && (
           <>
             <TitleBand>
               {tx("Preview", "पूर्वावलोकन")} - {svcTitle}
@@ -1073,7 +1105,7 @@ export default function CitizenPortal() {
           </>
         )}
 
-        {step === 5 && (
+        {step === 5 && !receipt && (
           <>
             <TitleBand>{tx("Fee details", "शुल्क विवरण")}</TitleBand>
             <table className="cz-table cz-fee">

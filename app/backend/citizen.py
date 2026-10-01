@@ -18,11 +18,12 @@ from __future__ import annotations
 
 import copy
 import secrets
+import threading
 from datetime import datetime, timedelta
 from typing import Literal, Optional
 
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 import engine
 import geo
@@ -43,6 +44,10 @@ ONLINE = {"en": "Online (citizen portal)", "hi": "ऑनलाइन (नाग�
 # session_id -> {"searches": int, "refs": {proof_ref: cert_no}}; demo-only, cleared on /api/reset
 _SESS: dict[str, dict] = {}
 _RESET = [None]
+# one filing at a time: the application number is allocated and the entry stored together, and a double submit of one
+# session (two requests in flight) cannot create two applications
+_SUBMIT_LOCK = threading.Lock()
+VREL_EN = {"पिता": "Father", "दादा": "Grandfather", "परदादा": "Great-grandfather"}
 
 
 def _state():
@@ -84,6 +89,15 @@ class CitizenPrecheck(BaseModel):
     relative_cert_no: Optional[str] = Field(default=None, max_length=40)
     consent: bool = False
     aadhaar_ok: bool = False
+
+    @field_validator("father_name")
+    @classmethod
+    def _real_name(cls, v: str) -> str:
+        # a blank / punctuation-only name would only use up one of the 3 searches and write a useless audit row
+        v = " ".join(v.split())
+        if sum(ch.isalpha() or "\u0900" <= ch <= "\u097f" for ch in v) < 2:
+            raise ValueError("father's name is required")
+        return v
 
 
 @router.post("/api/citizen/precheck")
@@ -142,20 +156,33 @@ class CitizenSubmit(BaseModel):
     father_name_en: str = Field(default="", max_length=80)
     mother_name: str = Field(default="", max_length=80)
     gender: Literal["M", "F"] = "F"
-    birth_year: int = Field(ge=1930, le=2025)
+    birth_year: int = Field(ge=1930)
     caste: str = Field(default="", max_length=40)
     village_lgd: int
     purpose: str = Field(default="", max_length=80)
     proof_ref: Optional[str] = None
     no_papers: bool = False
-    vanshavali: list[Vanshavali] = []
-    other_docs: list[str] = []          # codes the citizen uploaded (demo): identity_proof, affidavit, residence_proof …
+    declaration: str = Field(default="", max_length=2000)   # the generated unavailability declaration, as ticked (Hindi)
+    vanshavali: list[Vanshavali] = Field(default=[], max_length=6)
+    other_docs: list[str] = Field(default=[], max_length=12)  # codes the citizen uploaded (demo): identity_proof, affidavit, residence_proof …
     aadhaar_last4: Optional[str] = Field(default=None, pattern=r"^\d{4}$")   # only the last 4 digits ever leave the form
     mobile_last4: Optional[str] = Field(default=None, pattern=r"^\d{4}$")
+
+    @field_validator("birth_year")
+    @classmethod
+    def _not_in_future(cls, y: int) -> int:
+        if y > datetime.now(engine.IST).year:
+            raise ValueError("year of birth cannot be in the future")
+        return y
 
 
 @router.post("/api/citizen/submit")
 def citizen_submit(body: CitizenSubmit):
+    with _SUBMIT_LOCK:
+        return _submit(body)
+
+
+def _submit(body: CitizenSubmit) -> dict:
     st = _state()
     s = _session(body.session_id)
     if s["receipt"] is not None:  # one application per session: a double click / Back + Pay again returns the same receipt
@@ -172,6 +199,8 @@ def citizen_submit(body: CitizenSubmit):
         if not hit:
             raise HTTPException(400, "unknown proof reference — search again")
         cert_no, native = hit["cert_no"], hit["native"]
+    if cert_no and body.no_papers:
+        raise HTTPException(422, "choose one: the family certificate found, or 'I have no papers' — not both")
     if not cert_no and not body.no_papers and "caste_proof" not in body.other_docs:
         raise HTTPException(422, "caste proof: attach the family certificate found, upload one document, or choose 'I have no papers'")
     applicant = _bi(body.applicant_name_hi or body.applicant_name_en)
@@ -200,11 +229,12 @@ def citizen_submit(body: CitizenSubmit):
     if body.no_papers:
         docs.append({"code": "unavailability_declaration",
                      "label": {"en": "Unavailability declaration (no pre-notification papers) — system generated",
-                               "hi": "अनुपलब्धता घोषणा (अधिसूचना-पूर्व कागज़ नहीं) — स्वतः निर्मित"}, "uploaded": True})
+                               "hi": "अनुपलब्धता घोषणा (अधिसूचना-पूर्व कागज़ नहीं) — स्वतः निर्मित"}, "uploaded": True,
+                     **({"text": " ".join(body.declaration.split())} if body.declaration.strip() else {})})
         for r in body.vanshavali:
             if r.name or r.place_1950:
                 rows.append({"source": {"en": "Applicant's family tree (declared online)", "hi": "आवेदक द्वारा दी गई वंशावली (ऑनलाइन)"},
-                             "field": {"en": f"{r.relation}", "hi": f"{r.relation}"},
+                             "field": {"en": VREL_EN.get(r.relation, r.relation), "hi": r.relation},
                              "value": {"en": f"{r.name or 'not known'} — {r.village or '—'}; in 1950/1984: {r.place_1950 or 'not known'}",
                                        "hi": f"{r.name or 'पता नहीं'} — {r.village or '—'}; 1950/1984 में: {r.place_1950 or 'पता नहीं'}"},
                              "status": "info"})

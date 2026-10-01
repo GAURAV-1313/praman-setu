@@ -65,6 +65,11 @@ export default function Kendra() {
   }, []);
 
   const set = <K extends keyof Form>(k: K, v: Form[K]) => setF((cur) => ({ ...cur, [k]: v }));
+  // a result answers for the details it was searched with: once the operator edits them, it (and its attachment) goes
+  useEffect(() => {
+    setRes(null);
+    setAttached(null);
+  }, [f]);
 
   async function prefill(kind: "sunita" | "nomatch" | "married") {
     setRes(null);

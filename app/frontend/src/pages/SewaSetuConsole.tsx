@@ -29,6 +29,8 @@ const enc = encodeURIComponent;
 type Tab = "applicant" | "form" | "docs" | "decision" | "history";
 type Native = "reject" | "send_back" | "approve";
 const REMARK_MAX = 200;
+/** the officer's written reasons, as the backend requires them (api.MIN_FINDING_CHARS) */
+const MIN_FINDING = 15;
 
 // ------------------------------------------------------------------ helpers
 /** Synthetic last digits from a hash of the application number (Round 5: never the application number's own digits). */
@@ -91,8 +93,12 @@ function remarkSummary(an: Analysis, lang: Lang): string {
 }
 
 // ------------------------------------------------------------------ shell
-function Shell({ children, active }: { children: ReactNode; active: "dash" | "case" }) {
-  const { tx, lang, setLang, shadow, setShadow } = useI18n();
+function Shell({ children, active, office }: { children: ReactNode; active: "dash" | "case"; office?: I18n }) {
+  const { t, tx, lang, setLang, shadow, setShadow } = useI18n();
+  const desk = useDesk();
+  // the logged-in office: the file's own office in a case (SDO desk or Tehsildar), else the acting SDO desk
+  const deskHi = (DESK_LABEL[desk]?.hi ?? desk).replace(/^एसडीओ\s*/, "");
+  const who = office ?? { en: `SDO (Revenue), ${desk}`, hi: `अनुविभागीय अधिकारी (राजस्व), ${deskHi}` };
   const [sp, setSp] = useSearchParams();
   const down = sp.get("down") === "1";
   const [left, setLeft] = useState(300);
@@ -142,7 +148,9 @@ function Shell({ children, active }: { children: ReactNode; active: "dash" | "ca
             {tx("Session TimeOut (In Minute)", "सत्र समाप्ति (मिनट)")} {String(Math.floor(left / 60)).padStart(2, "0")}:{String(left % 60).padStart(2, "0")}
           </span>
           <span className="spacer" />
-          <span className="ss-user">{tx("Government login · SDO (Revenue), Kondagaon", "शासकीय लॉगिन · अनुविभागीय अधिकारी (राजस्व), कोंडागांव")}</span>
+          <span className="ss-user" id="ss-user">
+            {tx("Government login", "शासकीय लॉगिन")} · {t(who)}
+          </span>
           <div className="lang-toggle ss-lang" role="group" aria-label={tx("Language", "भाषा")}>
             <button className={lang === "hi" ? "on" : ""} onClick={() => setLang("hi")} aria-pressed={lang === "hi"}>
               हिंदी
@@ -201,7 +209,8 @@ export function SewaSetuDashboard() {
   if (loading && !data) return <Loading />;
   if (error) return <ErrorBox error={error} />;
   const all = data ?? [];
-  const pending = all.filter((q) => q.application.status === "pending");
+  // a file with a hearing notice out stays open on the officer's list (it comes back for the final order)
+  const pending = all.filter((q) => q.application.status === "pending" || q.application.status === "show_cause_issued");
   const count = (s: string) => all.filter((q) => q.application.status === s).length;
   const tiles: [string, string, number][] = [
     ["लंबित", "Pending", pending.length],
@@ -272,6 +281,7 @@ export function SewaSetuDashboard() {
                       </td>
                       <td>
                         <span className="ss-pill mono">{a.app_id}</span>
+                        {a.status === "show_cause_issued" && <span className="ss-chip warn">{t(STATUS_LABEL.show_cause_issued)}</span>}
                       </td>
                       <td>📎 ({a.documents.filter((d) => d.uploaded).length})</td>
                       <td>{t(a.applicant_name)}</td>
@@ -312,7 +322,7 @@ export default function SewaSetuConsole() {
   const down = sp.get("down") === "1";
   const [choice, setChoice] = useState<Native | null>(null);
   const [remarks, setRemarks] = useState("");
-  const [attached, setAttached] = useState<{ name: string; kb: number; text: I18n } | null>(null);
+  const [attached, setAttached] = useState<{ name: string; kb: number; text: I18n; remark: string } | null>(null);
   const [pending, setPending] = useState<{ action: DecisionAction; text: I18n; system: I18n; native: boolean } | null>(null);
   const [token, setToken] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -334,6 +344,10 @@ export default function SewaSetuConsole() {
     setErr(null);
     setTab("applicant");
     setSeen(new Set(["applicant"]));
+    setViewer(null);
+    setPending(null);
+    setToken(false);
+    setConfirmOpen(false);
     window.scrollTo(0, 0);
   }, [appId]);
 
@@ -358,6 +372,16 @@ export default function SewaSetuConsole() {
     return an.drafts?.approve ?? an.draft_order;
   }, [an, app?.routed_to, desk]);
 
+  // the attached order is the draft for the records as they stood: if the officer then undoes "same family" (or the
+  // file changes), the draft no longer applies — take it off, with the remark it filled in (unless the officer edited it)
+  useEffect(() => {
+    if (!attached) return;
+    if (draftReady && draftReady.en === attached.text.en && draftReady.hi === attached.text.hi) return;
+    setAttached(null);
+    setRemarks((r) => (r === attached.remark ? "" : r));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [draftReady]);
+
   if (loading && !data) return <Loading />;
   if (error) return <ErrorBox error={error} />;
   if (!app || !an) return null;
@@ -373,9 +397,10 @@ export default function SewaSetuConsole() {
   }
   function insertDraft() {
     if (!draftReady || !an || !app) return;
-    setRemarks(remarkSummary(an, lang));
+    const remark = remarkSummary(an, lang);
+    setRemarks(remark);
     const kb = Math.max(18, Math.round(new Blob([draftReady.hi + draftReady.en]).size / 1024) + 14);
-    setAttached({ name: `praman_order_${app.app_id.slice(-5)}.pdf`, kb, text: draftReady });
+    setAttached({ name: `praman_order_${app.app_id.slice(-5)}.pdf`, kb, text: draftReady, remark });
     open("decision");
   }
 
@@ -384,6 +409,21 @@ export default function SewaSetuConsole() {
     setErr(null);
     const r = remarks.trim();
     if (choice === "approve") {
+      if (!attached && panelVisible && an.flags.some((f) => f.severity === "attention") && r.length < MIN_FINDING)
+        return setErr(
+          tx(
+            `The Praman panel shows a point to look at. To approve over it, write your reasons in the remark (at least ${MIN_FINDING} characters).`,
+            `प्रमाण पैनल में एक ध्यान-बिंदु खुला है। इसके बावजूद स्वीकृत करने हेतु टिप्पणी में अपने कारण लिखें (न्यूनतम ${MIN_FINDING} अक्षर)।`,
+          ),
+        );
+      // same rule as the backend: nothing on file is relied on yet (e.g. "same family" undone, a record unmarked)
+      if (!attached && panelVisible && (an.finding_required?.approve || an.disposition_required?.length) && r.length < MIN_FINDING)
+        return setErr(
+          tx(
+            `Nothing shown in the Praman panel is relied on yet. Mark the family record above, or write your reasons for approving in the remark (at least ${MIN_FINDING} characters).`,
+            `प्रमाण पैनल में दिखाया कोई अभिलेख अभी आधार नहीं है। ऊपर पारिवारिक अभिलेख चिह्नित करें, या स्वीकृति के अपने कारण टिप्पणी में लिखें (न्यूनतम ${MIN_FINDING} अक्षर)।`,
+          ),
+        );
       if (attached) setPending({ action: "approve", text: attached.text, system: attached.text, native: false });
       else {
         const text = nativeOrder(app, an.office_info, "approve", r);
@@ -449,8 +489,9 @@ export default function SewaSetuConsole() {
   async function forward() {
     if (!app || !an) return;
     try {
-      const b = await api.forward(app.app_id, an.office.en);
-      setData(b);
+      await api.forward(app.app_id, an.office.en);
+      // the file has left this desk: back to the pending list (as the full case view does)
+      navTo(`/sewasetu${qs}`);
     } catch (e) {
       setErr(String((e as Error).message ?? e));
     }
@@ -466,7 +507,7 @@ export default function SewaSetuConsole() {
   const qs = down ? "?down=1" : "";
 
   return (
-    <Shell active="case">
+    <Shell active="case" office={app.routed_to === "tehsildar" ? an.office : undefined}>
       <div className={`ss-body ${collapsed ? "collapsed" : ""}`}>
         <main className="ss-native" aria-label={tx("Sewa Setu application screen (mock)", "सेवा सेतु आवेदन स्क्रीन (मॉक)")}>
           <div className="ss-appbar">
@@ -577,7 +618,14 @@ export default function SewaSetuConsole() {
                       <span>
                         <b>{t(docs[viewer].label)}</b>
                         <br />
-                        {tx("Scanned upload — demo placeholder (synthetic applicant; no real scan)", "अपलोड स्कैन — डेमो प्लेसहोल्डर (सिंथेटिक आवेदक; वास्तविक स्कैन नहीं)")}
+                        {docs[viewer].text ? (
+                          // a system-generated paper (the citizen's declaration): its own text, as signed — Hindi
+                          <span lang="hi" id="ss-doc-text" style={{ display: "block", textAlign: "left", whiteSpace: "pre-wrap", marginTop: 6 }}>
+                            {docs[viewer].text}
+                          </span>
+                        ) : (
+                          tx("Scanned upload — demo placeholder (synthetic applicant; no real scan)", "अपलोड स्कैन — डेमो प्लेसहोल्डर (सिंथेटिक आवेदक; वास्तविक स्कैन नहीं)")
+                        )}
                       </span>
                     </div>
                     <div className="row" style={{ justifyContent: "space-between", marginTop: 6 }}>

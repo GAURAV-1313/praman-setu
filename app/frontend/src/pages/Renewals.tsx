@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { api } from "../api/client";
 import { useI18n } from "../i18n";
 import type { RenewalItem, RenewalRecord, RenewalStrength } from "../api/types";
@@ -34,6 +34,8 @@ export default function Renewals() {
   const [rec, setRec] = useState<RenewalRecord | null>(null);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<unknown>(null);
+  const reqId = useRef(0);
+  const detailRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setSel(null);
@@ -42,18 +44,22 @@ export default function Renewals() {
 
   async function open(it: RenewalItem) {
     const no = it.certificate.cert_no;
+    const id = ++reqId.current; // a quick second click wins; the first answer must not clear its spinner or error
     setSel(no);
     setRec(null);
     setErr(null);
     setBusy(true);
+    // one column on phones / narrow windows: bring the pre-filled renewal into view below the list
+    if (window.matchMedia("(max-width: 980px)").matches) setTimeout(() => detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
     try {
       const r = await api.renewalPrefill(no);
+      if (id !== reqId.current) return;
       setRec(r);
       if (!it.renewal_id) reload();
     } catch (e) {
-      setErr(e);
+      if (id === reqId.current) setErr(e);
     } finally {
-      setBusy(false);
+      if (id === reqId.current) setBusy(false);
     }
   }
 
@@ -142,7 +148,7 @@ export default function Renewals() {
             </ul>
           </section>
 
-          <section className="card tight ren-detail" aria-live="polite">
+          <section className="card tight ren-detail" aria-live="polite" ref={detailRef}>
             {!sel && (
               <div className="ren-empty muted">
                 {tx(

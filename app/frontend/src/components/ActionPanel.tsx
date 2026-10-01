@@ -130,6 +130,19 @@ export default function ActionPanel({ app, analysis, role, result, onDecided, re
   const [creamyDocs, setCreamyDocs] = useState<string[]>(shadow ? [] : (creamy?.default_docs ?? []));
   const findingRef = useRef<HTMLTextAreaElement>(null);
   const signBtnRef = useRef<HTMLButtonElement>(null);
+  // the file already waits in the sign tray (read, not signed): say so, and do not offer "Add to sign tray" again
+  const [inTray, setInTray] = useState(false);
+  useEffect(() => {
+    if (app.status !== "pending") return;
+    let alive = true;
+    api
+      .tray()
+      .then((v) => alive && setInTray(v.items.some((i) => i.app_id === app.app_id)))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [app.app_id, app.status, analysis]);
 
   // follow the analysis when it changes (e.g. after a confirmation or a hearing notice reply)
   useEffect(() => {
@@ -174,10 +187,15 @@ export default function ActionPanel({ app, analysis, role, result, onDecided, re
   const findingWhy: I18n | null = eff ? (analysis.finding_required?.[eff] ?? null) : null;
   const needFinding = !!findingWhy;
   const findingOk = finding.trim().length >= MIN_FINDING;
+  // the finding counts only while its box is on screen for the chosen action: text typed for one action (e.g. hearing
+  // grounds under X) must never ride, unseen, into another action's order (e.g. an approval)
+  const liveFinding = needFinding ? finding.trim() : "";
   const reasons: I18n[] = useMemo(() => {
     const lib = analysis.sendback_reasons ?? analysis.deficiencies.map((d) => ({ ...d, suggested: true }));
     const r = lib.filter((d) => defCodes.includes(d.code)).map((d) => d.text);
-    if (custom.trim()) r.push({ en: custom.trim(), hi: custom.trim() });
+    // the officer's own reason: in the authoritative Hindi notice an English-only reason is marked as such (as findings are)
+    const own = custom.trim();
+    if (own) r.push({ en: own, hi: /[ऀ-ॿ]/.test(own) ? own : `${own} (अधिकारी द्वारा अंग्रेज़ी में लिखित)` });
     return r;
   }, [analysis, defCodes, custom]);
 
@@ -196,9 +214,9 @@ export default function ActionPanel({ app, analysis, role, result, onDecided, re
 
   const baseDraft = useMemo<I18n>(() => {
     if (!eff || eff === "send_back") return rawDraft;
-    if (eff === "show_cause" || eff === "reject") return insertFinding(rawDraft, finding);
-    return finding.trim() ? insertFinding(rawDraft, finding) : rawDraft;
-  }, [eff, rawDraft, finding]);
+    if (eff === "show_cause" || eff === "reject") return insertFinding(rawDraft, liveFinding);
+    return liveFinding ? insertFinding(rawDraft, liveFinding) : rawDraft;
+  }, [eff, rawDraft, liveFinding]);
 
   const key = `${eff}:${referTo}:${evKey}:${draftLang}`;
   const keyOf = (l: Lang) => `${eff}:${referTo}:${evKey}:${l}`;
@@ -240,7 +258,7 @@ export default function ActionPanel({ app, analysis, role, result, onDecided, re
       deficiency_codes: eff === "send_back" ? defCodes : undefined,
       custom_deficiency: eff === "send_back" && custom.trim() ? custom.trim() : undefined,
       refer_to: eff === "refer" && referTo ? referTo : undefined,
-      findings: finding.trim() ? finding.trim() : undefined,
+      findings: liveFinding || undefined,
       evidence_basis: eff === "approve" && analysis.evidence_required ? { caste: evCaste, residence: evRes } : undefined,
       creamy_layer: creamyNeeded ? { non_creamy: creamyOk, docs: creamyDocs } : undefined,
       time_on_screen_s: Math.round(secondsOnScreen() * 10) / 10,
@@ -263,6 +281,12 @@ export default function ActionPanel({ app, analysis, role, result, onDecided, re
       // shadow mode: stay on the file so the tool's check can be revealed and compared
       onDecided(r, autoNext && eff !== "show_cause" && !shadow);
     } catch (e) {
+      if (e instanceof ApiError && e.status === 409 && /already decided|not pending/.test(e.message)) {
+        // decided meanwhile (another tab / the sign tray): show the file as it now stands instead of a dead-end error
+        setModal(false);
+        onCalledBack();
+        return;
+      }
       setErr(e instanceof ApiError ? `${e.status}: ${e.message}` : String(e));
     } finally {
       inflight.current = false;
@@ -284,7 +308,15 @@ export default function ActionPanel({ app, analysis, role, result, onDecided, re
       window.dispatchEvent(new CustomEvent("praman:tray"));
       onTrayAdded?.(v.items.length);
     } catch (e) {
-      setErr(e instanceof ApiError ? `${e.status}: ${e.message}` : String(e));
+      // the tray holds one office's files (or is full): say what to do, in the officer's language
+      if (e instanceof ApiError && e.status === 409 && /one desk|holds|at most/.test(e.message))
+        setErr(
+          tx(
+            "The sign tray holds another office's files or is full — sign those from the queue first, or sign this file here.",
+            "हस्ताक्षर ट्रे में दूसरे कार्यालय की फ़ाइलें हैं या ट्रे भरी है — पहले कतार से उन पर हस्ताक्षर करें, या इस फ़ाइल पर यहीं हस्ताक्षर करें।",
+          ) + ` (${e.message})`,
+        );
+      else setErr(e instanceof ApiError ? `${e.status}: ${e.message}` : String(e));
     } finally {
       inflight.current = false;
       setBusy(false);
@@ -377,6 +409,12 @@ export default function ActionPanel({ app, analysis, role, result, onDecided, re
   );
 
   const drawerParts: ReactNode[] = [];
+  if (inTray)
+    drawerParts.push(
+      <div key="intray" className="sc-done small" id="in-tray-note">
+        ✍ {tx("Already in your sign tray (read, not yet signed) — sign it with the others from the queue. Deciding it here takes it out of the tray.", "पहले से आपकी हस्ताक्षर ट्रे में (पढ़ा गया, हस्ताक्षर शेष) — कतार से अन्य फ़ाइलों के साथ हस्ताक्षर करें। यहाँ निर्णय लेने पर यह ट्रे से हट जाएगी।")}
+      </div>,
+    );
   if (analysis.show_cause?.reply)
     drawerParts.push(
       <div key="scdone" className="sc-done small">
@@ -661,7 +699,7 @@ export default function ActionPanel({ app, analysis, role, result, onDecided, re
             analysis={analysis}
             text={orderText}
             systemBase={rawDraft}
-            finding={finding.trim()}
+            finding={eff === "send_back" ? custom.trim() : liveFinding}
             referLabel={eff === "refer" && referTo ? analysis.refer_options?.find((o) => o.code === referTo)?.label : undefined}
             busy={busy}
             err={err}
@@ -675,7 +713,7 @@ export default function ActionPanel({ app, analysis, role, result, onDecided, re
               setTimeout(() => signBtnRef.current?.focus(), 0);
             }}
             onSign={sign}
-            onTray={trayEligible ? addToTray : undefined}
+            onTray={trayEligible && !inTray ? addToTray : undefined}
           />,
           document.body,
         )}

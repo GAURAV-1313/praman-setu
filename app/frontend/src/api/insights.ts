@@ -4,6 +4,7 @@
  * (exported by backend/scripts/export_fixtures_round8a.py) and simulates the officer labels locally.
  */
 import type { I18n } from "./types";
+import { mock } from "../mock/mockServer";
 import familyFx from "../mock/fixtures/graph_family.json";
 import integrityFx from "../mock/fixtures/graph_integrity.json";
 import statusFx from "../mock/fixtures/learning_status.json";
@@ -170,6 +171,8 @@ const clone = <T,>(v: T): T => JSON.parse(JSON.stringify(v)) as T;
 const FAMILY = familyFx as unknown as Record<string, FamilyGraph>;
 let offlineLabels: { pair_id: string; y: number }[] = [];
 let offlineRecal = false;
+let offlineFit: { at: string; labels: number } | null = null; // labels counted at the last offline recalibrate
+const istNow = () => new Date(Date.now() + 5.5 * 3600000).toISOString().slice(0, 19) + "+05:30";
 
 function offlineStatus(): LearningStatus {
   const base = clone((offlineRecal ? recalFx : statusFx) as unknown as LearningStatus);
@@ -179,13 +182,20 @@ function offlineStatus(): LearningStatus {
   base.labels.real += offlineLabels.length;
   base.labels.total += offlineLabels.length;
   base.labels.positives += offlineLabels.filter((l) => l.y === 1).length;
+  if (base.calibration && offlineFit) {
+    // the bundled refit is a snapshot: show when it was "pressed" here and how many labels it counted then
+    base.calibration.fitted_at = offlineFit.at;
+    base.calibration.n_labels += offlineFit.labels;
+    base.calibration.n_real += offlineFit.labels;
+  }
   return base;
 }
 
 export const insights = {
   family: (appId: string) =>
     withFallback<FamilyGraph>(`/graph/family/${encodeURIComponent(appId)}`, () => {
-      const g = FAMILY[appId];
+      // after "same family" in the offline simulation, the bundle's confirmed variant shows the record as relied on
+      const g = (mock.confirmedCerts(appId).length ? FAMILY[`${appId}#confirmed`] : undefined) ?? FAMILY[appId];
       if (!g) throw new InsightsError(404, `${appId}: not in the offline demo bundle`);
       return clone(g);
     }),
@@ -196,6 +206,7 @@ export const insights = {
       "/learning/recalibrate",
       () => {
         offlineRecal = true;
+        offlineFit = { at: istNow(), labels: offlineLabels.length };
         return offlineStatus();
       },
       { method: "POST", body: JSON.stringify({ actor: "Collector, Kondagaon" }) },

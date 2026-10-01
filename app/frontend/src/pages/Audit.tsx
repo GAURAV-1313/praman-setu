@@ -1,5 +1,5 @@
-import { Fragment, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Fragment, useEffect, useState } from "react";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { api } from "../api/client";
 import { useI18n } from "../i18n";
 import type { AuditEntry, DecisionSnapshot, Role } from "../api/types";
@@ -48,6 +48,11 @@ const ACTION: Record<string, { en: string; hi: string }> = {
   tray_added: { en: "Order read, added to sign tray", hi: "आदेश पढ़ा, हस्ताक्षर ट्रे में" },
   tray_signed: { en: "Sign tray signed (one DSC token passcode)", hi: "हस्ताक्षर ट्रे हस्ताक्षरित (एक DSC टोकन पासकोड)" },
   tool_feedback: { en: "Tool feedback (not an officer metric)", hi: "उपकरण प्रतिक्रिया (अधिकारी मापदंड नहीं)" },
+  forwarded_other_subdivision: { en: "Forwarded to its own sub-division desk", hi: "अपने अनुविभाग की डेस्क को अग्रेषित" },
+  // Round 8a/8c
+  family_graph_viewed: { en: "Family network opened (records shown)", hi: "परिवार नेटवर्क खोला (अभिलेख दिखाए)" },
+  learning_label: { en: "Answered an 'ask the officer' pair (model label only)", hi: "'अधिकारी से पूछें' जोड़े का उत्तर (केवल मॉडल लेबल)" },
+  model_recalibrated: { en: "Model recalibration proposed (not applied to live matching)", hi: "मॉडल पुनः अंशांकन प्रस्तावित (लाइव मिलान पर लागू नहीं)" },
 };
 
 /** Round 3: Hindi view of the (English) audit log — actor and the head of each note; the full English note stays on hover. */
@@ -61,6 +66,7 @@ const ACTOR_HI: [RegExp, string][] = [
   [/Keskal/g, "केशकाल"],
   [/Makdi/g, "माकड़ी"],
   [/Kongera/g, "कोंगेरा"],
+  [/Model owner \(demo\)/g, "मॉडल स्वामी (डेमो)"],
 ];
 const REG_HI: Record<string, string> = { "Bhuiyan land record (mock)": "भुइयां भू-अभिलेख (नमूना)", "Khadya ration roster (mock)": "खाद्य राशन सूची (नमूना)" };
 function actorHi(a: string): string {
@@ -83,6 +89,10 @@ const NOTE_HI: [RegExp, (m: RegExpMatchArray) => string][] = [
   [/^Archive lookup WITHOUT/, () => "सहमति टिक के बिना अभिलेखागार खोज"],
   [/^Citizen self-search with consent, (\d)\/(\d)[^—]*— result (\w+)/, (m) => `नागरिक द्वारा सहमति सहित स्वयं खोज, ${m[1]}/${m[2]} — परिणाम: ${m[3] === "not_found" ? "नहीं मिला" : "मिला (नागरिक को आंशिक क्रमांक ही दिखा)"}`],
   [/^Filed online with the archive-verified/, () => "अभिलेखागार से सत्यापित परिवार प्रमाण पत्र संलग्न कर ऑनलाइन दाखिल; संबंध की पुष्टि अधिकारी करेंगे"],
+  [/^Family network opened for (\S+) \((\S+)\): (\d+) certificate/, (m) => `${m[1]} (${m[2]}) का परिवार नेटवर्क खोला: तीन पीढ़ियों के वृक्ष में ${m[3]} प्रमाण पत्र`],
+  [/^Officer answered an 'ask the officer' pair \((\S+)\): (same|not)/, (m) => `अधिकारी ने 'अधिकारी से पूछें' जोड़े (${m[1]}) का उत्तर दिया: ${m[2] === "same" ? "एक ही परिवार" : "यह परिवार नहीं"}; केवल मॉडल लेबल के रूप में उपयोग`],
+  [/^Matcher calibration refitted on (\d+) labels \((\d+) real, (\d+) simulated\)/, (m) => `मिलान-मॉडल का अंशांकन ${m[1]} लेबलों (${m[2]} वास्तविक, ${m[3]} सिम्युलेटेड) पर पुनः किया गया; केवल प्रस्ताव — लाइव मिलान पर लागू नहीं`],
+  [/^Praman Reader: certificate number read from an uploaded paper \(([^)]+)\)( — not in the archive)?/, (m) => `प्रमाण रीडर: अपलोड किए कागज़ से पढ़ा गया प्रमाण पत्र क्रमांक (${m[1]})${m[2] ? " — अभिलेखागार में नहीं" : ""}`],
   [/^Filed online WITHOUT pre-notification papers/, () => "पुराने कागज़ों के बिना ऑनलाइन दाखिल: अनुपलब्धता घोषणा + वंशावली; नियम 7 जांच का अनुरोध"],
 ];
 function noteHi(n: string): string {
@@ -99,6 +109,12 @@ export default function Audit() {
   // Round 5: the demo jump link pre-fills the number (the presenter still presses Search on stage)
   const [q, setQ] = useState(sp.get("q") ?? "");
   const [query, setQuery] = useState("");
+  // the demo jump link can be used while already on /audit: pick up the new number (still not searched)
+  const loc = useLocation();
+  useEffect(() => {
+    const v = new URLSearchParams(loc.search).get("q");
+    if (v !== null) setQ(v);
+  }, [loc.key, loc.search]);
   const { data, error, loading, reload } = useAsync<AuditEntry[]>(() => api.audit(query || undefined), [query]);
   const [open, setOpen] = useState<number | null>(null);
 
@@ -113,7 +129,7 @@ export default function Audit() {
         </div>
         <div className="row">
           <span className="pill blue">{tx("DPDP Rules 2025 · logs kept ≥ 1 year", "DPDP नियम 2025 · लॉग ≥ 1 वर्ष")}</span>
-          <button className="btn secondary sm" onClick={() => reload()}>
+          <button className="btn secondary sm" onClick={() => (setOpen(null), reload())}>
             ↻ {tx("Refresh", "रीफ़्रेश")}
           </button>
         </div>

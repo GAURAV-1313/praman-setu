@@ -11,6 +11,7 @@ Mounted by api.py (`app.include_router(insights_api.router)`); api.STATE is impo
 from __future__ import annotations
 
 import threading
+from datetime import datetime, timedelta, timezone
 from typing import Literal, Optional
 
 from fastapi import APIRouter, HTTPException
@@ -33,6 +34,9 @@ def _warm():
 threading.Thread(target=_warm, daemon=True).start()  # ~3 s of scoring off the request path
 
 
+IST = timezone(timedelta(hours=5, minutes=30))
+
+
 def _state():
     import api  # noqa: WPS433 — lazy: api imports this module at its end
     return api.STATE
@@ -52,9 +56,15 @@ def graph_family(app_id: str, role: Optional[str] = None):
     an = S.analysis(app_id)
     out = graph.family(e, an)
     recs = sorted({n["cert_no"] for n in out["nodes"] if n["kind"] == "cert"})
-    S.add_audit(role if role in ("sdo", "tehsildar", "collector", "kendra_operator") else e["application"]["routed_to"],
-                "family_graph_viewed", app_id, recs,
-                note=f"Family network opened for {app_id} ({out['family_id']}): {len(recs)} certificate(s) in the 3-generation tree.")
+    who = role if role in ("sdo", "tehsildar", "collector", "kendra_operator") else e["application"]["routed_to"]
+    with S.lock:  # one view = one entry: React StrictMode / quick reloads fetch twice (same rule as case_opened)
+        last = S.audit[-1] if S.audit else None
+        duplicate = (last is not None and last["action"] == "family_graph_viewed" and last.get("app_id") == app_id
+                     and last["actor_role"] == who
+                     and (datetime.now(IST) - datetime.fromisoformat(last["ts"])).total_seconds() < 3)
+        if not duplicate:
+            S.add_audit(who, "family_graph_viewed", app_id, recs,
+                        note=f"Family network opened for {app_id} ({out['family_id']}): {len(recs)} certificate(s) in the 3-generation tree.")
     return out
 
 

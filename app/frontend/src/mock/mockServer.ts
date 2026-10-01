@@ -171,6 +171,32 @@ function pushAudit(e: AuditEntry) {
 
 const renewalIds = new Map<string, string>(); // Round 8b: offline pre-filled renewals (session only)
 
+/** Round 9 QA: the renewal fixtures were exported on `as_of`; the backend makes expiry dates relative to today, so the
+ *  offline copy moves every date by (today − as_of) days — "expires in 5 days (on …)" stays true on the demo day.
+ *  `context` (the REAL MIS fetch date) is never moved. */
+function renewalShiftDays(): number {
+  const asOf = (fx<Record<string, RenewalList>>("renewals") ?? {})["643"]?.as_of;
+  if (!asOf) return 0;
+  const today = new Date(Date.now() + 5.5 * 3600000).toISOString().slice(0, 10);
+  return Math.round((Date.parse(today) - Date.parse(asOf)) / 86400000);
+}
+function shiftDates<T>(v: T, days: number): T {
+  if (!days) return v;
+  const mv = (y: string, m: string, d: string) => new Date(Date.UTC(+y, +m - 1, +d + days)).toISOString().slice(0, 10);
+  const str = (x: string) =>
+    x
+      .replace(/(?<!\d)(\d{4})-(\d{2})-(\d{2})(?!\d)/g, (_, y, m, d) => mv(y, m, d))
+      .replace(/(?<![\d-])(\d{2})-(\d{2})-(\d{4})(?!\d)/g, (_, d, m, y) => mv(y, m, d).split("-").reverse().join("-"));
+  const walk = (x: unknown, key?: string): unknown => {
+    if (key === "context" || key === "roadmap") return x;
+    if (typeof x === "string") return str(x);
+    if (Array.isArray(x)) return x.map((y) => walk(y));
+    if (x && typeof x === "object") return Object.fromEntries(Object.entries(x).map(([k, y]) => [k, walk(y, k)]));
+    return x;
+  };
+  return walk(v) as T;
+}
+
 // ---------- GET ----------
 const citizenReceipts: Record<string, string> = {};
 const citizenSearches: Record<string, number> = {};
@@ -433,7 +459,7 @@ export const mock = {
     const all = fx<Record<string, RenewalList>>("renewals") ?? {};
     const l = all[String(districtLgd)] ?? all["643"];
     if (!l) throw new MockHttpError(503, "renewal fixtures missing");
-    const out = clone(l);
+    const out = shiftDates(clone(l), renewalShiftDays());
     out.items = out.items.filter((i) => i.days_left <= window).map((i) => ({ ...i, renewal_id: renewalIds.get(i.certificate.cert_no) ?? null }));
     out.window_days = window;
     return out;
@@ -442,7 +468,12 @@ export const mock = {
     const rec = (fx<Record<string, RenewalRecord>>("renewal_prefill") ?? {})[certNo];
     if (!rec) throw new MockHttpError(404, `income certificate ${certNo} not found`);
     renewalIds.set(certNo, rec.renewal_id);
-    return clone(rec);
+    return shiftDates(clone(rec), renewalShiftDays());
+  },
+
+  /** Round 9 QA: certificates the officer marked "same family" in the offline simulation (no audit entry; read-only). */
+  confirmedCerts(appId: string): string[] {
+    return (state.cases[appId]?.analysis.lineage_matches ?? []).filter((m) => m.disposition?.decision === "same").map((m) => m.certificate.cert_no);
   },
 
   // ---------- POST ----------

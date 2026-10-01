@@ -129,6 +129,9 @@ export const api = {
     withFallback<CaseBundle>(`/applications/${enc(appId)}/route-desk`, () => mock.routeDesk(appId, getDesk()), post({ desk: getDesk(), officer_name: officer })),
   getCase: (appId: string, role: Role = "sdo") =>
     withFallback<CaseBundle>(`/applications/${enc(appId)}`, () => mock.getCase(appId, role)),
+  /** The application form only — no archive records / registry rows, so not logged as "case opened" (e.g. the Reader) */
+  getApplication: (appId: string) =>
+    withFallback<Pick<CaseBundle, "application">>(`/applications/${enc(appId)}?fields=application`, () => ({ application: mock.getCase(appId).application })),
   /** "Same family ✓" with the officer's grounds (Round 2) */
   confirmRelationship: (appId: string, certNo: string, role: Role = "sdo", grounds?: string[], note?: string, officer?: string) =>
     withFallback<CaseBundle>(

@@ -350,10 +350,16 @@ def queue_key(q: dict):
 
 
 @app.get("/api/applications/{app_id:path}")
-def get_application(app_id: str, role: Optional[str] = None):
+def get_application(app_id: str, role: Optional[str] = None, fields: Optional[Literal["application"]] = None):
     if app_id.endswith("/issued"):  # the greedy {app_id:path} converter catches .../issued first
         return issued(app_id[: -len("/issued")])
+    if role is not None and role not in ROLES:
+        raise HTTPException(400, f"unknown role {role}")  # never log an arbitrary string as the actor role
     e = STATE.entry(app_id)
+    if fields == "application":
+        # the application form only (e.g. the Reader checking an uploaded document against it): no archive records or
+        # registry rows are returned, so this is not a "records shown" access and is not logged as case_opened
+        return {"application": e["application"]}
     an = STATE.analysis(app_id)
     who = role or e["application"]["routed_to"]
     with STATE.lock:  # check-and-append atomically: concurrent duplicate fetches must not both log
@@ -384,6 +390,16 @@ class RejectMatchBody(BaseModel):
 class ClearMatchBody(BaseModel):
     cert_no: str
     officer_name: Optional[str] = None
+
+
+def _drop_from_tray(app_id: str, role: str, why: str) -> None:
+    """The order read into the sign tray no longer matches the file (a record act changed the evidence): take it out,
+    so one token passcode can never sign a text the officer did not read."""
+    with STATE.lock:
+        if not any(t["app_id"] == app_id for t in STATE.tray):
+            return
+        STATE.tray = [t for t in STATE.tray if t["app_id"] != app_id]
+    STATE.add_audit(role, "tray_removed", app_id, [], note=f"Removed from the sign tray: {why}; open and read the order again")
 
 
 def _match_or_400(an: dict, cert_no: str) -> dict:
@@ -422,6 +438,7 @@ def _dispose(app_id: str, cert_no: str, decision: str, grounds: list[str], note:
             "ts": datetime.now(IST).isoformat(timespec="seconds")}
         STATE.invalidate(app_id)
     an = STATE.analysis(app_id)
+    _drop_from_tray(app_id, e["application"]["routed_to"], f"the officer recorded '{decision}' for certificate {cert_no}")
     labels = ", ".join(engine.GROUND_LABEL[g]["en"] for g in grounds) or "—"
     if decision == "same":
         STATE.add_audit(e["application"]["routed_to"], "relationship_confirmed", app_id, [cert_no],
@@ -461,6 +478,7 @@ def clear_match(app_id: str, body: ClearMatchBody):
     if prev is None:
         raise HTTPException(400, f"no confirmation or dismissal recorded for {body.cert_no}")
     an = STATE.analysis(app_id)
+    _drop_from_tray(app_id, e["application"]["routed_to"], f"the record for certificate {body.cert_no} was undone")
     STATE.add_audit(e["application"]["routed_to"],
                     "relationship_unconfirmed" if prev["decision"] == "same" else "match_rejection_undone",
                     app_id, [body.cert_no], note=f"Officer withdrew the earlier '{'same family' if prev['decision'] == 'same' else 'not this family'}' "
@@ -500,6 +518,7 @@ def search_native_village(app_id: str, body: NativeVillageBody):
         STATE.invalidate(app_id)
     an = STATE.analysis(app_id)
     role = a["routed_to"]
+    _drop_from_tray(app_id, role, "the native (maiden) village search changed the records")
     if body.village_lgd is None:
         STATE.add_audit(role, "native_village_search_cleared", app_id, [],
                         note="Officer removed the native (maiden) village search", actor=body.officer_name)
@@ -649,6 +668,12 @@ def _decide(app_id: str, body: DecisionBody, esign_txn: str | None = None) -> di
         why = an["finding_required"].get(body.action) if body.action in ("reject", "show_cause") else None
         if body.action == "approve" and body.tool_visible and attention_open:
             why = {"en": "An attention point was open in the Praman panel.", "hi": "प्रमाण पैनल में एक ध्यान-बिंदु खुला था।"}
+        elif body.action == "approve" and body.tool_visible and (an["finding_required"].get("approve") or an["disposition_required"]):
+            # the panel showed the officer that nothing on file is relied on yet (e.g. "same family" was undone, a found
+            # record is unmarked, or no document can be picked): the full view needs a written finding there, so does this
+            why = an["finding_required"].get("approve") or {
+                "en": "A possible family record shown in the Praman panel is not marked — approving needs your written reasons.",
+                "hi": "प्रमाण पैनल में दिखाया गया संभावित पारिवारिक अभिलेख चिह्नित नहीं — स्वीकृति हेतु आपके लिखित कारण आवश्यक हैं।"}
     if body.action == "reject" and not findings:
         raise HTTPException(422, "reject requires written findings")
     if why and len(findings) < MIN_FINDING_CHARS:
@@ -698,8 +723,17 @@ def _decide(app_id: str, body: DecisionBody, esign_txn: str | None = None) -> di
     snap = snapshot_of(an, body, final, edited)
     records = records_of(an)
     actor = body.officer_name
+    with STATE.lock:
+        # decided on its own (not by the tray's token passcode): it leaves the sign tray, or the tray would try to sign it again
+        left_tray = esign_txn is None and any(t["app_id"] == app_id for t in STATE.tray)
+        if left_tray:
+            STATE.tray = [t for t in STATE.tray if t["app_id"] != app_id]
     if body.action == "show_cause":
         with STATE.lock:
+            prev_sc = STATE.show_cause.get(app_id)
+            if prev_sc:  # a fresh hearing notice after an earlier one was answered: keep the earlier notice on file
+                STATE.history.append({**prev_sc, "app_id": app_id, "action": "show_cause",
+                                      "superseded_ts": now.isoformat(timespec="seconds")})
             a["status"] = STATUS_FOR["show_cause"]
             STATE.show_cause[app_id] = {
                 "no": number, "date": now.strftime("%d-%m-%Y"), "issued_ts": now.isoformat(timespec="seconds"),
@@ -710,7 +744,8 @@ def _decide(app_id: str, body: DecisionBody, esign_txn: str | None = None) -> di
         msg = citizen_message("show_cause", a, info["office"], defs, None)
         STATE.show_cause[app_id]["citizen_message"] = msg
         audit = STATE.add_audit(a["routed_to"], "show_cause_issued", app_id, records,
-                                note=f"Pre-rejection hearing notice {number} issued; reply due {STATE.show_cause[app_id]['reply_due']}. Grounds: {findings}",
+                                note=f"Pre-rejection hearing notice {number} issued; reply due {STATE.show_cause[app_id]['reply_due']}. Grounds: {findings}"
+                                     + ("; removed from the sign tray" if left_tray else ""),
                                 actor=actor, extra={"snapshot": snap, "document_no": number})
         return {"application": a, "citizen_message": msg, "audit": audit, "document_kind": "show_cause",
                 "document_no": number, "issued_text": final}
@@ -751,7 +786,8 @@ def _decide(app_id: str, body: DecisionBody, esign_txn: str | None = None) -> di
             + (f"; findings: {findings}" if findings else "")
             + ("; decided with Sewa Setu's own buttons" if native else "")
             + ("; shadow mode: the tool's check was shown after the decision" if body.shadow else "")
-            + (f"; DSC token transaction {esign_txn} (sign tray)" if esign_txn else ""))
+            + (f"; DSC token transaction {esign_txn} (sign tray)" if esign_txn else "")
+            + ("; removed from the sign tray (decided individually)" if left_tray else ""))
     audit = STATE.add_audit(a["routed_to"], f"decision_{body.action}", app_id, records, note=note, actor=actor,
                             extra={"snapshot": snap, "document_no": number, **({"esign_txn": esign_txn} if esign_txn else {})})
     return {"application": a, "citizen_message": msg, "audit": audit, "document_kind": kind,
@@ -1060,6 +1096,8 @@ def route_desk(app_id: str, body: RouteDeskBody):
     """Round 6 (P2): a file of another sub-division opened on this SDO desk is forwarded to its own desk (logged)."""
     e = STATE.entry(app_id)
     a = e["application"]
+    if a["status"] != "pending":
+        raise HTTPException(409, f"application {app_id} is not pending ({a['status']}); nothing to forward")
     sd = wrong_desk(a, sdo_desk(body.desk))
     if not sd:
         raise HTTPException(409, f"{app_id} belongs to this desk; nothing to forward")
@@ -1139,8 +1177,13 @@ class TrayRemoveBody(BaseModel):
 @app.post("/api/tray/remove")
 def tray_remove(body: TrayRemoveBody):
     with STATE.lock:
+        gone = [t for t in STATE.tray if t["app_id"] == body.app_id]
         STATE.tray = [t for t in STATE.tray if t["app_id"] != body.app_id]
         STATE.save()
+    if gone:  # tray_added is logged, so is taking a file out again (unsigned)
+        a = STATE.entries.get(body.app_id, {}).get("application", {})
+        STATE.add_audit(a.get("routed_to", "sdo"), "tray_removed", body.app_id, [],
+                        note=f"Removed from the sign tray before signing ({len(STATE.tray)}/{TRAY_MAX} left); no decision taken")
     return _tray_view()
 
 
@@ -1187,6 +1230,8 @@ def tool_feedback(app_id: str, body: FeedbackBody):
     d = STATE.decisions.get(app_id)
     if not d:
         raise HTTPException(409, "feedback is recorded after the decision")
+    if d.get("tool_feedback"):  # one tap per decision; a repeat would silently flip the Collector's feedback tile
+        raise HTTPException(409, "tool feedback is already recorded for this decision")
     with STATE.lock:
         d["tool_feedback"] = {"useful": body.useful, "note": (body.note or "").strip() or None,
                               "ts": datetime.now(IST).isoformat(timespec="seconds")}

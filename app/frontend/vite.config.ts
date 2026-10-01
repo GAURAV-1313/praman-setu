@@ -5,11 +5,12 @@ import type { ServerResponse } from "node:http";
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 5173,
+    // PRAMAN_PORT / PRAMAN_API let a second copy run side by side (e.g. for testing); defaults unchanged
+    port: Number(process.env.PRAMAN_PORT ?? 5173),
     strictPort: true,
     proxy: {
       "/api": {
-        target: "http://localhost:8000",
+        target: process.env.PRAMAN_API ?? "http://localhost:8000",
         changeOrigin: true,
         // When the backend is down, answer quietly so the browser console stays clean;
         // the client sees the header and switches to offline demo mode (bundled fixtures).

@@ -150,7 +150,7 @@ export default function Reader() {
   const [sp] = useSearchParams();
   const appId = sp.get("app") || DEFAULT_APP;
   const [app, setApp] = useState<Application | null>(null);
-  const [src, setSrc] = useState<{ url: string; name: string; sample: boolean } | null>(null);
+  const [src, setSrc] = useState<{ url: string; name: string; sample: boolean; n: number } | null>(null);
   const [busy, setBusy] = useState(false);
   const [prog, setProg] = useState<OcrProgress | null>(null);
   const [engineMs, setEngineMs] = useState<number | null>(engineReadyMs);
@@ -161,7 +161,7 @@ export default function Reader() {
   const runId = useRef(0);
 
   useEffect(() => {
-    api.getCase(appId).then((b) => setApp(b.application)).catch(() => setApp(null));
+    api.getApplication(appId).then((b) => setApp(b.application)).catch(() => setApp(null));
   }, [appId]);
 
   // Warm the OCR engine as soon as the page opens (local files; ~1 s)
@@ -196,13 +196,20 @@ export default function Reader() {
 
   function pick(file: string) {
     setRes(null);
-    setSrc({ url: `/samples/${file}`, name: file, sample: true });
+    setErr(null);
+    // n remounts the <img>: picking the same paper again must read it again (same src fires no second onLoad)
+    setSrc((p) => ({ url: `/samples/${file}`, name: file, sample: true, n: (p?.n ?? 0) + 1 }));
   }
   function upload(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0];
     if (!f) return;
+    e.target.value = ""; // the same file can be chosen again
     setRes(null);
-    setSrc({ url: URL.createObjectURL(f), name: f.name, sample: false });
+    setErr(null);
+    setSrc((p) => {
+      if (p && !p.sample) URL.revokeObjectURL(p.url);
+      return { url: URL.createObjectURL(f), name: f.name, sample: false, n: (p?.n ?? 0) + 1 };
+    });
   }
 
   // ------- comparison rows
@@ -319,7 +326,7 @@ export default function Reader() {
           </div>
           {src && (
             <div className="reader-preview">
-              <img ref={imgRef} src={src.url} alt={src.name} onLoad={run} />
+              <img key={src.n} ref={imgRef} src={src.url} alt={src.name} onLoad={run} onError={() => setErr("image")} />
             </div>
           )}
         </section>
@@ -346,7 +353,7 @@ export default function Reader() {
               <div className="rp-bar"><div style={{ width: `${Math.max(4, pctDone)}%` }} /></div>
             </div>
           )}
-          {err && <div className="card tight error-box">{tx("Could not read this image. Try a clearer scan.", "यह छवि पढ़ी नहीं जा सकी। साफ़ स्कैन आज़माएँ।")}</div>}
+          {err && <div className="card tight error-box">{err === "engine" ? tx("The OCR engine could not start in this browser. Reload the page; the paper can still be checked by eye.", "OCR इंजन इस ब्राउज़र में आरंभ नहीं हो सका। पृष्ठ पुनः लोड करें; कागज़ को आँख से जांचा जा सकता है।") : tx("Could not read this image. Try a clearer scan.", "यह छवि पढ़ी नहीं जा सकी। साफ़ स्कैन आज़माएँ।")}</div>}
           {!src && !busy && <div className="card reader-empty muted">{tx("Pick a sample paper on the left, or upload a scan. Reading starts automatically.", "बाईं ओर कोई नमूना चुनें या स्कैन अपलोड करें। पढ़ना अपने-आप शुरू होगा।")}</div>}
 
           {res && view && (

@@ -239,3 +239,38 @@ pre { overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
   .case-band .lane-chip.lg { font-size: 13px; padding: 3px 9px; }
   .case-band .pill.sla { font-size: 13px; padding: 3px 8px; }
 }
+
+/* Round 9 QA: phone bar with both honesty pills (synthetic + offline) and the language toggle must keep the ⋯ menu on
+   screen — the pills drop their second word ("data", "demo"); the full text stays in their tooltips. */
+@media (max-width: 420px) {
+  .app.compact .nav-right { gap: 6px; }
+  .app.compact .nav-right .pill-more { display: none; }
+}
+
+/* Officer queue on a phone: each file is a card (applicant + SLA, service, what the records show, next step + lane),
+   so the next step and the lane are never scrolled off the right edge of the table box */
+@media (max-width: 640px) {
+  .table.queue { min-width: 0; }
+  .table.queue thead { display: none; }
+  .table.queue, .table.queue tbody { display: block; width: 100%; }
+  .table.queue tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--line-cool); box-shadow: inset 5px 0 0 var(--stripe, transparent); }
+  .table.queue td { display: block; padding: 0; border: 0; min-width: 0; }
+  .table.queue td:first-child { box-shadow: none; grid-column: 1; grid-row: 1; }
+  .table.queue td:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+  .table.queue td:nth-child(3) { grid-column: 2; grid-row: 1; text-align: right; }
+  .table.queue td.reason { grid-column: 1 / -1; grid-row: 3; max-width: none; min-width: 0; }
+  .table.queue td:nth-child(5) { grid-column: 1; grid-row: 4; }
+  .table.queue td:nth-child(6) { grid-column: 2; grid-row: 4; justify-self: end; }
+  .table.queue td[colspan] { grid-column: 1 / -1; grid-row: auto; }
+}
+
+/* Officer pages in shadow mode (+ presenter): the extra header pills must never push the bar past the window
+   between the phone breakpoint and a wide screen — the nav links tighten and the shadow pill ellipsises */
+@media (min-width: 1021px) and (max-width: 1560px) {
+  .shadow-mode .app.compact .nav .shell { gap: 10px; }
+  .shadow-mode .app.compact .nav-links { gap: 2px; }
+  .shadow-mode .app.compact .nav-links a { padding: 6px 8px; font-size: 15px; }
+  .shadow-mode .app.compact .nav-right { min-width: 0; gap: 6px; }
+  .shadow-mode .app.compact .nav-right .shadow-pill { min-width: 0; max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .shadow-mode .app.compact .nav-right .online-pill { white-space: nowrap; }
+}

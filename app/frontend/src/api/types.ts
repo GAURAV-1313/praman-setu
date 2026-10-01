@@ -144,7 +144,8 @@ export interface Application {
   kendra: I18n;
   routed_to: Role;
   status: "pending" | "approved" | "sent_back" | "referred" | "rejected" | "show_cause_issued" | "awaiting_patwari";
-  documents: { code: string; label: I18n; uploaded: boolean }[];
+  /** `text`: a system-generated document's own text (e.g. the citizen's unavailability declaration, Hindi) */
+  documents: { code: string; label: I18n; uploaded: boolean; text?: string }[];
   persona_note?: I18n;
   declared_relative_cert_no?: string;
   /** Round 1: times this application was sent back before */
@@ -707,6 +708,8 @@ export interface CitizenSubmitRequest {
   purpose?: string;
   proof_ref?: string;
   no_papers?: boolean;
+  /** the generated unavailability declaration, exactly as the citizen ticked it (Hindi) */
+  declaration?: string;
   vanshavali?: { relation: string; name: string; village: string; place_1950: string }[];
   other_docs?: string[];
   aadhaar_last4?: string;
