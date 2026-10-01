@@ -109,14 +109,14 @@ def plain_words(text: dict) -> dict:
 
 
 def citizen_message(action: str, app: dict, office: dict, deficiencies: list[dict] | None = None,
-                    findings: str | None = None, records: dict | None = None) -> dict:
+                    findings: str | None = None, records: dict | None = None, refer_to: str | None = None) -> dict:
     records = records or {"cert": [], "seen": {"en": "", "hi": ""}}
     if action == "send_back" and deficiencies:
         deficiencies = [{**d, "text": plain_words(d["text"])} for d in deficiencies]
     ctx = {
         "name": app["applicant_name"], "app_id": app["app_id"], "service": SHORT_SERVICE[app["service"]],
         "kendra": app["kendra"], "office": office, "deficiencies": deficiencies or [], "findings": findings or "",
-        "records": records,
+        "records": records, "patwari": refer_to == "patwari",
     }
     text = render_pair(f"msg_{action}", **ctx)
     source = [app, office, SHORT_SERVICE[app["service"]], deficiencies or [], findings or "", records]

@@ -121,6 +121,9 @@ export interface Application {
   channel?: "citizen_portal";
   /** citizen portal: no pre-notification papers — unavailability declaration + Rule 7 inquiry requested */
   inquiry_requested?: boolean;
+  /** citizen portal: last 4 digits only, as typed by the applicant */
+  aadhaar_last4?: string;
+  mobile_last4?: string;
   service: Service;
   service_label: I18n;
   applicant_name: I18n;
@@ -706,6 +709,8 @@ export interface CitizenSubmitRequest {
   no_papers?: boolean;
   vanshavali?: { relation: string; name: string; village: string; place_1950: string }[];
   other_docs?: string[];
+  aadhaar_last4?: string;
+  mobile_last4?: string;
 }
 export interface CitizenSubmitResponse {
   app_id: string;

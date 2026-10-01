@@ -739,7 +739,7 @@ def _decide(app_id: str, body: DecisionBody, esign_txn: str | None = None) -> di
     used = records_used(an["accepted_cert_nos"] if body.action == "approve" else
                         [lm["certificate"]["cert_no"] for lm in an["lineage_matches"] if (lm.get("disposition") or {}).get("decision") != "not"],
                         [ev["source"]["en"] for ev in an["evidence_rows"]])
-    msg = citizen_message(body.action, a, info["office"], defs, None, used)
+    msg = citizen_message(body.action, a, info["office"], defs, None, used, refer_to=refer_to)
     with STATE.lock:
         STATE.decisions[app_id]["citizen_message"] = msg
     note = (f"{kind.capitalize()} {number} issued"

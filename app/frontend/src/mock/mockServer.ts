@@ -172,6 +172,7 @@ function pushAudit(e: AuditEntry) {
 const renewalIds = new Map<string, string>(); // Round 8b: offline pre-filled renewals (session only)
 
 // ---------- GET ----------
+const citizenReceipts: Record<string, string> = {};
 const citizenSearches: Record<string, number> = {};
 
 export const mock = {
@@ -723,8 +724,10 @@ export const mock = {
   },
   citizenSubmit(req: CitizenSubmitRequest): CitizenSubmitResponse {
     const due = new Date(Date.now() + 22 * 864e5).toISOString().slice(0, 10);
+    // one sample number per session (a repeat submit returns the same receipt, as the server does)
+    const no = (citizenReceipts[req.session_id] ??= `SS/2026/KDG/${String(9001 + Object.keys(citizenReceipts).length).padStart(5, "0")}`);
     return {
-      app_id: "SS/2026/KDG/09001",
+      app_id: no,
       submitted_at: new Date().toISOString(),
       sla_due: due,
       office: { en: "SDO (Revenue), Kondagaon", hi: "अनुविभागीय अधिकारी (राजस्व), कोंडागांव" },
@@ -736,8 +739,8 @@ export const mock = {
         generator: "template",
         checker: { passed: true, unsupported_entities: [], checked_entities: [] },
         text: {
-          hi: `नमस्ते ${req.applicant_name_hi} जी। आपका आवेदन क्र. SS/2026/KDG/09001 जमा हो गया है (शुल्क ₹30)। निर्णय की तिथि: ${due.split("-").reverse().join("-")}। स्थिति सेवा सेतु पोर्टल या नज़दीकी लोक सेवा केंद्र पर देखें।`,
-          en: `Hello ${req.applicant_name_en}. Your application No. SS/2026/KDG/09001 is submitted (fee ₹30). Decision due by: ${due.split("-").reverse().join("-")}. See the status on the Sewa Setu portal or at your nearest Lok Seva Kendra.`,
+          hi: `नमस्ते ${req.applicant_name_hi} जी। आपका आवेदन क्र. ${no} जमा हो गया है (शुल्क ₹30)। निर्णय की तिथि: ${due.split("-").reverse().join("-")}। स्थिति सेवा सेतु पोर्टल या नज़दीकी लोक सेवा केंद्र पर देखें।`,
+          en: `Hello ${req.applicant_name_en}. Your application No. ${no} is submitted (fee ₹30). Decision due by: ${due.split("-").reverse().join("-")}. See the status on the Sewa Setu portal or at your nearest Lok Seva Kendra.`,
         },
       },
     };

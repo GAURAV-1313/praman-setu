@@ -287,23 +287,21 @@ export default function Kendra() {
                 <CertificateIllustration size={120} />
                 <div>
                   <span className="pill green">✔ {tx("Matching family certificate found", "परिवार का मिलता-जुलता प्रमाण पत्र मिला")}</span>
-                  <h2 style={{ marginTop: 8 }} className="mono">
-                    {usable.certificate.cert_no}
+                  <h2 style={{ marginTop: 8 }} className="mono" id="kd-masked-no">
+                    {tx("No.", "क्र.")} {maskNo(usable.certificate.cert_no)}
                   </h2>
                   <div style={{ fontSize: 16, marginTop: 4 }}>
-                    <Bi v={usable.certificate.holder_name} inline /> · <b>{t(usable.relation_label)}</b>
+                    <b>{t(usable.relation_label)}</b> · {tx("matches the father's name entered", "दर्ज पिता के नाम से मेल")}
                   </div>
                   <div className="small muted">
                     {t(usable.certificate.issuing_authority)} · {fmtDate(usable.certificate.issue_date, lang)}
                   </div>
                   <div className="small" style={{ marginTop: 4 }}>
                     {usable.found_via === "native_village" ? (
-                      <span className="pill blue" title={usable.found_via_note ? t(usable.found_via_note) : undefined}>
-                        ⌂ {tx("Found in the native / maiden village", "मायके / मूल गांव से मिला")}: <Bi v={usable.certificate.village} inline /> · {t(usable.certificate.district)}
-                      </span>
+                      <span className="pill blue">⌂ {tx("Found in the native / maiden village entered", "दर्ज मायके / मूल गांव से मिला")}</span>
                     ) : (
                       <span className="muted">
-                        {tx("Village", "गांव")}: <Bi v={usable.certificate.village} inline /> · {t(usable.certificate.district)}
+                        {tx("Privacy: the operator sees only part of the number — no name, village or category of the holder. The officer sees the full record.", "निजता: ऑपरेटर को क्रमांक का केवल अंश दिखता है — धारक का नाम, गांव या वर्ग नहीं। अधिकारी पूरा अभिलेख देखते हैं।")}
                       </span>
                     )}
                   </div>
@@ -329,8 +327,8 @@ export default function Kendra() {
                   </div>
                 ))}
               </div>
-              <p style={{ marginTop: 14 }}>{t(res.summary)}</p>
-              <p className="small muted" style={{ marginTop: 4 }}>{t(res.suggestion)}</p>
+              <p style={{ marginTop: 14 }}>{maskText(t(res.summary))}</p>
+              <p className="small muted" style={{ marginTop: 4 }}>{maskText(t(res.suggestion))}</p>
               <div style={{ marginTop: 14 }}>
                 {attached === usable.certificate.cert_no ? (
                   <div className="attach-done">
@@ -354,7 +352,7 @@ export default function Kendra() {
               <div className="row" style={{ alignItems: "center", gap: 18 }}>
                 <SearchFamilyIllustration size={150} className="no-shrink" />
                 <div>
-                  <h2 style={{ fontSize: 19 }}>{t(res.summary)}</h2>
+                  <h2 style={{ fontSize: 19 }}>{maskText(t(res.summary))}</h2>
                   <p className="muted" style={{ marginTop: 6 }}>
                     {tx("Common for first-time applicants and families who moved. Not a negative signal.", "पहली बार आवेदन करने वालों व स्थानांतरित परिवारों में सामान्य। यह कोई नकारात्मक संकेत नहीं है।")}
                   </p>
@@ -370,7 +368,7 @@ export default function Kendra() {
                   ⚠ {t(other.validity_headline)}
                 </p>
               )}
-              <p style={{ marginTop: 12 }}>{t(res.suggestion)}</p>
+              <p style={{ marginTop: 12 }}>{maskText(t(res.suggestion))}</p>
             </section>
           )}
 
@@ -383,7 +381,7 @@ export default function Kendra() {
                     <Tick ok={c.present} neutral={!c.present} />
                     <span>
                       {t(c.label)}
-                      {c.satisfied_by && <span className="sat">✓ {t(c.satisfied_by)}</span>}
+                      {c.satisfied_by && <span className="sat">✓ {maskText(t(c.satisfied_by))}</span>}
                       {!c.present && (
                         <span className="sat" style={{ color: "var(--muted)" }}>
                           {c.code === "family_tree"
@@ -402,3 +400,7 @@ export default function Kendra() {
     </div>
   );
 }
+
+/** The Kendra is a private operator: like the citizen, it sees only the last 4 digits of a family certificate. */
+const maskNo = (no: string) => "••••" + no.slice(-4);
+const maskText = (text: string) => text.replace(/\b[A-Z]{2}\/[A-Z]{2,4}\/[A-Z]{2,4}\/\d{4}\/\d{3,7}\b/g, (m) => maskNo(m));

@@ -509,10 +509,10 @@ export default function SewaSetuConsole() {
                     <tr>
                       <th>{tx("Aadhaar card number", "आधार कार्ड नंबर")}</th>
                       <td className="mono" id="ss-aadhaar">
-                        {maskedAadhaar(app.app_id)} <span className="small muted">({tx("masked", "छिपाया गया")})</span>
+                        {app.aadhaar_last4 ? `XXXX XXXX ${app.aadhaar_last4}` : maskedAadhaar(app.app_id)} <span className="small muted">({tx("masked", "छिपाया गया")})</span>
                       </td>
                       <th>{tx("Mobile", "मोबाइल")}</th>
-                      <td className="mono">••••••{synthDigits(app.app_id, "mob")}</td>
+                      <td className="mono">••••••{app.mobile_last4 ?? synthDigits(app.app_id, "mob")}</td>
                     </tr>
                     <tr>
                       <th>{tx("Guardian", "अभिभावक")}</th>
@@ -838,7 +838,9 @@ export default function SewaSetuConsole() {
                         <span className="small muted">
                           {an.disposition_required?.length || an.lineage_matches.some((m) => m.usable_as_evidence && !an.accepted_cert_nos.includes(m.certificate.cert_no) && !m.disposition)
                             ? tx("Decide the relationship above first; the draft is then ready.", "पहले ऊपर संबंध तय करें; फिर प्रारूप तैयार होगा।")
-                            : tx("This file needs a step first (pick proof / verify a point) — use the full evidence view.", "इस फ़ाइल में पहले एक चरण आवश्यक (प्रमाण चयन / बिंदु सत्यापन) — पूर्ण साक्ष्य दृश्य देखें।")}
+                            : an.suggested_action === "refer"
+                              ? tx("Referring (e.g. the Patwari inquiry) is done from the full evidence view — the Patwari form is pre-filled there.", "संदर्भ (जैसे पटवारी जांच) पूर्ण साक्ष्य दृश्य से भेजें — वहाँ पटवारी प्रपत्र पूर्व-भरित है।")
+                              : tx("This file needs a step first (pick proof / verify a point) — use the full evidence view.", "इस फ़ाइल में पहले एक चरण आवश्यक (प्रमाण चयन / बिंदु सत्यापन) — पूर्ण साक्ष्य दृश्य देखें।")}
                         </span>
                       )}
                       <Link className="small" to={`/officer/case/${enc(app.app_id)}`}>

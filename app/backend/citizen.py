@@ -55,7 +55,7 @@ def _session(sid: str) -> dict:
     if _RESET[0] != st.reset_id:
         _SESS.clear()
         _RESET[0] = st.reset_id
-    return _SESS.setdefault(sid, {"searches": 0, "refs": {}})
+    return _SESS.setdefault(sid, {"searches": 0, "refs": {}, "audit": [], "receipt": None})
 
 
 def _bi(text: str) -> dict:
@@ -117,11 +117,12 @@ def citizen_precheck(body: CitizenPrecheck):
             "relation": pick["relation_label"],
             "found_via_native": pick.get("found_via") == "native_village",
         })
-    _state().add_audit("citizen", "citizen_precheck", None, [m["certificate"]["cert_no"] for m in res["matches"]],
+    entry = _state().add_audit("citizen", "citizen_precheck", None, [m["certificate"]["cert_no"] for m in res["matches"]],
                        actor="Citizen (Aadhaar e-authenticated)",
                        note=f"Citizen self-search with consent, {s['searches']}/{MAX_SEARCHES}: father '{body.father_name}', "
                             f"village LGD {body.village_lgd or '—'}" + (f", native village LGD {body.native_village_lgd}" if body.native_village_lgd else "")
                             + f" — result {out['status']}" + (f" ({out['masked_no']}, shown masked)" if pick else ""))
+    s["audit"].append(entry)  # linked to the application number when it is filed, so /audit?q=<app no.> shows the searches
     return out
 
 
@@ -149,12 +150,16 @@ class CitizenSubmit(BaseModel):
     no_papers: bool = False
     vanshavali: list[Vanshavali] = []
     other_docs: list[str] = []          # codes the citizen uploaded (demo): identity_proof, affidavit, residence_proof …
+    aadhaar_last4: Optional[str] = Field(default=None, pattern=r"^\d{4}$")   # only the last 4 digits ever leave the form
+    mobile_last4: Optional[str] = Field(default=None, pattern=r"^\d{4}$")
 
 
 @router.post("/api/citizen/submit")
 def citizen_submit(body: CitizenSubmit):
     st = _state()
     s = _session(body.session_id)
+    if s["receipt"] is not None:  # one application per session: a double click / Back + Pay again returns the same receipt
+        return s["receipt"]
     vs = geo.villages()
     if body.village_lgd not in vs:
         raise HTTPException(422, f"unknown village LGD code {body.village_lgd}")
@@ -219,6 +224,8 @@ def citizen_submit(body: CitizenSubmit):
         "kendra": ONLINE, "routed_to": "sdo", "status": "pending", "sendback_count": 0, "documents": docs,
         "channel": "citizen_portal",
         "inquiry_requested": body.no_papers,
+        **({"aadhaar_last4": body.aadhaar_last4} if body.aadhaar_last4 else {}),
+        **({"mobile_last4": body.mobile_last4} if body.mobile_last4 else {}),
         "persona_note": {"en": "Filed on the citizen portal with the Family Proof Helper.", "hi": "नागरिक पोर्टल पर परिवार प्रमाण सहायक से दाखिल।"},
     }
     if cert_no:
@@ -240,6 +247,10 @@ def citizen_submit(body: CitizenSubmit):
                        f"{_mask(cert_no)}); the officer confirms the relationship." if cert_no else
                        "Filed online WITHOUT pre-notification papers: unavailability declaration + family tree; a Rule 7 inquiry is requested."
                        if body.no_papers else "Filed online with an uploaded caste-proof document."))
+    with st.lock:  # the citizen's own archive searches now answer "who accessed this application?"
+        for a in s["audit"]:
+            a.setdefault("app_id", app_id)
+    st.save()
     an = st.analysis(app_id)
     # the citizen's message, from the template and checked like every other citizen message
     due = datetime.strptime(application["sla_due"], "%Y-%m-%d").strftime("%d-%m-%Y")
@@ -248,6 +259,7 @@ def citizen_submit(body: CitizenSubmit):
     text = render_pair("msg_received", **ctx)
     msg = {"channel": "whatsapp", "text": text, "generator": "template",
            "checker": check_entities(text, [application, an["office"], SHORT_SERVICE[body.service], ctx["proof"], due])}
-    return {"app_id": app_id, "submitted_at": application["submitted_at"], "sla_due": application["sla_due"],
-            "office": an["office"], "fee": 30, "inquiry_requested": body.no_papers,
-            "proof": {"masked_no": _mask(cert_no)} if cert_no else None, "citizen_message": msg}
+    s["receipt"] = {"app_id": app_id, "submitted_at": application["submitted_at"], "sla_due": application["sla_due"],
+                    "office": an["office"], "fee": 30, "inquiry_requested": body.no_papers,
+                    "proof": {"masked_no": _mask(cert_no)} if cert_no else None, "citizen_message": msg}
+    return s["receipt"]

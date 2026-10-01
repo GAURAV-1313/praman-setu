@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 import Monogram from "../components/Monogram";
 import VillagePicker from "../components/VillagePicker";
 import WhatsAppPreview from "../components/WhatsAppPreview";
-import { api, ApiError } from "../api/client";
+import { api, ApiError, useApiMode } from "../api/client";
 import type { CitizenPrecheckResponse, CitizenSubmitResponse, Village } from "../api/types";
 import { useI18n } from "../i18n";
 import { fmtDate } from "../components/common";
@@ -65,8 +65,11 @@ interface Form {
   address: string;
   aadhaar: string;
   aadhaarName: string;
+  /** the real form asks for the guardian (father / husband / other); the family search always needs the FATHER */
+  guardianType: "father" | "husband" | "guardian";
   guardianHi: string;
   guardianEn: string;
+  fatherName: string;
   motherHi: string;
   gender: "F" | "M";
   married: boolean;
@@ -74,7 +77,7 @@ interface Form {
   caste: string;
   purpose: string;
 }
-const EMPTY: Form = { nameHi: "", nameEn: "", mobile: "", village: null, villageText: "", address: "", aadhaar: "", aadhaarName: "", guardianHi: "", guardianEn: "", motherHi: "", gender: "F", married: false, birthYear: "", caste: "", purpose: "" };
+const EMPTY: Form = { nameHi: "", nameEn: "", mobile: "", village: null, villageText: "", address: "", aadhaar: "", aadhaarName: "", guardianType: "father", guardianHi: "", guardianEn: "", fatherName: "", motherHi: "", gender: "F", married: false, birthYear: "", caste: "", purpose: "" };
 interface VRow {
   relation: string;
   name: string;
@@ -86,34 +89,53 @@ const VROWS: VRow[] = [
   { relation: "दादा", name: "", village: "", place: "" },
   { relation: "परदादा", name: "", village: "", place: "" },
 ];
+const VREL_EN: Record<string, string> = { पिता: "Father", दादा: "Grandfather", परदादा: "Great-grandfather" };
 const newSession = () => `nagrik-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+/** Draft kept for this browser tab only (sessionStorage), so a refresh or the phone's Back button does not throw away a
+ *  half-filled form. Only the last 4 Aadhaar digits are kept. Cleared by "Start again" / a new application / demo reset. */
+const DRAFT_KEY = "ps_nagrik_draft"; // ps_ prefix: cleared by the demo reset (demo.ts clearUiState)
+interface Draft {
+  step: Step; session: string; svcGroup: "scst" | "obc"; f: Form; aadhaarOk: boolean; relation: string; certNo: string;
+  native: Village | null; nativeText: string; consent: boolean; res: CitizenPrecheckResponse | null; resKey: string;
+  path: Path; vrows: VRow[]; declOk: boolean; uploads: string[]; finalDecl: boolean; receipt: CitizenSubmitResponse | null;
+}
+function loadDraft(): Partial<Draft> {
+  try {
+    return JSON.parse(sessionStorage.getItem(DRAFT_KEY) ?? "{}") as Partial<Draft>;
+  } catch {
+    return {};
+  }
+}
 
 export default function CitizenPortal() {
   const { tx, t, lang, setLang } = useI18n();
-  const [step, setStep] = useState<Step>(0);
-  const [session, setSession] = useState(newSession);
-  const [svcGroup, setSvcGroup] = useState<"scst" | "obc">("scst");
-  const [f, setF] = useState<Form>(EMPTY);
+  const mode = useApiMode();
+  const [d0] = useState(loadDraft);
+  const [step, setStep] = useState<Step>(d0.step ?? 0);
+  const [session, setSession] = useState(d0.session ?? newSession());
+  const [svcGroup, setSvcGroup] = useState<"scst" | "obc">(d0.svcGroup ?? "scst");
+  const [f, setF] = useState<Form>({ ...EMPTY, ...d0.f });
   const [aadhaarOpen, setAadhaarOpen] = useState(false);
   const [aadhaarConsent, setAadhaarConsent] = useState(false);
-  const [aadhaarOk, setAadhaarOk] = useState(false);
+  const [aadhaarOk, setAadhaarOk] = useState(d0.aadhaarOk ?? false);
   // Family Proof Helper
-  const [relation, setRelation] = useState<string>("father");
-  const [certNo, setCertNo] = useState("");
-  const [native, setNative] = useState<Village | null>(null);
-  const [nativeText, setNativeText] = useState("");
-  const [consent, setConsent] = useState(false);
+  const [relation, setRelation] = useState<string>(d0.relation ?? "father");
+  const [certNo, setCertNo] = useState(d0.certNo ?? "");
+  const [native, setNative] = useState<Village | null>(d0.native ?? null);
+  const [nativeText, setNativeText] = useState(d0.nativeText ?? "");
+  const [consent, setConsent] = useState(d0.consent ?? false);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
-  const [res, setRes] = useState<CitizenPrecheckResponse | null>(null);
-  const [path, setPath] = useState<Path>(null);
-  const [vrows, setVrows] = useState<VRow[]>(VROWS);
-  const [declOk, setDeclOk] = useState(false);
+  const [res, setRes] = useState<CitizenPrecheckResponse | null>(d0.res ?? null);
+  const [resKey, setResKey] = useState(d0.resKey ?? "");
+  const [path, setPath] = useState<Path>(d0.path ?? null);
+  const [vrows, setVrows] = useState<VRow[]>(d0.vrows ?? VROWS);
+  const [declOk, setDeclOk] = useState(d0.declOk ?? false);
   // uploads (mock) + submit
-  const [uploads, setUploads] = useState<Set<string>>(new Set());
+  const [uploads, setUploads] = useState<Set<string>>(new Set(d0.uploads ?? []));
   const [saved, setSaved] = useState(false);
-  const [finalDecl, setFinalDecl] = useState(false);
-  const [receipt, setReceipt] = useState<CitizenSubmitResponse | null>(null);
+  const [finalDecl, setFinalDecl] = useState(d0.finalDecl ?? false);
+  const [receipt, setReceipt] = useState<CitizenSubmitResponse | null>(d0.receipt ?? null);
   const [submitErr, setSubmitErr] = useState<string | null>(null);
   const [timer, setTimer] = useState(15 * 60);
   const demoMenu = useRef<HTMLDetailsElement>(null);
@@ -125,11 +147,46 @@ export default function CitizenPortal() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [step]);
+  // the phone's / browser's Back button moves one step back inside the form instead of leaving the portal
+  const fromPop = useRef(false);
+  useEffect(() => {
+    if (fromPop.current) {
+      fromPop.current = false;
+      return;
+    }
+    const st = (window.history.state ?? {}) as { czStep?: number };
+    if (st.czStep === step) return;
+    if (st.czStep === undefined) window.history.replaceState({ ...st, czStep: step }, "");
+    else window.history.pushState({ ...st, czStep: step }, "");
+  }, [step]);
+  useEffect(() => {
+    const h = (e: PopStateEvent) => {
+      const s = (e.state as { czStep?: number } | null)?.czStep;
+      if (typeof s === "number") {
+        fromPop.current = true;
+        setStep(s as Step);
+      }
+    };
+    window.addEventListener("popstate", h);
+    return () => window.removeEventListener("popstate", h);
+  }, []);
+  useEffect(() => {
+    const d: Draft = { step, session, svcGroup, f: { ...f, aadhaar: f.aadhaar ? "XXXXXXXX" + f.aadhaar.slice(-4) : "" }, aadhaarOk, relation, certNo, native, nativeText, consent, res, resKey, path, vrows, declOk, uploads: [...uploads], finalDecl, receipt };
+    try {
+      sessionStorage.setItem(DRAFT_KEY, JSON.stringify(d));
+    } catch {
+      /* storage blocked: the form still works, it just does not survive a refresh */
+    }
+  }, [step, session, svcGroup, f, aadhaarOk, relation, certNo, native, nativeText, consent, res, resKey, path, vrows, declOk, uploads, finalDecl, receipt]);
 
   const casteRow = CASTES.find((c) => c.hi === f.caste) ?? null;
   const svc: Svc = svcGroup === "obc" ? "caste_obc" : casteRow?.svc === "caste_sc" ? "caste_sc" : "caste_st";
   const set = <K extends keyof Form>(k: K, v: Form[K]) => setF((x) => ({ ...x, [k]: v }));
-  const proofAttached = path === "found" && res?.status !== "not_found" && !!res?.proof_ref;
+  // a search answers for the father's name / village / service it was made with; if the citizen changes them, search again
+  const fatherForSearch = (f.guardianType === "father" ? f.guardianHi || f.guardianEn : f.fatherName).trim();
+  const searchKey = JSON.stringify([fatherForSearch, f.village?.village_lgd ?? null, f.gender === "F" && f.married ? native?.village_lgd ?? null : null, svc]);
+  const resStale = !!res && resKey !== searchKey;
+  const proofAttached = !resStale && path === "found" && res?.status !== "not_found" && !!res?.proof_ref;
   const noPapers = path === "no_papers" && declOk;
   const block1950Optional = proofAttached || noPapers;
 
@@ -146,6 +203,7 @@ export default function CitizenPortal() {
     setNativeText("");
     setConsent(false);
     setRes(null);
+    setResKey("");
     setPath(null);
     setVrows(VROWS);
     setDeclOk(false);
@@ -155,6 +213,11 @@ export default function CitizenPortal() {
     setReceipt(null);
     setErr(null);
     setSubmitErr(null);
+    try {
+      sessionStorage.removeItem(DRAFT_KEY);
+    } catch {
+      /* ignore */
+    }
   }
   async function demo(kind: "sunita" | "ramesh" | "rajni") {
     reset();
@@ -186,14 +249,15 @@ export default function CitizenPortal() {
   async function search() {
     setErr(null);
     if (!consent) return setErr(tx("Tick the consent box first.", "पहले सहमति पर टिक करें।"));
-    if (!f.guardianHi && !f.guardianEn) return setErr(tx("Fill the father's name in 'General details' above.", "ऊपर 'सामान्य विवरण' में पिता का नाम भरें।"));
+    if (!fatherForSearch)
+      return setErr(f.guardianType === "father" ? tx("Fill the father's name in 'General details' above.", "ऊपर 'सामान्य विवरण' में पिता का नाम भरें।") : tx("Fill your father's name in the box above.", "ऊपर के खाने में अपने पिता का नाम भरें।"));
     setBusy(true);
     try {
       const r = await api.citizenPrecheck({
         session_id: session,
         service: svc,
         applicant_name: f.nameHi || f.nameEn,
-        father_name: f.guardianHi || f.guardianEn,
+        father_name: fatherForSearch,
         relation,
         village_lgd: f.village?.village_lgd,
         district_lgd: 643,
@@ -203,37 +267,56 @@ export default function CitizenPortal() {
         aadhaar_ok: aadhaarOk,
       });
       setRes(r);
+      setResKey(searchKey);
       setPath(null);
     } catch (e) {
+      if (e instanceof ApiError && e.status === 429) {
+        setRes((cur) => (cur && !resStale ? { ...cur, searches_left: 0 } : { status: "not_found", searches_left: 0 }));
+        setResKey(searchKey);
+      }
       setErr(e instanceof ApiError ? (e.status === 429 ? tx("You have used all 3 searches for this application. Continue with a document, or choose “I have no papers”.", "इस आवेदन की 3 खोज पूरी हो गईं। किसी दस्तावेज़ से आगे बढ़ें, या “मेरे पास कोई कागज़ नहीं” चुनें।") : e.message) : String(e));
     } finally {
       setBusy(false);
     }
   }
 
+  const vLabel = {
+    name: tx("Name", "नाम"),
+    village: tx("Village", "गांव"),
+    place: tx(`Where did they live in ${CUTOFF[svc][0].slice(-4)}?`, `${CUTOFF[svc][1].slice(-4)} में कहाँ रहते थे?`),
+  };
   const declaration = useMemo(() => {
     const known = vrows.filter((r) => r.name || r.place);
     const lines = known.map((r) => `${r.relation}: ${r.name || "नाम पता नहीं"}, ग्राम ${r.village || "—"}; ${CUTOFF[svc][1]} के समय: ${r.place || "पता नहीं"}`).join("। ");
     return (
-      `मैं, ${f.nameHi || "____"}, पिता ${f.guardianHi || "____"}, निवासी ग्राम ${f.village ? f.village.name.hi : "____"}, घोषणा करता/करती हूँ कि मेरे पास ${CUTOFF[svc][1]} से पहले के निवास का कोई दस्तावेज़ उपलब्ध नहीं है। ` +
-      `मेरे परिवार की जानकारी: ${lines || "—"}। मैं अनुरोध करता/करती हूँ कि नियम 7 के अंतर्गत पटवारी / राजस्व निरीक्षक से जांच कराई जाए। गलत जानकारी देना दंडनीय अपराध है।`
+      `मैं, ${f.nameHi || f.nameEn || "____"}, पिता ${fatherForSearch || "____"}, निवासी ग्राम ${f.village ? f.village.name.hi : "____"}, घोषणा ${f.gender === "M" ? "करता" : "करती"} हूँ कि मेरे पास ${CUTOFF[svc][1]} से पहले के निवास का कोई दस्तावेज़ उपलब्ध नहीं है। ` +
+      `मेरे परिवार की जानकारी: ${lines || "—"}। मैं अनुरोध ${f.gender === "M" ? "करता" : "करती"} हूँ कि नियम 7 के अंतर्गत पटवारी / राजस्व निरीक्षक से जांच कराई जाए। गलत जानकारी देना दंडनीय अपराध है।`
     );
-  }, [vrows, f.nameHi, f.guardianHi, f.village, svc]);
+  }, [vrows, f.nameHi, f.nameEn, fatherForSearch, f.village, f.gender, svc]);
 
+  const [voiceNote, setVoiceNote] = useState(false);
   function speak(text: string) {
     try {
+      const voices = window.speechSynthesis.getVoices();
+      // no Hindi voice on this phone: say so instead of silence (or an English voice mangling Hindi)
+      if (voices.length && !voices.some((v) => v.lang.toLowerCase().startsWith("hi"))) setVoiceNote(true);
       const u = new SpeechSynthesisUtterance(text);
       u.lang = "hi-IN";
       window.speechSynthesis.cancel();
       window.speechSynthesis.speak(u);
     } catch {
-      /* voice not available: the text is on screen */
+      setVoiceNote(true);
     }
   }
+  const voiceMsg = voiceNote && (
+    <p className="small cz-warn" role="status">
+      {tx("Hindi voice is not available on this device — ask a family member or the Lok Seva Kendra to read it to you.", "इस फ़ोन/कंप्यूटर पर हिंदी आवाज़ उपलब्ध नहीं — परिवारजन या लोक सेवा केंद्र से पढ़कर सुनवा लें।")}
+    </p>
+  );
 
   const formMissing = [
-    !f.guardianHi && tx("guardian's name", "अभिभावक का नाम"),
-    !f.guardianEn && tx("guardian's name in English", "अभिभावक का नाम अंग्रेजी में"),
+    f.guardianType !== "father" && !f.fatherName.trim() && tx("father's name", "पिता का नाम"),
+    !f.guardianHi && !f.guardianEn && tx("guardian's name (Hindi or English — one is enough)", "अभिभावक का नाम (हिंदी या अंग्रेज़ी — एक काफ़ी)"),
     !f.birthYear && tx("year of birth", "जन्म वर्ष"),
     !f.caste && tx("caste", "जाति"),
     !f.nameEn && tx("beneficiary's name in English", "हितग्राही का नाम अंग्रेजी में"),
@@ -253,8 +336,9 @@ export default function CitizenPortal() {
         service: svc,
         applicant_name_hi: f.nameHi,
         applicant_name_en: f.nameEn,
-        father_name_hi: f.guardianHi,
-        father_name_en: f.guardianEn,
+        // the officer's records check matches on the FATHER: a husband / other guardian is not sent as the father
+        father_name_hi: f.guardianType === "father" ? f.guardianHi : f.fatherName,
+        father_name_en: f.guardianType === "father" ? f.guardianEn : "",
         mother_name: f.motherHi,
         gender: f.gender,
         birth_year: Number(f.birthYear) || 2000,
@@ -265,11 +349,18 @@ export default function CitizenPortal() {
         no_papers: noPapers,
         vanshavali: noPapers ? vrows.map((r) => ({ relation: r.relation, name: r.name, village: r.village, place_1950: r.place })) : [],
         other_docs: other,
+        aadhaar_last4: /^\d{4}$/.test(f.aadhaar.slice(-4)) ? f.aadhaar.slice(-4) : undefined,
+        mobile_last4: /\d{4}$/.test(f.mobile) ? f.mobile.slice(-4) : undefined,
       });
       setReceipt(r);
       setStep(6);
     } catch (e) {
-      setSubmitErr(e instanceof ApiError ? e.message : String(e));
+      if (e instanceof ApiError && /proof reference/.test(e.message)) {
+        // the search result expired (server restarted / demo reset): search again instead of a dead end
+        setRes(null);
+        setPath(null);
+        setSubmitErr(tx("Your family-certificate search has expired. Press “Close”, then “Correct application”, and search again in the Family Proof Helper.", "परिवार के प्रमाण पत्र की खोज की अवधि समाप्त हो गई। “बंद” दबाएं, फिर “आवेदन सुधारें” में जाकर परिवार प्रमाण सहायक में फिर से खोजें।"));
+      } else setSubmitErr(tx("Could not submit — nothing was charged. Try again in a minute, or visit your Lok Seva Kendra. ", "आवेदन जमा नहीं हो सका — कोई शुल्क नहीं कटा। थोड़ी देर में फिर प्रयास करें, या लोक सेवा केंद्र जाएं। ") + (e instanceof ApiError ? `(${e.message})` : ""));
     } finally {
       setBusy(false);
     }
@@ -318,6 +409,11 @@ export default function CitizenPortal() {
         {tx(
           "Mock of the Sewa Setu citizen portal, redrawn from the CHiPS user manual (Jan 2026) — not the official portal · citizen data synthetic · the green-bordered parts are Praman Setu's proposal",
           "सेवा सेतु नागरिक पोर्टल का मॉक, CHiPS उपयोगकर्ता मार्गदर्शिका (जनवरी 2026) से पुनर्निर्मित — आधिकारिक पोर्टल नहीं · नागरिक डेटा सिंथेटिक · हरी किनारी वाले भाग प्रमाण सेतु का प्रस्ताव हैं",
+        )}
+        {mode === "offline" && (
+          <b className="cz-offline" id="cz-offline">
+            {" "}· {tx("Offline demo mode: the server is not reachable — answers are samples and nothing reaches the officer.", "ऑफ़लाइन डेमो मोड: सर्वर उपलब्ध नहीं — उत्तर नमूना हैं, अधिकारी तक कुछ नहीं पहुंचता।")}
+          </b>
         )}
       </div>
 
@@ -491,7 +587,7 @@ export default function CitizenPortal() {
               </button>
               {!aadhaarOk && <span className="cz-hint">{tx("Complete Aadhaar e-Authentication first", "पहले आधार ई-प्रमाणीकरण पूरा करें")}</span>}
               <button className="cz-btn red" onClick={() => setStep(0)}>
-                {tx("Back", "फिर से")}
+                {tx("Back", "पीछे")}
               </button>
             </div>
             {aadhaarOpen && (
@@ -540,16 +636,16 @@ export default function CitizenPortal() {
             <Band>{tx("General details", "सामान्य विवरण")}</Band>
             <div className="cz-grid2 cz-formgrid">
               <Field label={tx("Type of beneficiary's guardian", "हितग्राही के अभिभावक का प्रकार")} req>
-                <select className="cz-in" defaultValue="father">
+                <select className="cz-in" value={f.guardianType} onChange={(e) => set("guardianType", e.target.value as Form["guardianType"])} id="cz-guardian-type">
                   <option value="father">{tx("Father", "पिता")}</option>
-                  <option>{tx("Husband", "पति")}</option>
-                  <option>{tx("Guardian", "पालक")}</option>
+                  <option value="husband">{tx("Husband", "पति")}</option>
+                  <option value="guardian">{tx("Guardian", "पालक")}</option>
                 </select>
               </Field>
-              <Field label={tx("Guardian's name (Hindi)", "हितग्राही के अभिभावक का नाम")} req>
+              <Field label={tx("Guardian's name (Hindi)", "हितग्राही के अभिभावक का नाम")} req={!f.guardianEn}>
                 <input className="cz-in" value={f.guardianHi} onChange={(e) => set("guardianHi", e.target.value)} id="cz-father-hi" />
               </Field>
-              <Field label={tx("Guardian's name in English", "हितग्राही के अभिभावक का नाम अंग्रेजी में")} req>
+              <Field label={tx("Guardian's name in English", "हितग्राही के अभिभावक का नाम अंग्रेजी में")} req={!f.guardianHi}>
                 <input className="cz-in" value={f.guardianEn} onChange={(e) => set("guardianEn", e.target.value)} id="cz-father-en" />
               </Field>
               <Field label={tx("Mother's name", "माता का नाम")}>
@@ -646,9 +742,19 @@ export default function CitizenPortal() {
                     </div>
                     <div className="cz-will">
                       <div className="cz-lbl">{tx("We will search with", "हम इससे खोजेंगे")}</div>
-                      <div>
-                        {tx("Father", "पिता")}: <b>{f.guardianHi || f.guardianEn || "—"}</b>
-                      </div>
+                      {f.guardianType === "father" ? (
+                        <div>
+                          {tx("Father", "पिता")}: <b>{fatherForSearch || "—"}</b>
+                        </div>
+                      ) : (
+                        <label className="cz-field" style={{ display: "block" }}>
+                          <span className="cz-flabel">
+                            {tx("Your father's name (your guardian above is not your father) ", "आपके पिता का नाम (ऊपर अभिभावक पिता नहीं हैं) ")}
+                            <span className="cz-req">*</span>
+                          </span>
+                          <input className="cz-in" value={f.fatherName} onChange={(e) => set("fatherName", e.target.value)} id="cz-father-search" />
+                        </label>
+                      )}
                       <div>
                         {tx("Village", "ग्राम")}: <b>{f.village ? t(f.village.name) : "—"}</b> ({tx("LGD", "एलजीडी")} {f.village?.village_lgd ?? "—"})
                       </div>
@@ -675,18 +781,27 @@ export default function CitizenPortal() {
                     </span>
                   </label>
                   <div className="cz-row">
-                    <button className="cz-btn green" onClick={search} disabled={busy} id="cz-search">
+                    <button className="cz-btn green" onClick={search} disabled={busy || res?.searches_left === 0} id="cz-search">
                       {busy ? "…" : "🔍"} {tx("Search", "खोजें")}
                     </button>
                     {res && <span className="small muted">{tx(`${res.searches_left} of 3 searches left`, `3 में से ${res.searches_left} खोज शेष`)}</span>}
                   </div>
                   {err && <div className="cz-err">{err}</div>}
+                  {resStale && (
+                    <p className="cz-warn small" id="cz-stale">
+                      {tx("You changed the father's name, village or service after searching — search again (the earlier result is not attached).", "खोज के बाद आपने पिता का नाम, गांव या सेवा बदली है — फिर से खोजें (पिछला परिणाम संलग्न नहीं है)।")}
+                    </p>
+                  )}
 
-                  {res && (res.status === "found_usable" || res.status === "found_review") && (
+                  {res && !resStale && (res.status === "found_usable" || res.status === "found_review") && (
                     <div className={`cz-result ${res.status === "found_usable" ? "found" : "review"}`} id="cz-result">
-                      <div className="cz-result-title">
-                        {res.status === "found_usable" ? "✔ " + tx("Found", "मिल गया") : "◐ " + tx("Found — the officer will check it", "मिला — अधिकारी जांचेंगे")}
+                      <div className="cz-row" style={{ justifyContent: "space-between" }}>
+                        <span className="cz-result-title">{res.status === "found_usable" ? "✔ " + tx("Found", "मिल गया") : "◐ " + tx("Found — the officer will check it", "मिला — अधिकारी जांचेंगे")}</span>
+                        <button className="cz-btn outline sm" onClick={() => speak(`आपके परिवार का स्थायी जाति प्रमाण पत्र मिला। क्रमांक के अंतिम अंक ${res.masked_no?.slice(-4).split("").join(" ")}। ${res.office?.hi ?? ""}, वर्ष ${res.year ?? ""}। यदि यह आपके परिवार का है तो हरा बटन दबाकर जोड़ें। अधिकारी संबंध की पुष्टि करेंगे।`)} id="cz-listen-result">
+                          🔊 {tx("Listen", "सुनें")}
+                        </button>
                       </div>
+                      {voiceMsg}
                       <p>
                         {tx("A permanent caste certificate matching your family:", "आपके परिवार से मेल खाता स्थायी जाति प्रमाण पत्र:")}{" "}
                         <b className="mono">
@@ -696,6 +811,9 @@ export default function CitizenPortal() {
                         {res.found_via_native && <> · {tx("found in your maiden village", "मायके के गांव में मिला")}</>}
                       </p>
                       <p className="small muted">{tx("For privacy you see only part of the number. The officer sees the full record and confirms the relationship.", "निजता हेतु आपको क्रमांक का केवल अंश दिखता है। अधिकारी पूरा अभिलेख देखकर संबंध की पुष्टि करेंगे।")}</p>
+                      {res.status === "found_review" && (
+                        <p className="small cz-warn">{tx("Some detail does not match exactly. Check that the caste you chose and your father's name are right; if they are, attach it — the officer will check.", "कोई विवरण पूरी तरह मेल नहीं खाता। जांच लें कि चुनी गई जाति और पिता का नाम सही हैं; सही हों तो जोड़ दें — अधिकारी जांचेंगे।")}</p>
+                      )}
                       {path === "found" ? (
                         <div className="cz-attached" id="cz-attached">
                           ✓ {tx("Caste proof attached (archive-verified). You no longer need to upload old papers. If you have a Patwari family tree or ration card, you may add it.", "जाति प्रमाण जुड़ गया (अभिलेखागार से सत्यापित)। पुराने कागज़ अपलोड करना अब ज़रूरी नहीं। पटवारी वंशावली या राशन कार्ड हो तो लगा सकते हैं।")}{" "}
@@ -715,9 +833,12 @@ export default function CitizenPortal() {
                       )}
                     </div>
                   )}
-                  {res && res.status === "not_found" && (
+                  {res && !resStale && res.status === "not_found" && (
                     <div className="cz-result none" id="cz-result">
                       <div className="cz-result-title">○ {tx("Not found", "नहीं मिला")}</div>
+                      {f.gender === "F" && !f.married && res.searches_left > 0 && (
+                        <p className="small cz-warn">{tx("Married? Set marital status to “Married” above — your maiden (father's) village is then searched too.", "विवाहित हैं? ऊपर वैवाहिक स्थिति “विवाहित” चुनें — तब मायके (पिता) का गांव भी खोजा जाएगा।")}</p>
+                      )}
                       <p>
                         {tx(
                           "This is common — certificates from before 2015 are not online. Your application will NOT be rejected because of this.",
@@ -734,7 +855,7 @@ export default function CitizenPortal() {
                       </div>
                     </div>
                   )}
-                  {!res && (
+                  {(!res || resStale) && (
                     <p className="small" style={{ margin: "8px 0 0" }}>
                       <button className="linkish" onClick={() => setPath(path === "no_papers" ? null : "no_papers")} id="cz-no-papers-direct">
                         {tx("No family certificate and no old papers? Apply anyway →", "न परिवार का प्रमाण पत्र, न पुराने कागज़? फिर भी आवेदन करें →")}
@@ -758,10 +879,10 @@ export default function CitizenPortal() {
                         <tbody>
                           {vrows.map((r, i) => (
                             <tr key={r.relation}>
-                              <td>{r.relation}</td>
+                              <td>{tx(VREL_EN[r.relation] ?? r.relation, r.relation)}</td>
                               {(["name", "village", "place"] as const).map((k) => (
-                                <td key={k}>
-                                  <input className="cz-in" value={r[k]} placeholder={tx("don't know", "पता नहीं")} onChange={(e) => setVrows((rs) => rs.map((x, j) => (j === i ? { ...x, [k]: e.target.value } : x)))} />
+                                <td key={k} data-label={vLabel[k]}>
+                                  <input className="cz-in" aria-label={`${r.relation} — ${vLabel[k]}`} value={r[k]} placeholder={tx("don't know", "पता नहीं")} onChange={(e) => setVrows((rs) => rs.map((x, j) => (j === i ? { ...x, [k]: e.target.value } : x)))} />
                                 </td>
                               ))}
                             </tr>
@@ -770,12 +891,13 @@ export default function CitizenPortal() {
                       </table>
                       <div className="cz-decl">
                         <div className="cz-row" style={{ justifyContent: "space-between" }}>
-                          <b>{tx("Unavailability declaration (generated)", "अनुपलब्धता घोषणा (स्वतः निर्मित)")}</b>
+                          <b>{tx("Unavailability declaration (generated; the Hindi text is the one you sign)", "अनुपलब्धता घोषणा (स्वतः निर्मित)")}</b>
                           <button className="cz-btn outline sm" onClick={() => speak(declaration)}>
                             🔊 {tx("Listen", "सुनें")}
                           </button>
                         </div>
                         <p>{declaration}</p>
+                        {voiceMsg}
                       </div>
                       <label className="cz-check">
                         <input type="checkbox" checked={declOk} onChange={(e) => setDeclOk(e.target.checked)} id="cz-decl-ok" />
@@ -909,7 +1031,7 @@ export default function CitizenPortal() {
             <Band>{tx("Applicant's basic information", "आवेदक की बुनियादी जानकारी")}</Band>
             <KV rows={[[tx("Applicant's name", "आवेदक का नाम"), f.nameHi], [tx("Beneficiary's name (English)", "हितग्राही का नाम अंग्रेजी में"), f.nameEn], [tx("Mobile", "मोबाइल नंबर"), f.mobile], [tx("Aadhaar", "आधार कार्ड नंबर"), `XXXX XXXX ${f.aadhaar.slice(-4)} · ${tx("e-authenticated", "ई-प्रमाणीकृत")}`], [tx("Village", "ग्राम"), f.village ? `${t(f.village.name)} (${f.village.village_lgd})` : "—"]]} />
             <Band>{tx("General details", "सामान्य विवरण")}</Band>
-            <KV rows={[[tx("Guardian", "हितग्राही के अभिभावक का नाम"), `${f.guardianHi} / ${f.guardianEn}`], [tx("Gender / year of birth", "लिंग / जन्म वर्ष"), `${f.gender === "F" ? tx("Female", "स्त्री") : tx("Male", "पुरुष")} / ${f.birthYear}`], [tx("Caste / category", "जाति / श्रेणी"), casteRow ? `${lang === "hi" ? casteRow.hi : casteRow.en} · ${tx(CATEGORY[casteRow.svc][0], CATEGORY[casteRow.svc][1])}` : "—"]]} />
+            <KV rows={[[tx("Guardian", "हितग्राही के अभिभावक का नाम"), `${f.guardianHi} / ${f.guardianEn}`], ...(f.guardianType !== "father" ? [[tx("Father", "पिता"), f.fatherName] as [string, string]] : []), [tx("Gender / year of birth", "लिंग / जन्म वर्ष"), `${f.gender === "F" ? tx("Female", "स्त्री") : tx("Male", "पुरुष")} / ${f.birthYear}`], [tx("Caste / category", "जाति / श्रेणी"), casteRow ? `${lang === "hi" ? casteRow.hi : casteRow.en} · ${tx(CATEGORY[casteRow.svc][0], CATEGORY[casteRow.svc][1])}` : "—"]]} />
             <Band>{tx("Attached documents", "अनुलग्न दस्तावेज सूची")}</Band>
             <ul className="cz-doclist">
               {proofAttached && <li>✓ {tx(`Family member's caste certificate No. ${res?.masked_no} — archive-verified`, `परिवारजन का जाति प्रमाण पत्र क्र. ${res?.masked_no} — अभिलेखागार से सत्यापित`)}</li>}
@@ -922,7 +1044,7 @@ export default function CitizenPortal() {
             <div className="cz-records" id="cz-records">
               <b>{tx("Records used for this application", "इस आवेदन में उपयोग हुए अभिलेख")}</b> <span className="cz-tag">{tx("Praman Setu", "प्रमाण सेतु")}</span>
               <ul>
-                <li>{res ? tx(`Sewa Setu archive searched with your consent (father's name + village) — ${res.status === "not_found" ? "nothing found" : `certificate No. ${res.masked_no} found`}`, `आपकी सहमति से सेवा सेतु अभिलेखागार खोजा गया (पिता का नाम + गांव) — ${res.status === "not_found" ? "कुछ नहीं मिला" : `प्रमाण पत्र क्र. ${res.masked_no} मिला`}`) : tx("Sewa Setu archive: not searched", "सेवा सेतु अभिलेखागार: खोजा नहीं गया")}</li>
+                <li>{res && !resStale ? tx(`Sewa Setu archive searched with your consent (father's name + village) — ${res.status === "not_found" ? "nothing found" : `certificate No. ${res.masked_no} found`}`, `आपकी सहमति से सेवा सेतु अभिलेखागार खोजा गया (पिता का नाम + गांव) — ${res.status === "not_found" ? "कुछ नहीं मिला" : `प्रमाण पत्र क्र. ${res.masked_no} मिला`}`) : tx("Sewa Setu archive: not searched", "सेवा सेतु अभिलेखागार: खोजा नहीं गया")}</li>
                 {noPapers && <li>{tx("Inquiry requested: Patwari / RI (Rule 7)", "जांच का अनुरोध: पटवारी / आर.आई. (नियम 7)")}</li>}
                 <li>{tx("Nothing else is looked up. You can ask who accessed your records.", "इसके अलावा कुछ नहीं देखा गया। आप पूछ सकते हैं कि आपके अभिलेख किसने देखे।")}</li>
               </ul>
@@ -999,7 +1121,7 @@ export default function CitizenPortal() {
         )}
 
         {step === 6 && receipt && (
-          <Receipt receipt={receipt} svcTitle={svcTitle} noPapers={noPapers} />
+          <Receipt receipt={receipt} svcTitle={svcTitle} noPapers={!!receipt.inquiry_requested} offline={mode === "offline"} onNew={reset} />
         )}
       </div>
     </div>
@@ -1018,7 +1140,7 @@ function UPLOAD_LABEL(code: string, tx: (en: string, hi: string) => string) {
   return v ? tx(v[0], v[1]) : code;
 }
 
-function Receipt({ receipt, svcTitle, noPapers }: { receipt: CitizenSubmitResponse; svcTitle: string; noPapers: boolean }) {
+function Receipt({ receipt, svcTitle, noPapers, offline, onNew }: { receipt: CitizenSubmitResponse; svcTitle: string; noPapers: boolean; offline: boolean; onNew: () => void }) {
   const { tx, t } = useI18n();
   const msg = receipt.citizen_message;
   return (
@@ -1077,9 +1199,16 @@ function Receipt({ receipt, svcTitle, noPapers }: { receipt: CitizenSubmitRespon
           <button className="cz-btn blue" onClick={() => window.print()}>
             🖨 {tx("Print", "प्रिंट")}
           </button>
-          <Link className="cz-btn green" to={`/sewasetu/case/${encodeURIComponent(receipt.app_id)}`} id="cz-to-officer">
-            {tx("Demo: open it as the SDO →", "डेमो: एसडीओ के रूप में खोलें →")}
-          </Link>
+          <button className="cz-btn outline" onClick={onNew} id="cz-new">
+            {tx("New application", "नया आवेदन")}
+          </button>
+          {offline ? (
+            <span className="small cz-warn">{tx("Offline demo: this sample receipt is not in the officer's queue.", "ऑफ़लाइन डेमो: यह नमूना पावती अधिकारी की सूची में नहीं है।")}</span>
+          ) : (
+            <Link className="cz-btn green" to={`/sewasetu/case/${encodeURIComponent(receipt.app_id)}`} id="cz-to-officer">
+              {tx("Demo: open it as the SDO →", "डेमो: एसडीओ के रूप में खोलें →")}
+            </Link>
+          )}
         </div>
       </div>
       <div className="cz-receipt-msg">

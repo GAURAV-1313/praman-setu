@@ -5,7 +5,8 @@ import { useI18n } from "../i18n";
 import type { AuditEntry, DecisionSnapshot, Role } from "../api/types";
 import { ErrorBox, fmtDateTime, Loading, useAsync } from "../components/common";
 
-const ROLE: Record<Role, { en: string; hi: string }> = {
+const ROLE: Record<Role | "citizen", { en: string; hi: string }> = {
+  citizen: { en: "Citizen (self)", hi: "नागरिक (स्वयं)" },
   kendra_operator: { en: "Kendra operator", hi: "केंद्र संचालक" },
   sdo: { en: "SDO (Revenue)", hi: "अनुविभागीय अधिकारी" },
   tehsildar: { en: "Tehsildar", hi: "तहसीलदार" },
@@ -14,6 +15,8 @@ const ROLE: Record<Role, { en: string; hi: string }> = {
 
 const ACTION: Record<string, { en: string; hi: string }> = {
   precheck: { en: "Kendra pre-check", hi: "केंद्र पूर्व-जांच" },
+  citizen_precheck: { en: "Citizen's own family-record search (shown masked)", hi: "नागरिक द्वारा स्वयं परिवार-अभिलेख खोज (आंशिक दिखाया)" },
+  citizen_submitted: { en: "Filed online by the citizen", hi: "नागरिक द्वारा ऑनलाइन दाखिल" },
   view_case: { en: "Viewed case", hi: "मामला देखा" },
   confirm_relationship: { en: "Confirmed relationship", hi: "संबंध की पुष्टि" },
   "decision:approve": { en: "Decision: approve", hi: "निर्णय: स्वीकृत" },
@@ -51,6 +54,7 @@ const ACTION: Record<string, { en: string; hi: string }> = {
 const ACTOR_HI: [RegExp, string][] = [
   [/SDO \(Revenue\)/g, "अनुविभागीय अधिकारी (राजस्व)"],
   [/Tehsildar/g, "तहसीलदार"],
+  [/Citizen \(Aadhaar e-authenticated\)/g, "नागरिक (आधार ई-प्रमाणीकृत)"],
   [/Operator, CSC/g, "संचालक, सीएससी"],
   [/Collector/g, "कलेक्टर"],
   [/Kondagaon/g, "कोंडागांव"],
@@ -77,6 +81,9 @@ const NOTE_HI: [RegExp, (m: RegExpMatchArray) => string][] = [
   [/^Reference (\S+) issued/, (m) => `संदर्भ ${m[1]} जारी`],
   [/^Archive lookup with the applicant's consent/, () => "आवेदक की सहमति से अभिलेखागार खोज"],
   [/^Archive lookup WITHOUT/, () => "सहमति टिक के बिना अभिलेखागार खोज"],
+  [/^Citizen self-search with consent, (\d)\/(\d)[^—]*— result (\w+)/, (m) => `नागरिक द्वारा सहमति सहित स्वयं खोज, ${m[1]}/${m[2]} — परिणाम: ${m[3] === "not_found" ? "नहीं मिला" : "मिला (नागरिक को आंशिक क्रमांक ही दिखा)"}`],
+  [/^Filed online with the archive-verified/, () => "अभिलेखागार से सत्यापित परिवार प्रमाण पत्र संलग्न कर ऑनलाइन दाखिल; संबंध की पुष्टि अधिकारी करेंगे"],
+  [/^Filed online WITHOUT pre-notification papers/, () => "पुराने कागज़ों के बिना ऑनलाइन दाखिल: अनुपलब्धता घोषणा + वंशावली; नियम 7 जांच का अनुरोध"],
 ];
 function noteHi(n: string): string {
   for (const [re, f] of NOTE_HI) {

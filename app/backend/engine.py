@@ -923,6 +923,15 @@ def analyse(entry: dict, dispositions: dict | None = None, show_cause: dict | No
                             f"it then satisfies the caste proof.",
                       "hi": f"{pending[0]['relation_label']['hi']} के प्रमाण पत्र क्र. {c['cert_no']} से संबंध की पुष्टि के बाद संभवतः स्वीकृति योग्य; "
                             f"इससे जाति प्रमाण की पूर्ति हो जाएगी।"}
+        elif (app.get("inquiry_requested") and any(d["code"] == "caste_proof" for d in defs)
+              and "patwari" in refer_options(app, attention)):
+            # Filed online with an unavailability declaration: sending it back for a paper the applicant has declared
+            # they do not have would be a dead end. Rule 7: the inquiry is the way forward (never a rejection).
+            action, refer_code = "refer", "patwari"
+            reason = {"en": "The applicant has declared that no pre-notification papers are available and asks for an inquiry: "
+                            "refer to the Halka Patwari for a field report / family tree (Rule 7). Not a ground for rejection.",
+                      "hi": "आवेदक ने घोषित किया है कि अधिसूचना-पूर्व कागज़ उपलब्ध नहीं और जांच का अनुरोध किया है: "
+                            "क्षेत्र प्रतिवेदन / वंशावली हेतु हल्का पटवारी को संदर्भित करें (नियम 7)। यह अस्वीकृति का आधार नहीं।"}
         elif defs:
             action = "send_back"
             reason = {"en": "Send back for a specific, curable deficiency: " + " ".join(d["text"]["en"] for d in defs),
@@ -1002,6 +1011,8 @@ def analyse(entry: dict, dispositions: dict | None = None, show_cause: dict | No
     summary, rank = evidence_summary(lane, matches, accepted, pending, attention, defs, confirmed, undisposed, bool(all_matches))
     comp = competence(app)
     nstep = next_step(lane, attention, pending, undisposed, defs, evidence_required, obc=service == "caste_obc")
+    if lane == "standard_review" and action == "refer" and app.get("inquiry_requested"):
+        nstep = {"en": "Refer for the Patwari inquiry (no papers)", "hi": "पटवारी जांच हेतु संदर्भित करें (कागज़ नहीं)"}
     # Round 6 (P2): one definition of "ready to sign" for the queue, the case page and the sign tray
     ready = (comp["ok"] and lane == "records_complete" and action == "approve" and not attention and not pending
              and not undisposed and not defs and not finding_required["approve"])

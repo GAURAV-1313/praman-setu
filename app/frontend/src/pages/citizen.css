@@ -141,12 +141,41 @@
   .cz-svc-grid, .cz-grid2, .cz-helper-grid { grid-template-columns: 1fr; }
   .cz-field { grid-template-columns: 1fr; gap: 2px; }
   .cz-up { display: block; overflow-x: auto; }
+  /* the papers guide is what a first-time applicant needs most: show it before the long service text */
+  .cz-svc-grid > div:last-child { order: -1; }
+}
+/* phones: readable text, thumb-sized targets, no 16px-zoom jump on iOS, the upload table fits the screen */
+@media (max-width: 600px) {
+  .cz { font-size: 15px; }
+  .cz .small, .cz-lbl, .cz .cz-hint, .cz-rules, .cz-file, .cz-okchip, .cz-steps, .cz-crumb, .cz-mocknote, .cz-helper-foot { font-size: 13.5px; }
+  .cz-in, .cz .vpick .input, .cz-in.sm { font-size: 16px; padding: 8px 10px; }
+  .cz-btn { min-height: 44px; padding: 8px 16px; font-size: 15px; }
+  .cz-btn.sm { min-height: 40px; padding: 6px 12px; font-size: 14px; }
+  .cz-lang button { padding: 8px 14px; font-size: 14px; }
+  .cz-demo summary { padding: 8px 12px; }
+  .cz-svc-pick button, .cz-chips button { padding: 9px 14px; font-size: 15px; }
+  .cz-check input, .cz input[type="checkbox"] { width: 22px; height: 22px; flex: 0 0 auto; }
+  .cz-check { gap: 10px; }
+  .cz-actions .cz-btn { flex: 1 1 40%; justify-content: center; }
+  .cz-session { display: none; }
+  .cz-table { font-size: 14px; }
+  /* uploads: drop the columns a phone user never fills (number, type, DigiLocker) */
+  .cz-up { overflow-x: visible; }
+  .cz-up th:nth-child(4), .cz-up td:nth-child(4), .cz-up th:nth-child(5), .cz-up td:nth-child(5), .cz-up th:nth-child(7), .cz-up td:nth-child(7) { display: none; }
+  .cz-up th:first-child, .cz-up td:first-child { width: 22px; }
+  .cz-vtable, .cz-vtable tbody, .cz-vtable tr, .cz-vtable td { display: block; width: 100%; box-sizing: border-box; }
+  .cz-vtable thead { display: none; }
+  .cz-vtable tr { border-bottom: 1px solid #e5e7eb; padding: 4px 0; }
+  .cz-vtable td:first-child { font-weight: 700; border: 0; }
+  .cz-vtable td { border: 0; }
+  .cz-vtable td[data-label]::before { content: attr(data-label); display: block; font-size: 13.5px; color: #475569; margin-top: 2px; }
 }
 @media print {
   .cz-top, .cz-mocknote, .cz-steps, .cz-receipt-msg, .cz-receipt .cz-row { display: none !important; }
 }
 .cz-demostrip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; background: #fff8db; border: 1px dashed #e0c25a; border-radius: 6px; padding: 6px 10px; margin-bottom: 10px; }
 .cz-hint { color: #92400e; font-size: 12.5px; margin-left: 4px; }
+.cz-offline { color: #991b1b; }
 /* the shared village picker, in the portal's plain input style */
 .cz .vpick .input { border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px 8px; font-size: 13.5px; height: auto; min-height: 0; box-shadow: none; background: #fff; }
 .cz .vpick .input:focus { outline: 2px solid #93c5fd; outline-offset: 0; border-color: #1f75cb; }

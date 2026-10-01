@@ -96,3 +96,59 @@ def test_maiden_village_hit_carries_to_the_officer():
     an = client.get(f"/api/applications/{enc(r.json()['app_id'])}").json()["analysis"]
     m = [m for m in an["lineage_matches"] if m.get("citizen_attached")]
     assert m and m[0].get("found_via") == "native_village"
+
+
+# ---------------------------------------------------------------- QA round: citizen pipeline fixes
+RAMESH = {"session_id": "test-ramesh-qa", "service": "caste_obc", "applicant_name_en": "Ramesh Yadav", "applicant_name_hi": "रमेश यादव",
+          "father_name_en": "Bhagwati Yadav", "father_name_hi": "भगवती यादव", "gender": "M", "birth_year": 2004, "village_lgd": 448804,
+          "no_papers": True, "other_docs": ["father_income"],
+          "vanshavali": [{"relation": "पिता", "name": "भगवती यादव", "village": "उमरगांव", "place_1950": "उमरगांव"}]}
+
+
+def test_no_papers_is_suggested_for_the_patwari_inquiry_not_sent_back_for_papers():
+    app_id = client.post("/api/citizen/submit", json=RAMESH).json()["app_id"]
+    an = client.get(f"/api/applications/{enc(app_id)}?role=sdo").json()["analysis"]
+    assert an["suggested_action"] == "refer" and an["refer_to"] == "patwari"
+    assert "Rule 7" in an["suggested_action_reason"]["en"] and "नियम 7" in an["suggested_action_reason"]["hi"]
+    q = {x["application"]["app_id"]: x for x in client.get("/api/queue?role=sdo&desk=all").json()}
+    assert "Patwari" in q[app_id]["next_step"]["en"]
+    # an ordinary file with a missing caste proof (no declaration) is still sent back for it
+    other = client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-doc-qa", "no_papers": False, "other_docs": ["caste_proof", "father_income"]}).json()
+    assert other["inquiry_requested"] is False
+
+
+def test_citizen_searches_are_linked_to_the_filed_application():
+    ref = client.post("/api/citizen/precheck", json={**SUNITA, "session_id": "test-audit-qa"}).json()["proof_ref"]
+    r = client.post("/api/citizen/submit", json={"session_id": "test-audit-qa", "service": "caste_st", "applicant_name_hi": "सुनीता मरकाम",
+                                                 "applicant_name_en": "Sunita Markam", "father_name_hi": "रामलाल मरकाम", "father_name_en": "Ramlal Markam",
+                                                 "gender": "F", "birth_year": 2008, "village_lgd": 448703, "proof_ref": ref,
+                                                 "aadhaar_last4": "1165", "mobile_last4": "3973"}).json()
+    rows = client.get("/api/audit", params={"q": r["app_id"]}).json()
+    assert {"citizen_precheck", "citizen_submitted"} <= {x["action"] for x in rows}
+    a = client.get(f"/api/applications/{enc(r['app_id'])}").json()["application"]
+    assert a["aadhaar_last4"] == "1165" and a["mobile_last4"] == "3973"
+
+
+def test_submit_twice_in_one_session_returns_the_same_application():
+    first = client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-twice"}).json()
+    again = client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-twice"}).json()
+    assert first["app_id"] == again["app_id"]
+    ids = [x["application"]["app_id"] for x in client.get("/api/queue?role=sdo&desk=all").json()]
+    assert ids.count(first["app_id"]) == 1
+
+
+def test_only_the_last_four_aadhaar_digits_are_accepted():
+    r = client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-uid", "aadhaar_last4": "123412341234"})
+    assert r.status_code == 422
+
+
+def test_patwari_referral_tells_the_citizen_what_happens():
+    app_id = client.post("/api/citizen/submit", json={**RAMESH, "session_id": "test-ref-msg"}).json()["app_id"]
+    bundle = client.get(f"/api/applications/{enc(app_id)}?role=sdo").json()
+    d = bundle["analysis"]["refer_drafts"]["patwari"]
+    r = client.post(f"/api/applications/{enc(app_id)}/decision", json={"action": "refer", "refer_to": "patwari", "order_text": d, "system_text": d, "officer_name": "SDO (Revenue), Kondagaon"})
+    assert r.status_code == 200, r.text
+    msg = r.json()["citizen_message"]
+    assert "पटवारी" in msg["text"]["hi"] and "अस्वीकृति नहीं" in msg["text"]["hi"] and "Patwari" in msg["text"]["en"]
+    assert msg["checker"]["passed"], msg["checker"]
+    assert r.json()["application"]["status"] == "awaiting_patwari"

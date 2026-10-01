@@ -40,7 +40,15 @@ export default function VillagePicker({
     const idt = setTimeout(() => {
       api
         .villages(districtLgd, text.trim())
-        .then((v) => alive && (setSugg(v), setHl(0)))
+        .then((v) => {
+          if (!alive) return;
+          setSugg(v);
+          setHl(0);
+          // typed the full name of exactly one village but did not tap the list: take it (the LGD line below shows it)
+          const q = text.trim().toLowerCase();
+          const exact = v.filter((x) => x.name.en.toLowerCase() === q || x.name.hi === text.trim());
+          if (!value && exact.length === 1) onChange(exact[0], text);
+        })
         .catch(() => alive && setSugg([]));
     }, 150);
     return () => {
