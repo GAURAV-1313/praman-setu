@@ -82,6 +82,12 @@ export default function Landing() {
             </button>
             <span className="small muted">{tx("Same Sewa Setu screen, same Approve button, one new panel.", "वही सेवा सेतु स्क्रीन, वही Approve बटन, एक नया पैनल।")}</span>
           </div>
+          <div className="row" style={{ gap: 10, marginTop: 8 }}>
+            <button className="btn secondary" id="cta-nagrik" onClick={() => nav("/nagrik")}>
+              {tx("Citizen applies online (no old papers) →", "नागरिक ऑनलाइन आवेदन (पुराने कागज़ नहीं) →")}
+            </button>
+            <span className="small muted">{tx("The Family Proof Helper inside the citizen's application form, before the upload.", "नागरिक के आवेदन फ़ॉर्म में, अपलोड से पहले, परिवार प्रमाण सहायक।")}</span>
+          </div>
           <div className="points">
             <span className="pill blue">✓ {tx("Officer decides and signs", "अधिकारी निर्णय लेते व हस्ताक्षर करते हैं")}</span>
             <span className="pill blue">✓ {tx("No match = normal review, never a rejection", "मिलान नहीं = सामान्य जांच, अस्वीकृति नहीं")}</span>

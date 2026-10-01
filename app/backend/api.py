@@ -410,6 +410,12 @@ def _dispose(app_id: str, cert_no: str, decision: str, grounds: list[str], note:
     note = (note or "").strip()
     if decision == "not" and not grounds and len(note) < 10:
         raise HTTPException(422, "'not this family' needs at least one ground or a note of 10+ characters")
+    # one decision per record: "same" and "not" can never both stand; changing it needs an explicit Undo (clear-match)
+    prior = STATE.dispositions.get(app_id, {}).get(cert_no)
+    if prior:
+        if prior["decision"] == decision:
+            return {"application": e["application"], "analysis": an}
+        raise HTTPException(409, f"certificate {cert_no} is already recorded as '{prior['decision']}' — undo it first")
     with STATE.lock:
         STATE.dispositions.setdefault(app_id, {})[cert_no] = {
             "decision": decision, "grounds": grounds, "note": note,
@@ -1247,3 +1253,4 @@ def reset():
 
 import reader_api; app.include_router(reader_api.router)  # noqa: E402,E702 — Round 8c: Praman Reader archive lookup
 import insights_api; app.include_router(insights_api.router)  # noqa: E402,E702 — Round 8a: family graph + learning
+import citizen; app.include_router(citizen.router)  # noqa: E402,E702 — citizen portal: Family Proof Helper

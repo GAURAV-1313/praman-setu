@@ -6,6 +6,10 @@ import { useSyncExternalStore } from "react";
 import { mock, MockHttpError } from "../mock/mockServer";
 import { getDesk } from "../desk";
 import type {
+  CitizenPrecheckRequest,
+  CitizenPrecheckResponse,
+  CitizenSubmitRequest,
+  CitizenSubmitResponse,
   AuditEntry,
   CallbackResponse,
   CaseBundle,
@@ -163,6 +167,8 @@ export const api = {
     return withFallback<DecisionResponse>(`/applications/${enc(appId)}/decision`, () => mock.decision(appId, r, role), post(r));
   },
   precheck: (req: PrecheckRequest) => withFallback<PrecheckResponse>("/precheck", () => mock.precheck(req), post(req)),
+  citizenPrecheck: (req: CitizenPrecheckRequest) => withFallback<CitizenPrecheckResponse>("/citizen/precheck", () => mock.citizenPrecheck(req), post(req)),
+  citizenSubmit: (req: CitizenSubmitRequest) => withFallback<CitizenSubmitResponse>("/citizen/submit", () => mock.citizenSubmit(req), post(req)),
   villages: (districtLgd?: number, q?: string) => {
     const qs = new URLSearchParams();
     if (districtLgd) qs.set("district_lgd", String(districtLgd));

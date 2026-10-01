@@ -52,6 +52,14 @@ export default function VerdictCard({ app, analysis, status, shadow, compact, jo
     evidence = (
       <>
         <b>{dismissed.length ? tx("No family record relied on — you marked it “not this family”.", "कोई पारिवारिक अभिलेख आधार नहीं — आपने “यह परिवार नहीं” दर्ज किया।") : tx("No family certificate found in the archive — this is NOT a ground for rejection.", "अभिलेखागार में परिवार का कोई प्रमाण पत्र नहीं मिला — यह अस्वीकृति का आधार नहीं है।")}</b>
+        {app.inquiry_requested && (
+          <div className="vd-sub">
+            {tx(
+              "Filed online without pre-notification papers: unavailability declaration and family tree on file — the applicant asks for a Rule 7 inquiry (Patwari / RI).",
+              "अधिसूचना-पूर्व कागज़ों के बिना ऑनलाइन दाखिल: अनुपलब्धता घोषणा व वंशावली संलग्न — आवेदक ने नियम 7 जांच (पटवारी / आर.आई.) का अनुरोध किया है।",
+            )}
+          </div>
+        )}
         {app.gender === "F" && (
           <div className="vd-sub">
             {an.native_village
@@ -72,7 +80,9 @@ export default function VerdictCard({ app, analysis, status, shadow, compact, jo
     const meta = [c.category && isCaste ? t(CATEGORY_LABEL[c.category]) : null, c.cert_type === "permanent" ? tx("permanent", "स्थायी") : tx("temporary", "अस्थायी"), c.status === "active" ? tx("active", "सक्रिय") : c.status === "cancelled" ? tx("cancelled", "निरस्त") : tx("under scrutiny", "जांचाधीन")]
       .filter(Boolean)
       .join(" · ");
-    const how = main.declared && !main.kendra_attached ? tx("declared by the applicant (Form 2A) and matched", "आवेदक द्वारा घोषित (फॉर्म 2A) व मिलान") : main.kendra_attached ? tx("attached by the Kendra after a search", "केंद्र द्वारा खोज के बाद संलग्न") : tx("found in the archive by the system", "सिस्टम द्वारा अभिलेखागार में मिला");
+    const how = main.citizen_attached
+      ? tx("cited by the applicant on the citizen portal", "आवेदक द्वारा नागरिक पोर्टल पर बताया")
+      : main.declared && !main.kendra_attached ? tx("declared by the applicant (Form 2A) and matched", "आवेदक द्वारा घोषित (फॉर्म 2A) व मिलान") : main.kendra_attached ? tx("attached by the Kendra after a search", "केंद्र द्वारा खोज के बाद संलग्न") : tx("found in the archive by the system", "सिस्टम द्वारा अभिलेखागार में मिला");
     if (main.validity_headline) {
       evidence = (
         <>
@@ -158,6 +168,8 @@ export default function VerdictCard({ app, analysis, status, shadow, compact, jo
     job = <b>{tx(`Mark the possible record: same family${k("C")} or not this family${k("N")}. Then examine the documents.`, `संभावित अभिलेख चिह्नित करें: वही परिवार${k("C")} या यह परिवार नहीं${k("N")}। फिर दस्तावेज़ जांचें।`)}</b>;
   } else if (an.lane === "records_complete") {
     job = tx("All details agree. You will see the full order before signing.", "सभी विवरण मेल खाते हैं। हस्ताक्षर से पहले पूरा आदेश दिखेगा।");
+  } else if (app.inquiry_requested && !an.lineage_matches.length) {
+    job = <b>{tx(`No papers with the applicant: refer for the Rule 7 inquiry (Patwari / RI)${k("R")} — not a ground for rejection.`, `आवेदक के पास कागज़ नहीं: नियम 7 जांच (पटवारी / आर.आई.) हेतु संदर्भित करें${k("R")} — यह अस्वीकृति का आधार नहीं।`)}</b>;
   } else if (an.deficiencies.length) {
     job = tx(`A required document is missing: send back for it${k("S")}, or refer for a Patwari enquiry${k("R")}.`, `आवश्यक दस्तावेज़ कम है: मंगाने हेतु वापस भेजें${k("S")}, या पटवारी जांच हेतु संदर्भित करें${k("R")}।`);
   } else if (an.evidence_required) {

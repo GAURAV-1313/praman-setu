@@ -49,7 +49,7 @@ export default function LineageCard({ app, analysis, matches, confirmed, accepte
   const isConfirmed = confirmed.has(c.cert_no);
   const isAccepted = accepted.has(c.cert_no);
   const disp = m.disposition ?? null;
-  const declaredByApplicant = !!m.declared && !m.kendra_attached;
+  const declaredByApplicant = !!m.declared && !m.kendra_attached && !m.citizen_attached;
   const problem = m.validity_headline ?? null;
   const reviewOnly = m.validity_severity === "review";
   const v = Object.fromEntries(m.validity.map((x) => [x.code, x]));
@@ -74,6 +74,8 @@ export default function LineageCard({ app, analysis, matches, confirmed, accepte
     ? tx("Declared by the applicant (Form 2A) — matched in the archive", "आवेदक द्वारा घोषित (फॉर्म 2A) — अभिलेखागार में मिलान")
     : m.kendra_attached
       ? tx("Attached by the Kendra after an archive search — needs your confirmation", "केंद्र द्वारा अभिलेखागार खोज के बाद संलग्न — आपकी पुष्टि आवश्यक")
+      : m.citizen_attached
+        ? tx("Cited by the applicant on the citizen portal (masked archive search) — needs your confirmation", "आवेदक द्वारा नागरिक पोर्टल पर बताया (मास्क्ड अभिलेखागार खोज) — आपकी पुष्टि आवश्यक")
       : m.found_via === "native_village"
         ? tx(`Found by the native (maiden) village search — ${c.village.en}, ${c.district.en}`, `मायके / मूल गांव की खोज से मिला — ${c.village.hi}, ${c.district.hi}`)
         : tx("Found in the archive by the system", "सिस्टम द्वारा अभिलेखागार में मिला");

@@ -502,6 +502,23 @@ def test_not_this_family_removes_match_and_reevaluates():
     assert r.json()["analysis"]["lane"] == "needs_attention"
 
 
+def test_same_and_not_cannot_both_stand():
+    """One decision per record: the opposite decision is refused until the officer undoes the first one."""
+    same = {"cert_no": HERO_CERT, "grounds": ["same_father_village"]}
+    not_ = {"cert_no": HERO_CERT, "grounds": ["father_name_differs"]}
+    assert client.post(f"/api/applications/{enc(HERO)}/confirm-relationship", json=same).status_code == 200
+    audit_len = len(client.get("/api/audit").json())
+    assert client.post(f"/api/applications/{enc(HERO)}/confirm-relationship", json=same).status_code == 200  # repeat: no-op
+    assert len(client.get("/api/audit").json()) == audit_len
+    r = client.post(f"/api/applications/{enc(HERO)}/reject-match", json=not_)
+    assert r.status_code == 409 and "undo" in r.text
+    an = get_an(HERO)
+    assert HERO_CERT in an["accepted_cert_nos"] and HERO_CERT not in an["dismissed_cert_nos"]
+    client.post(f"/api/applications/{enc(HERO)}/clear-match", json={"cert_no": HERO_CERT})
+    assert client.post(f"/api/applications/{enc(HERO)}/reject-match", json=not_).status_code == 200
+    client.post(f"/api/applications/{enc(HERO)}/clear-match", json={"cert_no": HERO_CERT})
+
+
 def test_show_cause_then_reject_order():
     an = get_an(KIRAN)
     brother = an["adverse_cert_nos"][0]

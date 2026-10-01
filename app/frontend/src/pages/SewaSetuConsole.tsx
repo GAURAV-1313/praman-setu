@@ -14,7 +14,7 @@ import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom"
 import Monogram from "../components/Monogram";
 import { api, ApiError } from "../api/client";
 import { useI18n } from "../i18n";
-import type { Analysis, Application, CaseBundle, DecisionAction, DecisionResponse, I18n, Lang, OfficeInfo, QueueItem, Role } from "../api/types";
+import type { Analysis, Application, CaseBundle, DecisionAction, DecisionResponse, I18n, Lang, LineageMatch, OfficeInfo, QueueItem, Role } from "../api/types";
 import { CATEGORY_LABEL, ErrorBox, fmtDate, Loading, slaDaysLeft, STATUS_LABEL, todayDMY, useAsync } from "../components/common";
 import VerdictCard from "../components/VerdictCard";
 import NativeVillageAction, { nativeSearchOffered } from "../components/NativeVillageAction";
@@ -431,13 +431,11 @@ export default function SewaSetuConsole() {
       );
       setPending(null);
       setToken(false);
-      if (res.document_kind === "show_cause") {
-        setResult(null);
-        reload();
-      } else {
-        setResult(res);
-      }
+      setResult(res);
+      // a hearing notice keeps the file open: refresh it so the panel shows the notice and its reply date
+      if (res.document_kind === "show_cause") reload();
       setConfirmOpen(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (e) {
       setErr(e instanceof ApiError ? `${e.status}: ${e.message}` : String(e));
     } finally {
@@ -445,8 +443,8 @@ export default function SewaSetuConsole() {
       setBusy(false);
     }
   }
-  // approve and a final reject are signed with the DSC token; notices go out on submit
-  const needsToken = (a: DecisionAction) => a === "approve" || a === "reject";
+  // every order or notice the officer issues from the console is signed with the DSC token
+  const needsToken = (_a: DecisionAction) => true;
 
   async function forward() {
     if (!app || !an) return;
@@ -485,6 +483,10 @@ export default function SewaSetuConsole() {
               {tx("Officer's due date", "अधिकारी की समय सीमा")}: {fmtDate(offDue)}
             </span>
           </div>
+          {result ? (
+            <SuccessView result={result} app={app} an={an} qs={qs} />
+          ) : (
+          <>
           <div className="ss-tabs" role="tablist">
             {tabs.map(([k, l]) => (
               <button key={k} role="tab" aria-selected={tab === k} className={`${tab === k ? "on" : ""} ${k === "decision" && panelVisible ? "praman" : ""}`} onClick={() => open(k)} id={`ss-tab-${k}`}>
@@ -620,11 +622,6 @@ export default function SewaSetuConsole() {
                     {an.show_cause.date} — {tx(`Pre-rejection hearing notice ${an.show_cause.no}`, `पूर्व-अस्वीकृति सुनवाई सूचना ${an.show_cause.no}`)}
                   </li>
                 )}
-                {result && (
-                  <li>
-                    {todayDMY()} — {t(STATUS_LABEL[status])} · {result.document_no}
-                  </li>
-                )}
               </ol>
             )}
             {tab === "decision" && (
@@ -725,24 +722,12 @@ export default function SewaSetuConsole() {
               </div>
             )}
           </div>
+          </>
+          )}
 
           {err && (
             <div className="error-box small" style={{ margin: "0 12px" }}>
               {err}
-            </div>
-          )}
-          {result && (
-            <div className="ss-done" role="status" id="ss-done">
-              <b>
-                ✓ {t(STATUS_LABEL[status])} · {result.document_no}
-              </b>{" "}
-              ·{" "}
-              {status === "approved"
-                ? tx("signed with the DSC token (simulated) · certificate with QR pushed to DigiLocker", "DSC टोकन से हस्ताक्षरित (डेमो) · QR सहित प्रमाण पत्र DigiLocker में")
-                : tx("issued (simulated); the applicant is informed", "जारी (डेमो); आवेदक को सूचना")}
-              <div style={{ marginTop: 8, maxWidth: 440 }}>
-                <WhatsAppPreview msg={result.citizen_message} />
-              </div>
             </div>
           )}
           {decided && !result && (
@@ -785,7 +770,7 @@ export default function SewaSetuConsole() {
                   {tx("Forward", "अग्रेषित करें")} → {t(an.competence?.forward_label)}
                 </button>
               </>
-            ) : decided ? (
+            ) : decided || result ? (
               <Link className="ss-btn primary" to={`/sewasetu${qs}`} id="ss-back-list">
                 ← {tx("Back to the pending list", "लंबित सूची पर लौटें")}
               </Link>
@@ -801,7 +786,7 @@ export default function SewaSetuConsole() {
                 <Link className="ss-btn reject" to={`/sewasetu${qs}`}>
                   ✖ {tx("Close", "बंद")}
                 </Link>
-                <span className="small muted">{tx("Approve / final Reject: order preview → SIGN WITH TOKEN", "अनुमोदित / अंतिम अस्वीकृति: आदेश पूर्वावलोकन → SIGN WITH TOKEN")}</span>
+                <span className="small muted">{tx("Every decision: preview the order / notice → SIGN WITH TOKEN (DSC)", "हर निर्णय: आदेश / सूचना पूर्वावलोकन → SIGN WITH TOKEN (DSC)")}</span>
               </>
             )}
           </div>
@@ -844,7 +829,7 @@ export default function SewaSetuConsole() {
                     nativeAction={!misrouted && nativeSearchOffered(app, an, status) ? <NativeVillageAction app={app} analysis={an} role={app.routed_to} onBundle={setData} compact /> : undefined}
                   />
                   <PanelMatches an={an} />
-                  {!decided && (
+                  {!decided && !misrouted && !result && (
                     <div className="ss-draft">
                       <button className="btn blue sm" disabled={!draftReady} onClick={insertDraft} id="ss-insert-draft">
                         {tx("Use this draft: ≤200-char remark + order as PDF", "यह प्रारूप उपयोग करें: ≤200 अक्षर टिप्पणी + आदेश PDF में")}
@@ -893,11 +878,11 @@ export default function SewaSetuConsole() {
             setAutoNext={() => undefined}
             onCancel={() => setPending(null)}
             onSign={() => (needsToken(pending.action) ? setToken(true) : sign())}
-            signLabel={needsToken(pending.action) ? "SIGN WITH TOKEN" : pending.action === "send_back" ? tx("Submit: send back to applicant", "सबमिट: आवेदक को वापस") : tx("Submit: issue hearing notice", "सबमिट: सुनवाई सूचना जारी करें")}
+            signLabel={pending.action === "send_back" ? tx("SIGN WITH TOKEN · send back", "SIGN WITH TOKEN · वापस भेजें") : pending.action === "show_cause" ? tx("SIGN WITH TOKEN · hearing notice", "SIGN WITH TOKEN · सुनवाई सूचना") : "SIGN WITH TOKEN"}
           />,
           document.body,
         )}
-      {pending && token && <TokenModal busy={busy} err={err} onCancel={() => setToken(false)} onSign={(p) => sign(p)} />}
+      {pending && token && <TokenModal action={pending.action} office={an.office} busy={busy} err={err} onCancel={() => setToken(false)} onSign={(p) => sign(p)} />}
       {confirmOpen && (result || status === "show_cause_issued") && (
         <div className="modal-bg" onClick={() => setConfirmOpen(false)}>
           <div className="modal ss-confirm" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()} id="ss-confirm">
@@ -915,9 +900,103 @@ export default function SewaSetuConsole() {
   );
 }
 
+/** After the officer signs: a clear success screen in place of the form — what was issued, what happens next, and the
+ *  message the citizen receives (the console's own "Decision confirmed" box still pops up first). */
+function SuccessView({ result, app, an, qs }: { result: DecisionResponse; app: Application; an: Analysis; qs: string }) {
+  const { t, tx } = useI18n();
+  const st = result.application.status;
+  const no = result.document_no ?? "";
+  const due = an.show_cause?.reply_due;
+  const copy: Record<string, { title: [string, string]; lines: [string, string][]; tone: "ok" | "warn" | "info" }> = {
+    approved: {
+      tone: "ok",
+      title: ["Application approved — certificate issued", "आवेदन स्वीकृत — प्रमाण पत्र जारी"],
+      lines: [
+        [`Reasoned order ${no}, signed with the DSC token (demo)`, `तर्कसंगत आदेश ${no}, DSC टोकन से हस्ताक्षरित (डेमो)`],
+        ["Permanent certificate with QR pushed to DigiLocker", "QR सहित स्थायी प्रमाण पत्र डिजीलॉकर में भेजा गया"],
+        ["The applicant has been informed by SMS / WhatsApp", "आवेदक को SMS / WhatsApp से सूचना भेजी गई"],
+      ],
+    },
+    sent_back: {
+      tone: "info",
+      title: ["Sent back to the applicant", "आवेदक को वापस भेजा गया"],
+      lines: [
+        [`Notice ${no}, signed with the DSC token (demo)`, `सूचना ${no}, DSC टोकन से हस्ताक्षरित (डेमो)`],
+        ["Same application number · no new fee · 30 days to add what is missing", "वही आवेदन क्रमांक · कोई नया शुल्क नहीं · कमी पूरी करने हेतु 30 दिन"],
+        ["The applicant has been told exactly what to bring", "आवेदक को बताया गया कि ठीक क्या लाना है"],
+      ],
+    },
+    show_cause_issued: {
+      tone: "warn",
+      title: ["Pre-rejection hearing notice issued", "पूर्व-अस्वीकृति सुनवाई सूचना जारी"],
+      lines: [
+        [`Notice ${no}, signed with the DSC token (demo)`, `सूचना ${no}, DSC टोकन से हस्ताक्षरित (डेमो)`],
+        [`Reply due ${due ?? "in 15 days"} · the file stays open`, `उत्तर देय ${due ?? "15 दिन में"} · फ़ाइल खुली रहेगी`],
+        ["The final decision comes only after the reply (or the period lapses)", "अंतिम निर्णय उत्तर के बाद (या अवधि समाप्त होने पर) ही"],
+      ],
+    },
+    rejected: {
+      tone: "warn",
+      title: ["Rejection order issued after the hearing", "सुनवाई के बाद अस्वीकृति आदेश जारी"],
+      lines: [
+        [`Reasoned order ${no}, signed with the DSC token (demo)`, `तर्कसंगत आदेश ${no}, DSC टोकन से हस्ताक्षरित (डेमो)`],
+        ["The applicant can appeal within 30 days (section 5)", "आवेदक 30 दिन में अपील कर सकता है (धारा 5)"],
+      ],
+    },
+  };
+  const c = copy[st] ?? { tone: "info" as const, title: [`Decision recorded: ${STATUS_LABEL[st]?.en ?? st}`, `निर्णय दर्ज: ${STATUS_LABEL[st]?.hi ?? st}`] as [string, string], lines: [[`Document ${no}`, `दस्तावेज़ ${no}`]] as [string, string][] };
+  return (
+    <section className={`ss-success ${c.tone}`} role="status" id="ss-done" aria-live="polite">
+      <div className="ss-success-main">
+        <div className="ss-success-icon" aria-hidden="true">{c.tone === "ok" ? "✓" : c.tone === "warn" ? "!" : "↩"}</div>
+        <h2>{tx(c.title[0], c.title[1])}</h2>
+        <p className="ss-success-who">
+          <span className="mono">{app.app_id}</span> · {t(app.applicant_name)} · {t(app.service_label)}
+        </p>
+        <ul>
+          {c.lines.map(([en, hi]) => (
+            <li key={en}>✓ {tx(en, hi)}</li>
+          ))}
+        </ul>
+        <div className="row" style={{ gap: 8, marginTop: 14, flexWrap: "wrap" }}>
+          <Link className="ss-btn primary" to={`/sewasetu${qs}`} id="ss-success-list">
+            ← {tx("Next file: pending list", "अगली फ़ाइल: लंबित सूची")}
+          </Link>
+          <Link className="ss-btn" to={`/officer/case/${enc(app.app_id)}`}>
+            {tx("View the issued text", "जारी पाठ देखें")} ↗
+          </Link>
+        </div>
+      </div>
+      <div className="ss-success-msg">
+        <p className="small muted" style={{ margin: "0 0 6px" }}>{tx("What the citizen receives", "नागरिक को यह संदेश मिलता है")}</p>
+        <WhatsAppPreview msg={result.citizen_message} />
+      </div>
+    </section>
+  );
+}
+
 /** DSC token signing (as in the console walkthrough): declaration · Token provider · Certificate · Passcode → Sign PDF. */
-function TokenModal({ busy, err, onCancel, onSign }: { busy: boolean; err: string | null; onCancel: () => void; onSign: (passcode: string) => void }) {
+function TokenModal({ action, office, busy, err, onCancel, onSign }: { action: DecisionAction; office: I18n; busy: boolean; err: string | null; onCancel: () => void; onSign: (passcode: string) => void }) {
   const { tx } = useI18n();
+  const declaration: Record<string, [string, string]> = {
+    approve: [
+      "I declare that the above certificate is as per the information given by the applicant — and cross-checked against the records listed in the attached order.",
+      "मैं घोषणा करता हूँ कि उपरोक्त प्रमाण पत्र आवेदक द्वारा दी गयी जानकारी के अनुसार है — तथा संलग्न आदेश में सूचीबद्ध अभिलेखों से मिलान किया गया है।",
+    ],
+    send_back: [
+      "I declare that this send-back names what the applicant must add — same application number, no new fee.",
+      "मैं घोषणा करता हूँ कि इस वापसी में स्पष्ट लिखा है कि आवेदक को क्या जोड़ना है — वही आवेदन क्रमांक, कोई नया शुल्क नहीं।",
+    ],
+    show_cause: [
+      "I declare that this pre-rejection notice states my grounds and gives the applicant 15 days to be heard before any rejection.",
+      "मैं घोषणा करता हूँ कि इस पूर्व-अस्वीकृति सूचना में मेरे आधार दर्ज हैं और किसी भी अस्वीकृति से पहले आवेदक को सुनवाई हेतु 15 दिन दिए गए हैं।",
+    ],
+    reject: [
+      "I declare that this rejection order is made after the hearing, for the reasons recorded in it.",
+      "मैं घोषणा करता हूँ कि यह अस्वीकृति आदेश सुनवाई के बाद, उसमें दर्ज कारणों से पारित किया गया है।",
+    ],
+  };
+  const [declEn, declHi] = declaration[action] ?? declaration.approve;
   const [pass, setPass] = useState("");
   const [decl, setDecl] = useState(false);
   return (
@@ -927,10 +1006,7 @@ function TokenModal({ busy, err, onCancel, onSign }: { busy: boolean; err: strin
         <label className="ss-decl">
           <input type="checkbox" checked={decl} onChange={(e) => setDecl(e.target.checked)} id="ss-decl" />
           <span>
-            {tx(
-              "I declare that the above certificate is as per the information given by the applicant — and cross-checked against the records listed in the attached order.",
-              "मैं घोषणा करता हूँ कि उपरोक्त प्रमाण पत्र आवेदक द्वारा दी गयी जानकारी के अनुसार है — तथा संलग्न आदेश में सूचीबद्ध अभिलेखों से मिलान किया गया है।",
-            )}
+            {tx(declEn, declHi)}
           </span>
         </label>
         <table className="ss-form" style={{ marginTop: 8 }}>
@@ -941,7 +1017,7 @@ function TokenModal({ busy, err, onCancel, onSign }: { busy: boolean; err: strin
             </tr>
             <tr>
               <th>{tx("Certificate*", "प्रमाणपत्र*")}</th>
-              <td>{tx("DSC of SDO (Revenue), Kondagaon (demo)", "अनुविभागीय अधिकारी (राजस्व), कोंडागांव का DSC (डेमो)")}</td>
+              <td>{tx(`DSC of ${office.en} (demo)`, `${office.hi} का DSC (डेमो)`)}</td>
             </tr>
             <tr>
               <th>{tx("Passcode*", "पासकोड*")}</th>
@@ -1001,7 +1077,7 @@ function PanelMatches({ an }: { an: Analysis }) {
 /** Round 5 (P1-4): same family / not this family inside the console panel, with the officer's grounds — the console
  *  file is no longer a dead end. Buttons only (no keyboard letters in the console); Undo until signing. */
 function PanelDecide({ an, appId, role, onBundle }: { an: Analysis; appId: string; role: Role; onBundle: (b: CaseBundle) => void }) {
-  const { tx } = useI18n();
+  const { t, tx } = useI18n();
   const [active, setActive] = useState<"same" | "not" | null>(null);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
@@ -1034,31 +1110,48 @@ function PanelDecide({ an, appId, role, onBundle }: { an: Analysis; appId: strin
       setBusy(false);
     }
   }
+  // who a record is, in one line: "Sister: Ramkali Manjhi · CG/KDG/TSL/2019/001702"
+  const who = (m: LineageMatch) => (
+    <>
+      <b>{t(m.relation_label)}</b>: {t(m.certificate.holder_name)} · <span className="mono">{m.certificate.cert_no}</span>
+    </>
+  );
   return (
     <div className="ss-decide" id="ss-decide">
-      {done.map((m) => (
-        <div key={m.certificate.cert_no} className="row small" style={{ width: "100%", gap: 6 }}>
-          <span className={`checked-badge ${m.disposition?.decision === "not" ? "neutral" : ""}`}>
-            {m.disposition?.decision === "same" ? "✓ " + tx("Same family — recorded by you", "वही परिवार — आपके द्वारा दर्ज") : "✗ " + tx("Not this family — recorded by you", "यह परिवार नहीं — आपके द्वारा दर्ज")} · <span className="mono">{m.certificate.cert_no}</span>
-          </span>
-          <button className="btn secondary sm" disabled={busy} onClick={() => undo(m.certificate.cert_no)} id="ss-undo">
-            ↶ {tx("Undo", "पूर्ववत करें")}
-          </button>
+      {done.length > 0 && (
+        <ul className="ss-decided" aria-label={tx("Recorded by you", "आपके द्वारा दर्ज")}>
+          {done.map((m) => (
+            <li key={m.certificate.cert_no} className={m.disposition?.decision === "same" ? "same" : "not"}>
+              <span className="ss-decided-mark">{m.disposition?.decision === "same" ? "✓ " + tx("Same family", "वही परिवार") : "✗ " + tx("Not this family", "यह परिवार नहीं")}</span>
+              <span className="ss-decided-who">{who(m)}</span>
+              <button className="btn secondary sm" disabled={busy || !!active} onClick={() => undo(m.certificate.cert_no)} id={`ss-undo-${m.certificate.cert_no.slice(-6)}`} title={tx("Undo this decision", "यह निर्णय पूर्ववत करें")}>
+                ↶ {tx("Undo", "पूर्ववत करें")}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      {target && (
+        <div className="ss-decide-next">
+          <p className="ss-decide-q">
+            {done.length > 0 ? tx("Next record", "अगला अभिलेख") : tx("Record to decide", "तय करने हेतु अभिलेख")} — {who(target)}
+            <br />
+            <span className="small muted">{tx("Is this the applicant's family? Only you decide.", "क्या यह आवेदक का परिवार है? यह केवल आप तय करते हैं।")}</span>
+          </p>
+          {active ? (
+            <GroundsPop key={active + target.certificate.cert_no} analysis={an} m={target} decision={active} onCancel={() => setActive(null)} onCommit={(g, n) => commit(active, g, n)} />
+          ) : (
+            <div className="row" style={{ gap: 8 }}>
+              <button className="btn decide-pair sm" disabled={busy} onClick={() => setActive("same")} id="ss-same">
+                ✓ {tx("Same family", "वही परिवार")}
+              </button>
+              <button className="btn decide-pair sm" disabled={busy} onClick={() => setActive("not")} id="ss-not">
+                ✗ {tx("Not this family", "यह परिवार नहीं")}
+              </button>
+            </div>
+          )}
         </div>
-      ))}
-      {target &&
-        (active ? (
-          <GroundsPop key={active + target.certificate.cert_no} analysis={an} m={target} decision={active} onCancel={() => setActive(null)} onCommit={(g, n) => commit(active, g, n)} />
-        ) : (
-          <>
-            <button className="btn decide-pair sm" onClick={() => setActive("same")} id="ss-same">
-              ✓ {tx("Same family", "वही परिवार")}
-            </button>
-            <button className="btn decide-pair sm" onClick={() => setActive("not")} id="ss-not">
-              ✗ {tx("Not this family", "यह परिवार नहीं")}
-            </button>
-          </>
-        ))}
+      )}
       {err && <div className="error-box small">{err}</div>}
     </div>
   );

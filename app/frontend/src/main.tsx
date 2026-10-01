@@ -23,6 +23,7 @@ import GraphPage from "./pages/GraphPage";
 import Renewals from "./pages/Renewals";
 import Reader from "./pages/Reader";
 import SewaSetuConsole, { SewaSetuDashboard } from "./pages/SewaSetuConsole";
+import CitizenPortal from "./pages/CitizenPortal";
 
 import { bootDemo } from "./demo";
 
@@ -34,6 +35,7 @@ bootDemo().finally(() => ReactDOM.createRoot(document.getElementById("root")!).r
         <Routes>
           <Route path="/sewasetu/case/:appId" element={<SewaSetuConsole />} />
           <Route path="/sewasetu" element={<SewaSetuDashboard />} />
+          <Route path="/nagrik" element={<CitizenPortal />} />
           <Route element={<Layout />}>
             <Route path="/" element={<Landing />} />
             <Route path="/kendra" element={<Kendra />} />

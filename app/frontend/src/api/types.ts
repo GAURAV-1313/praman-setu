@@ -65,6 +65,8 @@ export interface LineageMatch {
   declared?: boolean;
   /** Round 2: declared number was attached by the Kendra operator after a search (needs the officer's confirmation) */
   kendra_attached?: boolean;
+  /** citizen portal: named by the applicant online after a masked archive search (still needs confirmation) */
+  citizen_attached?: boolean;
   /** Round 2: grounds offered pre-ticked for "same family" (never committed without the officer) */
   default_grounds?: string[];
   /** Round 7: present only when the record came from the native (maiden) village search */
@@ -115,6 +117,10 @@ export interface Deficiency {
 
 export interface Application {
   app_id: string;
+  /** citizen portal filing */
+  channel?: "citizen_portal";
+  /** citizen portal: no pre-notification papers — unavailability declaration + Rule 7 inquiry requested */
+  inquiry_requested?: boolean;
   service: Service;
   service_label: I18n;
   applicant_name: I18n;
@@ -657,4 +663,57 @@ export interface RenewalRecord {
   nudge: CitizenMessage & { status: "preview"; status_note: I18n };
   rule_file: { name: string; note: I18n };
   synthetic: true;
+}
+
+/** Citizen portal: Family Proof Helper (masked archive search) and online filing */
+export interface CitizenPrecheckRequest {
+  session_id: string;
+  service: "caste_sc" | "caste_st" | "caste_obc";
+  applicant_name: string;
+  father_name: string;
+  relation?: string;
+  village_lgd?: number;
+  district_lgd?: number;
+  native_village_lgd?: number;
+  relative_cert_no?: string;
+  consent: boolean;
+  aadhaar_ok: boolean;
+}
+export interface CitizenPrecheckResponse {
+  status: "found_usable" | "found_review" | "not_found";
+  searches_left: number;
+  proof_ref?: string;
+  masked_no?: string;
+  office?: I18n;
+  year?: string;
+  relation?: I18n;
+  found_via_native?: boolean;
+}
+export interface CitizenSubmitRequest {
+  session_id: string;
+  service: "caste_sc" | "caste_st" | "caste_obc";
+  applicant_name_hi: string;
+  applicant_name_en: string;
+  father_name_hi: string;
+  father_name_en: string;
+  mother_name?: string;
+  gender: "M" | "F";
+  birth_year: number;
+  caste?: string;
+  village_lgd: number;
+  purpose?: string;
+  proof_ref?: string;
+  no_papers?: boolean;
+  vanshavali?: { relation: string; name: string; village: string; place_1950: string }[];
+  other_docs?: string[];
+}
+export interface CitizenSubmitResponse {
+  app_id: string;
+  submitted_at: string;
+  sla_due: string;
+  office: I18n;
+  fee: number;
+  inquiry_requested: boolean;
+  proof: { masked_no: string } | null;
+  citizen_message: CitizenMessage;
 }

@@ -3,6 +3,10 @@
  * The backend can overwrite ./fixtures/*.json with real exports; any of the listed file names work.
  */
 import type {
+  CitizenPrecheckRequest,
+  CitizenPrecheckResponse,
+  CitizenSubmitRequest,
+  CitizenSubmitResponse,
   Analysis,
   ChecklistItem,
   Application,
@@ -168,6 +172,8 @@ function pushAudit(e: AuditEntry) {
 const renewalIds = new Map<string, string>(); // Round 8b: offline pre-filled renewals (session only)
 
 // ---------- GET ----------
+const citizenSearches: Record<string, number> = {};
+
 export const mock = {
   health(): Health {
     return fx<Health>("health") ?? { ok: true, model_version: "offline", synthetic_population: 0, archive_certificates: 0 };
@@ -700,6 +706,42 @@ export const mock = {
     return clone(d);
   },
 
+  // citizen portal (offline fallback): the two demo families only; everything else is "not found"
+  citizenPrecheck(req: CitizenPrecheckRequest): CitizenPrecheckResponse {
+    if (!req.aadhaar_ok) throw new MockHttpError(403, "Aadhaar e-authentication is required before the archive is searched");
+    if (!req.consent) throw new MockHttpError(400, "the applicant's consent is required before the archive is searched");
+    const n = (citizenSearches[req.session_id] ?? 0) + 1;
+    if (n > 3) throw new MockHttpError(429, "search limit reached (3 per application) — continue with documents or the 'no papers' path");
+    citizenSearches[req.session_id] = n;
+    const f = req.father_name.toLowerCase();
+    const left = 3 - n;
+    if (/ramlal|ram lal|रामलाल/.test(f))
+      return { status: "found_usable", searches_left: left, proof_ref: "mock-4512", masked_no: "••••4512", office: { en: "SDO (Revenue), Kondagaon", hi: "अनुविभागीय अधिकारी (राजस्व), कोंडागांव" }, year: "2019", relation: { en: "Father", hi: "पिता" } };
+    if (/jaglu|जगलू/.test(f) && req.native_village_lgd)
+      return { status: "found_usable", searches_left: left, proof_ref: "mock-3186", masked_no: "••••3186", office: { en: "SDO (Revenue), Narayanpur", hi: "अनुविभागीय अधिकारी (राजस्व), नारायणपुर" }, year: "2017", relation: { en: "Father", hi: "पिता" }, found_via_native: true };
+    return { status: "not_found", searches_left: left };
+  },
+  citizenSubmit(req: CitizenSubmitRequest): CitizenSubmitResponse {
+    const due = new Date(Date.now() + 22 * 864e5).toISOString().slice(0, 10);
+    return {
+      app_id: "SS/2026/KDG/09001",
+      submitted_at: new Date().toISOString(),
+      sla_due: due,
+      office: { en: "SDO (Revenue), Kondagaon", hi: "अनुविभागीय अधिकारी (राजस्व), कोंडागांव" },
+      fee: 30,
+      inquiry_requested: !!req.no_papers,
+      proof: req.proof_ref ? { masked_no: req.proof_ref === "mock-3186" ? "••••3186" : "••••4512" } : null,
+      citizen_message: {
+        channel: "whatsapp",
+        generator: "template",
+        checker: { passed: true, unsupported_entities: [], checked_entities: [] },
+        text: {
+          hi: `नमस्ते ${req.applicant_name_hi} जी। आपका आवेदन क्र. SS/2026/KDG/09001 जमा हो गया है (शुल्क ₹30)। निर्णय की तिथि: ${due.split("-").reverse().join("-")}। स्थिति सेवा सेतु पोर्टल या नज़दीकी लोक सेवा केंद्र पर देखें।`,
+          en: `Hello ${req.applicant_name_en}. Your application No. SS/2026/KDG/09001 is submitted (fee ₹30). Decision due by: ${due.split("-").reverse().join("-")}. See the status on the Sewa Setu portal or at your nearest Lok Seva Kendra.`,
+        },
+      },
+    };
+  },
   precheck(req: PrecheckRequest): PrecheckResponse {
     if (req.consent === false) throw new MockHttpError(400, "the applicant's consent is required before the archive is searched");
     const certs = new Map<string, { cert: Certificate; source: LineageMatch }>();

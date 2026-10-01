@@ -4,7 +4,7 @@ Team Insiders (Gaurav Singh, Aditya Tiwari) · Sewa Setu Innovation Hackathon, P
 
 | File | What it is |
 |---|---|
-| `Praman_Setu_deck.pdf` | The full deck, 17 slides (16:9) |
+| `Praman_Setu_deck.pdf` | The full deck, 18 slides (16:9) |
 | `index.html` | All slides in the browser, with speaker notes under each |
 | `png/` | One image per slide, numbered in order |
 | `slides/`, `deck.json`, `images/` | Slide sources (HTML) and their images |

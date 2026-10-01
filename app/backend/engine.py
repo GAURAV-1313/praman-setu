@@ -622,7 +622,8 @@ def evidence_summary(lane, matches, accepted, pending, attention, defs, confirme
     if pending:
         lm = pending[0]
         rel = lm["relation_label"]
-        src = ("attached by Kendra", "केंद्र द्वारा संलग्न") if lm.get("kendra_attached") else ("found", "मिला")
+        src = (("attached by Kendra", "केंद्र द्वारा संलग्न") if lm.get("kendra_attached") else
+               ("cited by the citizen online", "नागरिक द्वारा ऑनलाइन बताया") if lm.get("citizen_attached") else ("found", "मिला"))
         return ({"en": f"{rel['en']}'s certificate {src[0]} · {_strength(lm)['en']} · confirm relationship",
                  "hi": f"{rel['hi']} का प्रमाण पत्र {src[1]} · {_strength(lm)['hi']} · संबंध की पुष्टि करें"}, 1)
     if undisposed:
@@ -872,6 +873,7 @@ def analyse(entry: dict, dispositions: dict | None = None, show_cause: dict | No
         lm["disposition"] = dispositions.get(no)
         lm["declared"] = declared == no
         lm["kendra_attached"] = declared == no and declared_src == "kendra_search"
+        lm["citizen_attached"] = declared == no and declared_src == "citizen_search"  # citizen portal: still needs confirmation
         lm["default_grounds"] = default_grounds(app, lm)
     dismissed = [lm for lm in all_matches if (lm["disposition"] or {}).get("decision") == "not"]
     matches = [lm for lm in all_matches if lm not in dismissed]           # records still in play
